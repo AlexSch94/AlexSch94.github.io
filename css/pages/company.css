@@ -22,12 +22,14 @@
     justify-content: center;
     min-height: 30%;
     flex: 1 0 auto;
+    margin: 0 0 2.5em;
 }
 
 .intro-paragraph {
     opacity: 0;
     transform: translate(3em, 0);
     animation: fade-move-in 1.5s ease-in-out forwards;
+    max-width: none;
 }
 
 /* Stats */
@@ -329,11 +331,5 @@
     }
     .team-section-container {
         grid-template-columns: repeat(1, minmax(min(100%, 150px), 1fr));
-    }
-}
-
-@media (max-width: 426px) {
-    .intro-section .section-inner {
-        gap: 2.5rem;
     }
 }
