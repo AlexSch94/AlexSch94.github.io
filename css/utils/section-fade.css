@@ -1,0 +1,12 @@
+section:not(.partners-section) .section-inner {
+    font-size: var(--FS10);
+    opacity: 0;
+    transform: translateX(7em);
+    transition: opacity, transform ease;
+    transition-duration: 0.9s, 1.3s;
+}
+
+section:not(.partners-section).come-in .section-inner {
+    opacity: 1;
+    transform: translateX(0);
+}

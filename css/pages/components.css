@@ -1,0 +1,270 @@
+.main-wrapper {
+    padding: 30px 0;
+    padding-top: clamp(70px, 7.5vw, 120px);
+}
+
+.component-heading {
+    margin: 20px 0;
+}
+
+/* flip test */
+.flip-tests {
+    color: white;
+    width: 100%;
+    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.flip-test-wrapper {
+    width: fit-content;
+}
+
+.flip-test-wrapper:focus {
+    outline: none;
+}
+
+.flip-test {
+    height: 150px;
+    width: 250px;
+    background-color: hsla(230, 100%, 20%, 0.644);
+    transition: transform 0.5s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.flip-test-wrapper:hover .flip-test,
+.flip-test-wrapper:focus .flip-test {
+    transform: rotateY(-180deg);
+}
+
+.flip-tester {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.3);
+}
+
+.flip-tester-back {
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    position: absolute;
+    transform: rotateY(180deg);
+    box-shadow: 3px 3px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* navigator */
+
+.navigator-container {
+    width: 100%;
+    position: relative;
+}
+
+.navigator-controls-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+}
+
+.dot {
+    border-radius: 50%;
+    background-color: hsla(230, 70%, 30%, 0.5);
+    height: 15px;
+    width: 15px;
+    transition: background-color 0.3s ease-in;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: hsla(230, 70%, 30%, 1);
+}
+
+.nav-control-btn.active {
+    background-color: hsla(230, 100%, 20%, 1);
+}
+
+.navigator-item-wrapper {
+    width: 100%;
+    padding: 30px;
+}
+
+.nav-item-container {
+    width: 100%;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* cards */
+
+.card {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 10px 10px 25px var(--shadow);
+    padding: 50px 60px;
+    font-size: 18px;
+    background-color: white;
+}
+
+.card-description {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-description > * {
+    width: 80%;
+}
+
+.card-heading {
+    margin: 0 0 15px 0;
+}
+
+.card p {
+    margin: 15px 0;
+}
+
+.card-right {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+}
+
+.card-content-container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.card-content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+}
+
+.card-content-text {
+    height: 10%;
+}
+
+.card-content-text h5 {
+    margin: 0;
+    text-align: center;
+}
+
+.card-content-image {
+    position: relative;
+    height: 85%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cCImg1 {
+    background-image: url(../../images/pointer_3x2.jpg);
+}
+
+.cCImg2 {
+    background-image: url(../../images/pointerS3_3x2.jpg);
+}
+
+.cCImg3 {
+    background-image: url(../../images/pointerS3-G_3x2.jpg);
+}
+
+@media (min-width: 1400px) {
+    .hero-img-container {
+        padding-left: clamp(0px, 4vw, 100px);
+    }
+}
+
+/* Team test */
+.team-display-wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    padding: 10px 0 0 0;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 10px 10px 25px var(--shadow);
+}
+
+.team-display-heading {
+    padding: 60px;
+}
+
+.team-display-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.team-display-images {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 14vw;
+    max-height: 255px;
+    min-height: 127px;
+}
+
+.img-placeholder {
+    width: 8vw;
+    height: 8vw;
+    max-width: 150px;
+    max-height: 150px;
+    min-width: 75px;
+    min-height: 75px;
+    border: 1px solid black;
+    transition: all 1s ease;
+    display: grid;
+    place-items: center;
+}
+
+.img-placeholder:hover,
+.img-placeholder.active {
+    background-color: white;
+    width: 12vw;
+    height: 12vw;
+    max-width: 225px;
+    max-height: 225px;
+    min-width: 112px;
+    min-height: 112px;
+}
+
+.img-placeholder.active {
+    width: 14vw;
+    height: 14vw;
+    max-width: 255px;
+    max-height: 255px;
+    min-width: 127px;
+    min-height: 127px;
+}
+
+.team-display-text {
+    margin-block: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.teammember-desc {
+    font-size: 20px;
+    min-height: 100px;
+}

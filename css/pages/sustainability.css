@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.page-header {
+    margin: 0 0 0.7em 0;
+}
+
+section {
+    padding: 30px 0;
+}
+
+.section-header {
+    font-size: var(--FS5);
+}
+
+.sub-header {
+    text-align: left;
+    transform: none;
+    animation: none;
+    width: fit-content;
+    margin-bottom: 0em;
+}
+
+.sub-header::after {
+    margin: 0.3em 0 0;
+    height: 2px;
+    width: 75%;
+}
+
+/* Intro section */
+
+.intro-section {
+    padding-bottom: 20px;
+}
+
+/* Solarpark section */
+
+.solarpark-content {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    gap: 1em;
+    margin-bottom: 2.5em;
+}
+
+.solarpark-description {
+    margin: 0 auto 3rem auto;
+}
+
+.solarpark-text p {
+    padding-right: 5ch;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column: 2;
+    grid-row: 1/3;
+    justify-self: end;
+    width: 100%;
+    opacity: 0;
+    transform: translate(3rem, 0);
+    transition: all 3s ease;
+}
+
+.stat-counter-container {
+    font-family: roboto mono;
+    display: flex;
+    justify-content: center;
+    font-size: var(--FS9);
+    color: var(--brand-color3);
+}
+
+.stat-counter {
+    display: block;
+    width: fit-content;
+    text-align: center;
+}
+
+.solarpark-section.come-in .stat {
+    animation: fade-move-in 2s ease forwards;
+}
+
+.stat-name {
+    text-align: center;
+    font-size: var(--FS11);
+}
+
+.solarpark-image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.solarpark-img {
+    width: 100%;
+}
+
+/* Media Queries */
+
+@media (max-width: 1400px) {
+    .solarpark-content {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+    }
+
+    .solarpar-text {
+        grid-row: 2;
+    }
+
+    .stat {
+        grid-column: 1;
+        grid-row: 3;
+        padding: 0.5em 0;
+    }
+
+    .solarpark-text p {
+        padding-right: 0;
+    }
+}

@@ -1,0 +1,120 @@
+.intro-paragraph:last-of-type {
+    margin-top: 2.5rem;
+}
+
+.sub-header-2 {
+    margin-bottom: 1em;
+    transform: none;
+    animation: none;
+}
+
+/* Job offers */
+
+.jobs-section {
+    overflow: hidden;
+}
+
+.jobs-section-container {
+    font-size: var(--FS11);
+    opacity: 0;
+    transform: translateX(3em);
+    animation: fade-move-in 2s ease-in-out forwards;
+}
+
+.job-container {
+    background-color: hsl(208, 28%, 90%);
+    border: 1px solid var(--brand-color);
+    font-size: var(--FS10);
+    padding: 0.5em 1em;
+    margin-bottom: 1em;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    user-select: none;
+}
+
+.job-container:hover,
+.job-container:active {
+    transform: translateY(-2px);
+    box-shadow: 0.4em 0.4em 1.2em var(--shadow-400);
+}
+
+.job-container a {
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+}
+
+.job-description {
+    display: flex;
+    gap: 20px;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.role {
+    width: 70%;
+}
+
+.role h3 {
+    font-size: var(--FS10);
+    font-weight: 600;
+}
+
+.sector {
+    color: white;
+    max-width: 30%;
+    flex-grow: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0.3em 0.8em;
+    font-size: var(--FS12);
+    background-color: var(--brand-color3);
+    border-radius: 3px;
+}
+
+.sector span {
+    white-space: nowrap;
+}
+
+.careers-contact {
+    margin-top: 2rem;
+}
+
+/* Media Queries */
+
+@media (max-width: 1000px) {
+    .intro-paragraph:last-of-type {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 750px) {
+    .intro-paragraph:last-of-type {
+        margin-top: 1.5rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .job-container {
+        padding: 1em;
+    }
+
+    .job-description {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5em;
+    }
+
+    .role {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sector {
+        max-width: none;
+    }
+}

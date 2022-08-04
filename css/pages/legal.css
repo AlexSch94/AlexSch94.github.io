@@ -1,0 +1,63 @@
+.main-wrapper {
+    padding: 0;
+}
+
+section {
+    font-size: var(--FS11);
+}
+
+p,
+.li-text {
+    max-width: 85ch;
+    margin: 0 0 0.4em 0;
+    font-size: var(--FS11);
+}
+
+.sub-section {
+    margin-bottom: 1em;
+}
+
+.ul-text {
+    padding-left: 1.5em;
+}
+
+h2,
+.p-header,
+.p-subheader {
+    color: var(--brand-color);
+}
+
+.p-header,
+.p-subheader {
+    border-bottom: 1px solid currentColor;
+    width: fit-content;
+}
+
+.p-header {
+    font-size: var(--FS8);
+}
+
+.p-subheader {
+    font-size: var(--FS9);
+}
+
+.return-link {
+    display: block;
+    width: fit-content;
+    margin-top: 1.5em;
+    border-bottom: 1px solid currentColor;
+    transition: all 0.2s ease;
+}
+
+.return-link:hover {
+    color: var(--brand-color2);
+}
+
+.application-info {
+    margin-top: 2rem;
+}
+
+.legal-notice {
+    font-size: var(--FS11);
+    margin-bottom: 1.5em;
+}

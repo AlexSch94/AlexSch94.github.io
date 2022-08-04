@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+    <meta name="viewport" content="width=device-width" initial-scale="1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="DOT; telematic; telematics; system; system technology; rail; GPS; sensor; logistics; transportation">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="../images/logo_DOT_greyscale.png">
+    <link rel="stylesheet" type="text/css" href="../css/utils/reset.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/base.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/pages/company.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/utils/utils.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/utils/keyframes.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/utils/carousel.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../plugins/fontello/css/dropdown.css" media="screen">
+    <script type="text/javascript" src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <script type="text/javascript" src="../js/app.js" defer></script>
+    <script type="text/javascript" src="../js/pages/company.js" defer></script>
+    <script type="text/javascript" src="../js/nav.js" defer></script>
+    <title>Company | DOT Telematik</title>
+</head>
+<body>
+    <header>
+        <div class="nav-bar">            
+			<div class="nav-bar-inner">
+				<div class="logo-container">
+					<a href="index.html" tabindex="1"><img src="../images/logo_DOT_transparent-white.png" alt="DOT Logo" id="dotLogo"></a>
+				</div>
+				
+				<nav class="top-nav">
+                    <div class="nav-links-container">
+                        <ul role="list" class="top-nav-links">
+                            <li id="homeLink" class="nav-parent active">
+                                <a href="index.html" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-parent" id="solutionsLink">
+                                <a href="solutions_overview.html" class="nav-link">Solutions <i class="icon-dropdown"></i></a>
+                                <ul role="list" class="nav-dropdown-menu solutions-dropdown" id="solutionsDropdown">
+                                    <li class="dropdown-link sol-dd-item"><a href="solutions_overview.html">Solutions Overview</a></li>
+                                    <li class="dropdown-link sol-dd-item"><a href="solutions/dot_link.html">DOT-Link Software</a></li>
+                                    <li class="dropdown-link sol-dd-item"><a href="solutions/pointer_S3.html">Pointer S3</a></li>
+                                    <li class="dropdown-link sol-dd-item"><a href="solutions/sensors_S3.html">Sensors S3</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-parent" id="aboutLink">
+                                <a href="company.html" class="nav-link">About <i class="icon-dropdown"></i></a>
+                                <ul role="list" class="nav-dropdown-menu about-dropdown" id="aboutDropdown">
+                                    <li class="dropdown-link about-dd-item"><a href="company.html">Company</a></li>
+                                    <li class="dropdown-link about-dd-item"><a href="contact.html">Contact</a></li>
+                                    <li class="dropdown-link about-dd-item"><a href="careers.html">Careers</a></li>
+                                    <li class="dropdown-link about-dd-item"><a href="partners.html">Partners</a></li>
+                                </ul>
+                            </li>                            
+                            <li class="nav-parent" id="languageLink">
+                                <a href="#" class="nav-link">Language <i class="icon-dropdown"></i></a>
+                                <ul role="list" class="nav-dropdown-menu language-dropdown" id="languageDropdown">
+                                    <li class="dropdown-link lang-dd-item"><a href="../company.html">English</a></li>
+                                    <li class="dropdown-link lang-dd-item"><a href="company.html">Deutsch</a></li>
+                                    
+                                </ul>
+                            </li>
+                            <li id="loginMobile" class="nav-parent">
+                                <div id="loginBtnMobile" class="nav-link login-btn-mobile mobile-only">Login</div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+				<div class="login-btn-wrapper">
+					<div class="login-btn-container">
+						<div class="nav-link login-btn">Login</div>
+					</div>
+				</div>
+
+				<div class="menu-icon-wrapper" tabindex="1">
+					<div class="menu-icon-container">
+						<span class="icon-span"></span>
+						<span class="icon-span"></span>
+						<span class="icon-span"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+        <!-- / NavBar -->
+
+        <div class="hero-section">
+            <div class="hero-text-wrapper">
+                <div class="hero-text">
+                    <h1 class="hero-h1">About Us</h1>
+                    <h3>Pioneering sustainable telematics solutions for over two decades.</h3>
+                </div>
+            </div>
+            <div class="hero-img-wrapper">
+                <div class="hero-img-container">
+                    <img src="../images/favpng_technology-mesh-clip-art.png" class="hero-img" alt="" draggable="false">
+                </div>
+            </div>
+        </div>
+
+        <!-- / Hero Section -->
+        
+        <div class="menu-fader"></div>
+    </header>
+    <!-- / Header -->
+
+    <div class="login-wrapper">
+        <div class="login-container">
+            <div class="login-heading">
+                <h3>DOT-Link Login</h3>
+                <p class="login-prompt">Please enter your username and password</p>
+            </div>
+            <form id="loginForm" class="login-form" method="post" accept-charset="utf-8">
+            <fieldset>
+            <div class="input-text-div">
+                <label for="UserName">Username</label>
+                <br>
+                <input name="data[User][name]" type="text" maxlength="50" required="required" value id="UserName"
+                class="input-text-field">
+            </div>
+            <div class="input-text-div">
+                <label for="UserPassword">Password</label>
+                <br>
+                <input name="data[User][password]" type="password" required="required" value id="UserPassword"
+                class="input-text-field">
+            </div>
+            </fieldset>
+            <div class="submit-btn-wrapper">
+                <input type="submit" value="Login" class="login-submit-btn" id="loginSubmitBtn">
+            </div>
+        </form>
+            <button id="loginCloseBtn" class="login-close-btn"><span class="iconify x-icon" data-icon="akar-icons:circle-x"></span></button>
+        </div>
+    </div>  
+    <!-- / Login -->
+
+    <div class="main-wrapper">
+        <section class="intro-section" id="introSection">
+                        <div class="intro-text">
+                <h1 class="page-header">
+                    DOT Telematik
+                </h1>
+                <p class="intro-paragraph">
+                    A financially strong Austrian family-owned company, DOT Telematik combines IT-specialists with a manufactory of highest quality standards, as well as innovative and fully sustainable technology. DOT is a pioneer in the field of digital devices in the logistics industry, with a focus on railway systems.
+                </p>
+                <p class="intro-paragraph">
+                    DOT Telematik continually impresses its customers with individual solutions for telematics and GPS tracking systems. Its patented X-RAYL system has been rolled out all across Europe, selling over 40.000 durable, solar powered and easy-to-use telematic systems.
+                </p>
+            </div>
+                
+            <div class="stats-wrapper">
+                <div class="stats-container">
+                    <div class="stat">
+                        <div class="stat-counter-container">
+                            <div class="stat-counter" id="activeDeviceCounter">0</div>
+                            <div class="counter-suffix">.000+</div>
+                        </div>
+                        <div class="stat-name">Active Devices</div>
+                    </div>
+                    
+                    <div class="stat">
+                        <div class="stat-counter-container">
+                            <div class="stat-counter" id="solarPowerCounter">0</div>
+                            <div class="counter-suffix">KWh+</div>
+                        </div>
+                        <div class="stat-name">solar power produced</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-counter-container">
+                            <div class="stat-counter" id="dataPointsCounter">0</div>
+                            <div class="counter-suffix">.000+</div>
+                        </div>
+                        <div class="stat-name">data points analised per month</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-counter-container">
+                            <div class="stat-counter" id="traveledCounter">4096</div>
+                            <div class="counter-suffix">km+</div>
+                        </div>
+                        <div class="stat-name">kilometres tracked every year</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-counter-container">
+                            <div class="stat-counter" id="experienceCounter">0</div>
+                            <div class="counter-suffix">&nbsp;years</div>
+                        </div>
+                        <div class="stat-name">of experience</div>
+                    </div>
+                </div>
+            </div>        
+        </section>
+        <!-- / Intro-section -->
+
+        <section class="team-section" id="teamSection">
+            <h2 class="team-header sub-header">Meet the Team</h2>
+            <div class="team-section-wrapper">
+                <div class="team-section-container">
+                    <div class="teammember teammember1">
+                        <div class="teammember-front">
+                            <img src="../images/team/Team_PhilippTarter.jpg" alt="" class="teammember-img" draggable="false">
+                            <div class="teammember-intro">
+                                <div class="teammember-role-front">Founder and CEO</div>
+                                <div class="teammember-name-front">Philipp Tarter</div>
+                            </div>
+                        </div>
+                        <div class="teammember-back">
+                            <img src="../images/team/Team_PhilippTarter.jpg" alt="" class="teammember-img" draggable="false">
+                            <div class="teammember-content">
+                                <div class="teammember-role-back">Founder and CEO</div>
+                                <div class="teammember-name-back">Philipp Tarter</div>
+                                <div class="teammember-description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis animi veniam, quod autem pariatur ab culpa repellendus blanditiis itaque aliquam architecto quas quasi unde tenetur laborum dolor! Numquam, quia ratione.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="teammember teammember2">
+                        <div class="teammember-front">
+                            <img src="../images/team/Team_SonjaTarter.jpg" alt="" class="teammember-img" draggable="false">
+                            <div class="teammember-intro">
+                                <div class="teammember-role-front">Head of Finance</div>
+                                <div class="teammember-name-front">Sonja Tarter</div>
+                            </div>
+                        </div>
+                        <div class="teammember-back">
+                            <img src="../images/team/Team_SonjaTarter.jpg" alt="" class="teammember-img" draggable="false">
+                            <div class="teammember-content">
+                                <div class="teammember-role-back">Head of Finance</div>
+                                <div class="teammember-name-back">Sonja Tarter</div>
+                                <div class="teammember-description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis animi veniam, quod autem pariatur ab culpa repellendus blanditiis itaque aliquam architecto quas quasi unde tenetur laborum dolor! Numquam, quia ratione.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="teammember teammember3">
+                        <div class="teammember-front">
+                            <img src="../images/team/Team_DanielSteiner.jpg" alt="" class="teammember-img" draggable="false">
+                            <div class="teammember-intro">
+                                <div class="teammember-role-front">Head of Technology</div>
+                                <div class="teammember-name-front">Daniel Steiner</div>
+                            </div>
+                        </div>
+                        <div class="teammember-back">
+                            <img src="../images/team/Team_DanielSteiner.jpg" alt="" class="teammember-img" draggable="false">
+                            <div class="teammember-content">
+                                <div class="teammember-role-back">Head of Technology</div>
+                                <div class="teammember-name-back">Daniel Steiner</div>
+                                <div class="teammember-description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis animi veniam, quod autem pariatur ab culpa repellendus blanditiis itaque aliquam architecto quas quasi unde tenetur laborum dolor! Numquam, quia ratione.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="teammember teammember4">
+                        <div class="teammember-front">
+                            <img src="../images/team/Team_AlexGlaser.jpg" alt="" class="teammember-img" draggable="false">
+                            <div class="teammember-intro">
+                                <div class="teammember-role-front">Head of Research <br> and Development</div>
+                                <div class="teammember-name-front">Alexander Glaser</div>
+                            </div>
+                        </div>
+                        <div class="teammember-back">
+                            <img src="../images/team/Team_AlexGlaser.jpg" alt="" class="teammember-img" draggable="false">
+                            <div class="teammember-content">
+                                <div class="teammember-role-back">Head of Research <br> and Development</div>
+                                <div class="teammember-name-back">Alexander Glaser</div>
+                                <div class="teammember-description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis animi veniam, quod autem pariatur ab culpa repellendus blanditiis itaque aliquam architecto quas quasi unde tenetur laborum dolor! Numquam, quia ratione.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="teammember teammember5">
+                        <div class="teammember-front">
+                            <img src="../images/team/profile-placeholder.png" alt="" class="teammember-img" draggable="false">
+                            <div class="teammember-intro">
+                                <div class="teammember-role-front">XXX XXX</div>
+                                <div class="teammember-name-front">XXX XXX</div>
+                            </div>
+                        </div>
+                        <div class="teammember-back">
+                            <img src="../images/team/profile-placeholder.png" alt="" class="teammember-img" draggable="false">
+                            <div class="teammember-content">
+                                <div class="teammember-role-back"></div>
+                                <div class="teammember-name-back"></div>
+                                <div class="teammember-description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis animi veniam, quod autem pariatur ab culpa repellendus blanditiis itaque aliquam architecto quas quasi unde tenetur laborum dolor! Numquam, quia ratione.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="teammember teammember6">
+                        <div class="teammember-front">
+                            <img src="../images/team/profile-placeholder.png" alt="" class="teammember-img" draggable="false">
+                            <div class="teammember-intro">
+                                <div class="teammember-role-front">XXX XXX</div>
+                                <div class="teammember-name-front">XXX XXX</div>
+                            </div>
+                        </div>
+                        <div class="teammember-back">
+                            <img src="../images/team/profile-placeholder.png" alt="" class="teammember-img" draggable="false">
+                            <div class="teammember-content">
+                                <div class="teammember-role-back"></div>
+                                <div class="teammember-name-back"></div>
+                                <div class="teammember-description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis animi veniam, quod autem pariatur ab culpa repellendus blanditiis itaque aliquam architecto quas quasi unde tenetur laborum dolor! Numquam, quia ratione.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="teammember teammember7">
+                        <div class="teammember-front">
+                            <img src="../images/team/profile-placeholder.png" alt="" class="teammember-img" draggable="false">
+                            <div class="teammember-intro">
+                                <div class="teammember-role-front">XXX XXX</div>
+                                <div class="teammember-name-front">XXX XXX</div>
+                            </div>
+                        </div>
+                        <div class="teammember-back">
+                            <img src="../images/team/profile-placeholder.png" alt="" class="teammember-img" draggable="false">
+                            <div class="teammember-content">
+                                <div class="teammember-role-back">XXX XXX</div>
+                                <div class="teammember-name-back">XXX XXX</div>
+                                <div class="teammember-description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis animi veniam, quod autem pariatur ab culpa repellendus blanditiis itaque aliquam architecto quas quasi unde tenetur laborum dolor! Numquam, quia ratione.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="teammember teammember8">
+                        <div class="teammember-front">
+                            <img src="../images/team/profile-placeholder.png" alt="" class="teammember-img" draggable="false">
+                            <div class="teammember-intro">
+                                <div class="teammember-role-front">XXX XXX</div>
+                                <div class="teammember-name-front">XXX XXX</div>
+                            </div>
+                        </div>
+                        <div class="teammember-back">
+                            <img src="../images/team/profile-placeholder.png" alt="" class="teammember-img" draggable="false">
+                            <div class="teammember-content">
+                                <div class="teammember-role-back">XXX XXX</div>
+                                <div class="teammember-name-back">XXX XXX</div>
+                                <div class="teammember-description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis animi veniam, quod autem pariatur ab culpa repellendus blanditiis itaque aliquam architecto quas quasi unde tenetur laborum dolor! Numquam, quia ratione.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="teammember teammember9">
+                        <div class="teammember-front">
+                            <img src="../images/team/profile-placeholder.png" alt="" class="teammember-img" draggable="false">
+                            <div class="teammember-intro">
+                                <div class="teammember-role-front">XXX XXX</div>
+                                <div class="teammember-name-front">XXX XXX</div>
+                            </div>
+                        </div>
+                        <div class="teammember-back">
+                            <img src="../images/team/profile-placeholder.png" alt="" class="teammember-img" draggable="false">
+                            <div class="teammember-content">
+                                <div class="teammember-role-back">XXX XXX</div>
+                                <div class="teammember-name-back">XXX XXX</div>
+                                <div class="teammember-description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis animi veniam, quod autem pariatur ab culpa repellendus blanditiis itaque aliquam architecto quas quasi unde tenetur laborum dolor! Numquam, quia ratione.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="teammember teammember10">
+                        <div class="teammember-front">
+                            <img src="../images/team/profile-placeholder.png" alt="" class="teammember-img" draggable="false">
+                            <div class="teammember-intro">
+                                <div class="teammember-role-front">XXX XXX</div>
+                                <div class="teammember-name-front">XXX XXX</div>
+                            </div>
+                        </div>
+                        <div class="teammember-back">
+                            <img src="../images/team/profile-placeholder.png" alt="" class="teammember-img" draggable="false">
+                            <div class="teammember-content">
+                                <div class="teammember-role-back">XXX XXX</div>
+                                <div class="teammember-name-back">XXX XXX</div>
+                                <div class="teammember-description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis animi veniam, quod autem pariatur ab culpa repellendus blanditiis itaque aliquam architecto quas quasi unde tenetur laborum dolor! Numquam, quia ratione.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="teammember teammember11">
+                        <div class="teammember-front">
+                            <img src="../images/team/profile-placeholder.png" alt="" class="teammember-img" draggable="false">
+                            <div class="teammember-intro">
+                                <div class="teammember-role-front">XXX XXX</div>
+                                <div class="teammember-name-front">XXX XXX</div>
+                            </div>
+                        </div>
+                        <div class="teammember-back">
+                            <img src="../images/team/profile-placeholder.png" alt="" class="teammember-img" draggable="false">
+                            <div class="teammember-content">
+                                <div class="teammember-role-back">XXX XXX</div>
+                                <div class="teammember-name-back">XXX XXX</div>
+                                <div class="teammember-description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis animi veniam, quod autem pariatur ab culpa repellendus blanditiis itaque aliquam architecto quas quasi unde tenetur laborum dolor! Numquam, quia ratione.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="teammember teammember12">
+                        <div class="teammember-front">
+                            <img src="../images/team/profile-placeholder.png" alt="" class="teammember-img" draggable="false">
+                            <div class="teammember-intro">
+                                <div class="teammember-role-front">XXX XXX</div>
+                                <div class="teammember-name-front">XXX XXX</div>
+                            </div>
+                        </div>
+                        <div class="teammember-back">
+                            <img src="../images/team/profile-placeholder.png" alt="" class="teammember-img" draggable="false">
+                            <div class="teammember-content">
+                                <div class="teammember-role-back">XXX XXX</div>
+                                <div class="teammember-name-back">XXX XXX</div>
+                                <div class="teammember-description">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis animi veniam, quod autem pariatur ab culpa repellendus blanditiis itaque aliquam architecto quas quasi unde tenetur laborum dolor! Numquam, quia ratione.
+                                </div>
+                            </div>
+                        </div>
+                    </div>                     
+                </div>
+            </div>
+        </section>
+        <!-- / Team Section -->
+
+        <section class="history-section" id="historySection">
+            <h2 class="history-header sub-header">Our Company History</h2>
+            <div class="timeline">
+                <div class="timeline-segment">
+                    <h3 class="timeline-year">2022</h3>
+                    <div class="timeline-description">
+                        <p>100% sustainable office building under construction, opening planned 2023</p>
+
+                        <p>A new milestone: Over 40,000 X-Rayl® Pointers sold.</p>
+
+                        <p>Development of a low-cost King Pin Solution.</p>
+                    </div>
+                </div>
+                <div class="timeline-segment right">
+                    <h3 class="timeline-year">2021</h3>
+                    <div class="timeline-description">
+                        <p>Certification of the Sensor S3 Revision 002 for the highest ATEX, UKCA and IECEx standards.</p>
+                    </div>
+                </div>
+                <div class="timeline-segment">
+                    <h3 class="timeline-year">2020</h3>
+                    <div class="timeline-description">
+                        <p>Development of Sensor S3 (based on Bluetooth Low Energy) which, as a platform is now capable of distance, temperature, pressure, attitude, vibration, acceleration Hi G and acceleration Low G.</p>
+
+                        <p>All our S3 devices were certified ATEX und IECEx (IIC T6 Gb).</p>
+                    </div>
+                </div>
+                <div class="timeline-segment right">
+                    <h3 class="timeline-year">2019</h3>
+                    <div class="timeline-description">
+                        <p>Enhanced ATEX Certification for X-Rayl® Pointer S2: II 2G Ex ib IIC T6 Gb for Gas and II 2D Ex ib IIIC T85°C Db for Dust.</p>
+                    </div>
+                </div>
+                <div class="timeline-segment">
+                    <h3 class="timeline-year">2018</h3>
+                    <div class="timeline-description">
+                        <p>Joined as a member of ITSS</p>
+
+                        <p>Development of the Sensor Box (IEEE 802.15.4, 2,4GHz) for temperatures up to 260°C, tilt, humidity, derailment, loading status and laser ranging. </p>
+                    </div>
+                </div>
+                <div class="timeline-segment right">
+                    <h3 class="timeline-year">2017</h3>
+                    <div class="timeline-description">
+                        <p>A new milestone: Over 1000 X-Rayl® Pointer in use.</p>
+
+                        <p>Development of new Series 17M Pointer with almost three times more energy and better positioning precision.</p>
+                    </div>
+                </div>
+                <div class="timeline-segment">
+                    <h3 class="timeline-year">2015</h3>
+                    <div class="timeline-description">
+                        <p>Extension of the ATEX Certification (ATEX 94/9/EC) of the X-Rayl® Solar Pointers to Zone 1 and Zone 21.</p>
+                    </div>
+                </div>
+                <div class="timeline-segment right">
+                    <h3 class="timeline-year">2014</h3>
+                    <div class="timeline-description">
+                        <p>Deployment of the DOT-Link Version 4.0 including features such as Geofencing for numerous Customers and a Map-Matching System for Eye-contact Analysis for the Advertising Industry.</p>
+                    </div>
+                </div>
+                <div class="timeline-segment">
+                    <h3 class="timeline-year">2012</h3>
+                    <div class="timeline-description">
+                        <p>Opening of the new Operation Site connected to a Solar Power Plant in Leobendorf, Lower Austria.</p>
+                    </div>
+                </div>
+                <div class="timeline-segment right">
+                    <h3 class="timeline-year">2011</h3>
+                    <div class="timeline-description">
+                        <p>Opening of the new Operation Site connected to a Solar Power Plant in Leobendorf, Lower Austria.</p>
+                    </div>
+                </div>
+                <div class="timeline-segment">
+                    <h3 class="timeline-year">2005</h3>
+                    <div class="timeline-description">
+                        <p>A patent is granted on the solar-energy powered GPS positioning device “X-Rayl® Pointer”.</p>
+                    </div>
+                </div>
+                <div class="timeline-segment right">
+                    <h3 class="timeline-year">2004</h3>
+                    <div class="timeline-description">
+                        <p>The German railway company Deutsche Bahn (DB) places the first substantial order for X-Rayl®. The quality and state of the GSM-R network are recorded in a position-dependent manner.</p>
+                    </div>
+                </div>
+                <div class="timeline-segment">
+                    <h3 class="timeline-year">2003</h3>
+                    <div class="description-wrapper">
+                        <div class="timeline-description">
+                            <p>Philipp Tarter dreams of offering innovative, ground-breaking telematics solutions but finds the market lacking flexible and functional products. He decides to found DOT-Telematik GmbH in order to be able to develop and produce solutions himself.</p>
+                        </div>
+                        <div class="timeline-blocker"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- / History Section -->
+
+        <hr>
+        <section>  
+            <div class="partners-wrapper" id="partnersWrapper">
+                <h2 class="partners-title">Trusted by several leading companies in the field</h2>
+                <div class="partners-carousel">
+                    <div class="carousel-wrapper">
+                        <div class="fade-bar fb-left">
+                        </div>
+                        <div class="carousel">
+                            <div class="carousel-content carouselpart1">
+                                <div class="carousel-item">
+                                    <a href="https://www.gatx.eu/" target="_blank">
+                                        <img src="../images/logo-gatx.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="https://www.bahn.de/" target="_blank">
+                                        <img src="../images/logo-DB.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="https://mfdrail.ch/de" target="_blank">
+                                        <img src="../images/logo-mfd.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="https://railrent.com/en" target="_blank">
+                                        <img src="../images/logo-ERR.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="https://www.orv-moers.de/" target="_blank">
+                                        <img src="../images/logo-orv.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="https://www.tramesa.com/inicio" target="_blank">
+                                        <img src="../images/logo-tramesa.jpg" alt="">
+                                    </a>
+                                </div>                            
+                                <div class="carousel-item">
+                                    <a href="https://www.wascosa.ch/" target="_blank">
+                                        <img src="../images/logo-wascosa.png" alt="" class="wide">
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="https://www.aretzwaggon.de/" target="_blank">
+                                        <img src="../images/logo-aretz.gif" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="carousel-content carouselpart2">
+                                <div class="carousel-item">
+                                    <a href="https://www.gatx.eu/" target="_blank">
+                                        <img src="../images/logo-gatx.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="https://www.bahn.de/" target="_blank">
+                                        <img src="../images/logo-DB.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="https://mfdrail.ch/de" target="_blank">
+                                        <img src="../images/logo-mfd.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="https://railrent.com/en" target="_blank">
+                                        <img src="../images/logo-ERR.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="https://www.orv-moers.de/" target="_blank">
+                                        <img src="../images/logo-orv.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="https://www.tramesa.com/inicio" target="_blank">
+                                        <img src="../images/logo-tramesa.jpg" alt="">
+                                    </a>
+                                </div>                            
+                                <div class="carousel-item">
+                                    <a href="https://www.wascosa.ch/" target="_blank">
+                                        <img src="../images/logo-wascosa.png" alt="" class="wide">
+                                    </a>
+                                </div>
+                                <div class="carousel-item">
+                                    <a href="https://www.aretzwaggon.de/" target="_blank">
+                                        <img src="../images/logo-aretz.gif" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fade-bar fb-right"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- / Carousel -->
+
+    </div>
+    <!-- / Main Wrapper -->
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-links">
+                    <a href="../imprint.html" style="text-decoration: none; color:inherit">Imprint</a> 
+                    <a href="../legal.html" style="text-decoration: none; color:inherit">Privacy Policy</a> 
+                    <a href="../contact.html">Contact</a>
+                </div>
+                <div class="footer-copyright">Copyright © DOT Telematik und Systemtechnik GmbH</div>
+            </div>
+            
+            <div class="footer-right">
+                <div class="scroll-to-top-btn" id="scrollToTopBtn">
+                    Scroll to top
+                </div>
+            
+                <div class="footer-socials">
+                    <a class="social-icon-container" href="https://www.linkedin.com/company/dot-telematik-gmbh" target="_blank" tabindex="0">
+                            <div class="social-icon-front">
+                                    <img src="../images/icon-linkedin.png" class="social-icon" alt="linkedin icon">
+                            </div>
+                            <div class="social-icon-back">
+                                <img src="../images/icon-linkedin.png" class="social-icon" alt="linkedin icon">
+                            </div>
+                    </a>
+                    <a class="social-icon-container" href="https://en-gb.facebook.com/pages/category/Telecommunication-company/DOT-Telematik-GmbH-223432831075892/" target="_blank" tabindex="0">
+                            <div class="social-icon-front">
+                                <img src="../images/icon-facebook.png" class="social-icon" alt="facebook icon">
+                            </div>
+                            <div class="social-icon-back">
+                                <img src="../images/icon-facebook.png" class="social-icon" alt="facebook icon">
+                            </div>
+                    </a>
+                    <a class="social-icon-container" href="https://www.youtube.com/channel/UC85XTikEGpBQFWRBd392axg" target="_blank" tabindex="0">
+                            <div class="social-icon-front">
+                                <img src="../images/icon-youtube.png" class="social-icon" alt="youtube icon">
+                            </div>
+                            <div class="social-icon-back">
+                                <img src="../images/icon-youtube.png" class="social-icon" alt="youtube icon">
+                            </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer> 
+    <!-- / Footer -->	
+</body>
+</html>  

@@ -1,0 +1,104 @@
+.animation-stop,
+.animation-stop * {
+    animation: none !important;
+    transition: none !important;
+}
+
+.visible {
+    opacity: 1 !important;
+}
+
+.hidden {
+    opacity: 0 !important;
+}
+
+.fadeOut {
+    animation: fade-out 0.8s linear forwards;
+}
+
+.fadeIn {
+    animation: fade-in 0.8s ease-in forwards;
+}
+
+.fade-bar {
+    position: absolute;
+    height: 100%;
+    width: clamp(10px, 3%, 55px);
+    z-index: 1;
+    top: 0;
+}
+
+.fb-left {
+    background-image: linear-gradient(
+        to right,
+        var(--page-background) 30%,
+        hsl(210, 44%, 96%, 0.1)
+    );
+    left: 0;
+    border-radius: 20px 0 0 20px;
+    overflow: hidden;
+}
+
+.fb-right {
+    background-image: linear-gradient(
+        to left,
+        var(--page-background) 70%,
+        hsl(210, 44%, 96%, 0.1)
+    );
+    right: 0;
+    border-radius: 0 20px 20px 0;
+    overflow: hidden;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.highlight {
+    font-weight: bold;
+    color: var(--brand-color2);
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.brand-color {
+    color: var(--brand-color2);
+}
+
+.flex {
+    display: flex;
+}
+
+.rounded3 {
+    border-radius: 3px;
+}
+
+.rounded5 {
+    border-radius: 5px;
+}
+
+.rounded8 {
+    border-radius: 8px;
+}
+
+.rounded10 {
+    border-radius: 10px;
+}
+
+.rounded15 {
+    border-radius: 15px;
+}
+
+.rounded20 {
+    border-radius: 20px;
+}
+
+.shadow {
+    box-shadow: 0 0 1em var(--shadow-400);
+}
+
+.dropshadow {
+    filter: drop-shadow(0 0 1em var(--shadow-400));
+}

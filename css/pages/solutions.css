@@ -1,0 +1,243 @@
+.hero-h1 {
+    font-size: var(--FS6);
+}
+
+.hero-section h3 {
+    font-size: var(--FS11);
+}
+
+p {
+    margin: 0;
+}
+
+section:target .section-header::after {
+    width: 80%;
+}
+
+.headers {
+    font-size: var(--FS10);
+    margin-bottom: 1em;
+}
+
+section:nth-child(even) {
+    background-color: var(--page-background3);
+}
+
+.section-header {
+    position: relative;
+    line-height: 1;
+    font-size: var(--FS3);
+    color: var(--text-color);
+    width: fit-content;
+    padding-bottom: 0.1em;
+    margin-bottom: 0.3em;
+}
+
+.section-header::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: currentcolor;
+}
+.section-header,
+.section-header::after {
+    transition: all 0.3s ease;
+}
+
+.sub-header {
+    font-size: var(--FS10);
+    color: var(--text-color);
+    margin-bottom: 0.4em;
+    line-height: 1;
+    max-width: 63ch;
+}
+
+.sub-header::after {
+    display: none;
+}
+
+.text-container {
+    margin-bottom: 2em;
+}
+
+.text-container p {
+    max-width: 90ch;
+}
+
+.attribute {
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.attribute-main,
+.popout-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.attribute-text-container {
+    gap: 1.2em;
+}
+
+.appstore-link {
+    padding-top: 0.3em;
+}
+
+.more-info-links {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 5em;
+    font-size: var(--FS11);
+}
+
+/* Popout read more */
+
+.popout-wrapper {
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background-fade);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.popout {
+    display: flex;
+    width: 90%;
+    min-width: 310px;
+    max-width: 750px;
+    height: auto;
+    flex-direction: column;
+    gap: 1em;
+    font-size: var(--FS11);
+    padding: 2em;
+    border-radius: 10px;
+    border: 4px solid var(--brand-color2);
+    background-color: var(--page-background);
+    opacity: 0;
+    transform: scale(0.5) translateX(20vw);
+    animation: popoutIn 0.3s ease forwards;
+}
+
+.popout-out {
+    animation: popoutOut 0.3s ease forwards;
+}
+
+@keyframes popoutIn {
+    0% {
+        transform: translateX(20vw);
+        opacity: 0;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes popoutOut {
+    0% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(20vw);
+        opacity: 0;
+    }
+}
+
+.popout-icon-container {
+    display: flex;
+    justify-content: center;
+}
+
+.popout-icon {
+    height: 3em;
+    width: auto;
+}
+
+.popout-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+}
+
+.popout-header h3 {
+    text-align: center;
+    font-size: var(--FS9);
+    color: var(--brand-color2);
+    line-height: 1;
+}
+
+.popout-description p {
+    font-size: var(--FS12);
+    line-height: 1.5;
+}
+
+.popout-close-btn {
+    position: absolute;
+    color: white;
+    border: 2px solid var(--brand-color2);
+    background-color: var(--brand-color2);
+    border-radius: 0 3px 0 5px;
+    height: 2.5rem;
+    width: 4rem;
+    padding: 0 1px 2px 0;
+    top: 0px;
+    right: 0px;
+    display: grid;
+    place-items: center;
+    transition: transform 0.1s ease;
+    transform: scale(1) translate(2px, -2px);
+    transform-origin: top right;
+}
+
+.popout-close-btn:focus {
+    outline: none;
+    transform: scale(0.97) translate(2px, -2px);
+}
+
+.popout-close-btn:active {
+    transform: scale(0.95) translate(2px, -2px);
+}
+
+.popout-close-btn:active .x-icon {
+    transform: scale(0.97);
+}
+
+.x-icon {
+    width: 1.3rem;
+    height: auto;
+    aspect-ratio: 1 / 1;
+}
+
+/* Data processing and presentation section */
+
+.attributes-wrapper.ddp-attributes {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr));
+}
+
+/* ACM Section */
+
+.acm-text-container {
+    margin-bottom: 2em;
+}
+
+/* Media Queries */
