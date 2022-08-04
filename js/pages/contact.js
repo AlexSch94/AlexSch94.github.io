@@ -48,23 +48,9 @@ currentCategory = 'about'
                 loadingDots.innerText = ''
             }
         }, 400)
-
-        // Temporary
-        setTimeout(() => {
-            contactForm.reset()
-            submitIndicator.addEventListener('transitionend', () => {
-                submitIndicator.style.display = 'none'
-                alert('Submission successful')
-            })
-            submitIndicator.style.opacity = '0'
-            clearInterval(loaderInterval)
-        }, 3000)
     }
 
     contactForm.addEventListener('submit', (e) => {
-        // Temporary
-        preventDefault(e)
-
         startLoader()
     })
 
