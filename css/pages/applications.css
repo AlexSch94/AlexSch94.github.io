@@ -79,7 +79,7 @@ section:target .section-header::after {
     color: var(--brand-color2);
 }
 
-.advantage-text-container * {
+.advantage-text-container *:not(.link1) {
     width: 100%;
     text-align: center;
 }
