@@ -14,13 +14,13 @@ section:target .section-header::after {
     width: 80%;
 }
 
+section:nth-child(even) {
+    background-color: var(--page-background3);
+}
+
 .headers {
     font-size: var(--FS10);
     margin-bottom: 1em;
-}
-
-section:nth-child(even) {
-    background-color: var(--page-background3);
 }
 
 .section-header {
@@ -30,7 +30,6 @@ section:nth-child(even) {
     color: var(--text-color);
     width: fit-content;
     padding-bottom: 0.1em;
-    margin-bottom: 0.3em;
 }
 
 .section-header::after {

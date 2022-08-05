@@ -86,21 +86,30 @@ p {
     font-size: var(--FS2);
 }
 
-.intro-paragraph {
-    margin-bottom: 0.5em;
+.section-header {
+    position: relative;
+    line-height: 1;
+    font-size: var(--FS3);
+    width: fit-content;
+    padding-bottom: 0.1em;
+    margin-bottom: 0.2em;
 }
 
 .sub-header {
+    position: relative;
+    line-height: 1;
     text-align: left;
     font-size: var(--FS9);
     width: fit-content;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     color: var(--brand-color);
 }
 
 .sub-header::after {
+    position: absolute;
     content: '';
     display: block;
+    top: 100%;
     background-color: var(--brand-color);
     margin: 0.3em 0 0;
     height: 2px;
@@ -122,11 +131,15 @@ p {
     background-color: var(--brand-color);
     width: 5em;
     height: 0.25em;
-    margin: 0.5em auto 0;
+    margin: 0.3em auto 0;
 }
 
 .sub-header-2.come-in {
     transform: translateY(0) scale(1);
+}
+
+.intro-paragraph {
+    margin-bottom: 0.5em;
 }
 
 a[href^='mailto:'] {
@@ -260,15 +273,6 @@ section .section-inner {
     width: 85%;
     max-width: 1400px;
     overflow: visible;
-}
-
-.section-header {
-    position: relative;
-    line-height: 1;
-    font-size: var(--FS3);
-    width: fit-content;
-    padding-bottom: 0.1em;
-    margin-bottom: 0.2em;
 }
 
 hr {
