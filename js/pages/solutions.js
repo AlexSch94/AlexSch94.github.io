@@ -1,9 +1,5 @@
 currentPage = 'solutions'
 currentCategory = 'solutions'
-let isIOS = false
-if (navigator.userAgent.match(/(iPhone|iPad)/)) {
-    isIOS = true
-}
 
 // Main page functionality
 ;(function () {
@@ -59,20 +55,26 @@ if (navigator.userAgent.match(/(iPhone|iPad)/)) {
     Appstore links 
     ----------- */
     // const iOSLinks = document.querySelector([""])
-    const appstoreLinks = document.querySelectorAll('[data-appStoreLink]')
+    let appstoreLinks
 
-    appstoreLinks.forEach((link) => {
-        link.style.display = 'none'
-        if (isIOS) {
-            if (link.getAttribute('data-linktype') === 'iOS') {
-                link.style.display = 'initial'
+    function checkAppLinks() {
+        appstoreLinks = document.querySelectorAll('[data-appStoreLink]')
+
+        appstoreLinks.forEach((link) => {
+            link.style.display = 'none'
+            if (isIOS) {
+                if (link.getAttribute('data-linktype') === 'iOS') {
+                    link.style.display = 'initial'
+                }
+            } else {
+                if (link.getAttribute('data-linktype') !== 'iOS') {
+                    link.style.display = 'initial'
+                }
             }
-        } else {
-            if (link.getAttribute('data-linktype') !== 'iOS') {
-                link.style.display = 'initial'
-            }
-        }
-    })
+        })
+    }
+
+    checkAppLinks()
 
     /* --------------
     Read more popouts 
@@ -198,9 +200,9 @@ if (navigator.userAgent.match(/(iPhone|iPad)/)) {
 
                             <p>The X-Rayl Scanner App is available for Android™ 5.0 or higher and iOS® Version 11.0 or higher in the respective app store.</p>
 
-                            <a class="appstore-link" href="https://play.google.com/store/apps/details?id=com.dot_telematik.pointeractivation&gl=AT" target="_blank" data-linktype="androidLink">Find the app for Android™ here</a>
+                            <a class="appstore-link" href="https://play.google.com/store/apps/details?id=com.dot_telematik.pointeractivation&gl=AT" target="_blank" data-appStoreLink data-linktype="android" >Find the app for Android™ here</a>
 
-                            <a class="appstore-link" href="https://play.google.com/store/apps/details?id=com.dot_telematik.pointeractivation&gl=AT" target="_blank" data-linktype="iOSLink">Find the app for iOS® here</a>
+                            <a class="appstore-link" href="xraylscanner://startapp" target="_blank" data-appStoreLink data-linktype="iOS">Find the app for iOS® here</a>
 
                             <a href=""></a>
                         </div>
@@ -420,6 +422,7 @@ if (navigator.userAgent.match(/(iPhone|iPad)/)) {
     Object.keys(attributes).forEach((key) => {
         attributes[key].button.addEventListener('click', () => {
             popout.innerHTML = attributes[key].content
+            checkAppLinks()
             openPopout()
         })
     })

@@ -8,9 +8,14 @@ const isTouch = 'ontouchstart' in window || 0 < navigator.msMaxTouchPoints,
     navBar = document.querySelector('.nav-bar'),
     scrollToTopBtns = document.querySelectorAll('.scroll-to-top-btn')
 
+let isIOS = false
+if (navigator.userAgent.match(/(iPhone|iPad)/)) {
+    isIOS = true
+}
+
 if (scrollToTopBtns) {
     scrollToTopBtns.forEach((button) => {
-        button.addEventListener('click', (e) => {
+        button.addEventListener('click', () => {
             window.scrollTo(0, 0)
         })
     })
