@@ -5,10 +5,10 @@ currentCategory = 'about'
     Stat Counters 
     ----------- */
     // Delay until shown by animation
-    let delay = 500
+    let delay = 0,
+        countersRan = false
 
-    const statsWrapper = document.querySelector('.stats-wrapper'),
-        statsContainer = document.querySelector('.stats-container'),
+    const statsContainer = document.querySelector('.stats-container'),
         activeDeviceCounter = document.getElementById('activeDeviceCounter'),
         solarPowerCounter = document.getElementById('solarPowerCounter'),
         traveledCounter = document.getElementById('traveledCounter'),
@@ -25,6 +25,7 @@ currentCategory = 'about'
                 'load',
                 () => {
                     if (entry.isIntersecting) {
+                        delay = 700
                         entry.target.classList.add('delayed')
                     }
                 },
@@ -33,21 +34,25 @@ currentCategory = 'about'
 
             if (entry.isIntersecting) {
                 entry.target.classList.add('come-in')
-                delay = 0
+
+                setTimeout(() => {
+                    if (!countersRan) {
+                        countersRan = true
+                        setTimeout(() => {
+                            incrementCounter(activeDeviceCounter, 0, 50, 50)
+                            incrementCounter(solarPowerCounter, 0, 2, 20)
+                            incrementCounter(traveledCounter, 0, 2.3, 23)
+                            incrementCounter(experienceCounter, 0, 20, 20)
+                            incrementCounter(dataPointsCounter, 0, 745000)
+                        }, delay)
+                    }
+                }, 10)
             }
         })
     },
     statOptions)
 
     statObserver.observe(statsContainer)
-
-    setTimeout(() => {
-        incrementCounter(activeDeviceCounter, 0, 50)
-        incrementCounter(solarPowerCounter, 0, 2, 20)
-        incrementCounter(traveledCounter, 0, 2.3, 23)
-        incrementCounter(experienceCounter, 0, 20, 20)
-        incrementCounter(dataPointsCounter, 0, 745)
-    }, delay)
 
     /* -------------------------
     Timeline & Header Observers  
@@ -70,9 +75,7 @@ currentCategory = 'about'
             if (entry.isIntersecting) {
                 entry.target.classList.add('come-in')
             } else {
-                if (!entry.target.classList.contains('sub-header-2')) {
-                    entry.target.classList.remove('come-in')
-                }
+                entry.target.classList.remove('come-in')
             }
         })
     },

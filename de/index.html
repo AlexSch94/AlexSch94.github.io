@@ -1,80 +1,146 @@
 <!DOCTYPE html>
-<html lang="en" translate="no">
+<html lang="de" translate="no">
 <head>
 	<meta name="viewport" content="width=device-width" initial-scale="1.0">
 	<meta charset="utf-8">
 	<meta name="keywords" content="DOT; telematic; telematics; system; system technology; rail; GPS; sensor; logistics; transportation">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" type="image/x-icon" href="../images/logo_DOT_greyscale.png">
-    <link rel="stylesheet" type="text/css" href="../css/utils/reset.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="../css/base.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="../css/pages/home.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="../css/utils/utils.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="../css/utils/keyframes.css" media="screen">
+	<link rel="shortcut icon" type="image/x-icon" href="../images/logo_DOT_greyscale.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../css/utils/reset.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="../css/base.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="../css/pages/home.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="../css/utils/utils.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="../css/utils/keyframes.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="../plugins/css/fullpage.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="../plugins/fontello/css/dropdown.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="../plugins/fontello/css/dropdown.css" media="screen">
-    <script type="text/javascript" src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+	<script type="text/javascript" src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 	<script type="text/javascript" src="../plugins/js/fullpage.min.js" defer></script>
-	<script type="text/javascript" src="../plugins/js/main.js" defer></script>
-    <script type="text/javascript" src="../js/app.js" defer></script>
-    <script type="text/javascript" src="../js/pages/home.js" defer></script>
-    <script type="text/javascript" src="../js/nav.js" defer></script>
-	<title>Home | DOT Telematik</title>
+	<script type="text/javascript" src="../plugins/js/fp-main.js" defer></script>
+	<script type="text/javascript" src="../js/app.js" defer></script>
+	<script type="text/javascript" src="../js/pages/home.js" defer></script>
+	<script type="text/javascript" src="../js/utils/video-timer.js" defer></script>
+	<script type="text/javascript" src="../js/nav.js" defer></script>
+	<title>Home | DOT</title>
 </head>
 
 <body>
 	<header>
-		<div class="nav-bar">            
+		<div class="nav-bar sticky">            
 			<div class="nav-bar-inner">
 				<div class="logo-container">
-					<a href="index.html" tabindex="1"><img src="../images/logo_DOT_transparent-white.png" alt="DOT Logo" id="dotLogo"></a>
+					<a href="./index.html" tabindex="1"><img src="../images/logo_DOT.png" alt="DOT Logo" id="dotLogo"></a>
 				</div>
 				
 				<nav class="top-nav">
                     <div class="nav-links-container">
                         <ul role="list" class="top-nav-links">
-                            <li id="homeLink" class="nav-parent active">
-                                <a href="index.html" class="nav-link">Home</a>
+                            <li id="homeLink" class="nav-parent">
+                                <a href="./index.html" class="nav-link">Home</a>
                             </li>
-                            <li class="nav-parent" id="solutionsLink">
-                                <a href="solutions_overview.html" class="nav-link">Solutions <i class="icon-dropdown"></i></a>
-                                <ul role="list" class="nav-dropdown-menu solutions-dropdown" id="solutionsDropdown">
-                                    <li class="dropdown-link sol-dd-item"><a href="solutions_overview.html">Solutions Overview</a></li>
-                                    <li class="dropdown-link sol-dd-item"><a href="solutions/dot_link.html">DOT-Link Software</a></li>
-                                    <li class="dropdown-link sol-dd-item"><a href="solutions/pointer_S3.html">Pointer S3</a></li>
-                                    <li class="dropdown-link sol-dd-item"><a href="solutions/sensors_S3.html">Sensors S3</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-parent" id="aboutLink">
-                                <a href="company.html" class="nav-link">About <i class="icon-dropdown"></i></a>
+
+							<li id="applicationsLink" class="nav-parent">
+								<a href="./applications.html" class="nav-link">Anwendungen<i class="icon-dropdown"> </i></a>
+
+								<ul role="list" class="nav-dropdown-menu applications-dropdown" id="applicationsDropdown">
+									<li class="dropdown-link app-dd-item"><a href="./applications.html#railLogistics">Bahnlogistik</a></li>
+									<li class="dropdown-link app-dd-item"><a href="./applications.html#containerLogistics">Containerlogistik</a></li>
+									<li class="dropdown-link app-dd-item"><a href="./applications.html#buildingEnergyManagement">Energiemanagement für Gebäude</a></li>
+									<li class="dropdown-link app-dd-item"><a href="./applications.html#constructionAutomation">Bau-Automatisierung</a></li>
+									<li class="dropdown-link app-dd-item"><a href="./applications.html#freightLogistics">Frachtlogistik</a></li>
+								</ul>
+							</li>
+
+							<li id="solutionsLink" class="nav-parent">
+								<a href="./solutions.html" class="nav-link">Lösungen<i class="icon-dropdown"> </i></a>
+
+								<ul role="list" class="nav-dropdown-menu solutions-dropdown" id="solutionsDropdown">
+									<li class="dropdown-link sol-dd-item"><a href="./solutions.html#ddpSection">Datenverarbeitung und -darstellung</a></li>
+									<li class="dropdown-link sol-dd-item"><a href="./solutions.html#dataEnrichmentSection">Datenanreicherung</a></li>
+									<li class="dropdown-link sol-dd-item"><a href="./solutions.html#srSection">Statistiken und Berichte</a></li>
+									<li class="dropdown-link sol-dd-item"><a href="./solutions.html#acmSection">Überwachung des Anlagenzustandes</a></li>
+									<li class="dropdown-link sol-dd-item"><a href="./solutions.html#dataSharingSection">Datenaustausch</a></li>
+								</ul>
+							</li>
+
+                            <li id="productsLink" class="nav-parent">
+								<a href="./products/pointer_S3.html" class="nav-link">Produkte <i class="icon-dropdown"></i></a>
+
+								<ul role="list" class="nav-dropdown-menu products-dropdown" id="productsDropdown">
+									<li class="dropdown-link prod-dd-item"><a href="./products/pointer_S3.html">X-Rayl® Pointer S3</a></li>
+									<li class="dropdown-link prod-dd-item"><a href="./products/sensors_S3.html">X-Rayl® Sensors S3</a></li>
+									<li class="dropdown-link prod-dd-item"><a href="./products/dot_link.html">X-Rayl® DOT-Link</a></li>
+									<li class="dropdown-link prod-dd-item"><a href="./products/scanner.html">X-Rayl® Scanner</a></li>
+								</ul>
+							</li>
+
+                            <li id="aboutLink" class="nav-parent">
+                                <a href="./company.html" class="nav-link">About <i class="icon-dropdown"></i></a>
+
                                 <ul role="list" class="nav-dropdown-menu about-dropdown" id="aboutDropdown">
-                                    <li class="dropdown-link about-dd-item"><a href="company.html">Company</a></li>
-                                    <li class="dropdown-link about-dd-item"><a href="contact.html">Contact</a></li>
-                                    <li class="dropdown-link about-dd-item"><a href="careers.html">Careers</a></li>
-                                    <li class="dropdown-link about-dd-item"><a href="partners.html">Partners</a></li>
+                                    <li class="dropdown-link about-dd-item"><a href="./company.html">Unternehmen</a></li>
+                                    <li class="dropdown-link about-dd-item"><a href="./team.html">Team</a></li>
+									<li class="dropdown-link about-dd-item"><a href="./sustainability.html">Nachhaltigkeit</a></li>
+                                    <li class="dropdown-link about-dd-item"><a href="./careers.html">Karriere</a></li>
+                                    <li class="dropdown-link about-dd-item"><a href="./partners.html">Partner</a></li>
+                                    <li class="dropdown-link about-dd-item"><a href="./contact.html">Kontakt</a></li>
                                 </ul>
-                            </li>                            
-                            <li class="nav-parent" id="languageLink">
-                                <a href="#" class="nav-link">Language <i class="icon-dropdown"></i></a>
-                                <ul role="list" class="nav-dropdown-menu language-dropdown" id="languageDropdown">
-                                    <li class="dropdown-link lang-dd-item"><a href="../index.html">English</a></li>
-                                    <li class="dropdown-link lang-dd-item"><a href="index.html">Deutsch</a></li>
-                                    
-                                </ul>
+                            </li>                                
+                            
+                            <li id="loginMobile" class="nav-parent mobile-only">
+                                <div id="loginBtnMobile" class="nav-link login-btn-mobile">Login</div>
                             </li>
-                            <li id="loginMobile" class="nav-parent">
-                                <div id="loginBtnMobile" class="nav-link login-btn-mobile mobile-only">Login</div>
+                            
+                            <li id="languageMobile" class="nav-parent language-mobile mobile-only">
+                                <a class="nav-link"><img src="../images/icons/icon-flag-gb.svg" alt="English flag" class="language-icon main-icon">
+									<i class="icon-dropdown"></i>
+								</a>
+
+                                <ul role="list" class="nav-dropdown-menu language-dropdown" id="languageDropdownMobile">
+                                    <li class="dropdown-link lang-dd-item-mobile">
+										<a href="../index.html">
+                                        	<img src="../images/icons/icon-flag-gb.svg" alt="English Flag" class="language-icon">English
+										</a>
+                                    </li>
+                                    <li class="dropdown-link lang-dd-item-mobile">
+										<a href="./de/index.html">
+                                        	<img src="../images/icons/icon-flag-de.svg" alt="German Flag" class="language-icon">Deutsch
+										</a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
                 </nav>
-
-				<div class="login-btn-wrapper">
-					<div class="login-btn-container">
-						<div class="nav-link login-btn">Login</div>
-					</div>
-				</div>
+                
+                <nav class="nav-bar-right">                    
+                    <div class="login-btn-wrapper">
+                        <div class="login-btn-container">
+                            <div class="nav-link login-btn">Login</div>
+                        </div>
+                    </div>
+                    
+                    <div id="languageLink" class="nav-parent language-link">
+                        <a class="nav-link">
+                            <img src="../../images/icons/icon-flag-gb.svg" alt="English flag" class="language-icon main-icon">
+                            <i class="icon-dropdown"></i>
+                        </a>
+                        <ul role="list" class="nav-dropdown-menu language-dropdown" id="languageDropdown">
+                            <li class="dropdown-link lang-dd-item">
+                                <a href="../index.html">
+                                    <img src="../../images/icons/icon-flag-gb.svg" alt="English flag" class="language-icon">English
+                                </a>
+                            </li>
+                            <li class="dropdown-link lang-dd-item">
+                                <a href="../de/index.html">
+                                    <img src="../../images/icons/icon-flag-de.svg" alt="German flag" class="language-icon">Deutsch
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
 
 				<div class="menu-icon-wrapper" tabindex="1">
 					<div class="menu-icon-container">
@@ -90,171 +156,70 @@
 		<div class="menu-fader"></div>
 	</header>
 	<!-- / Header -->
-
-	<div class="login-wrapper">
-		<div class="login-container">
-			<div class="login-heading">
-				<h3>DOT-Link Login</h3>
-				<p class="login-prompt">Please enter your username and password</p>
-			</div>
-			<form id="loginForm" class="login-form" method="post" accept-charset="utf-8">
-			<fieldset>
-			<div class="input-text-div">
-				<label for="UserName">Username</label>
-				<br>
-				<input name="data[User][name]" type="text" maxlength="50" required="required" value id="UserName"
-				class="input-text-field">
-			</div>
-			<div class="input-text-div">
-				<label for="UserPassword">Password</label>
-				<br>
-				<input name="data[User][password]" type="password" required="required" value id="UserPassword"
-				class="input-text-field">
-			</div>
-			</fieldset>
-			<div class="submit-btn-wrapper">
-				<input type="submit" value="Login" class="login-submit-btn" id="loginSubmitBtn">
-			</div>
-		</form>
-			<button id="loginCloseBtn" class="login-close-btn"><span class="iconify x-icon" data-icon="akar-icons:circle-x"></span></button>
-		</div>
-	</div>   
-	<!-- / Login -->	
 		
-	<div class="content-wrapper-home" id="fullpage">
+	<div class="content-wrapper" id="fullpage">
 
-		<div class="section active sec0" id="section0">
-
-			<div class="bg-wrapper bg-wrapper0" id="bg-sec0">
-				<div class="text-segment text-seg0" id="text-seg-sec0">
-					<div class="text-wrapper tw0" id="section0Text">
-						<h1 id="section0-h1">
-							Introducing a new paradigm of telematic solutions<span class="sec0-hideable"> to optimise the efficiency and safety of your logistics operation</span>.
-						</h1>						
+		<section class="section active sec0" id="section0">
+			<div class="section0-container">
+				<div class="intro-video-container">
+					<video muted preload playsinline poster data-autoplay class="intro-video" id="introVideo">
+						<source src="../images/videos/cover-video.mp4">
+					</video>
+				</div>
+				<div class="section-fade"></div>
+				<div class="section-overlay">
+					<div class="overlay-logo">
+						<img src="../images/logo_DOT.png" alt="DOT logo">
+					</div>
+					<div class="overlay-text-container">
+						<h1 class="overlay-text">
+							Wir erweitern das Potential von Telematiklösungen.
+						</h1>
 					</div>
 				</div>
-
-				<div class="img-segment img-seg0 animation-stop">
-					<div class="img-wrapper img-wrapper0">
-						<div class="pulse-container">
-							<div class="pulse"></div>
-							<div class="pulse"></div>
-							<div class="pulse"></div>
-						</div>
-
-						<div class="indicator-wrapper">
-							<div class="location-indicator indicator">
-								<div class="location-name">
-									<span class="highlight">Current location:</span> Vienna, AT
-									<br>
-									48.2082° N, 16.3738° E
-								</div>
-								<div class="timestamp">
-									<span class="highlight">Current time:</span> 10:24 AM
-								</div>
-								<div class="eta">
-									<span class="highlight">ETA:</span> 16:35 PM
-								</div>
-							</div>
-
-							<div class="temperature-indicator indicator">
-								<span class="highlight">Internal Temperature:</span> 6°C
-							</div>
-							
-							<div class="kingpin-indicator indicator">
-								<span class="highlight">Kingpin:</span> In, Locked
-							</div>
-
-							<div class="geofence-indicator indicator">
-								<span class="highlight">Geofence crossed!</span>
-								<br>
-								at 10:24AM, Vienna
-							</div>
-						</div>
-						<img class="section-img sec0-img" id="img-sec0" src="../images/train3.png" alt="Pointer S3">
-						<div class="geofence"></div>
-					</div>
-				</div>
-				
-				<div class="mobile-indicator-wrapper">
-					<div class="mobile-indicator-flex-container">
-						<div class="mobile-location-indicator mobile-indicator">
-							<div class="location-name">
-								<span class="highlight">Current location:</span> Vienna, AT
-							</div>
-							<div class="indicator-hideable">
-								<div class="timestamp">
-									<span class="sec0-hideable"><span class="highlight">Current time:</span> 10:24 AM</span>
-								</div>
-							</div>
-						</div>
-						<div class="mobile-temperature-indicator mobile-indicator">
-							<span class="highlight"><span class="indicator-hideable">Internal </span>Temperature:</span> 6°C
-						</div>
-					</div>
-					
-					<div class="mobile-indicator-flex-container">
-						<div class="mobile-kingpin-indicator mobile-indicator">
-							<span class="highlight">Kingpin:</span> In, Locked
-						</div>
-						<div class="mobile-geofence-indicator mobile-indicator">
-							<span class="highlight">Geofence crossed!</span>
-							<span class="sec0-hideable">at 10:24AM, Vienna</span>
-						</div>
-					</div>
-				</div>					
-
-				<div class="scroll-prompt-wrapper" id="scrollPrompt">
-					<div class="scroll-prompt-txt">Scroll for more</div>
-					<a href="#2" id="scrollPromptBtn">
-						<div class="scroll-prompt-img">
-							<img src="../images/scroll.png" alt="">
-						</div>
-					</a>
-				</div>
-			</div>			
-		</div>	
+			</div>
+		</section>	
 		<!-- / Section0 -->		
 		
-		<div class="section sec1" id="section1">
+		<section class="section sec1" id="section1">
 			<div class="bg-wrapper" id="bg-sec1">
 				<div class="text-segment" id="text-seg-sec1">
 					<div class="text-wrapper tw1" id="section1-txt">
 						<div class="text-container1">
 							<h1 id="section1-h1">
-								Complete <span class="brand-color">Access</span>
+								Kompletter <span class="brand-color">Zugriff</span>
 							</h1>
 							<h2>
-								Full insight into the state of your operation at the tip of your fingers.
+								Erlangen Sie vollständige Einsicht in den Stand Ihrer Operation.
 							</h2>
-							<p>
-								Our DOT-Link portal enables constant access to the position and status of your fleet's assets and cargo, improving operational cost and  time-efficiency.
+							<p class="text-hideable">
+								Unser DOT-Link portal ermöglicht durchgehend Zugriff auf die Position und den Status Ihrer Anlage, Flotte und Fracht und führt folglich zu Kostenreduktion und der Erhöhung von Effizienz.</span>
 							</p>
-							<div class="buttons">
-								<a href="#" class="learn-more-btn" id="learnMoreBtn1">Learn More</a>
-							</div>
+						</div>
+						<div class="buttons">
+							<a href="../products/dot_link.html" class="btn1">Mehr erfahren</a>
 						</div>
 					</div>
 				</div>
 
 				<div class="img-segment">
 					<div class="img-wrapper img-wrapper1">
-							<img class="section-img" id="img-sec1" src="../images/DOT-link_multiple.png" alt="Pointer S3">
+							<img class="section-img" id="img-sec1" src="../images/dotlink_multiple.png" alt="DOT-Link">
 					</div>
 				</div>
 			</div>			
-		</div>
+		</section>
 		<!-- / Section1 -->				
 		
-		<div class="section sec2" id="section2">
+		<section class="section sec2" id="section2">
 			<div class="bg-wrapper" id="bg-sec2">
 				<div class="text-segment" id="text-seg-sec2">
 					<div class="text-wrapper tw2" id="section2Text">
 						<div class="text-container2">
 							<h1 class="main-text" id="section2-h1">
-								<span class="brand-color">Durable</span> Technology
+								<span class="brand-color">Robuste</span> Technologie
 							</h1>
-							<p>Our solutions are designed to stand the test of time. High Quality materials and long-lasting power supply ensure long lifespans and eliminate the need for maintenance, even in the toughest environments.
+							<p>Unsere Geräte wurden entwickelt um die Zeit zu überdauern. Hochqualitative Materialien und langlebige Energieversorgung garantieren lange Laufzeiten und eliminieren den Bedarf nach Wartung, selbst unter den härtesten Bedinungen.</p>
 							</p>
 						</div>
 					</div>
@@ -262,134 +227,98 @@
 
 				<div class="img-segment">
 					<div class="img-wrapper img-wrapper2">
-							<img class="section-img rounded10 shadow" id="img-sec2" src="../images/section1_img.jpg" alt="">
+							<img class="section-img dropshadow" id="img-sec2" src="../images/device-collection.png" alt="X-Rayl device collection">
 					</div>
 				</div>
 			</div>			
-		</div>
+		</section>
 		<!-- / Section2 -->		
 
-		<div class="section sec3" id="section3">
-
-			<div class="bg-wrapper" id="bg-sec3">
+		<section class="section" id="section3">
+			<div class="bg-wrapper bg-wrapper3" id="bg-sec3">
 				<div class="text-segment" id="text-seg-sec3">
-					<div class="text-wrapper tw3" id="section3Text">
+					<div class="text-wrapper tw3" id="section3Txt">
 						<div class="text-container3">
 							<h1>
-								X-Rayl&reg; <span class="brand-color">Pointer S3</span>
+								<span class="brand-color">Nachhaltigkeit</span>  an erster Stelle
 							</h1>
-							<h2>
-								The Main Device
-							</h2>
+							
 							<p>
-								is the first patented solar powered tracking device for the logistics industry meeting the strongest
-								operational and digitisational requirements.
+								Das operative Geschäft findet in unserem Werk in Leobendorf bei Wien statt, wo wir eine Photovoltaikanlage mit 178 kWp auf unserem Firmengelände betreiben. Mit einer jährlichen Energieproduktion von 200.000 kWh<span class="text-hideable"> produzieren wir nachhaltig und</span> sind <span class="unhidden">wir</span> völlig energieautark.  
 							</p>
-							<div class="buttons">
-								<a href="#" class="learn-more-btn" id="learnMoreBtn1">Learn More</a>
-							</div>
+						</div>
+						<div class="buttons">
+							<a href="../sustainability.html" class="btn1">Learn More</a>
 						</div>
 					</div>
 				</div>
 
 				<div class="img-segment">
 					<div class="img-wrapper img-wrapper3">
-							<img class="section-img dropshadow rounded10" id="img-sec3" src="../images/XRAYL_Pointer_S3_transparent_crop.png" alt="Pointer S3">
+							<img class="section-img img-sec3 dropshadow" id="img-sec5" src="../images/sustainability.png" alt="Decorative image">
 					</div>
 				</div>
-			</div>			
-		</div>	
-		<!-- / Section3 -->
+			</div>
+		</section>
+		<!-- / Section3 -->		
 
-		<div class="section" id="section4">
-
+		<section class="section" id="section4">
 			<div class="bg-wrapper" id="bg-sec4">
-				<div class="text-segment" id="text-seg-sec4">
-					<div class="text-wrapper tw4" id="section4Text">
+				<div class="text-segment text-seg4" id="textSeg4">
+					<div class="text-wrapper tw4" id="section4Txt">
 						<div class="text-container4">
 							<h1>
-								X-Rayl&reg; <span class="brand-color">Sensor S3</span>
+								Maximale <span class="brand-color">Sicherheit</span>
 							</h1>
-							<h2>
-								The Peripheral Devices
-							</h2>
+							
 							<p>
-								measure key factors such as temperature, pressure, distance and proximity, and much more, allowing you to monitor all aspects of your assets and goods.
-							</p>
-							<div class="buttons">
-								<a href="#" class="learn-more-btn" id="learnMoreBtn1">Learn More</a>
-							</div>
+								All unsere Geräte sind nach den höchsten ATEX Standards zertifiziert und können somit selbst unter sensiblen Bedingungen wie dem Transport von Chemikalien eingesetzt werden.
+							</p>													
 						</div>
 					</div>
 				</div>
 
 				<div class="img-segment img-seg4">
 					<div class="img-wrapper img-wrapper4">
-							<img class="section-img dropshadow rounded10" id="img-sec4" src="../images/XRAYL_Sensor_S3ACC-D_crop.png" alt="SensorS3">
+							<img class="section-img img-sec4 rounded10" id="imgSec4" src="../images/sensor_S3(1).png" alt="Sensor S3">
 					</div>
 				</div>
 			</div>
-		</div>
-		<!-- / Section4 -->		
-
-		<div class="section" id="section5">
-			<div class="bg-wrapper" id="bg-sec5">
-				<div class="text-segment" id="text-seg-sec5">
-					<div class="text-wrapper tw5" id="section5Txt">
-						<div class="text-container5">
-							<h1>
-								<span class="brand-color">Sustainability</span> first
-							</h1>
-							
-							<p>
-								Just like the Pointer S3, our entire operation runs on green energy, powered by our very own DOT Solar Park.
-							</p>
-							<div class="buttons">
-								<a href="#" class="learn-more-btn" id="learnMoreBtn1">Learn More</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="img-segment">
-					<div class="img-wrapper img-wrapper5">
-							<img class="section-img dropshadow rounded10" id="img-sec5" src="../images/istock/green-globe.png" alt="">
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- / Section5 -->		
-
-		<div class="section" id="section6">
-			<div class="bg-wrapper" id="bg-sec6">
-				<div class="text-segment" id="text-seg-sec6">
-					<div class="text-wrapper tw6" id="section6Txt">
-						<div class="text-container6">
-							<h1>
-								Maximum <span class="brand-color">Safety</span>
-							</h1>
-							
-							<p>
-								All of our devices are certified to the highest ATEX standards, allowing for use in the most sensitive conditions, such as the transport of chemical materials.
-							</p>
-							<div class="buttons">
-								<a href="#" class="learn-more-btn" id="learnMoreBtn1">Learn More</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="img-segment">
-					<div class="img-wrapper img-wrapper6">
-							<img class="section-img shadow rounded10" id="img-sec6" src="../images/ATEX_image.jpg" alt="">
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- / Section6 -->
+		</section>
+		<!-- / Section4 -->
 			
 	</div>
 	<!-- / Content Wrapper -->
+
+	<div class="login-wrapper">
+        <div class="login-container">
+            <div class="login-heading">
+                <h3>DOT-Link Login</h3>
+                <p class="login-prompt">Please enter your username and password</p>
+            </div>
+            <form action="https://dotlink.dot-telematik.com/users/login" id="loginForm" class="login-form" method="post" accept-charset="utf-8">
+            <fieldset>
+            <div class="input-text-div">
+                <label for="UserName">Username</label>
+                <br>
+                <input name="data[User][name]" type="text" maxlength="50" required="required" value id="UserName"
+                class="input-text-field">
+            </div>
+            <div class="input-text-div">
+                <label for="UserPassword">Password</label>
+                <br>
+                <input name="data[User][password]" type="password" required="required" value id="UserPassword"
+                class="input-text-field">
+            </div>
+            </fieldset>
+            <div class="submit-btn-wrapper">
+                <input type="submit" value="Login" class="login-submit-btn" id="loginSubmitBtn">
+            </div>
+        </form>
+            <button id="loginCloseBtn" class="login-close-btn"><span class="iconify x-icon" data-icon="akar-icons:circle-x"></span></button>
+        </div>
+    </div>  
+    <!-- / Login -->
 
 </body>
 </html>  

@@ -3,11 +3,7 @@
 /* Intro-section */
 
 .intro-section {
-    min-height: calc(100vh - (var(--header-height) + 70px));
-}
-
-.intro-section > .section-inner {
-    gap: 0.5rem;
+    min-height: calc(100vh - (var(--header-height) + 50px));
 }
 
 @media (min-height: 1400px) {
@@ -22,7 +18,7 @@
     justify-content: center;
     min-height: 30%;
     flex: 1 0 auto;
-    margin: 0 0 2.5em;
+    margin: 0 0 2em;
 }
 
 .intro-paragraph {
@@ -37,7 +33,7 @@
     flex: 1 0 auto;
     display: flex;
     align-items: center;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
 }
 
 .stats-container {
@@ -45,7 +41,7 @@
     width: 100%;
     display: grid;
     justify-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
     gap: 3rem;
     overflow: hidden;
     font-size: var(--FS11);
@@ -99,19 +95,20 @@
 .timeline::after {
     content: '';
     position: absolute;
+    z-index: -1;
     width: 0.2rem;
     left: 50%;
     top: 0;
     bottom: 0;
-    z-index: -1;
     opacity: 0;
-    transition: opacity 1.5s ease;
-    transform: translateX(-50%);
     background-color: var(--brand-color);
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease;
 }
 
 .timeline.come-in::after {
     opacity: 1;
+    transition: opacity 1.2s ease;
 }
 
 .timeline-segment {
@@ -160,7 +157,7 @@
     font-size: var(--FS9);
     transform: translateX(-50%);
     opacity: 0;
-    transition: all 0.5s ease;
+    transition: opacity 0.5s ease;
 }
 
 .timeline-segment.come-in .timeline-year {
@@ -252,7 +249,7 @@
 
 @media (max-width: 1000px) {
     .intro-section {
-        gap: 3rem;
+        min-height: unset;
     }
 
     .timeline {
