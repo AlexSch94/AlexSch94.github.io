@@ -363,9 +363,7 @@
     })
 
     //Restrict Focus within LoginForm while open
-    window.addEventListener('keydown', (e) => {
-        if (!loginOpen) return
-
+    function restrictFocus(e) {
         if (e.key === 'Tab') {
             if (e.shiftKey) {
                 if (document.activeElement === userNameInput) {
@@ -379,7 +377,7 @@
                 }
             }
         }
-    })
+    }
 
     function openLogin() {
         loginOpen = true
@@ -396,6 +394,7 @@
         setTimeout(() => {
             userNameInput.focus()
         }, 320)
+        window.addEventListener('keydown', restrictFocus)
     }
 
     function closeLogin() {
@@ -410,6 +409,7 @@
         window.removeEventListener('keydown', clickLoginSubmit)
         window.removeEventListener('keyup', releaseLoginSubmit)
         window.removeEventListener('keydown', escapeLogin)
+        window.removeEventListener('keydown', restrictFocus)
     }
 
     loginSubmitBtn.addEventListener('pointerdown', () => {
