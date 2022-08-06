@@ -41,7 +41,7 @@ section {
     display: grid;
     grid-template-columns: 7fr 3fr;
     gap: 0.5em;
-    margin-bottom: 2.5em;
+    margin-bottom: 2em;
 }
 
 .solarpark-header {
@@ -106,7 +106,8 @@ section {
 @media (max-width: 1400px) {
     .solarpark-content {
         grid-template-columns: 1fr;
-        gap: 1.5em;
+        gap: 0.5em;
+        margin-bottom: 1.5em;
     }
 
     .solarpar-text {

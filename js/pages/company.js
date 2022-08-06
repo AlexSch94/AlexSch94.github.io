@@ -4,7 +4,6 @@ currentCategory = 'about'
     /* ----------
     Stat Counters 
     ----------- */
-    // Delay until shown by animation
     let delay = 0,
         countersRan = false
 

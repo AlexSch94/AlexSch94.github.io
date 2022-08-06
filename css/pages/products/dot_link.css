@@ -13,7 +13,7 @@
 }
 
 .hero-img-container {
-    display: block;
+    display: none;
     position: relative;
     place-items: initial;
     perspective: 700px;

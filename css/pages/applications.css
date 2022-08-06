@@ -6,6 +6,16 @@ section:target .section-header::after {
     width: 80%;
 }
 
+.section-header {
+    position: relative;
+    display: inline;
+    line-height: 1;
+    font-size: var(--FS3);
+    color: var(--text-color);
+    width: fit-content;
+    padding-bottom: 0.1em;
+}
+
 .section-header::after {
     content: '';
     position: absolute;
@@ -14,9 +24,6 @@ section:target .section-header::after {
     width: 0%;
     height: 2px;
     background-color: currentcolor;
-}
-.section-header,
-.section-header::after {
     transition: all 0.3s ease;
 }
 
@@ -26,6 +33,10 @@ section:target .section-header::after {
 
 .text-container p {
     max-width: 90ch;
+}
+
+.text-container p:first-of-type {
+    margin-top: 1em;
 }
 
 .advantage-header {

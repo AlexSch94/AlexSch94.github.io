@@ -41,7 +41,7 @@ currentCategory = 'about'
             submitIndicator.style.opacity = '1'
         }, 10)
 
-        let loaderInterval = setInterval(() => {
+        setInterval(() => {
             if (loadingDots.innerText.length < 3) {
                 loadingDots.innerText += '.'
             } else {
