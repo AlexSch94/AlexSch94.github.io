@@ -2,10 +2,6 @@ section:nth-child(even) {
     background-color: var(--page-background3);
 }
 
-section:target .section-header::after {
-    width: 80%;
-}
-
 .section-header {
     position: relative;
     display: inline;
@@ -21,7 +17,7 @@ section:target .section-header::after {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 0%;
+    width: 80%;
     height: 2px;
     background-color: currentcolor;
     transition: all 0.3s ease;

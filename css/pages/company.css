@@ -18,7 +18,8 @@
     justify-content: center;
     min-height: 30%;
     flex: 1 0 auto;
-    margin: 0 0 2em;
+    font-size: var(--FS10);
+    margin: 0 0 2.5em;
 }
 
 .intro-paragraph {
