@@ -44,7 +44,7 @@ section:nth-child(even) {
 .advantage-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
-    gap: 2em;
+    gap: 1.5em;
     padding: 1em 0;
 }
 
@@ -55,7 +55,7 @@ section:nth-child(even) {
     justify-content: center;
     gap: 1em;
     font-size: var(--FS11);
-    padding: 1em;
+    padding: 0.75em;
     border: 1px solid var(--brand-color2);
     border-radius: 0.3em;
     background-color: var(--page-background);

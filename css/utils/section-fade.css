@@ -3,7 +3,7 @@ section:not(.partners-section) .section-inner {
     opacity: 0;
     transform: translateX(7em);
     transition: opacity, transform ease;
-    transition-duration: 0.9s, 1.3s;
+    transition-duration: 1s, 1.3s;
 }
 
 section:not(.partners-section).come-in .section-inner {
