@@ -313,6 +313,9 @@
         }, 10)
         navBar.classList.add('sticky')
         mainMenuOpen = true
+        if (currentPage === 'home') {
+            hideIndexNavigation()
+        }
     }
 
     function closeMenu() {
@@ -325,6 +328,9 @@
         mainMenuOpen = false
         if (currentPage !== 'home' && currentPage !== 'test') {
             if (window.pageYOffset === 0) navBar.classList.remove('sticky')
+        }
+        if (currentPage === 'home') {
+            showIndexNavigation()
         }
     }
 

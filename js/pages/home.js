@@ -3,7 +3,11 @@ currentCategory = 'home'
 
 const vid = document.getElementById('introVideo')
 
+let indexNavigation
+
 window.addEventListener('load', () => {
+    indexNavigation = document.getElementById('fp-nav')
+
     document.body.classList.add('ldd')
 
     // Start Video
@@ -17,9 +21,19 @@ vid.addEventListener('ended', () => {
     vid.play()
 })
 
-const overlayLogo = document.querySelector('.overlay-logo'),
-    overlayText = document.querySelector('.overlay-text-container')
+function showIndexNavigation() {
+    indexNavigation.removeEventListener('transitionend', removeIndexNavigation)
+    indexNavigation.style.display = 'initial'
+    setTimeout(() => {
+        indexNavigation.style.opacity = '1'
+    }, 10)
+}
 
-overlayLogo.addEventListener('animationend', () => {
-    overlayText.style.top = `${overlayLogo.getBoundingClientRect().bottom}px`
-})
+function hideIndexNavigation() {
+    indexNavigation.style.opacity = '0'
+    indexNavigation.addEventListener('transitionend', removeIndexNavigation)
+}
+
+function removeIndexNavigation() {
+    indexNavigation.style.display = 'none'
+}
