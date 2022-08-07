@@ -125,7 +125,7 @@
             if (window.innerWidth <= 1000 || isTouch) return
             element.parent.classList.remove('active')
             element.active = false
-            selectCurrentCategory()
+            highlightCurrentCategory()
         })
 
         // Mobile selection
@@ -170,7 +170,7 @@
                     element.parent.classList.remove('active')
                     element.menu.classList.remove('open')
                     element.active = false
-                    selectCurrentCategory()
+                    highlightCurrentCategory()
                 }
             }
         })
@@ -191,7 +191,7 @@
             if (window.innerWidth <= 1000) return
             element.parent.classList.remove('active')
             element.menu.classList.remove('open')
-            selectCurrentCategory()
+            highlightCurrentCategory()
             element.active = false
         })
 
@@ -218,7 +218,7 @@
         })
     }
 
-    function selectCurrentCategory() {
+    function highlightCurrentCategory() {
         if (window.innerWidth <= 1000) return
         switch (currentCategory) {
             case 'home':
@@ -611,7 +611,7 @@
                         closeMenu()
                     }
 
-                    selectCurrentCategory()
+                    highlightCurrentCategory()
                 } else if (width > 500) {
                     newScreenSize = 'tablet'
                     if (newScreenSize !== screenSize) {

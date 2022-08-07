@@ -3,7 +3,7 @@ function incrementCounter(
     currentVal,
     finalVal,
     steps = 40,
-    duration = 2500
+    duration = 3000
 ) {
     const timeout = duration / steps,
         increment = (finalVal - currentVal) / steps
