@@ -1,5 +1,5 @@
-currentPage = 'solutions'
-currentCategory = 'solutions'
+currentPage = 'products'
+currentCategory = 'products'
 
 // Main page functionality
 ;(function () {
