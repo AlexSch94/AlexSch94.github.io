@@ -25,104 +25,111 @@ currentCategory = 'home'
         vid.currentTime = 8.3525
         vid.play()
     })
-
-    /* ---------- 
-    Scroll prompt 
-    ---------- */
-    const scrollPrompt = document.getElementById('scrollPrompt'),
-        overlayText = document.querySelector('.overlay-text'),
-        indexNavigationEContainer = document.getElementById('fp-nav')
-
-    function showScrollPrompt() {
-        setTimeout(() => {
-            scrollPrompt.style.display = 'flex'
-            setTimeout(() => {
-                scrollPrompt.style.opacity = '1'
-                scrollPrompt.style.transform = 'scale(1)'
-            }, 10)
-        }, 200)
-    }
-
-    function disableScrollPrompt() {
-        scrollPrompt.style.opacity = '0'
-        scrollPrompt.style.transform = 'scale(0)'
-
-        window.removeEventListener('keyup', validateScroll)
-        window.removeEventListener('touchmove', validateScroll)
-        window.removeEventListener('DOMMouseScroll', validateScroll)
-        window.removeEventListener(wheelEvent, validateScroll)
-        indexNavigationEContainer.removeEventListener('click', validateScroll)
-
-        localStorage.setItem('hideScrollPrompt', true)
-    }
-
-    function validateScroll() {
-        setTimeout(() => {
-            if (!document.body.classList.contains('fp-viewing-1')) {
-                disableScrollPrompt()
-            }
-        }, 80)
-    }
-
-    if (!localStorage.getItem('hideScrollPrompt')) {
-        overlayText.addEventListener('animationend', () => {
-            showScrollPrompt()
-        })
-
-        scrollPrompt.addEventListener('click', () => {
-            disableScrollPrompt()
-        })
-
-        window.addEventListener('keyup', validateScroll)
-        window.addEventListener('touchmove', validateScroll)
-        window.addEventListener('DOMMouseScroll', validateScroll)
-        window.addEventListener(wheelEvent, validateScroll)
-        indexNavigationEContainer.addEventListener('click', validateScroll)
-    }
-
-    /* -------------------------------------
-    Hide index navigation while menu is open
-    ------------------------------------- */
-    function showIndexNavigation() {
-        indexNavigation.removeEventListener(
-            'transitionend',
-            removeIndexNavigation
-        )
-        indexNavigation.style.display = 'initial'
-        setTimeout(() => {
-            indexNavigation.style.opacity = '1'
-        }, 10)
-    }
-
-    function hideIndexNavigation() {
-        indexNavigation.style.opacity = '0'
-        indexNavigation.addEventListener('transitionend', removeIndexNavigation)
-    }
-
-    function removeIndexNavigation() {
-        indexNavigation.style.display = 'none'
-    }
-
-    /* -----------------
-    Sustainability cards
-    ----------------- */
-
-    const cardsWrapper = document.querySelector('.cards-wrapper'),
-        cardObserverOptions = {
-            threshold: 1,
-        }
-
-    const cardObserver = new IntersectionObserver(function (
-        entries,
-        attibuteObserver
-    ) {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('come-in')
-            }
-        })
-    },
-    cardObserverOptions)
-
-    cardObserver.observe(cardsWrapper)
 })()
+
+/* ---------- 
+Scroll prompt 
+---------- */
+const scrollPrompt = document.getElementById('scrollPrompt'),
+    overlayText = document.querySelector('.overlay-text'),
+    indexNavigationContainer = document.getElementById('fp-nav')
+
+function showScrollPrompt() {
+    setTimeout(() => {
+        scrollPrompt.style.display = 'flex'
+        setTimeout(() => {
+            scrollPrompt.style.opacity = '1'
+            scrollPrompt.style.transform = 'scale(1)'
+        }, 10)
+    }, 200)
+}
+
+function disableScrollPrompt() {
+    scrollPrompt.addEventListener('transitionend', () => {
+        scrollPrompt.style.display = 'none'
+    })
+    scrollPrompt.style.opacity = '0'
+    scrollPrompt.style.transform = 'scale(0)'
+
+    window.removeEventListener('keyup', validateScroll)
+    window.removeEventListener('touchmove', validateScroll)
+    window.removeEventListener('DOMMouseScroll', validateScroll)
+    window.removeEventListener(wheelEvent, validateScroll)
+    indexNavigationContainer.removeEventListener('click', validateScroll)
+
+    localStorage.setItem('hideScrollPrompt', true)
+}
+
+function validateScroll() {
+    setTimeout(() => {
+        if (!document.body.classList.contains('fp-viewing-1')) {
+            disableScrollPrompt()
+        }
+    }, 80)
+}
+
+if (!localStorage.getItem('hideScrollPrompt')) {
+    overlayText.addEventListener('animationend', () => {
+        showScrollPrompt()
+    })
+
+    scrollPrompt.addEventListener('click', () => {
+        disableScrollPrompt()
+    })
+
+    window.addEventListener('keyup', validateScroll)
+    window.addEventListener('touchmove', validateScroll)
+    window.addEventListener('DOMMouseScroll', validateScroll)
+    window.addEventListener(wheelEvent, validateScroll)
+    indexNavigationContainer.addEventListener('click', validateScroll)
+}
+
+/* -------------------------------------
+Hide index navigation while menu is open
+------------------------------------- */
+
+function showIndexNavigation() {
+    indexNavigationContainer.removeEventListener(
+        'transitionend',
+        removeIndexNavigation
+    )
+    indexNavigationContainer.style.display = 'initial'
+    setTimeout(() => {
+        indexNavigationContainer.style.opacity = '1'
+    }, 10)
+}
+
+function hideIndexNavigation() {
+    indexNavigationContainer.style.opacity = '0'
+    indexNavigationContainer.addEventListener(
+        'transitionend',
+        removeIndexNavigation
+    )
+}
+
+function removeIndexNavigation() {
+    indexNavigationContainer.style.display = 'none'
+}
+
+/* -----------------
+Sustainability cards
+----------------- */
+
+const cardsWrapper = document.querySelector('.cards-wrapper'),
+    cardObserverOptions = {
+        threshold: 1,
+    }
+
+const cardObserver = new IntersectionObserver(function (
+    entries,
+    attibuteObserver
+) {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('come-in')
+        }
+    })
+},
+cardObserverOptions)
+
+cardObserver.observe(cardsWrapper)
