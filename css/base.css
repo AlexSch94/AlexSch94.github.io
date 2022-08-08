@@ -525,6 +525,7 @@ header {
     height: 1em;
     width: auto;
     margin-top: 0.2em;
+    box-shadow: 0 0.05em 0.5em rgba(255, 255, 255, 0.3);
 }
 
 .language-link > .nav-dropdown-menu {

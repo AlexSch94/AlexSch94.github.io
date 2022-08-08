@@ -99,7 +99,7 @@ section:nth-child(even) {
 
 /* Individual Section */
 
-.advantage-wrapper.bem {
+.advantage-wrapper.pem {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr));
 }
 

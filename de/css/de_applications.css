@@ -1,0 +1,3 @@
+.section-header {
+    font-size: clamp(25px, 4.5vw, 60px);
+}
