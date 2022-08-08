@@ -137,6 +137,7 @@ section:first-of-type {
     left: 0;
     bottom: 0;
     right: 0;
+    z-index: -1;
 }
 
 .intro-video {
@@ -191,13 +192,25 @@ section:first-of-type {
 
 .overlay-text {
     color: white;
-    font-size: clamp(26px, 7vw, 70px);
+    font-size: clamp(28px, 7vw, 70px);
+    font-weight: 700;
     text-align: center;
     text-shadow: 0 0 0.2em black, 0 0 0.5em black;
     opacity: 0;
     transform: translateY(-20vh);
     will-change: transform;
     animation: moveOverlayText 2.5s ease 5.3s forwards;
+}
+
+.overlay-text a {
+    display: block;
+    font-size: var(--FS10);
+    font-size: 400;
+    transition: all 0.3s ease;
+}
+
+.overlay-text a:hover {
+    color: var(--accent-color1);
 }
 
 @keyframes moveOverlayText {
@@ -230,6 +243,35 @@ section:first-of-type {
     animation-play-state: running;
 }
 
+.scroll-prompt {
+    position: absolute;
+    display: none;
+    align-items: center;
+    gap: 0.5em;
+    font-size: var(--FS10);
+    bottom: 1em;
+    right: 1em;
+    padding: 0.3em 0.6em;
+    border-radius: 0.1em;
+    background-color: rgba(255, 255, 255, 1);
+    opacity: 0;
+    transform: scale(0.3);
+    transition: all 0.6s ease;
+}
+
+.scroll-prompt * {
+    flex: 0 0 auto;
+}
+
+.scroll-prompt p {
+    color: black;
+}
+
+.scroll-prompt img {
+    height: 0.7em;
+    width: auto;
+}
+
 /* Section 1 */
 
 .img-wrapper1 {
@@ -242,9 +284,92 @@ section:first-of-type {
 
 /* Section 3 */
 
-.img-wrapper3 {
-    width: 70% !important;
-    max-width: 800px;
+.bg-wrapper3 {
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../images/sustainability.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.bg-wrapper3::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.img-seg3 {
+    display: none;
+}
+
+.text-seg3 {
+    display: block;
+    max-height: unset;
+}
+
+.text-wrapper .sec3-h1,
+.text-wrapper .sec3-h1 span {
+    margin: 0;
+    text-shadow: 0 0 0.5em rgba(255, 255, 255), 0 0 0.3em rgba(255, 255, 255),
+        0 0 0.1em rgba(255, 255, 255);
+}
+
+/* Cards */
+
+.cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+    gap: 1em;
+    padding: 1em 0;
+}
+
+.card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    font-size: var(--FS11);
+    padding: 0.75em;
+    border: 1px solid var(--brand-color2);
+    border-radius: 0.3em;
+    border: 1px solid var(--brand-color2);
+    background-color: var(--page-background);
+    box-shadow: 0 0 1em var(--shadow-100);
+    opacity: 0;
+    transform: scale(0.6);
+    transform-origin: center;
+    transition: all 0.3s ease;
+}
+
+.cards-wrapper.come-in .card {
+    transition: all 0.6s ease;
+    opacity: 1;
+    transform: scale(1);
+    transition-delay: calc(0.35s * var(--i));
+}
+
+.card-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3em;
+}
+
+.card-text-container h3 {
+    font-size: var(--FS10);
+    color: var(--brand-color2);
+}
+
+.card-text-container *:not(.link1) {
+    width: 100%;
+    text-align: center;
 }
 
 /* Section 4 */
@@ -269,7 +394,7 @@ section:first-of-type {
 
 .fp-viewing-5 .img-sec4 {
     transition: all 2s ease-in-out;
-    transform: scale(3.3) translateY(-22.5%) translateX(-0.75%);
+    transform: scale(3.3) translateY(-22.7%) translateX(-0.75%);
     transition-delay: 1.2s;
 }
 
@@ -435,6 +560,10 @@ section:first-of-type {
     .img-wrapper4 img {
         max-width: 65%;
     }
+
+    .fp-viewing-5 .img-sec4 {
+        transform: scale(3.36) translateY(-22.5%) translateX(0.5%);
+    }
 }
 
 @media (max-width: 750px) {
@@ -459,22 +588,27 @@ section:first-of-type {
         filter: drop-shadow(3px 3px 15px var(--shadow));
     }
 
-    /* Section 3 */
-    .img-wrapper3 {
-        width: 80% !important;
-    }
-
     /* Section 4 */
     .img-wrapper4 {
         width: 90%;
     }
 
     .fp-viewing-5 .img-sec4 {
-        transform: scale(3.1) translateY(-22.7%);
+        transform: scale(3.5) translateY(-22.3%) translateX(1%);
     }
 }
 
 @media (max-width: 500px) {
+    /* Section 0 */
+
+    .overlay-logo {
+        width: 60vw;
+    }
+
+    .fp-viewing-5 .img-sec4 {
+        transform: scale(3.5) translateY(-22.1%) translateX(1%);
+    }
+
     /* Section 1 */
 
     .img-wrapper1 img {
@@ -496,6 +630,82 @@ section:first-of-type {
     }
 }
 
+@media (max-width: 400px) {
+    .fp-viewing-5 .img-sec4 {
+        transform: scale(3.5) translateY(-22%) translateX(1%);
+    }
+}
+
+/* min-width */
+
+@media (min-width: 2000px) {
+    @keyframes moveLogo {
+        75% {
+            opacity: 0;
+        }
+
+        100% {
+            left: 10%;
+            top: -10%;
+            opacity: 0;
+            width: 1vw;
+            transform: translate(0, 0);
+        }
+    }
+}
+
+@media (min-width: 2500px) {
+    @keyframes moveLogo {
+        75% {
+            opacity: 0;
+        }
+
+        100% {
+            left: 17.5%;
+            top: -10%;
+            opacity: 0;
+            width: 1vw;
+            transform: translate(0, 0);
+        }
+    }
+}
+
+@media (min-width: 3000px) {
+    .overlay-logo {
+        animation: moveLogo 2s ease 3.5s forwards;
+    }
+
+    @keyframes moveLogo {
+        50% {
+            opacity: 0;
+            width: 1vw;
+        }
+
+        70%,
+        100% {
+            left: 22%;
+            top: -10%;
+            opacity: 0;
+            width: 1vw;
+        }
+    }
+}
+
+@media (min-width: 4000px) {
+    @keyframes moveLogo {
+        75% {
+            opacity: 0;
+        }
+
+        100% {
+            left: 35%;
+            top: -10%;
+            opacity: 0;
+            width: 1vw;
+        }
+    }
+}
+
 /* mixed media queries */
 
 @media (max-width: 800px) and (min-height: 1000px) {
@@ -506,32 +716,5 @@ section:first-of-type {
 
     .bg-wrapper:not(.bg-wrapper0) {
         gap: 100px;
-    }
-}
-
-@media (max-width: 600px), (max-height: 600px) {
-    .bg-wrapper3::after {
-        position: absolute;
-        content: '';
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: rgba(255, 255, 255, 0.9);
-    }
-
-    .text-container3 * {
-        text-shadow: 0 0 0.1em var(--shadow-500);
-    }
-
-    .bg-wrapper3 {
-        background-image: url(../../images/sustainability.png);
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-
-    .img-seg3 {
-        display: none;
     }
 }

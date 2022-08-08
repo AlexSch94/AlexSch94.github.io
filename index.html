@@ -11,9 +11,9 @@
 	<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="./css/utils/reset.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="./css/base.css" media="screen">
-	<link rel="stylesheet" type="text/css" href="./css/pages/home.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="./css/utils/utils.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="./css/utils/keyframes.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="./css/pages/home.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="./plugins/css/fullpage.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="./plugins/fontello/css/dropdown.css" media="screen">
 	<script type="text/javascript" src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
@@ -55,7 +55,7 @@
 							<li id="productsLink" class="nav-parent">
 								<a href="./products.html" class="nav-link">Products<i class="icon-dropdown"> </i></a>
 
-								<ul role="list" class="nav-dropdown-menu products-dropdown" id="productsDropdown">
+								<ul role="list" class="nav-dropdown-menu devices-dropdown" id="productsDropdown">
 									<li class="dropdown-link prod-dd-item"><a href="./products.html#dppSection">Data Processing and Presentation</a></li>
 									<li class="dropdown-link prod-dd-item"><a href="./products.html#dataEnrichmentSection">Data Enrichment</a></li>
 									<li class="dropdown-link prod-dd-item"><a href="./products.html#srSection">Statistics and reports</a></li>
@@ -67,7 +67,7 @@
                             <li id="devicesLink" class="nav-parent">
 								<a href="./devices/pointer_S3.html" class="nav-link">Devices <i class="icon-dropdown"></i></a>
 
-								<ul role="list" class="nav-dropdown-menu products-dropdown" id="devicesDropdown">
+								<ul role="list" class="nav-dropdown-menu devices-dropdown" id="devicesDropdown">
 									<li class="dropdown-link dev-dd-item"><a href="./devices/pointer_S3.html">X-Rayl® Pointer S3</a></li>
 									<li class="dropdown-link dev-dd-item"><a href="./devices/sensors_S3.html">X-Rayl® Sensors S3</a></li>
 								</ul>
@@ -78,8 +78,7 @@
 
                                 <ul role="list" class="nav-dropdown-menu about-dropdown" id="aboutDropdown">
                                     <li class="dropdown-link about-dd-item"><a href="./company.html">Company</a></li>
-                                    <li class="dropdown-link about-dd-item"><a href="./team.html">Team</a></li>
-									<li class="dropdown-link about-dd-item"><a href="./sustainability.html">Sustainability</a></li>
+                                    <li class="dropdown-link about-dd-item"><a href="./team.html">Team</a></li>									
                                     <li class="dropdown-link about-dd-item"><a href="./careers.html">Careers</a></li>
                                     <li class="dropdown-link about-dd-item"><a href="./partners.html">Partners</a></li>
                                     <li class="dropdown-link about-dd-item"><a href="./contact.html">Contact</a></li>
@@ -163,17 +162,25 @@
 						<source src="./images/videos/cover-video.mp4">
 					</video>
 				</div>
+
 				<div class="section-fade"></div>
+
 				<div class="section-overlay">
 					<div class="overlay-logo">
 						<img src="./images/logo_DOT.png" alt="DOT logo">
 					</div>
+
 					<div class="overlay-text-container">
 						<h1 class="overlay-text">
 							Introducing a new paradigm of telematic solutions.
 						</h1>
-					</div>
+					</div>					
 				</div>
+
+				<a href="#2" class="scroll-prompt" id="scrollPrompt">
+					<p>Scroll down to see more</p>
+					<img src="./images/icons/icon-scroll-down.png" alt="">
+				</a>
 			</div>
 		</section>	
 		<!-- / Section0 -->		
@@ -221,7 +228,7 @@
 
 				<div class="img-segment">
 					<div class="img-wrapper img-wrapper2">
-							<img class="section-img dropshadow" id="img-sec2" src="./images/device-collection.png" alt="X-Rayl device collection">
+							<img class="section-img dropshadow" id="img-sec2" src="./images/device-collection.png" alt="Device collection">
 					</div>
 				</div>
 			</div>			
@@ -230,19 +237,79 @@
 
 		<section class="section" id="section3">
 			<div class="bg-wrapper bg-wrapper3" id="bg-sec3">
-				<div class="text-segment" id="text-seg-sec3">
+				<div class="text-segment text-seg3" id="text-seg-sec3">
 					<div class="text-wrapper tw3" id="section3Txt">
 						<div class="text-container3">
-							<h1>
+							<h1 class="sec3-h1">
 								<span class="brand-color">Sustainability</span> first
 							</h1>
 							
-							<p>
-								The operational business takes place in our facility in Leobendorf near Vienna, where we operate a photo voltaic plant with 178 kWp. With a yearly energy production of 200 000 kWh, we<span class="text-hideable"> produce sustainably and</span> are completely energy self-sufficient.  
-							</p>						
-						</div>
-						<div class="buttons">
-							<a href="./sustainability.html" class="btn1">Learn More</a>
+							<div class="cards-wrapper dpp-cards">
+								<div class="card-container">
+									<div class="card" style="--i:0">
+										<div class="card-main">
+											<div class="card-text-container">
+												<div class="card-header">
+													<h3>Sustainable building</h3>
+												</div>
+		
+												<div class="card-description">
+													<p>The operational business including production with Hardware- and Software-engineers takes place in our facility in Leobendorf near Vienna, where we operate a photo voltaic plant with 178 kWp on our company premises. With a yearly energy production of 200 000 kWh, we produce sustainably and are completely energy self-sufficient. </p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="card-container">
+									<div class="card" style="--i:1">
+										<div class="card-main">
+											<div class="card-text-container">
+												<div class="card-header">
+													<h3>Sustainable use of materials and recycling </h3>
+												</div>
+		
+												<div class="card-description">
+													<p>Sustainability is a very high priority for us, and where we can, we use only materials that can be recycled easily like aluminum, glass. All devices returned to us are properly dismantled, recycled. Unavoidable electronic components, batteries and potting materials are disposed of in accordance with legal requirements.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="card-container">
+									<div class="card" style="--i:2">
+										<div class="card-main">
+											<div class="card-text-container">
+												<div class="card-header">
+													<h3>Sustainable Supply Chain </h3>
+												</div>
+		
+												<div class="card-description">
+													<p>On site we develop and manufacture prototypes according to our specifications. For series production, the manufacturing of individual components is outsourced to local companies thus avoiding long shipments. The assembly as well as the development of the entire software is done by DOT Telematik. We have no production sites abroad.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="card-container">
+									<div class="card" style="--i:3">
+										<div class="card-main">
+											<div class="card-text-container">
+												<div class="card-header">
+													<h3>Sustainable Product </h3>
+												</div>
+		
+												<div class="card-description">
+													<p>The <span class="nowrap">X-Rayl</span> Solar Pointer S3 (main device) has a fully renewable power supply. Our energy supply concept based on solar energy with long-term storage allows up to 8 times higher transmission power than conventional solutions with absolute freedom from maintenance over the entire expected service life of more than 8 years.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- / Cards wrapper -->						
 						</div>
 					</div>
 				</div>

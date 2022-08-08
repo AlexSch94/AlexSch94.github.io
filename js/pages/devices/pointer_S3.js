@@ -1,5 +1,8 @@
-currentPage = 'sensor_VIB-D'
-currentCategory = 'products'
+currentPage = 'pointer_S3'
+currentCategory = 'devices'
+hasPreview = true
+
+const previewWrapper = document.querySelector('.preview-wrapper')
 
 /* -----------------
 Preview Slider Setup
@@ -11,5 +14,5 @@ let slides = document.getElementsByName('slide')
 const clonedSlide = slides[0].cloneNode(true)
 slider.append(clonedSlide)
 
-let interval = 5500,
+let interval = 4200,
     transitionDuration = 1100

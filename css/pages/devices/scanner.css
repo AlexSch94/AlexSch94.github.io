@@ -8,6 +8,15 @@
     display: none;
 }
 
+.appstore-link-container {
+    font-size: var(--FS11);
+}
+
+.appstore-link {
+    display: inline;
+    font-size: var(--FS11);
+}
+
 .main-img {
     max-width: 60%;
 }

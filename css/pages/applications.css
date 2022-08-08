@@ -29,7 +29,7 @@ section:nth-child(even) {
 }
 
 .text-container {
-    margin-bottom: 1em;
+    margin-bottom: 0.75em;
 }
 
 .text-container p {
@@ -42,6 +42,7 @@ section:nth-child(even) {
 
 .advantage-header {
     color: var(--brand-color2);
+    margin-bottom: -0.3em;
 }
 
 /* Advantage cards */
@@ -49,7 +50,7 @@ section:nth-child(even) {
 .advantage-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
-    gap: 1.5em;
+    gap: 1em;
     padding: 1em 0;
 }
 
@@ -94,6 +95,12 @@ section:nth-child(even) {
 .advantage-text-container *:not(.link1) {
     width: 100%;
     text-align: center;
+}
+
+/* Individual Section */
+
+.advantage-wrapper.bem {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr));
 }
 
 /* Media Queries */

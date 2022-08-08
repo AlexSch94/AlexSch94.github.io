@@ -1,5 +1,5 @@
-currentPage = 'sensor_LUX-D'
-currentCategory = 'products'
+currentPage = 'sensor_VIB-D'
+currentCategory = 'devices'
 
 /* -----------------
 Preview Slider Setup

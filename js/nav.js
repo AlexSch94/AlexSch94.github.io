@@ -233,8 +233,8 @@
                 products.parent.classList.add('active')
                 break
 
-            case 'products':
-                products.parent.classList.add('active')
+            case 'devices':
+                devices.parent.classList.add('active')
                 break
 
             case 'about':

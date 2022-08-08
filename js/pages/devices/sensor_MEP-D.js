@@ -1,5 +1,5 @@
-currentPage = 'sensor_TMP-D'
-currentCategory = 'products'
+currentPage = 'sensor_MEP-D.js'
+currentCategory = 'devices'
 
 /* -----------------
 Preview Slider Setup

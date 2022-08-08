@@ -1,5 +1,5 @@
 currentPage = 'sensors_S3'
-currentCategory = 'products'
+currentCategory = 'devices'
 hasPreview = true
 
 const heroImgContainer = document.querySelector('.hero-img-container'),

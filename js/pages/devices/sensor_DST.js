@@ -1,5 +1,5 @@
-currentPage = 'sensor_ACC-D'
-currentCategory = 'products'
+currentPage = 'sensor_DST'
+currentCategory = 'devices'
 
 /* -----------------
 Preview Slider Setup

@@ -1,5 +1,5 @@
 currentPage = 'sensor_DSP'
-currentCategory = 'products'
+currentCategory = 'devices'
 
 /* -----------------
 Preview Slider Setup

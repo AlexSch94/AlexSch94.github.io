@@ -1,8 +1,5 @@
-currentPage = 'pointer_S3'
-currentCategory = 'products'
-hasPreview = true
-
-const previewWrapper = document.querySelector('.preview-wrapper')
+currentPage = 'sensor_LUX-D'
+currentCategory = 'devices'
 
 /* -----------------
 Preview Slider Setup
@@ -14,5 +11,5 @@ let slides = document.getElementsByName('slide')
 const clonedSlide = slides[0].cloneNode(true)
 slider.append(clonedSlide)
 
-let interval = 4200,
+let interval = 5500,
     transitionDuration = 1100

@@ -1,5 +1,5 @@
-currentPage = 'sensor_HUM-D'
-currentCategory = 'products'
+currentPage = 'sensor_ATT-D'
+currentCategory = 'devices'
 
 /* -----------------
 Preview Slider Setup

@@ -554,10 +554,10 @@ header {
 }
 
 .products-dropdown > .dropdown-link:first-of-type:before {
-    left: 1.55em;
+    left: 1.6em;
 }
 
-.products-dropdown > .dropdown-link:first-of-type:before {
+.devices-dropdown > .dropdown-link:first-of-type:before {
     left: 1.55em;
 }
 
@@ -1213,11 +1213,11 @@ footer .scroll-to-top-btn:hover {
         max-height: 17em;
     }
 
-    .products-dropdown.open {
+    .devices-dropdown.open {
         max-height: 17em;
     }
 
-    .products-dropdown.open {
+    .devices-dropdown.open {
         max-height: 13.5em;
     }
 
