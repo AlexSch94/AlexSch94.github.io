@@ -83,8 +83,14 @@ section:nth-child(even) {
     gap: 1.2em;
 }
 
+.appstore-link-container {
+    margin-top: 0.5em;
+    font-size: var(--FS12);
+}
+
 .appstore-link {
-    padding-top: 0.3em;
+    display: inline;
+    font-size: var(--FS12);
 }
 
 .more-info-links {

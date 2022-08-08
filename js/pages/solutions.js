@@ -54,27 +54,27 @@ currentCategory = 'solutions'
     /* ----------- 
     Appstore links 
     ----------- */
-    // const iOSLinks = document.querySelector([""])
-    let appstoreLinks
+    // Disabled until working Apple Store link is found
+    // let appstoreLinks
 
-    function checkAppLinks() {
-        appstoreLinks = document.querySelectorAll('[data-appStoreLink]')
+    // function checkAppLinks() {
+    //     appstoreLinks = document.querySelectorAll('[data-appStoreLink]')
 
-        appstoreLinks.forEach((link) => {
-            link.style.display = 'none'
-            if (isIOS) {
-                if (link.getAttribute('data-linktype') === 'iOS') {
-                    link.style.display = 'initial'
-                }
-            } else {
-                if (link.getAttribute('data-linktype') !== 'iOS') {
-                    link.style.display = 'initial'
-                }
-            }
-        })
-    }
+    //     appstoreLinks.forEach((link) => {
+    //         link.style.display = 'none'
+    //         if (isIOS) {
+    //             if (link.getAttribute('data-linktype') === 'iOS') {
+    //                 link.style.display = 'initial'
+    //             }
+    //         } else {
+    //             if (link.getAttribute('data-linktype') !== 'iOS') {
+    //                 link.style.display = 'initial'
+    //             }
+    //         }
+    //     })
+    // }
 
-    checkAppLinks()
+    // checkAppLinks()
 
     /* --------------
     Read more popouts 
