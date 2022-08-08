@@ -54,27 +54,27 @@ currentCategory = 'solutions'
     /* ----------- 
     Appstore links 
     ----------- */
-    // Disabled until working Apple Store link is found
-    // let appstoreLinks
+    // const iOSLinks = document.querySelector([""])
+    let appstoreLinks
 
-    // function checkAppLinks() {
-    //     appstoreLinks = document.querySelectorAll('[data-appStoreLink]')
+    function checkAppLinks() {
+        appstoreLinks = document.querySelectorAll('[data-appStoreLink]')
 
-    //     appstoreLinks.forEach((link) => {
-    //         link.style.display = 'none'
-    //         if (isIOS) {
-    //             if (link.getAttribute('data-linktype') === 'iOS') {
-    //                 link.style.display = 'initial'
-    //             }
-    //         } else {
-    //             if (link.getAttribute('data-linktype') !== 'iOS') {
-    //                 link.style.display = 'initial'
-    //             }
-    //         }
-    //     })
-    // }
+        appstoreLinks.forEach((link) => {
+            link.style.display = 'none'
+            if (isIOS) {
+                if (link.getAttribute('data-linktype') === 'iOS') {
+                    link.style.display = 'initial'
+                }
+            } else {
+                if (link.getAttribute('data-linktype') !== 'iOS') {
+                    link.style.display = 'initial'
+                }
+            }
+        })
+    }
 
-    // checkAppLinks()
+    checkAppLinks()
 
     /* --------------
     Read more popouts 
@@ -210,7 +210,7 @@ currentCategory = 'solutions'
                 </div>
 
                 <div class="more-info-links">
-                    <a href="./products/scanner.html" class="link1">Go to page</a>
+                    <a href="./devices/scanner.html" class="link1">Go to page</a>
                 </div>
                             
                 <button id="popoutCloseBtn" class="popout-close-btn"><span class="iconify x-icon" data-icon="akar-icons:circle-x"></span></button>`,

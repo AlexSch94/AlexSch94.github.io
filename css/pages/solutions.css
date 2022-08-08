@@ -14,10 +14,9 @@ section:nth-child(even) {
     background-color: var(--page-background3);
 }
 
-.headers {
+.section-header-container {
     font-size: var(--FS10);
-    margin-bottom: 0.8em;
-    width: fit-content;
+    margin-bottom: 1em;
 }
 
 .section-header {
@@ -48,10 +47,9 @@ section:nth-child(even) {
 .sub-header {
     font-size: var(--FS10);
     color: var(--text-color);
-    margin-bottom: 0.4em;
+    margin-bottom: 0.5em;
     line-height: 1;
     max-width: 63ch;
-    margin-top: 1em;
 }
 
 .sub-header::after {
@@ -83,14 +81,8 @@ section:nth-child(even) {
     gap: 1.2em;
 }
 
-.appstore-link-container {
-    margin-top: 0.5em;
-    font-size: var(--FS12);
-}
-
 .appstore-link {
-    display: inline;
-    font-size: var(--FS12);
+    padding-top: 0.3em;
 }
 
 .more-info-links {

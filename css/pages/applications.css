@@ -2,6 +2,11 @@ section:nth-child(even) {
     background-color: var(--page-background3);
 }
 
+.section-header-container {
+    font-size: var(--FS10);
+    margin-bottom: 1em;
+}
+
 .section-header {
     position: relative;
     display: inline;

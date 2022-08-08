@@ -139,7 +139,7 @@ p {
 }
 
 .intro-paragraph {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.3em;
 }
 
 a[href^='mailto:'] {
@@ -553,7 +553,7 @@ header {
     left: 2.3em;
 }
 
-.solutions-dropdown > .dropdown-link:first-of-type:before {
+.products-dropdown > .dropdown-link:first-of-type:before {
     left: 1.55em;
 }
 
@@ -1213,7 +1213,7 @@ footer .scroll-to-top-btn:hover {
         max-height: 17em;
     }
 
-    .solutions-dropdown.open {
+    .products-dropdown.open {
         max-height: 17em;
     }
 

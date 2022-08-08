@@ -14,16 +14,6 @@
             items: appDDItems,
             active: false,
         },
-        // Solutions
-        solutionsLink = document.getElementById('solutionsLink'),
-        solutionsDropdown = document.getElementById('solutionsDropdown'),
-        [...solDDItems] = document.querySelectorAll('.sol-dd-item'),
-        solutions = {
-            parent: solutionsLink,
-            menu: solutionsDropdown,
-            items: solDDItems,
-            active: false,
-        },
         // Products
         productsLink = document.getElementById('productsLink'),
         productsDropdown = document.getElementById('productsDropdown'),
@@ -32,6 +22,16 @@
             parent: productsLink,
             menu: productsDropdown,
             items: prodDDItems,
+            active: false,
+        },
+        // Devices
+        devicesLink = document.getElementById('devicesLink'),
+        devicesDropdown = document.getElementById('devicesDropdown'),
+        [...devDDItems] = document.querySelectorAll('.dev-dd-item'),
+        devices = {
+            parent: devicesLink,
+            menu: devicesDropdown,
+            items: devDDItems,
             active: false,
         },
         // About
@@ -88,8 +88,8 @@
         categories = [
             home,
             applications,
-            solutions,
             products,
+            devices,
             about,
             language,
             languageMobile,
@@ -103,8 +103,8 @@
     // Init
     setupNoDropdown(home)
     setupDropdown(applications)
-    setupDropdown(solutions)
     setupDropdown(products)
+    setupDropdown(devices)
     setupDropdown(about)
     setupNoDropdown(login)
     setupNoDropdown(loginMobile)
@@ -229,8 +229,8 @@
                 applications.parent.classList.add('active')
                 break
 
-            case 'solutions':
-                solutions.parent.classList.add('active')
+            case 'products':
+                products.parent.classList.add('active')
                 break
 
             case 'products':

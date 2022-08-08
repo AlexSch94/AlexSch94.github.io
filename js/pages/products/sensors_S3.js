@@ -1,5 +1,9 @@
 currentPage = 'sensors_S3'
 currentCategory = 'products'
+hasPreview = true
+
+const heroImgContainer = document.querySelector('.hero-img-container'),
+    previewWrapper = document.querySelector('.preview-wrapper')
 
 /* -----------------
 Preview Slider Setup

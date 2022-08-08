@@ -137,7 +137,6 @@ section:first-of-type {
     left: 0;
     bottom: 0;
     right: 0;
-    z-index: -1;
 }
 
 .intro-video {
@@ -192,25 +191,13 @@ section:first-of-type {
 
 .overlay-text {
     color: white;
-    font-size: clamp(28px, 7vw, 70px);
-    font-weight: 700;
+    font-size: clamp(26px, 7vw, 70px);
     text-align: center;
     text-shadow: 0 0 0.2em black, 0 0 0.5em black;
     opacity: 0;
     transform: translateY(-20vh);
     will-change: transform;
     animation: moveOverlayText 2.5s ease 5.3s forwards;
-}
-
-.overlay-text a {
-    display: block;
-    font-size: var(--FS10);
-    font-size: 400;
-    transition: all 0.3s ease;
-}
-
-.overlay-text a:hover {
-    color: var(--accent-color1);
 }
 
 @keyframes moveOverlayText {
@@ -241,35 +228,6 @@ section:first-of-type {
 .fp-viewing-1 .overlay-logo,
 .fp-viewing-1 .overlay-text {
     animation-play-state: running;
-}
-
-.scroll-prompt {
-    position: absolute;
-    display: none;
-    align-items: center;
-    gap: 0.5em;
-    font-size: var(--FS10);
-    bottom: 1em;
-    right: 1em;
-    padding: 0.3em 0.6em;
-    border-radius: 0.1em;
-    background-color: rgba(255, 255, 255, 1);
-    opacity: 0;
-    transform: scale(0.3);
-    transition: all 0.6s ease;
-}
-
-.scroll-prompt * {
-    flex: 0 0 auto;
-}
-
-.scroll-prompt p {
-    color: black;
-}
-
-.scroll-prompt img {
-    height: 0.7em;
-    width: auto;
 }
 
 /* Section 1 */
@@ -311,7 +269,7 @@ section:first-of-type {
 
 .fp-viewing-5 .img-sec4 {
     transition: all 2s ease-in-out;
-    transform: scale(3.3) translateY(-22.7%) translateX(-0.75%);
+    transform: scale(3.3) translateY(-22.5%) translateX(-0.75%);
     transition-delay: 1.2s;
 }
 
@@ -477,10 +435,6 @@ section:first-of-type {
     .img-wrapper4 img {
         max-width: 65%;
     }
-
-    .fp-viewing-5 .img-sec4 {
-        transform: scale(3.36) translateY(-22.5%) translateX(0.5%);
-    }
 }
 
 @media (max-width: 750px) {
@@ -516,21 +470,11 @@ section:first-of-type {
     }
 
     .fp-viewing-5 .img-sec4 {
-        transform: scale(3.5) translateY(-22.3%) translateX(1%);
+        transform: scale(3.1) translateY(-22.7%);
     }
 }
 
 @media (max-width: 500px) {
-    /* Section 0 */
-
-    .overlay-logo {
-        width: 60vw;
-    }
-
-    .fp-viewing-5 .img-sec4 {
-        transform: scale(3.5) translateY(-22.1%) translateX(1%);
-    }
-
     /* Section 1 */
 
     .img-wrapper1 img {
@@ -549,12 +493,6 @@ section:first-of-type {
 
     .unhidden {
         display: initial;
-    }
-}
-
-@media (max-width: 400px) {
-    .fp-viewing-5 .img-sec4 {
-        transform: scale(3.5) translateY(-22%) translateX(1%);
     }
 }
 
@@ -589,7 +527,7 @@ section:first-of-type {
     .bg-wrapper3 {
         background-image: url(../../images/sustainability.png);
         background-position: center;
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
     }
 

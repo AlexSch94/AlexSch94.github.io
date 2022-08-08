@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: auto;
+}
+
 .dropshadow {
     filter: drop-shadow(10px 20px 15px var(--shadow));
 }
@@ -75,10 +79,6 @@
 
 /* Intro section */
 
-.intro-section {
-    padding-bottom: 10px;
-}
-
 .page-header {
     margin: 0 0 0.4em -0.1em;
 }
@@ -87,14 +87,51 @@
     margin-top: 1em;
 }
 
-.features-list {
-    padding-left: 2em;
+.preview-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--FS10);
+    margin: 2em 0;
+}
+
+.preview-wrapper.come-in .main-img {
+    transform: translate(0);
+    opacity: 1;
+}
+
+.main-img {
+    transition: all 1.5s ease;
+    max-width: 90%;
+    max-height: 350px;
 }
 
 /* Sensor Portfolio */
 
-.portfolio-section {
-    padding-top: 20px;
+.section-header-container {
+    font-size: var(--FS10);
+    margin-bottom: 1.5em;
+}
+
+.section-header {
+    position: relative;
+    display: inline;
+    line-height: 1;
+    font-size: var(--FS3);
+    color: var(--text-color);
+    width: fit-content;
+    padding-bottom: 0.1em;
+}
+
+.section-header::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 80%;
+    height: 2px;
+    background-color: currentcolor;
+    transition: all 0.3s ease;
 }
 
 .sensors-wrapper {

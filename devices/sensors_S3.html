@@ -14,15 +14,17 @@
     <link rel="stylesheet" type="text/css" href="../css/utils/utils.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../css/utils/keyframes.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../css/utils/carousel.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/utils/attributes.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../css/pages/products/products.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../css/pages/products/sensors_S3.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../plugins/fontello/css/dropdown.css" media="screen">
     <script type="text/javascript" src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <script type="text/javascript" src="../js/app.js" defer></script>
     <script type="text/javascript" src="../js/pages/products/sensors_S3.js" defer></script>
-    <script type="text/javascript" src="../js/nav.js" defer></script>
     <script type="text/javascript" src="../js/utils/p_observer.js" defer></script>
+    <script type="text/javascript" src="../js/utils/att_observer.js" defer></script>
     <script type="text/javascript" src="../js/utils/slider.js" defer></script>
+    <script type="text/javascript" src="../js/nav.js" defer></script>
     <title>X-Rayl® Sensors S3 | DOT</title>
 </head>
 <body>
@@ -52,26 +54,24 @@
                                 </ul>
                             </li>
 
-                            <li id="solutionsLink" class="nav-parent">
-                                <a href="../solutions.html" class="nav-link">Solutions<i class="icon-dropdown"> </i></a>
+                            <li id="productsLink" class="nav-parent">
+                                <a href="../products.html" class="nav-link">Products<i class="icon-dropdown"> </i></a>
 
-                                <ul role="list" class="nav-dropdown-menu solutions-dropdown" id="solutionsDropdown">
-                                    <li class="dropdown-link sol-dd-item"><a href="../solutions.html#dppSection">Data Processing and Presentation</a></li>
-                                    <li class="dropdown-link sol-dd-item"><a href="../solutions.html#dataEnrichmentSection">Data Enrichment</a></li>
-                                    <li class="dropdown-link sol-dd-item"><a href="../solutions.html#srSection">Statistics and reports</a></li>
-                                    <li class="dropdown-link sol-dd-item"><a href="../solutions.html#acmSection">Asset Condition Monitoring</a></li>
-                                    <li class="dropdown-link sol-dd-item"><a href="../solutions.html#dataSharingSection">Data Sharing</a></li>
+                                <ul role="list" class="nav-dropdown-menu products-dropdown" id="productsDropdown">
+                                    <li class="dropdown-link prod-dd-item"><a href="../products.html#dppSection">Data Processing and Presentation</a></li>
+                                    <li class="dropdown-link prod-dd-item"><a href="../products.html#dataEnrichmentSection">Data Enrichment</a></li>
+                                    <li class="dropdown-link prod-dd-item"><a href="../products.html#srSection">Statistics and reports</a></li>
+                                    <li class="dropdown-link prod-dd-item"><a href="../products.html#acmSection">Asset Condition Monitoring</a></li>
+                                    <li class="dropdown-link prod-dd-item"><a href="../products.html#dataSharingSection">Data Sharing</a></li>
                                 </ul>
                             </li>
     
-                            <li id="productsLink" class="nav-parent">
-                                <a href="./pointer_S3.html" class="nav-link">Products <i class="icon-dropdown"></i></a>
+                            <li id="devicesLink" class="nav-parent">
+                                <a href="./pointer_S3.html" class="nav-link">Devices <i class="icon-dropdown"></i></a>
 
-                                <ul role="list" class="nav-dropdown-menu products-dropdown" id="productsDropdown">
-                                    <li class="dropdown-link prod-dd-item"><a href="./pointer_S3.html">X-Rayl® Pointer S3</a></li>
-                                    <li class="dropdown-link prod-dd-item"><a href="./sensors_S3.html">X-Rayl® Sensors S3</a></li>
-                                    <li class="dropdown-link prod-dd-item"><a href="./dot_link.html">X-Rayl® DOT-Link</a></li>
-                                    <li class="dropdown-link prod-dd-item"><a href="./scanner.html">X-Rayl® Scanner</a></li>
+                                <ul role="list" class="nav-dropdown-menu products-dropdown" id="devicesDropdown">
+                                    <li class="dropdown-link dev-dd-item"><a href="./pointer_S3.html">X-Rayl® Pointer S3</a></li>
+                                    <li class="dropdown-link dev-dd-item"><a href="./sensors_S3.html">X-Rayl® Sensors S3</a></li>
                                 </ul>
                             </li>
 
@@ -217,7 +217,7 @@
                         </div>
                         <!-- / Slider-container -->                    
                     </div>
-                    <!-- / Preview-wrapper -->
+                    <!-- / Slider-wrapper -->
                 </div>
                 <!-- / Hero section preview -->
             </div>
@@ -248,12 +248,170 @@
                         The sensors are maintenance-free and integrate seamlessly into the <span class="nowrap">X-Rayl</span> system, and can be used under any conditions, since they have the highest standard of ATEX certification available.
                     </p>                  
                 </div>
+
+                <div class="preview-wrapper">
+                    <img src="../images/sensor_DST(1).png" alt="DOT-Link" class="main-img dropshadow">
+                </div>
+
+                <div class="attributes-wrapper">
+                    <div class="attribute-container">
+                        <div class="attribute">
+                            <div class="attribute-icon-container">
+                                <img src="../images/icons/icon-maintenance.png" alt="Decorative icon" class="attribute-icon">
+                            </div>
+                            <div class="attribute-text-container">
+                                <div class="attribute-header">
+                                    <h3>Maintenance free</h3>
+                                </div>
+                                <div class="attribute-description">
+                                    <p>All X-Rayl Sensors are designed to be 100 percent maintenance free over their lifetime of 10+ years. No battery changes or charging is required, activation and deactivation as well as configuration is done automatically or over the air.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attribute-container">
+                        <div class="attribute">
+                            <div class="attribute-icon-container">
+                                <img src="../images/icons/icon-atex.png" alt="Decorative icon" class="attribute-icon">
+                            </div>
+                            <div class="attribute-text-container">
+                                <div class="attribute-header">
+                                    <h3>Safety certifications</h3>
+                                </div>
+                                <div class="attribute-description">
+                                    <p>All X-Rayl Sensors are certified according to ATEX, UKEX and IECEx. <br> 
+                                        It conforms with the standards: <br>
+                                        <span class="nowrap">EN IEC 60079-0:2018 / </span> <span class="nowrap">EN 60079-11:2012</span> <br>
+                                        Category: <span class="nowrap">II 2G Ex ib IIC T6 Gb / </span> <span class="nowrap">II 2D Ex ib IIIC T85°C Db / </span> <br> 
+                                        -40°C ≤ Ta ≤ +60°C.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attribute-container">
+                        <div class="attribute">
+                            <div class="attribute-icon-container">
+                                <img src="../images/icons/icon-spanner.png" alt="Decorative icon" class="attribute-icon">
+                            </div>
+                            <div class="attribute-text-container">
+                                <div class="attribute-header">
+                                    <h3>Easy to mount</h3>
+                                </div>
+                                <div class="attribute-description">
+                                    <p>All X-Rayl Sensors S3 are easy to mount due to a variety of available mounting plates. In case of special mounting requirements individual mounting plates can be created according to customer specifications.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attribute-container">
+                        <div class="attribute">
+                            <div class="attribute-icon-container">
+                                <img src="../images/icons/icon-security.png" alt="Decorative icon" class="attribute-icon">
+                            </div>
+                            <div class="attribute-text-container">
+                                <div class="attribute-header">
+                                    <h3>Security</h3>
+                                </div>
+                                <div class="attribute-description">
+                                    <p>From the data transmission to the X-Rayl Pointer to relaying of the data to the DOT backend services, the data generated by all X-Ray Sensors is always transmitted with strong industry standard encryption.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attribute-container">
+                        <div class="attribute">
+                            <div class="attribute-icon-container">
+                                <img src="../images/icons/icon-display.png" alt="Decorative icon" class="attribute-icon">
+                            </div>
+                            <div class="attribute-text-container">
+                                <div class="attribute-header">
+                                    <h3>Large display</h3>
+                                </div>
+                                <div class="attribute-description">
+                                    <p>The large LCD display allows users to easily verify the values measured by the sensor when standing in front of the asset the sensor is mounted on. This allows on site personnel to monitor sensor values and verify the operation of the sensor.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attribute-container">
+                        <div class="attribute">
+                            <div class="attribute-icon-container">
+                                <img src="../images/icons/icon-feather.png" alt="Decorative icon" class="attribute-icon">
+                            </div>
+                            <div class="attribute-text-container">
+                                <div class="attribute-header">
+                                    <h3>Light weight</h3>
+                                </div>
+                                <div class="attribute-description">
+                                    <p>The X-Rayl Sensors S3 weigh only 280 grams and have a very small form factor allowing for installation in places where regular hardware might be too heavy (e.g. pipes)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="attribute-container">
+                        <div class="attribute">
+                            <div class="attribute-icon-container">
+                                <img src="../images/icons/icon-frequency.png" alt="Decorative icon" class="attribute-icon">
+                            </div>
+                            <div class="attribute-text-container">
+                                <div class="attribute-header">
+                                    <h3>High sampling frequency</h3>
+                                </div>
+                                <div class="attribute-description">
+                                    <p>By default, the X-Rayl Sensors S3 are configured to sample data at 10 second intervals. On board difference and gradient detection allow for reduced sample transmission in case the measured value has not changed since the last measurement, saving energy and data.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attribute-container">
+                        <div class="attribute">
+                            <div class="attribute-icon-container">
+                                <img src="../images/icons/icon-piggy-bank.png" alt="Decorative icon" class="attribute-icon">
+                            </div>
+                            <div class="attribute-text-container">
+                                <div class="attribute-header">
+                                    <h3>No service fee</h3>
+                                </div>
+                                <div class="attribute-description">
+                                    <p>The operation of X-Rayl Sensors is free of charge, in combination with an X-Rayl Pointer. When pairing third party sensors with X-Rayl Pointers, a service charge may apply.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attribute-container">
+                        <div class="attribute">
+                            <div class="attribute-icon-container">
+                                <img src="../images/icons/icon-placeholder.png" alt="Decorative icon" class="attribute-icon">
+                            </div>
+                            <div class="attribute-text-container">
+                                <div class="attribute-header">
+                                    <h3>Future proof</h3>
+                                </div>
+                                <div class="attribute-description">
+                                    <p>All DOT devices have the option of over-the-air firmware updates, which ensures that our customers benefit from new features, improved reliability, and maximum security, all remotely and without physical contact. The updates are of course encrypted, from a secure DOT server.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- / Attributes wrapper -->
             </div>
         </section>
         <!-- / Intro-section -->        
         
         <section class="portfolio-section last" id="sensorPortfolio">
             <div class="section-inner">
+                <div class="section-header-container">
+                    <h1 class="section-header">Sensor Portfolio</h1>
+                </div>
                 <div class="sensors-wrapper">
                     <div class="sensor-container">
                         <div class="sensor-card">
@@ -267,15 +425,14 @@
                                 <div class="sensor-text">
                                     <p>The <span class="nowrap">X-Rayl</span> Sensor S3DST is based on the latest radar technology and allows for distance measurements of objects with millimeter precision.</p>
                                 </div>
-                                <div class="UI-container">
-                                    <a href="./sensor_DST.html" class="btn1">Learn more</a>
-                                </div>
+                                
                             </div>
                             <div class="sensor-img-container">
                                 <img src="../images/sensor_DST(3).png" alt="Sensor S3DST" class="sensor-img">
                             </div>
                         </div>
                     </div>
+
                     <div class="sensor-container">
                         <div class="sensor-card">
                             <div class="sensor-info">
@@ -288,15 +445,14 @@
                                 <div class="sensor-text">
                                     <p>The <span class="nowrap">X-Rayl</span> Sensor S3TMP-D comes with a PT1000 temperature probe, which provides a measurement range from -30° to + 250°C.</p>
                                 </div>
-                                <div class="UI-container">
-                                    <a href="./sensor_TMP-D.html" class="btn1">Learn more</a>
-                                </div>
+                                
                             </div>
                             <div class="sensor-img-container">
                                 <img src="../images/sensor_TMP(4)_v3.png" alt="Sensor S3TMP-D" class="sensor-img">
                             </div>
                         </div>
                     </div>
+
                     <div class="sensor-container">
                         <div class="sensor-card">
                             <div class="sensor-info">
@@ -309,15 +465,14 @@
                                 <div class="sensor-text">
                                     <p>The <span class="nowrap">X-Rayl</span> Sensor S3PRS-D was developed to measure the absolute pressure in pipe systems.</p>
                                 </div>
-                                <div class="UI-container">
-                                    <a href="./sensor_PRS-D.html" class="btn1">Learn more</a>
-                                </div>
+                                
                             </div>
                             <div class="sensor-img-container">
                                 <img src="../images/sensor_PRS(3).png" alt="Sensor S3PRS-D" class="sensor-img no-mount">
                             </div>
                         </div>
                     </div>
+
                     <div class="sensor-container">
                         <div class="sensor-card">
                             <div class="sensor-info">
@@ -330,15 +485,14 @@
                                 <div class="sensor-text">
                                     <p>The <span class="nowrap">X-Rayl</span> Sensor S3MEP-D is a contact sensor, developed to detect the presence of ferromagnetic metals.</p>
                                 </div>
-                                <div class="UI-container">
-                                    <a href="./sensor_MEP-D.html" class="btn1">Learn more</a>
-                                </div>
+                                
                             </div>
                             <div class="sensor-img-container">
                                 <img src="../images/sensor_MEP(2).png" alt="Sensor S3MEP-D" class="sensor-img no-mount">
                             </div>
                         </div>
                     </div>
+
                     <div class="sensor-container">
                         <div class="sensor-card">
                             <div class="sensor-info">
@@ -351,15 +505,14 @@
                                 <div class="sensor-text">
                                     <p>The <span class="nowrap">X-Rayl</span> Sensor S3ACC-D is designed to detect sudden acceleration which can occur during shunting or loading.</p>
                                 </div>
-                                <div class="UI-container">
-                                    <a href="./sensor_ACC-D.html" class="btn1">Learn more</a>
-                                </div>
+                                
                             </div>
                             <div class="sensor-img-container">
                                 <img src="../images/sensor_ACC(2).png" alt="Sensor S3ACC-D" class="sensor-img">
                             </div>
                         </div>
                     </div>
+
                     <div class="sensor-container">
                         <div class="sensor-card">
                             <div class="sensor-info">
@@ -372,15 +525,14 @@
                                 <div class="sensor-text">
                                     <p>The <span class="nowrap">X-Rayl</span> Sensor S3VIB-D detects the vibrations of a wagon. This allows it to determine damage to the wheelsets, like flat spots shortly after the damage occurs.</p>
                                 </div>
-                                <div class="UI-container">
-                                    <a href="./sensor_VIB-D.html" class="btn1">Learn more</a>
-                                </div>
+                                
                             </div>
                             <div class="sensor-img-container">
                                 <img src="../images/sensor_S3(3).png" alt="Sensor S3VIB-D" class="sensor-img">
                             </div>
                         </div>
                     </div>
+
                     <div class="sensor-container">
                         <div class="sensor-card">
                             <div class="sensor-info">
@@ -393,15 +545,14 @@
                                 <div class="sensor-text">
                                     <p>The <span class="nowrap">X-Rayl</span> Sensor S3LUX-D acts as a theft prevention device, through measurements of the ambient light levels in enclosed compartments that require monitoring.</p>
                                 </div>
-                                <div class="UI-container">
-                                    <a href="./sensor_LUX-D.html" class="btn1">Learn more</a>
-                                </div>
+                                
                             </div>
                             <div class="sensor-img-container">
                                 <img src="../images/sensor_LUX(3).png" alt="Sensor S3LUX-D" class="sensor-img">
                             </div>
                         </div>
                     </div>
+
                     <div class="sensor-container">
                         <div class="sensor-card">
                             <div class="sensor-info">
@@ -414,9 +565,7 @@
                                 <div class="sensor-text">
                                     <p>The <span class="nowrap">X-Rayl</span> Sensor S3ATT-D determines the relative spatial location of a wagon or container allowing for quick detection of derailment or tilt events.</p>
                                 </div>
-                                <div class="UI-container">
-                                    <a href="./sensor_ATT-D.html" class="btn1">Learn more</a>
-                                </div>
+                                
                             </div>
                             <div class="sensor-img-container">
                                 <img src="../images/sensor_ATT(2).png" alt="Sensor S3ATT-D" class="sensor-img">
@@ -436,9 +585,7 @@
                                 <div class="sensor-text">
                                     <p>The <span class="nowrap">X-Rayl</span> Sensor S3HUM-D allows monitoring of relative humidity and temperature. It continuously analyses the surrounding atmosphere to detect undesirable conditions.</p>
                                 </div>
-                                <div class="UI-container">
-                                    <a href="./sensor_HUM-D.html" class="btn1">Learn more</a>
-                                </div>
+                                
                             </div>
                             <div class="sensor-img-container">
                                 <img src="../images/sensor_HUM(2).png" alt="Sensor S3HUM-D" class="sensor-img">
@@ -458,9 +605,7 @@
                                 <div class="sensor-text">
                                     <p>The <span class="nowrap">X-Rayl</span> display S3DSP serves as a flexibly positionable local display of states and measured values.</p> 
                                 </div>
-                                <div class="UI-container">
-                                    <a href="./sensor_DSP.html" class="btn1">Learn more</a>
-                                </div>
+                                
                             </div>
                             <div class="sensor-img-container">
                                 <img src="../images/sensor_DSP(-).png" alt="Sensor S3DSP" class="sensor-img">
