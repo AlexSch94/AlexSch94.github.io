@@ -315,6 +315,10 @@
         mainMenuOpen = true
         if (currentPage === 'home') {
             hideIndexNavigation()
+            vid.pause()
+            sec0AnimElements.forEach((element) => {
+                element.classList.add('animation-pause')
+            })
         }
     }
 
@@ -331,6 +335,10 @@
         }
         if (currentPage === 'home') {
             showIndexNavigation()
+            vid.play()
+            sec0AnimElements.forEach((element) => {
+                element.classList.remove('animation-pause')
+            })
         }
     }
 

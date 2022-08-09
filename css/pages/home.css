@@ -243,6 +243,10 @@ section:first-of-type {
     animation-play-state: running;
 }
 
+.animation-pause {
+    animation-play-state: paused !important;
+}
+
 .scroll-prompt {
     position: absolute;
     display: none;

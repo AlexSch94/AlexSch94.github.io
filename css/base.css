@@ -1127,7 +1127,7 @@ footer .scroll-to-top-btn:hover {
         position: relative;
         flex-direction: column;
         width: 100%;
-        min-height: 750px;
+        /* min-height: 750px; */
         padding: 0;
     }
 

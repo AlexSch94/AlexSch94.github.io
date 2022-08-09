@@ -1,6 +1,12 @@
 currentPage = 'home'
 currentCategory = 'home'
 
+const vid = document.getElementById('introVideo'),
+    overlayLogoContainer = document.querySelector('.overlay-logo'),
+    overlayTextContainer = document.querySelector('.overlay-text'),
+    sectionFade = document.querySelector('.section-fade'),
+    sec0AnimElements = [overlayLogoContainer, overlayTextContainer, sectionFade]
+
 // Set different img src for german version
 let overlayLogoSrc
 if (typeof germanVersion !== 'undefined' && germanVersion) {
@@ -14,10 +20,7 @@ if (typeof germanVersion !== 'undefined' && germanVersion) {
     // -----------
     // Intro video
     // -----------
-    const vid = document.getElementById('introVideo'),
-        overlayLogo = document
-            .querySelector('.overlay-logo')
-            .querySelector('img')
+    const overlayLogo = overlayLogoContainer.querySelector('img')
 
     window.addEventListener('load', () => {
         // Remove fade and add src to img late for visually smooth loading (img pops up if not delayed -> it already loads for navbar)
