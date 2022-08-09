@@ -1,9 +1,9 @@
 currentPage = 'company'
 currentCategory = 'about'
 ;(function () {
-    /* ----------
-    Stat Counters 
-    ----------- */
+    // -------------
+    // Stat Counters
+    // -------------
     let delay = 0,
         countersRan = false
 
@@ -53,9 +53,9 @@ currentCategory = 'about'
 
     statObserver.observe(statsContainer)
 
-    /* -------------------------
-    Timeline & Header Observers  
-    ------------------------- */
+    // ---------------------------
+    // Timeline & Header Observers
+    // ---------------------------
     const timeline = document.querySelector('.timeline'),
         [...timelineSegs] = document.querySelectorAll('.timeline-segment'),
         [...headers] = document.querySelectorAll('.sub-header-2'),
@@ -98,9 +98,9 @@ currentCategory = 'about'
     timelineSegs.forEach((segment) => mainObserver.observe(segment))
     timelineAfterObserver.observe(timeline)
 
-    /* -------------
-    Partners sections Observer
-    ------------- */
+    // --------------------------
+    // Partners sections Observer
+    // --------------------------
     const partnersSection = document.querySelector('.partners-section'),
         partnersSectionObserverOptions = {
             threshold: 0.3,

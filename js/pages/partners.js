@@ -1,9 +1,9 @@
 currentPage = 'partners'
 currentCategory = 'about'
 ;(function () {
-    /* -------------
-    Partners sections Observer
-    ------------- */
+    // --------------------------
+    // Partners sections Observer
+    // --------------------------
     const partnersSection = document.querySelector('.partners-section'),
         partnersSectionObserverOptions = {
             threshold: 0.1,

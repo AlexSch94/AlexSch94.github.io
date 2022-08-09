@@ -1,9 +1,9 @@
 currentPage = 'sustainability'
 currentCategory = 'about'
 ;(function () {
-    /* -------------
-    Sections Observer
-    ------------- */
+    // -----------------
+    // Sections Observer
+    // -----------------
     const sections = document.querySelectorAll('section'),
         solarparkSection = document.getElementById('solarParkSection'),
         solarPowerCounter = document.getElementById('solarPowerCounter2'),

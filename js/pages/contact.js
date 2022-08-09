@@ -1,9 +1,9 @@
 currentPage = 'contact'
 currentCategory = 'about'
 ;(function () {
-    /* -------------
-    Sections Observer
-    ------------- */
+    // -----------------
+    // Sections Observer
+    // -----------------
     const sections = document.querySelectorAll('section'),
         sectionObserverOptions = {
             threshold: 0.1,
@@ -27,9 +27,9 @@ currentCategory = 'about'
         sectionObserver.observe(section)
     })
 
-    /* ---------
-    Contact form
-    ---------- */
+    // ------------
+    // Contact form
+    // ------------
     const contactForm = document.getElementById('contactForm'),
         contactSubmitBtn = document.getElementById('contactSubmitBtn'),
         submitIndicator = document.getElementById('submitIndicator'),

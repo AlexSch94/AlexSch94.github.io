@@ -14,9 +14,9 @@ currentCategory = 'none'
 
     setMainWrapperPadding()
 
-    /* -------------
-    Sections Observer
-    ------------- */
+    // -----------------
+    // Sections Observer
+    // -----------------
     const sections = document.querySelectorAll('section'),
         sectionObserverOptions = {
             threshold: 0.1,

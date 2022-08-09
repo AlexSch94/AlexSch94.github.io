@@ -4,9 +4,9 @@ hasPreview = true
 
 const previewWrapper = document.querySelector('.preview-wrapper')
 
-/* -----------------
-Preview Slider Setup
------------------ */
+// --------------------
+// Preview Slider Setup
+// --------------------
 const slider = document.querySelector('.slider')
 
 let slides = document.getElementsByName('slide')

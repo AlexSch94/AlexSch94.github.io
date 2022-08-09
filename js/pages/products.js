@@ -3,9 +3,9 @@ currentCategory = 'products'
 
 // Main page functionality
 ;(function () {
-    /* -------------
-    Sections Observer
-    ------------- */
+    // -----------------
+    // Sections Observer
+    // -----------------
     const sections = document.querySelectorAll('section'),
         partnersSection = document.querySelector('.partners-section')
 
@@ -51,9 +51,9 @@ currentCategory = 'products'
         })
     }, smallSectionObserverOptions)
 
-    /* ----------- 
-    Appstore links 
-    ----------- */
+    // --------------
+    // Appstore links
+    // --------------
     let appstoreLinks
 
     function checkAppLinks() {
@@ -75,9 +75,9 @@ currentCategory = 'products'
 
     checkAppLinks()
 
-    /* -----------
-    Responsiveness
-    ----------- */
+    // --------------
+    // Responsiveness
+    // --------------
     function switchObservers(size) {
         if (size === 'large') {
             sections.forEach((section) => {

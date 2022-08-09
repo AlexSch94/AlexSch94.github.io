@@ -3,9 +3,9 @@ currentCategory = 'applications'
 
 // Main page functionality
 ;(function () {
-    /* -------------
-    Sections Observer
-    ------------- */
+    // -----------------
+    // Sections Observer
+    // -----------------
     const sections = document.querySelectorAll('section'),
         partnersSection = document.querySelector('.partners-section')
 
@@ -51,9 +51,9 @@ currentCategory = 'applications'
         })
     }, smallSectionObserverOptions)
 
-    /* ----------------
-    Advantages observer
-    ---------------- */
+    // -------------------
+    // Advantages observer
+    // -------------------
 
     const advantageWrappers = document.querySelectorAll('.advantage-wrapper')
 
@@ -79,9 +79,9 @@ currentCategory = 'applications'
         })
     }, mediumAdvantageObserverOptions)
 
-    /* -----------
-    Responsiveness
-    ----------- */
+    // --------------
+    // Responsiveness
+    // --------------
     function switchObservers(size) {
         if (size === 'large') {
             // Sections

@@ -5,9 +5,9 @@ hasPreview = true
 const heroImgContainer = document.querySelector('.hero-img-container'),
     previewWrapper = document.querySelector('.preview-wrapper')
 
-/* -----------------
-Preview Slider Setup
------------------ */
+// --------------------
+// Preview Slider Setup
+// --------------------
 const slider = document.querySelector('.slider')
 
 let slides = document.getElementsByName('slide')
@@ -20,9 +20,9 @@ let interval = 3700,
 
 // Closure page functions
 ;(function () {
-    /* --------------
-    Portfolio section
-    --------------- */
+    // -----------------
+    // Portfolio section
+    // -----------------
     const sensorContainers = document.querySelectorAll('.sensor-container'),
         sensorObserverOptions = {
             threshold: 0.3,

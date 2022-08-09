@@ -1,9 +1,9 @@
 currentPage = 'legal'
 currentCategory = 'none'
 ;(function () {
-    /* -------------
-    Sections Observer
-    ------------- */
+    // -----------------
+    // Sections Observer
+    // -----------------
     const sections = document.querySelectorAll('section'),
         sectionObserverOptions = {
             threshold: 0,

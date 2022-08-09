@@ -1,9 +1,9 @@
 currentPage = 'job0001'
 currentCategory = 'about'
 ;(function () {
-    /* -------------
-    Sections Observer
-    ------------- */
+    // -----------------
+    // Sections Observer
+    // -----------------
     const sections = document.querySelectorAll('section'),
         sectionObserverOptions = {
             threshold: 0.07,

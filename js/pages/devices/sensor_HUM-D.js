@@ -1,9 +1,9 @@
 currentPage = 'sensor_HUM-D'
 currentCategory = 'devices'
 
-/* -----------------
-Preview Slider Setup
------------------ */
+// --------------------
+// Preview Slider Setup
+// --------------------
 const slider = document.querySelector('.slider')
 
 let slides = document.getElementsByName('slide')

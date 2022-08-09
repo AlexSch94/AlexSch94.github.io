@@ -11,16 +11,16 @@ if (typeof germanVersion !== 'undefined' && germanVersion) {
 
 // Main page functionality
 ;(function () {
-    /* --------
-    Intro video
-    -------- */
+    // -----------
+    // Intro video
+    // -----------
     const vid = document.getElementById('introVideo'),
         overlayLogo = document
             .querySelector('.overlay-logo')
             .querySelector('img')
 
     window.addEventListener('load', () => {
-        // Remove fade and add src to img late for visually smooth loading (img is loaded earlier in header -> pops up if not delayed)
+        // Remove fade and add src to img late for visually smooth loading (img pops up if not delayed -> it already loads for navbar)
         document.body.classList.add('ldd')
         overlayLogo.setAttribute('src', overlayLogoSrc)
 
@@ -36,9 +36,9 @@ if (typeof germanVersion !== 'undefined' && germanVersion) {
     })
 })()
 
-/* ---------- 
-Scroll prompt 
----------- */
+// ------------
+// Scroll prompt
+// -------------
 const scrollPrompt = document.getElementById('scrollPrompt'),
     overlayText = document.querySelector('.overlay-text'),
     indexNavigationContainer = document.getElementById('fp-nav')
@@ -93,9 +93,9 @@ if (!localStorage.getItem('hideScrollPrompt')) {
     indexNavigationContainer.addEventListener('click', validateScroll)
 }
 
-/* -------------------------------------
-Hide index navigation while menu is open
-------------------------------------- */
+// ----------------------------------------
+// Hide index navigation while menu is open
+// ----------------------------------------
 
 function showIndexNavigation() {
     indexNavigationContainer.removeEventListener(
@@ -120,9 +120,9 @@ function removeIndexNavigation() {
     indexNavigationContainer.style.display = 'none'
 }
 
-/* -----------------
-Sustainability cards
------------------ */
+// --------------------
+// Sustainability cards
+// --------------------
 
 const cardsWrapper = document.querySelector('.cards-wrapper'),
     cardObserverOptions = {
