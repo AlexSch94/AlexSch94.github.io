@@ -6,14 +6,19 @@ currentCategory = 'home'
     /* --------
     Intro video
     -------- */
-    const vid = document.getElementById('introVideo')
+    const vid = document.getElementById('introVideo'),
+        overlayLogo = document
+            .querySelector('.overlay-logo')
+            .querySelector('img')
 
     let indexNavigation
 
     window.addEventListener('load', () => {
+        document.body.classList.add('ldd')
+
         indexNavigation = document.getElementById('fp-nav')
 
-        document.body.classList.add('ldd')
+        overlayLogo.setAttribute('src', './images/logo_DOT.png')
 
         // Start Video
         vid.currentTime = 1.5

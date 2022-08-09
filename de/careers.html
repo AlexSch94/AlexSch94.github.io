@@ -21,66 +21,131 @@
 </head>
 <body>
     <header>
-        <div class="nav-bar">            
-			<div class="nav-bar-inner">
-				<div class="logo-container">
-					<a href="index.html" tabindex="1"><img src="../images/logo_DOT_transparent-white.png" alt="DOT Logo" id="dotLogo"></a>
-				</div>
-				
-				<nav class="top-nav">
+        <div class="nav-bar sticky">            
+            <div class="nav-bar-inner">
+                <div class="logo-container">
+                    <a href="./index.html" tabindex="1"><img src="../images/logo_DOT.png" alt="DOT Logo" id="dotLogo"></a>
+                </div>
+                
+                <nav class="top-nav">
                     <div class="nav-links-container">
                         <ul role="list" class="top-nav-links">
-                            <li id="homeLink" class="nav-parent active">
-                                <a href="index.html" class="nav-link">Home</a>
+                            <li id="homeLink" class="nav-parent">
+                                <a href="./index.html" class="nav-link">Home</a>
                             </li>
-                            <li class="nav-parent" id="productsLink">
-                                <a href="solutions_overview.html" class="nav-link">Devices <i class="icon-dropdown"></i></a>
+
+                            <li id="applicationsLink" class="nav-parent">
+                                <a href="./applications.html" class="nav-link">Anwendungen<i class="icon-dropdown"> </i></a>
+
+                                <ul role="list" class="nav-dropdown-menu applications-dropdown" id="applicationsDropdown">
+                                    <li class="dropdown-link app-dd-item"><a href="./applications.html#railLogistics">Bahnlogistik</a></li>
+                                    <li class="dropdown-link app-dd-item"><a href="./applications.html#containerLogistics">Containerlogistik</a></li>
+                                    <li class="dropdown-link app-dd-item"><a href="./applications.html#propertyEnergyManagement">Energiemanagement für Gebäude</a></li>
+                                    <li class="dropdown-link app-dd-item"><a href="./applications.html#constructionAutomation">Bau-Automatisierung</a></li>
+                                    <li class="dropdown-link app-dd-item"><a href="./applications.html#freightLogistics">Frachtlogistik</a></li>
+                                </ul>
+                            </li>
+
+                            <li id="productsLink" class="nav-parent">
+                                <a href="./products.html" class="nav-link">Produkte<i class="icon-dropdown"> </i></a>
+
                                 <ul role="list" class="nav-dropdown-menu devices-dropdown" id="productsDropdown">
-                                    <li class="dropdown-link prod-dd-item"><a href="solutions_overview.html">Solutions Overview</a></li>
-                                    <li class="dropdown-link prod-dd-item"><a href="solutions/dot_link.html">DOT-Link Software</a></li>
-                                    <li class="dropdown-link prod-dd-item"><a href="solutions/pointer_S3.html">Pointer S3</a></li>
-                                    <li class="dropdown-link prod-dd-item"><a href="solutions/sensors_S3.html">Sensors S3</a></li>
+                                    <li class="dropdown-link prod-dd-item"><a href="./products.html#dppSection">Datenverarbeitung und -darstellung</a></li>
+                                    <li class="dropdown-link prod-dd-item"><a href="./products.html#dataEnrichmentSection">Datenanreicherung</a></li>
+                                    <li class="dropdown-link prod-dd-item"><a href="./products.html#srSection">Statistiken und Berichte</a></li>
+                                    <li class="dropdown-link prod-dd-item"><a href="./products.html#acmSection">Überwachung des Anlagenzustandes</a></li>
+                                    <li class="dropdown-link prod-dd-item"><a href="./products.html#dataSharingSection">Datenaustausch</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-parent" id="aboutLink">
-                                <a href="company.html" class="nav-link">About <i class="icon-dropdown"></i></a>
-                                <ul role="list" class="nav-dropdown-menu about-dropdown" id="aboutDropdown">
-                                    <li class="dropdown-link about-dd-item"><a href="company.html">Company</a></li>
-                                    <li class="dropdown-link about-dd-item"><a href="contact.html">Contact</a></li>
-                                    <li class="dropdown-link about-dd-item"><a href="careers.html">Careers</a></li>
-                                    <li class="dropdown-link about-dd-item"><a href="partners.html">Partners</a></li>
-                                </ul>
-                            </li>                            
-                            <li class="nav-parent" id="languageLink">
-                                <a href="#" class="nav-link">Language <i class="icon-dropdown"></i></a>
-                                <ul role="list" class="nav-dropdown-menu language-dropdown" id="languageDropdown">
-                                    <li class="dropdown-link lang-dd-item"><a href="../index.html">English</a></li>
-                                    <li class="dropdown-link lang-dd-item"><a href="index.html">Deutsch</a></li>
+
+                            <li id="devicesLink" class="nav-parent">
+                                <a href="./devices/pointer_S3.html" class="nav-link">Geräte<i class="icon-dropdown"></i></a>
+
+                                <ul role="list" class="nav-dropdown-menu devices-dropdown" id="devicesDropdown">
+                                    <li class="dropdown-link dev-dd-item"><a href="./devices/pointer_S3.html">X-Rayl® Pointer S3</a></li>
+                                    <li class="dropdown-link dev-dd-item"><a href="./devices/sensors_S3.html">X-Rayl® Sensors S3</a></li>
+                                    
                                     
                                 </ul>
                             </li>
-                            <li id="loginMobile" class="nav-parent">
-                                <div id="loginBtnMobile" class="nav-link login-btn-mobile mobile-only">Login</div>
+
+                            <li id="aboutLink" class="nav-parent">
+                                <a href="./company.html" class="nav-link">Über<i class="icon-dropdown"></i></a>
+
+                                <ul role="list" class="nav-dropdown-menu about-dropdown" id="aboutDropdown">
+                                    <li class="dropdown-link about-dd-item"><a href="./company.html">Unternehmen</a></li>
+                                    <li class="dropdown-link about-dd-item"><a href="./team.html">Team</a></li>
+                                    <li class="dropdown-link about-dd-item"><a href="./sustainability.html">Nachhaltigkeit</a></li>
+                                    <li class="dropdown-link about-dd-item"><a href="./careers.html">Karriere</a></li>
+                                    <li class="dropdown-link about-dd-item"><a href="./partners.html">Partner</a></li>
+                                    <li class="dropdown-link about-dd-item"><a href="./contact.html">Kontakt</a></li>
+                                </ul>
+                            </li>                                
+                            
+                            <li id="loginMobile" class="nav-parent mobile-only">
+                                <div id="loginBtnMobile" class="nav-link login-btn-mobile">Login</div>
+                            </li>
+                            
+                            <li id="languageMobile" class="nav-parent language-mobile mobile-only">
+                                <a class="nav-link"><img src="../images/icons/icon-flag-de.svg" alt="German flag" class="language-icon main-icon">
+                                    <i class="icon-dropdown"></i>
+                                </a>
+
+                                <ul role="list" class="nav-dropdown-menu language-dropdown" id="languageDropdownMobile">
+                                    <li class="dropdown-link lang-dd-item-mobile">
+                                        <a href="./careers.html">
+                                            <img src="../images/icons/icon-flag-de.svg" alt="German Flag" class="language-icon">Deutsch
+                                        </a>
+                                    </li>
+
+                                    <li class="dropdown-link lang-dd-item-mobile">
+                                        <a href="../careers.html">
+                                            <img src="../images/icons/icon-flag-gb.svg" alt="English Flag" class="language-icon">English
+                                        </a>
+                                    </li>									
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                
+                <nav class="nav-bar-right">                    
+                    <div class="login-btn-wrapper">
+                        <div class="login-btn-container">
+                            <div class="nav-link login-btn">Login</div>
+                        </div>
+                    </div>
+                    
+                    <div id="languageLink" class="nav-parent language-link">
+                        <a class="nav-link">
+                            <img src="../images/icons/icon-flag-de.svg" alt="German flag" class="language-icon main-icon">
+                            <i class="icon-dropdown"></i>
+                        </a>
+                        <ul role="list" class="nav-dropdown-menu language-dropdown" id="languageDropdown">
+                            <li class="dropdown-link lang-dd-item">
+                                <a href="./careers.html">
+                                    <img src="../images/icons/icon-flag-de.svg" alt="German flag" class="language-icon">Deutsch
+                                </a>
+                            </li>
+
+                            <li class="dropdown-link lang-dd-item">
+                                <a href="../careers.html">
+                                    <img src="../images/icons/icon-flag-gb.svg" alt="English flag" class="language-icon">English
+                                </a>
                             </li>
                         </ul>
                     </div>
                 </nav>
 
-				<div class="login-btn-wrapper">
-					<div class="login-btn-container">
-						<div class="nav-link login-btn">Login</div>
-					</div>
-				</div>
-
-				<div class="menu-icon-wrapper" tabindex="1">
-					<div class="menu-icon-container">
-						<span class="icon-span"></span>
-						<span class="icon-span"></span>
-						<span class="icon-span"></span>
-					</div>
-				</div>
-			</div>
-		</div>
+                <div class="menu-icon-wrapper" tabindex="1">
+                    <div class="menu-icon-container">
+                        <span class="icon-span"></span>
+                        <span class="icon-span"></span>
+                        <span class="icon-span"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- / NavBar -->
 
         <div class="hero-section">
@@ -102,37 +167,7 @@
         <div class="menu-fader"></div>
     </header>
     <!-- / Header -->
-
-    <div class="login-wrapper">
-        <div class="login-container">
-            <div class="login-heading">
-                <h3>DOT-Link Login</h3>
-                <p class="login-prompt">Please enter your username and password</p>
-            </div>
-            <form id="loginForm" class="login-form" method="post" accept-charset="utf-8">
-            <fieldset>
-            <div class="input-text-div">
-                <label for="UserName">Username</label>
-                <br>
-                <input name="data[User][name]" type="text" maxlength="50" required="required" value id="UserName"
-                class="input-text-field">
-            </div>
-            <div class="input-text-div">
-                <label for="UserPassword">Password</label>
-                <br>
-                <input name="data[User][password]" type="password" required="required" value id="UserPassword"
-                class="input-text-field">
-            </div>
-            </fieldset>
-            <div class="submit-btn-wrapper">
-                <input type="submit" value="Login" class="login-submit-btn" id="loginSubmitBtn">
-            </div>
-        </form>
-            <button id="loginCloseBtn" class="login-close-btn"><span class="iconify x-icon" data-icon="akar-icons:circle-x"></span></button>
-        </div>
-    </div>  
-    <!-- / Login -->
-
+    
     <div class="main-wrapper">
         <section class="intro-section" id="introSection">
             <div class="section-inner">
@@ -346,5 +381,35 @@
         </div>
     </footer> 
     <!-- / Footer -->	
+
+    <div class="login-wrapper">
+        <div class="login-container">
+            <div class="login-heading">
+                <h3>DOT-Link Login</h3>
+                <p class="login-prompt">Geben Sie Ihrnen Nutzernamen und Passwort ein</p>
+            </div>
+            <form action="https://dotlink.dot-telematik.com/users/login" id="loginForm" class="login-form" method="post" accept-charset="utf-8">
+            <fieldset>
+            <div class="input-text-div">
+                <label for="UserName">Nutzername</label>
+                <br>
+                <input name="data[User][name]" type="text" maxlength="50" required="required" value id="UserName"
+                class="input-text-field">
+            </div>
+            <div class="input-text-div">
+                <label for="UserPassword">Passwort</label>
+                <br>
+                <input name="data[User][password]" type="password" required="required" value id="UserPassword"
+                class="input-text-field">
+            </div>
+            </fieldset>
+            <div class="submit-btn-wrapper">
+                <input type="submit" value="Login" class="login-submit-btn" id="loginSubmitBtn">
+            </div>
+        </form>
+            <button id="loginCloseBtn" class="login-close-btn"><span class="iconify x-icon" data-icon="akar-icons:circle-x"></span></button>
+        </div>
+    </div>  
+    <!-- / Login -->
 </body>
 </html>  
