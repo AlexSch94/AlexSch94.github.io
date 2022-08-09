@@ -4,9 +4,6 @@ currentCategory = 'about'
     // -------------
     // Stat Counters
     // -------------
-    let delay = 0,
-        countersRan = false
-
     const statsContainer = document.querySelector('.stats-container'),
         activeDeviceCounter = document.getElementById('activeDeviceCounter'),
         solarPowerCounter = document.getElementById('solarPowerCounter'),
@@ -14,6 +11,9 @@ currentCategory = 'about'
         dataPointsCounter = document.getElementById('dataPointsCounter'),
         experienceCounter = document.getElementById('experienceCounter'),
         statOptions = {}
+
+    let delay = 0,
+        countersRan = false
 
     const statObserver = new IntersectionObserver(function (
         entries,
@@ -38,11 +38,16 @@ currentCategory = 'about'
                     if (!countersRan) {
                         countersRan = true
                         setTimeout(() => {
-                            incrementCounter(activeDeviceCounter, 0, 50, 50)
+                            incrementCounter(activeDeviceCounter, 0, 50000, 51)
                             incrementCounter(solarPowerCounter, 0, 2, 20)
-                            incrementCounter(traveledCounter, 0, 2.3, 23)
+                            incrementCounter(traveledCounter, 0, 875000000, 49)
                             incrementCounter(experienceCounter, 0, 20, 20)
-                            incrementCounter(dataPointsCounter, 0, 745000)
+                            incrementCounter(
+                                dataPointsCounter,
+                                0,
+                                745000000,
+                                49
+                            )
                         }, delay)
                     }
                 }, 10)

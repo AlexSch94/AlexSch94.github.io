@@ -42,10 +42,10 @@
     width: 100%;
     display: grid;
     justify-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
-    gap: 3rem;
-    overflow: hidden;
+    grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
     font-size: var(--FS11);
+    gap: 3em;
+    overflow: hidden;
     opacity: 0;
     transform: translate(3rem, 0);
 }
@@ -78,9 +78,12 @@
     font-size: var(--FS11);
 }
 
-.solar-suffix,
-.traveled-suffix {
-    margin-left: 0.3em;
+.counter-suffix {
+    margin-left: 0.2em;
+}
+
+span.plus {
+    margin-left: 0.1em;
 }
 
 /* History-section */

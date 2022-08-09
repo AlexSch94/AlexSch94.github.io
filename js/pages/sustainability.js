@@ -9,7 +9,7 @@ currentCategory = 'about'
         solarPowerCounter = document.getElementById('solarPowerCounter2'),
         partnersSection = document.querySelector('.partners-section')
 
-    let hasCounted = false
+    let countersRan = false
 
     const sectionObserverOptions = { threshold: 0.2 }
     const sectionObserver = new IntersectionObserver(function (
@@ -19,9 +19,12 @@ currentCategory = 'about'
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('come-in')
-                if (entry.target === solarparkSection && hasCounted === false) {
-                    incrementCounter(solarPowerCounter, 0, 2000)
-                    hasCounted = true
+                if (
+                    entry.target === solarparkSection &&
+                    countersRan === false
+                ) {
+                    incrementCounter(solarPowerCounter, 0, 2000000, 49)
+                    countersRan = true
                 }
             } else if (
                 entry.target.getBoundingClientRect().top > 1 ||
