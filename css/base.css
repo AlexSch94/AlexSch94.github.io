@@ -747,7 +747,7 @@ header {
 }
 
 .intro-paragraph {
-    max-width: 85ch;
+    max-width: 115ch;
 }
 
 /* login-form */
@@ -1211,15 +1211,15 @@ footer .scroll-to-top-btn:hover {
 
     /* max-height = number of entries * 3.5em (1em + 2 * 1.25em -> padding top & bottom) */
     .applications-dropdown.open {
-        max-height: 17em;
+        max-height: 17.5em;
+    }
+
+    .products-dropdown.open {
+        max-height: 17.5em;
     }
 
     .devices-dropdown.open {
-        max-height: 17em;
-    }
-
-    .devices-dropdown.open {
-        max-height: 13.5em;
+        max-height: 7em;
     }
 
     .about-dropdown.open {

@@ -244,12 +244,6 @@
 }
 
 @media (max-width: 1200px) {
-    .team-section-container {
-        grid-template-columns: repeat(2, minmax(min(100%, 150px), 1fr));
-    }
-}
-
-@media (max-width: 1000px) {
     .intro-section {
         min-height: unset;
     }
@@ -278,6 +272,7 @@
     .timeline-segment.right .timeline-description {
         transition-delay: 0.1s;
         margin: 0 0 3rem 0;
+        width: 100%;
     }
 
     .timeline-description::after,

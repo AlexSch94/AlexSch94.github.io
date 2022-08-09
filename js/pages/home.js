@@ -1,6 +1,14 @@
 currentPage = 'home'
 currentCategory = 'home'
 
+// Set different img src for german version
+let overlayLogoSrc
+if (typeof germanVersion !== 'undefined' && germanVersion) {
+    overlayLogoSrc = '../images/logo_DOT.png'
+} else {
+    overlayLogoSrc = './images/logo_DOT.png'
+}
+
 // Main page functionality
 ;(function () {
     /* --------
@@ -11,14 +19,10 @@ currentCategory = 'home'
             .querySelector('.overlay-logo')
             .querySelector('img')
 
-    let indexNavigation
-
     window.addEventListener('load', () => {
+        // Remove fade and add src to img late for visually smooth loading (img is loaded earlier in header -> pops up if not delayed)
         document.body.classList.add('ldd')
-
-        indexNavigation = document.getElementById('fp-nav')
-
-        overlayLogo.setAttribute('src', './images/logo_DOT.png')
+        overlayLogo.setAttribute('src', overlayLogoSrc)
 
         // Start Video
         vid.currentTime = 1.5
