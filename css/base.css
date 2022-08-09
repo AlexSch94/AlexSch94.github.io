@@ -933,6 +933,7 @@ footer {
     width: 100%;
     max-width: 1900px;
     padding: 1.5rem 2rem;
+    gap: 5%;
     display: flex;
     align-items: center;
 }
@@ -945,6 +946,16 @@ footer {
     gap: 1.5rem;
     width: 67%;
     justify-content: space-between;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    height: 100%;
+    gap: 1rem;
+    width: 28%;
+    align-items: flex-end;
 }
 
 .footer-links {
@@ -965,16 +976,6 @@ footer .scroll-to-top-btn {
 .footer-links a:active,
 footer .scroll-to-top-btn:hover {
     border-bottom: 1px solid currentColor;
-}
-
-.footer-right {
-    display: flex;
-    flex-direction: column;
-    flex: 1 0 auto;
-    height: 100%;
-    gap: 1rem;
-    width: 33%;
-    align-items: flex-end;
 }
 
 .footer-socials {
@@ -1088,13 +1089,12 @@ footer .scroll-to-top-btn:hover {
         position: absolute;
         grid-column: none;
         top: 100%;
-        height: 100vh;
         height: calc(100vh - var(--nav-bar-height));
         right: 0;
         background-color: var(--brand-color);
         z-index: 4;
         width: 50%;
-        min-width: 300px;
+        min-width: 321px;
         transform: translateX(100%);
         border-left: 1px solid var(--brand-color);
         transition: all 0.3s ease;
@@ -1273,6 +1273,14 @@ footer .scroll-to-top-btn:hover {
     :root {
         --nav-bar-height: 65px;
         --header-height: 350px;
+    }
+
+    .top-nav {
+        width: 100%;
+    }
+
+    .nav-bar.sticky .top-nav {
+        border: none;
     }
 
     .logo-container {
