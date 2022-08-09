@@ -197,7 +197,11 @@
 
         // Deselect dropdown items on mouseleave (for mobile view)
         element.menu.addEventListener('mouseleave', (e) => {
-            element.items.forEach((item) => item.classList.remove('selected'))
+            element.items.forEach((item) => {
+                if (e.relatedTarget !== element.parent) {
+                    item.classList.remove('selected')
+                }
+            })
         })
 
         // Close menu / highlight dropdown item on click (for mobile view)
