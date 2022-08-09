@@ -707,7 +707,7 @@ header {
     flex-direction: column;
     justify-content: center;
     height: calc(var(--header-height) - var(--nav-bar-height));
-    padding: 0 30px calc(var(--nav-bar-height) / 2) 50px;
+    padding: 0 0 calc(var(--nav-bar-height) / 2) 50px;
     width: 730px;
 }
 
@@ -747,7 +747,7 @@ header {
 }
 
 .intro-paragraph {
-    max-width: 115ch;
+    max-width: 110ch;
 }
 
 /* login-form */
