@@ -22,8 +22,9 @@ section:first-of-type {
 }
 
 #fp-nav {
-    transition: opacity 0.3s ease;
-    transform: rotate(-90deg) translateX(-45px) !important;
+    transition: opacity, transform ease;
+    transition-duration: 0.3s, 0.6s;
+    transform: rotate(-90deg) translateX(-45px) translateY(-15%) !important;
 }
 
 .bg-wrapper {
@@ -95,7 +96,7 @@ section:first-of-type {
     text-align: left;
     width: fit-content;
     line-height: 1.2;
-    margin-bottom: 0.7em;
+    margin-bottom: 0.5em;
 }
 
 .text-wrapper p {
@@ -247,14 +248,16 @@ section:first-of-type {
     animation-play-state: paused !important;
 }
 
+/* Scroll prompt */
+
 .scroll-prompt {
     position: absolute;
     display: none;
     align-items: center;
     gap: 0.5em;
-    font-size: var(--FS10);
-    bottom: 1em;
-    right: 1em;
+    font-size: var(--FS11);
+    bottom: 1.5em;
+    right: 1.5em;
     padding: 0.3em 0.6em;
     border-radius: 0.1em;
     background-color: rgba(255, 255, 255, 1);
@@ -269,6 +272,8 @@ section:first-of-type {
 
 .scroll-prompt p {
     color: black;
+    font-size: var(--FS12);
+    margin: 0;
 }
 
 .scroll-prompt img {
@@ -277,6 +282,10 @@ section:first-of-type {
 }
 
 /* Section 1 */
+
+.text-wrapper .sec1-h1 {
+    margin-bottom: 0.1em;
+}
 
 .img-wrapper1 {
     width: 70%;
@@ -288,91 +297,9 @@ section:first-of-type {
 
 /* Section 3 */
 
-.bg-wrapper3 {
-    justify-content: center;
-    align-items: center;
-    background-image: url(../../images/sustainability.png);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.bg-wrapper3::after {
-    position: absolute;
-    content: '';
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(255, 255, 255, 0.95);
-}
-
-.img-seg3 {
-    display: none;
-}
-
-.text-seg3 {
-    display: block;
-    max-height: unset;
-}
-
-.text-wrapper .sec3-h1,
-.text-wrapper .sec3-h1 span {
-    margin: 0;
-    text-shadow: 0 0 0.5em rgba(255, 255, 255), 0 0 0.3em rgba(255, 255, 255),
-        0 0 0.1em rgba(255, 255, 255);
-}
-
-/* Cards */
-
-.cards-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
-    gap: 1em;
-    padding: 1em 0;
-}
-
-.card {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1em;
-    font-size: var(--FS11);
-    padding: 0.75em;
-    border: 1px solid var(--brand-color2);
-    border-radius: 0.3em;
-    border: 1px solid var(--brand-color2);
-    background-color: var(--page-background);
-    box-shadow: 0 0 1em var(--shadow-100);
-    opacity: 0;
-    transform: scale(0.6);
-    transform-origin: center;
-    transition: all 0.3s ease;
-}
-
-.cards-wrapper.come-in .card {
-    transition: all 0.6s ease;
-    opacity: 1;
-    transform: scale(1);
-    transition-delay: calc(0.15s * var(--i));
-}
-
-.card-text-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.card-text-container h3 {
-    font-size: var(--FS10);
-    color: var(--brand-color2);
-}
-
-.card-text-container *:not(.link1) {
-    width: 100%;
-    text-align: center;
+.img-wrapper3 {
+    width: 70% !important;
+    max-width: 800px;
 }
 
 /* Section 4 */
@@ -558,6 +485,11 @@ section:first-of-type {
         width: 80%;
     }
 
+    .scroll-prompt {
+        bottom: 60px;
+        right: auto;
+    }
+
     /* Section 4 */
 
     .img-wrapper4 img {
@@ -569,13 +501,20 @@ section:first-of-type {
     }
 }
 
+@media (max-width: 900px) {
+}
+
 @media (max-width: 750px) {
     .buttons {
         margin: 1rem 0 0 0;
     }
 
     #fp-nav {
-        transform: rotate(-90deg) translateX(-55px) !important;
+        transform: rotate(-90deg) translateX(-55px) translateY(-15%) !important;
+    }
+
+    .scroll-prompt {
+        bottom: 50px;
     }
 
     /* Section 0 */
@@ -719,5 +658,38 @@ section:first-of-type {
 
     .bg-wrapper:not(.bg-wrapper0) {
         gap: 100px;
+    }
+}
+
+@media (max-width: 600px), (max-height: 600px) {
+    .bg-wrapper3::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .text-container3 * {
+        text-shadow: 0 0 0.1em var(--shadow-500);
+    }
+
+    .bg-wrapper3 {
+        background-image: url(../../images/sustainability.svg);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-origin: content-box;
+        padding: 5vw;
+    }
+
+    .img-seg3 {
+        display: none;
+    }
+
+    .tex-seg3 {
+        max-height: unset;
     }
 }

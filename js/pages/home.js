@@ -122,26 +122,3 @@ function hideIndexNavigation() {
 function removeIndexNavigation() {
     indexNavigationContainer.style.display = 'none'
 }
-
-// --------------------
-// Sustainability cards
-// --------------------
-
-const cardsWrapper = document.querySelector('.cards-wrapper'),
-    cardObserverOptions = {
-        threshold: 1,
-    }
-
-const cardObserver = new IntersectionObserver(function (
-    entries,
-    attibuteObserver
-) {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('come-in')
-        }
-    })
-},
-cardObserverOptions)
-
-cardObserver.observe(cardsWrapper)

@@ -205,7 +205,6 @@
         })
 
         // Close menu / highlight dropdown item on click (for mobile view)
-
         element.items.forEach((item) => {
             item.addEventListener('pointerup', (e) => {
                 element.items.forEach((item) =>

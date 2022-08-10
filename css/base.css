@@ -209,19 +209,6 @@ a[href^='mailto:']:hover {
     color: var(--brand-color2);
 }
 
-.return-link {
-    font-size: var(--FS11);
-    display: block;
-    width: fit-content;
-    margin-top: 1.5em;
-    border-bottom: 1px solid currentColor;
-    transition: all 0.2s ease;
-}
-
-.return-link:hover {
-    color: var(--brand-color2);
-}
-
 .btn1 {
     display: block;
     flex: 0 0 auto;

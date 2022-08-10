@@ -4,7 +4,10 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
     gap: 2em;
-    padding: 1em 0;
+}
+
+.attribute-container {
+    width: 100%;
 }
 
 .attribute {

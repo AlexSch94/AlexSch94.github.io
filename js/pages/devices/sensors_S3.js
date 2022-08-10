@@ -18,16 +18,19 @@ slider.append(clonedSlide)
 let interval = 3700,
     transitionDuration = 1100
 
+// Set smooth scroll behavior late (not performant while slider starts)
+setTimeout(() => {
+    document.documentElement.style.scrollBehavior = 'smooth'
+}, 100)
+
 // Closure page functions
 ;(function () {
     // -----------------
     // Portfolio section
     // -----------------
-    const sensorContainers = document.querySelectorAll('.sensor-container'),
-        sensorObserverOptions = {
-            threshold: 0.3,
-        }
+    const sensorContainers = document.querySelectorAll('.sensor-container')
 
+    const sensorObserverOptions = { threshold: 0.3 }
     const sensorObserver = new IntersectionObserver(function (
         entries,
         sensorObserver
@@ -45,4 +48,27 @@ let interval = 3700,
     sensorContainers.forEach((sensorContainer) =>
         sensorObserver.observe(sensorContainer)
     )
+
+    // -----------------
+    // Attribute section
+    // -----------------
+
+    const attributeHeader = document.querySelector('.sub-header-2')
+
+    const attributeHeaderObserverOptions = { threshold: 0.1 }
+    const attributeHeaderObserver = new IntersectionObserver(function (
+        entries,
+        sensorObserver
+    ) {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('come-in')
+            } else if (entry.target.getBoundingClientRect().top > 1) {
+                entry.target.classList.remove('come-in')
+            }
+        })
+    },
+    attributeHeaderObserverOptions)
+
+    attributeHeaderObserver.observe(attributeHeader)
 })()

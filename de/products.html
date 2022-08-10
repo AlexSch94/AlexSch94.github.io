@@ -319,7 +319,7 @@
                     <!-- / Text container -->
 
                     <div class="attributes-wrapper">
-                        <div class="attribute-container">
+                        <div class="attribute-container" id="mileageCalculation">
                             <div class="attribute">
                                 <div class="attribute-main">
                                     <div class="attribute-icon-container">
@@ -350,13 +350,13 @@
                                     
                                     <div class="attribute-text-container">
                                         <div class="attribute-header">
-                                            <h3>Recognition of Start-Stop</h3>
+                                            <h3>Recognition of <span class="nowrap">Start-Stop</span></h3>
                                         </div>
                                         
                                         <div class="attribute-description">
                                             <p class="bold">Erkennung, ob ein Asset sich in Bewegung setzt oder ob es gerade stehen geblieben ist.</p>
 
-                                            <p>Pointer ab der Serie S17 verfügen über einen integrierten hochpräzisen Beschleunigungssensor, der jede Form von Bewegung erkennt. Mit dem Leistungsmerkmal „Start-Stop“ lässt sich die Sendefrequenz im Stillstand reduzieren, um signifikant Energie zu sparen. Zudem werden die Ereignisse Start und Stop sofort gemeldet. Die Reduktion des Sendeintervalls wird mit einem konfigurierbaren Faktor eingegeben. So kann durch Eingabe des Faktors 48 ein Fahrt-Sende-Intervall von 30 Minuten (eine Nachricht alle 30 Minuten) auf 24 Stunden im Stillstand erhöht werden.</p>
+                                            <p>Pointer ab der Serie S17 verfügen über einen integrierten hochpräzisen Beschleunigungssensor, der jede Form von Bewegung erkennt. Mit dem Leistungsmerkmal „<span class="nowrap">Start-Stop</span>“ lässt sich die Sendefrequenz im Stillstand reduzieren, um signifikant Energie zu sparen. Zudem werden die Ereignisse Start und Stop sofort gemeldet. Die Reduktion des Sendeintervalls wird mit einem konfigurierbaren Faktor eingegeben. So kann durch Eingabe des Faktors 48 ein Fahrt-Sende-Intervall von 30 Minuten (eine Nachricht alle 30 Minuten) auf 24 Stunden im Stillstand erhöht werden.</p>
 
                                             <p>Wenn das Objekt (Container, Güterwagen, etc.) losfährt, wir die Fahrt innerhalb von 2 Minuten gemeldet. Der eingetretene Stillstand wird nach rund 5 Minuten gemeldet.</p>
                                         </div>
@@ -365,7 +365,7 @@
                             </div>                            
                         </div>
                         
-                        <div class="attribute-container">
+                        <div class="attribute-container" id="geofencing">
                             <div class="attribute">
                                 <div class="attribute-main">
                                     <div class="attribute-icon-container">
@@ -430,7 +430,7 @@
                         </div>     
 
                         
-                        <div class="attribute-container">
+                        <div class="attribute-container" id="turnaroundAnalysis">
                             <div class="attribute">
                                 <div class="attribute-main">
                                     <div class="attribute-icon-container">
@@ -439,7 +439,7 @@
                                     
                                     <div class="attribute-text-container">
                                         <div class="attribute-header">
-                                            <h3>Analyse der Wagenumläufe und Zeiten</h3>
+                                            <h3>Analyse von Wagenumläufen und Zeiten</h3>
                                         </div>
 
                                         <div class="attribute-description">
@@ -474,7 +474,7 @@
                             </div>
                         </div>
                         
-                        <div class="attribute-container">
+                        <div class="attribute-container" id="carloadDetection">
                             <div class="attribute">
                                 <div class="attribute-main">
                                     <div class="attribute-icon-container">
@@ -534,7 +534,7 @@
                             </div>
                         </div>
                         
-                        <div class="attribute-container">
+                        <div class="attribute-container" id="heatingAnalysis">
                             <div class="attribute">
                                 <div class="attribute-main">
                                     <div class="attribute-icon-container">
@@ -627,7 +627,7 @@
                     </h1>
                 </div>
 
-                <div class="section-content acm-content">
+                <div class="section-content acm-content" id="shockDetection">
                     <div class="attributes-wrapper">
                         <div class="attribute-container">
                             <div class="attribute">
@@ -643,7 +643,7 @@
                                         <div class="attribute-description">
                                             <p class="bold">Simultanes Erfassen von Beschleunigungen mit unterschiedlichen Konfigurationen und Filtereinstellungen .</p>
 
-                                            <p>Sowohl die <span class="nowrap">X-Rayl</span> Pointer als auch der <span class="nowrap">X-Rayl</span> Sensor S3ACC-D enthalten drei hochpräzise 3-Achsen-Beschleunigungssensoren mit einer breiten Palette von Erfassungsbereichen. Alle Sensoren wurden speziell ausgewählt, um verschiedene Schockszenarien abzudecken, die in der Eisenbahnumgebung zu erwarten sind, von der Messung kleiner Änderungen im mg-Bereich bis hin zu Schocks von bis zu 200g mit einer hohen Auflösung. Verschiedene konfigurierbare Frequenzfilter ermöglichen nicht nur die Erkennung von relativ langsamen Rangierstößen, sondern auch die Erkennung von schnellen Stößen, die zu Oberbauschäden führen können. Einstellbare Schwellenwerte ermöglichen eine sofortige Alarmierung bei Überschreitung.</p>
+                                            <p>Sowohl die <span class="nowrap">X-Rayl</span> Pointer als auch der <span class="nowrap">X-Rayl</span> Sensor S3ACC-D enthalten drei hochpräzise <span class="nowrap">3-Achsen-Beschleunigungssensoren</span> mit einer breiten Palette von Erfassungsbereichen. Alle Sensoren wurden speziell ausgewählt, um verschiedene Schockszenarien abzudecken, die in der Eisenbahnumgebung zu erwarten sind, von der Messung kleiner Änderungen im mg-Bereich bis hin zu Schocks von bis zu 200g mit einer hohen Auflösung. Verschiedene konfigurierbare Frequenzfilter ermöglichen nicht nur die Erkennung von relativ langsamen Rangierstößen, sondern auch die Erkennung von schnellen Stößen, die zu Oberbauschäden führen können. Einstellbare Schwellenwerte ermöglichen eine sofortige Alarmierung bei Überschreitung.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -664,7 +664,7 @@
                                         <div class="attribute-description">
                                             <p class="bold">Frühalarmierung bei übermäßiger Veränderung der Lage des Wagens.</p>
 
-                                            <p><span class="nowrap">X-Rayl</span> Pointer verfügen über einen 3-Achsen Beschleunigungssensor, der eine präzise (+/- 1°) Lage des Wagens erkennt. Bei einer Entgleisung ändert sich die Lage des Wagens signifikant, wodurch eine Frühalarmierung möglich wird. Auch die Demontage des Gerätes führt zu einer Alarmierung (Diebstahlserkennung).</p>
+                                            <p><span class="nowrap">X-Rayl</span> Pointer verfügen über einen <span class="nowrap">3-Achsen</span> Beschleunigungssensor, der eine präzise <span class="nowrap">(+/- 1°)</span> Lage des Wagens erkennt. Bei einer Entgleisung ändert sich die Lage des Wagens signifikant, wodurch eine Frühalarmierung möglich wird. Auch die Demontage des Gerätes führt zu einer Alarmierung (Diebstahlserkennung).</p>
                                         </div>
                                     </div>
                                 </div>
@@ -711,7 +711,7 @@
                             </div>
                         </div>
                         
-                        <div class="attribute-container">
+                        <div class="attribute-container" id="eventhandling">
                             <div class="attribute">
                                 <div class="attribute-main">
                                     <div class="attribute-icon-container">

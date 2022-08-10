@@ -314,7 +314,7 @@
                     <!-- / Text container -->
 
                     <div class="attributes-wrapper">
-                        <div class="attribute-container">
+                        <div class="attribute-container" id="mileageCalculation">
                             <div class="attribute">
                                 <div class="attribute-main">
                                     <div class="attribute-icon-container">
@@ -345,13 +345,13 @@
                                     
                                     <div class="attribute-text-container">
                                         <div class="attribute-header">
-                                            <h3>Recognition of Start-Stop</h3>
+                                            <h3>Recognition of <span class="nowrap">Start-Stop</span></h3>
                                         </div>
                                         
                                         <div class="attribute-description">
                                             <p class="bold">Detects whether an asset is moving or has just stopped.</p>
 
-                                            <p>Pointers from the S17 series upwards have an integrated high-precision acceleration sensor that detects any form of movement. With the "start-stop" feature, the transmission frequency can be reduced at standstill to save significant energy. In addition, the Start and Stop events are reported immediately. The reduction of the transmission interval is entered with a configurable factor. For example, by entering factor 48, a travel transmission interval of 30 minutes (one message every 30 minutes) can be increased to 24 hours at standstill. </p>
+                                            <p>Pointers from the S17 series upwards have an integrated high-precision acceleration sensor that detects any form of movement. With the "<span class="nowrap">start-stop</span>" feature, the transmission frequency can be reduced at standstill to save significant energy. In addition, the Start and Stop events are reported immediately. The reduction of the transmission interval is entered with a configurable factor. For example, by entering factor 48, a travel transmission interval of 30 minutes (one message every 30 minutes) can be increased to 24 hours at standstill. </p>
 
                                             <p>When the object (container, freight wagon, etc.) starts, the trip is reported within 2 minutes. The standstill is reported after about 5 minutes. </p>
                                         </div>
@@ -360,7 +360,7 @@
                             </div>                            
                         </div>
                         
-                        <div class="attribute-container">
+                        <div class="attribute-container" id="geofencing">
                             <div class="attribute">
                                 <div class="attribute-main">
                                     <div class="attribute-icon-container">
@@ -411,7 +411,7 @@
                                     
                                     <div class="attribute-text-container">
                                         <div class="attribute-header">
-                                            <h3>Detection of long idle times</h3>
+                                            <h3>Detection of long <span class="nowrap">idle times</span></h3>
                                         </div>
 
                                         <div class="attribute-description">
@@ -425,7 +425,7 @@
                         </div>     
 
                         
-                        <div class="attribute-container">
+                        <div class="attribute-container" id="turnaroundAnalysis">
                             <div class="attribute">
                                 <div class="attribute-main">
                                     <div class="attribute-icon-container">
@@ -434,7 +434,7 @@
                                     
                                     <div class="attribute-text-container">
                                         <div class="attribute-header">
-                                            <h3>Analysis of wagon turnaround and times</h3>
+                                            <h3>Analysis of wagon <span class="nowrap">turnaround and times</span></h3>
                                         </div>
 
                                         <div class="attribute-description">
@@ -469,7 +469,7 @@
                             </div>
                         </div>
                         
-                        <div class="attribute-container">
+                        <div class="attribute-container" id="carloadDetection">
                             <div class="attribute">
                                 <div class="attribute-main">
                                     <div class="attribute-icon-container">
@@ -529,7 +529,7 @@
                             </div>
                         </div>
                         
-                        <div class="attribute-container">
+                        <div class="attribute-container" id="heatingAnalysis">
                             <div class="attribute">
                                 <div class="attribute-main">
                                     <div class="attribute-icon-container">
@@ -538,7 +538,7 @@
                                     
                                     <div class="attribute-text-container">
                                         <div class="attribute-header">
-                                            <h3>Heating analysis for containers/ tanks </h3>
+                                            <h3>Heating analysis for containers / tanks </h3>
                                         </div>
                                         <div class="attribute-description">
                                             <p class="bold">Heating start and end can be recorded automatically, e.g. for billing purposes.</p>
@@ -624,7 +624,7 @@
 
                 <div class="section-content acm-content">
                     <div class="attributes-wrapper">
-                        <div class="attribute-container">
+                        <div class="attribute-container" id="shockDetection">
                             <div class="attribute">
                                 <div class="attribute-main">
                                     <div class="attribute-icon-container">
@@ -638,7 +638,7 @@
                                         <div class="attribute-description">
                                             <p class="bold">Simultaneous acquisition of accelerations with different configurations and filter settings.</p>
 
-                                            <p>The <span class="nowrap">X-Rayl</span> pointers as well as the <span class="nowrap">X-Rayl</span> Sensor S3ACC-D include three high-precision 3-axis accelerometers featuring a wide array of detection ranges. All sensors have been specifically chosen to cover different shock detection scenarios, that can be expected in the railway environment, from measuring small changes in the mg range as well as shocks up to 200g with a high resolution. Different configurable frequency filters allow not only the detection of relatively slow shunting shocks, but also the detection of fast shocks which might lead to superstructure damage. Adjustable thresholds allow immediate alarming when exceeded.</p>
+                                            <p>The <span class="nowrap">X-Rayl</span> pointers as well as the <span class="nowrap">X-Rayl</span> Sensor S3ACC-D include three high-precision <span class="nowrap">3-axis</span> accelerometers featuring a wide array of detection ranges. All sensors have been specifically chosen to cover different shock detection scenarios, that can be expected in the railway environment, from measuring small changes in the mg range as well as shocks up to 200g with a high resolution. Different configurable frequency filters allow not only the detection of relatively slow shunting shocks, but also the detection of fast shocks which might lead to superstructure damage. Adjustable thresholds allow immediate alarming when exceeded.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -706,7 +706,7 @@
                             </div>
                         </div>
                         
-                        <div class="attribute-container">
+                        <div class="attribute-container" id="eventhandling">
                             <div class="attribute">
                                 <div class="attribute-main">
                                     <div class="attribute-icon-container">

@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: auto;
+}
+
 .dropshadow {
     filter: drop-shadow(10px 20px 15px var(--shadow));
 }
@@ -75,8 +79,16 @@
 
 /* Intro section */
 
+.intro-section {
+    padding-bottom: 10px;
+}
+
 .page-header {
     margin: 0 0 0.4em -0.1em;
+}
+
+.intro-paragraph {
+    max-width: 85ch;
 }
 
 .intro-paragraph.last {
@@ -103,6 +115,10 @@
 }
 
 /* Sensor Portfolio */
+
+.portfolio-section {
+    padding-top: 20px;
+}
 
 .section-header-container {
     font-size: var(--FS10);
@@ -204,6 +220,12 @@
 .sensor-img.no-mount {
     max-width: 75%;
     max-height: 85%;
+}
+
+/* Attribute section */
+
+.sub-header-2 {
+    margin-bottom: 1.5em;
 }
 
 /* Media Queries */
