@@ -87,10 +87,6 @@ html {
     margin: 0 0 0.4em -0.1em;
 }
 
-.intro-paragraph {
-    max-width: 85ch;
-}
-
 .intro-paragraph.last {
     margin-top: 1em;
 }
@@ -109,9 +105,11 @@ html {
 }
 
 .main-img {
-    transition: all 1.5s ease;
-    max-width: 90%;
-    max-height: 350px;
+    transition: opacity, transform ease;
+    transition-duration: 1.2s, 1.5s;
+    max-width: 100%;
+    font-size: var(--FS10);
+    filter: drop-shadow(0 0 0.5em var(--shadow-500));
 }
 
 /* Sensor Portfolio */

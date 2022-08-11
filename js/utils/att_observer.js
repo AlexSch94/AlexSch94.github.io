@@ -34,9 +34,9 @@
     },
     smallAttributeObserverOptions)
 
-    /* -----------
-    Responsiveness
-    ----------- */
+    // ----------------
+    //  Responsiveness
+    // ----------------
     function switchObservers(size) {
         if (size === 'large') {
             attributeContainers.forEach((attributeContainer) =>

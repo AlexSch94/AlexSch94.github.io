@@ -1,4 +1,6 @@
-// Globals
+// --------------------
+//  Initialise globals
+// --------------------
 let currentPage = '',
     currentCategory = '',
     hasPreview = false,
@@ -29,13 +31,22 @@ function scrollToTop() {
     window.scrollTo(0, 0)
 }
 
-/* -----------------------
-Disable / enable scrolling
------------------------ */
+// -----------------------------
+//  Disabling / enabling scroll
+// -----------------------------
 
 // left: 37, up: 38, right: 39, down: 40,
 // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
-var scrollKeys = { 32: 1, 33: 1, 34: 1, 35: 1, 37: 1, 38: 1, 39: 1, 40: 1 }
+var scrollKeys = {
+    32: true,
+    33: true,
+    34: true,
+    35: true,
+    37: true,
+    38: true,
+    39: true,
+    40: true,
+}
 
 function preventDefaultForScrollKeys(e) {
     if (scrollKeys[e.keyCode]) {
