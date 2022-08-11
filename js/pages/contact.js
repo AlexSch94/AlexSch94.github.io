@@ -26,44 +26,4 @@ currentCategory = 'about'
     sections.forEach((section) => {
         sectionObserver.observe(section)
     })
-
-    // ------------
-    // Contact form
-    // ------------
-    const contactForm = document.getElementById('contactForm'),
-        contactSubmitBtn = document.getElementById('contactSubmitBtn'),
-        submitIndicator = document.getElementById('submitIndicator'),
-        loadingDots = document.getElementById('loadingDots')
-
-    function startLoader() {
-        submitIndicator.style.display = 'flex'
-        setTimeout(() => {
-            submitIndicator.style.opacity = '1'
-        }, 10)
-
-        setInterval(() => {
-            if (loadingDots.innerText.length < 3) {
-                loadingDots.innerText += '.'
-            } else {
-                loadingDots.innerText = ''
-            }
-        }, 400)
-    }
-
-    contactForm.addEventListener('submit', (e) => {
-        startLoader()
-    })
-
-    contactSubmitBtn.addEventListener('pointerdown', () => {
-        contactSubmitBtn.classList.add('active')
-    })
-
-    contactSubmitBtn.addEventListener('pointerup', () => {
-        contactSubmitBtn.classList.remove('active')
-    })
-
-    contactSubmitBtn.addEventListener('pointerleave', () => {
-        contactSubmitBtn.classList.remove('active')
-        contactSubmitBtn.blur()
-    })
 })()

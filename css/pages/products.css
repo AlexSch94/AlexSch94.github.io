@@ -59,7 +59,10 @@ section:nth-child(even) {
     max-width: 90ch;
 }
 
+/* Attributes */
+
 .attributes-wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 430px), 1fr));
     gap: 0;
     column-gap: 2em;
 }
@@ -97,7 +100,12 @@ section:nth-child(even) {
 }
 
 .attribute-text-container {
-    gap: 1.2em;
+    gap: 1em;
+}
+
+.attribute-description p.bold {
+    text-align: center;
+    margin-bottom: 0.4em;
 }
 
 .appstore-link-container {
@@ -264,8 +272,38 @@ section:nth-child(even) {
 
 /* Media Queries */
 
+@media (max-width: 1180px) {
+    .text-hideable {
+        display: none;
+    }
+}
+
 @media (max-width: 1000px) {
     .attribute-header h3::after {
         height: 0.1em;
+    }
+}
+
+@media (max-width: 450px) {
+    .hero-h1 {
+        font-size: var(--FS7);
+    }
+
+    .text-hideable2 {
+        display: none;
+    }
+
+    .unhidden {
+        display: initial;
+    }
+
+    .section-header.long {
+        font-size: var(--FS6);
+    }
+}
+
+@media (max-width: 350px) {
+    .section-header.long {
+        font-size: var(--FS7);
     }
 }

@@ -5,8 +5,6 @@ currentCategory = 'none'
     const mainWrapper = document.querySelector('.main-wrapper'),
         footer = document.querySelector('footer')
 
-    console.log(footer)
-
     function setMainWrapperPadding() {
         let footerHeight = getComputedStyle(footer).getPropertyValue('height')
         mainWrapper.style.paddingBottom = footerHeight

@@ -29,17 +29,22 @@
 
 .carousel {
     position: relative;
-    width: 3000px;
+    width: 3300px;
     height: 150px;
     display: flex;
 }
 
 .carouselpart1 {
-    animation: scroll-out-left 40s forwards infinite linear;
+    animation: scroll-out-left forwards infinite linear;
 }
 
 .carouselpart2 {
-    animation: scroll-in-left 40s forwards infinite linear;
+    animation: scroll-in-left forwards infinite linear;
+}
+
+.carouselpart1,
+.carouselpart2 {
+    animation-duration: 40s;
 }
 
 @keyframes scroll-out-left {
@@ -87,6 +92,11 @@
     width: auto;
 }
 
+.carousel-item .eurowagon-logo {
+    max-height: 70px;
+    width: auto;
+}
+
 .carousel-wrapper .fb-left {
     background-image: linear-gradient(
         to right,
@@ -111,28 +121,15 @@
 
 /* Media Queries */
 
-@media (max-width: 1200px) {
-    .carouselpart1 {
-        animation: scroll-out-left 40s forwards infinite linear;
-    }
-
-    .carouselpart2 {
-        animation: scroll-in-left 40s forwards infinite linear;
-    }
-}
-
 @media (max-width: 1000px) {
     .carousel {
-        width: 2000px;
+        width: 2200px;
         height: 100px;
     }
 
-    .carouselpart1 {
-        animation: scroll-out-left 30s forwards infinite linear;
-    }
-
+    .carouselpart1,
     .carouselpart2 {
-        animation: scroll-in-left 30s forwards infinite linear;
+        animation-duration: 30s;
     }
 
     .carousel-item {
@@ -149,8 +146,9 @@
 }
 
 @media (max-width: 500px) {
+    /* times 0.66 */
     .carousel {
-        width: 1332px;
+        width: 1466px;
         height: 66px;
     }
 

@@ -86,7 +86,7 @@
 
         element.parent.addEventListener('mouseleave', (e) => {
             if (window.innerWidth <= 1000 || isTouch) return
-            if (element !== login) {
+            if (e.relatedTarget !== loginWrapper) {
                 element.parent.classList.remove('active')
                 element.active = false
                 highlightCurrentCategory()
@@ -474,7 +474,7 @@
                     previewWrapper.classList.add('come-in')
                 }
             } else {
-                if (!mainMenuOpen) {
+                if (!mainMenuOpen && currentPage !== 'home') {
                     // Remove sticky nav
                     navBar.classList.remove('sticky')
                 }

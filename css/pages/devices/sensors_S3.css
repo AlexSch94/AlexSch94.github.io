@@ -287,16 +287,19 @@ html {
 
     .sensor-img-container {
         width: 100%;
-    }
-
-    .sensor-img {
-        max-height: 150px;
+        max-height: 170px;
     }
 }
 
 @media (max-width: 500px) {
     .slider-container {
         padding: 1em 0;
+    }
+}
+
+@media (max-width: 450px) {
+    .preview-wrapper {
+        display: none;
     }
 }
 
