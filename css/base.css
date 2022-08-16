@@ -756,13 +756,14 @@ header {
 }
 
 .login-container {
+    max-width: 90%;
+    padding: 2.5rem 4rem;
     background-color: var(--page-background);
     border-radius: 10px;
     border: 4px solid var(--brand-color2);
-    padding: 2.5rem 4rem;
     transform: translateX(20vw);
+    will-change: transform, opacity;
     animation: loginIn 0.3s ease forwards;
-    max-width: 90%;
 }
 
 .login-out {
