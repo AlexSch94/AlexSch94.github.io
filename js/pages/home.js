@@ -3,8 +3,6 @@ currentCategory = 'home'
 
 const preloader = document.getElementById('preloader'),
     sectionAnimation = document.getElementById('sectionAnimation'),
-    overlayLogoContainer = document.querySelector('.overlay-logo'),
-    overlayLogo = overlayLogoContainer.querySelector('img'),
     vid = document.getElementById('introVideo')
 
 // Main page functionality
@@ -14,10 +12,12 @@ const preloader = document.getElementById('preloader'),
     // -------------------------
     const loadStart = new Date(),
         preloader = document.getElementById('preloader'),
-        sectionAnimation = document.getElementById('sectionAnimation'),
-        overlayLogo = overlayLogoContainer.querySelector('img')
+        sectionAnimation = document.getElementById('sectionAnimation')
 
     let loaderTimeout = 0
+
+    // Disable fullpage scrolling during load
+    myFullpage.setAllowScrolling(false)
 
     // Vid setup & loop
     vid.currentTime = 1.5
@@ -31,20 +31,22 @@ const preloader = document.getElementById('preloader'),
         const loadEnd = new Date(),
             loadTime = loadEnd - loadStart
 
-        // Add smoothing time if loader becomes visible
-        // if (loadTime > 200) {
-        //     loaderTimeout = 1000
-        // }
-        loaderTimeout = 100000
+        // Let preloader run out smoothly if loadtime is long enough for animation to start
+        if (loadTime > 200) {
+            loaderTimeout = 1000
+        }
 
         setTimeout(() => {
-            // Remove fade and add src to img late for visually smooth loading (img pops up if not delayed -> it already loads for navbar)
+            // Remove preloader
             preloader.classList.add('ldd')
             preloader.addEventListener('transitionend', () => {
                 preloader.remove()
             })
 
-            // Start Video / Animations
+            // Enable fullpage scrolling
+            myFullpage.setAllowScrolling(true)
+
+            // Start video / animations
             vid.play()
             sectionAnimation.classList.remove('animation-pause')
         }, loaderTimeout)
@@ -109,7 +111,7 @@ if (!localStorage.getItem('hideScrollPrompt')) {
 }
 
 // ----------------------------------------
-// Hide index navigation while menu is open
+// Hide fullpage index navigation while menu is open
 // ----------------------------------------
 function showIndexNavigation() {
     indexNavigationContainer.removeEventListener(

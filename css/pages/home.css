@@ -23,76 +23,30 @@ header {
     opacity: 0;
 }
 
-.preloader-inner {
+.preloader-container {
     display: flex;
-    flex-direction: column;
     align-items: center;
     font-size: var(--FS10);
-    gap: 2em;
+    gap: 1em;
     opacity: 0;
-    animation: fade-in 1.2s ease forwards 0.2s;
+    animation: fade-in 0.6s linear forwards 0.2s;
 }
 
-.preloader-logo {
-    max-width: 450px;
-}
-
-.preloader .outer {
-    position: relative;
-    padding: 0.1em;
-    height: 0.9em;
-    width: 75%;
-    width: 40vw;
-    max-width: 450px;
-    border-radius: 0.2em;
-    border: 1px solid white;
-    overflow: visible;
-    overflow: hidden;
-}
-
-.preloader .inner1 {
-    animation: innerAnim1;
-    transform: translateX(0);
-}
-
-.preloader .inner2 {
-    animation: innerAnim2;
-    transform: translateX(-100%);
-}
-
-.preloader .inner1,
-.preloader .inner2 {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    padding: 0.1em;
-    left: 0;
-    top: 0;
-    animation-duration: 1.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-
-.preloader .inner1 .inner-bar,
-.preloader .inner2 .inner-bar {
-    left: 0;
-    top: 0;
-    width: 12%;
-    height: 100%;
-    left: 0;
-    border-radius: 0.1em;
+.preloader-dot {
+    width: 1em;
+    height: 1em;
     background-color: white;
+    border-radius: 50%;
+    opacity: 0.2;
+    transform: scale(0.2);
+    animation: preloadBlink 1.5s ease infinite;
+    animation-delay: calc(0.2s * var(--i));
 }
 
-@keyframes innerAnim1 {
-    100% {
-        transform: translateX(100%);
-    }
-}
-
-@keyframes innerAnim2 {
-    100% {
-        transform: translateX(0%);
+@keyframes preloadBlink {
+    50% {
+        opacity: 1;
+        transform: scale(1);
     }
 }
 
@@ -251,14 +205,14 @@ section:first-of-type {
 .section-overlay {
     z-index: 1;
     opacity: 0;
-    animation: fade-in 2s ease 0.5s forwards;
+    animation: fade-in 1s ease 0.5s forwards;
 }
 
-.overlay-logo {
+.overlay-logo-container {
     position: absolute;
     display: flex;
     justify-content: center;
-    width: 40vw;
+    width: 35vw;
     max-width: 450px;
     top: 50%;
     left: 50%;
@@ -266,7 +220,7 @@ section:first-of-type {
     animation: moveLogo 1.5s ease 3.5s forwards;
 }
 
-.overlay-logo img {
+.overlay-logo-container img {
     filter: drop-shadow(0 0 5px black) drop-shadow(0 0 10px black);
 }
 
@@ -633,7 +587,7 @@ section:first-of-type {
 @media (max-width: 500px) {
     /* Section 0 */
 
-    .overlay-logo {
+    .overlay-logo-container {
         width: 60vw;
     }
 
