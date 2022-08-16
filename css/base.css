@@ -21,6 +21,7 @@
     --brand-color2: hsl(206, 100%, 30%);
     --brand-color3: hsl(211, 100%, 25%);
     --brand-color4: hsl(206, 90%, 57%);
+    --brand-color5: hsl(211, 100%, 10%);
     --page-background: hsl(0, 0%, 100%);
     --page-background2: hsl(210, 20%, 98%);
     --page-background3: hsl(198, 57%, 95%);
@@ -277,7 +278,7 @@ header {
     display: flex;
     flex-direction: column;
     color: white;
-    z-index: 2;
+    z-index: 1000;
     width: 100%;
 }
 
@@ -372,6 +373,7 @@ header {
     width: 100%;
     justify-content: flex-end;
     padding: 0 0.8em;
+    cursor: pointer;
 }
 
 .login-btn {
@@ -404,7 +406,6 @@ header {
 
 .login-btn {
     height: fit-content;
-    cursor: pointer;
 }
 
 .nav-link {
@@ -744,7 +745,7 @@ header {
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 5;
+    z-index: 9999;
     top: 0;
     bottom: 0;
     left: 0;
@@ -755,7 +756,6 @@ header {
 }
 
 .login-container {
-    z-index: 9999;
     background-color: var(--page-background);
     border-radius: 10px;
     border: 4px solid var(--brand-color2);
@@ -818,6 +818,12 @@ header {
     font-size: var(--FS11);
 }
 
+.login-heading h3,
+.login-prompt,
+.login-form label {
+    user-select: none;
+}
+
 .login-close-btn {
     position: absolute;
     color: white;
@@ -841,7 +847,8 @@ header {
     transform: scale(0.97) translate(2px, -2px);
 }
 
-.login-close-btn:active {
+.login-close-btn:active,
+.login-close-btn.active {
     transform: scale(0.95) translate(2px, -2px);
 }
 
@@ -1076,7 +1083,7 @@ footer .scroll-to-top-btn:hover {
         position: absolute;
         grid-column: none;
         top: 100%;
-        height: calc(100vh - var(--nav-bar-height));
+        height: calc(100vh + 1px - var(--nav-bar-height));
         right: 0;
         background-color: var(--brand-color);
         z-index: 4;
@@ -1114,13 +1121,11 @@ footer .scroll-to-top-btn:hover {
         position: relative;
         flex-direction: column;
         width: 100%;
-        /* min-height: 750px; */
         padding: 0;
     }
 
     .nav-link {
         height: fit-content;
-        width: fit-content;
         padding: 1em 0 1em 45px;
         font-size: 18px;
         z-index: 1;
@@ -1264,6 +1269,8 @@ footer .scroll-to-top-btn:hover {
 
     .top-nav {
         width: 100%;
+        padding-top: 1rem;
+        min-width: unset;
     }
 
     .nav-bar.sticky .top-nav {

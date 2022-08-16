@@ -14,10 +14,7 @@ currentCategory = 'products'
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('come-in')
-            } else if (
-                entry.target.getBoundingClientRect().top > 1 ||
-                entry.target === partnersSection
-            ) {
+            } else if (entry.target === partnersSection) {
                 entry.target.classList.remove('come-in')
             }
         })
@@ -28,10 +25,7 @@ currentCategory = 'products'
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('come-in')
-            } else if (
-                entry.target.getBoundingClientRect().top > 1 ||
-                entry.target === partnersSection
-            ) {
+            } else if (entry.target === partnersSection) {
                 entry.target.classList.remove('come-in')
             }
         })
@@ -42,10 +36,7 @@ currentCategory = 'products'
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('come-in')
-            } else if (
-                entry.target.getBoundingClientRect().top > 1 ||
-                entry.target === partnersSection
-            ) {
+            } else if (entry.target === partnersSection) {
                 entry.target.classList.remove('come-in')
             }
         })

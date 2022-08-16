@@ -273,6 +273,7 @@
     })
 
     function openMenu() {
+        mainMenuOpen = true
         topNav.classList.add('open')
         menuBtn.classList.add('active')
         menuFader.style.display = 'initial'
@@ -280,33 +281,46 @@
             menuFader.classList.add('visible')
         }, 10)
         navBar.classList.add('sticky')
-        mainMenuOpen = true
+
         if (currentPage === 'home') {
             hideIndexNavigation()
             vid.pause()
-            sec0AnimElements.forEach((element) => {
-                element.classList.add('animation-pause')
-            })
+            sectionAnimation.classList.add('animation-pause')
+        }
+
+        // Disable scrolling of body -> add padding instead of scrollbar width
+        if (currentPage !== 'home') {
+            if (document.body.scrollHeight > window.innerHeight) {
+                document.body.style.overflowY = 'hidden'
+                document.body.style.paddingRight = getScrollbarWidth() + 'px'
+            }
         }
     }
 
     function closeMenu() {
+        mainMenuOpen = false
         topNav.classList.remove('open')
         menuBtn.classList.remove('active')
         menuFader.addEventListener('transitionend', hideMenuFader)
         menuFader.classList.remove('visible')
         deselectCategories()
         deselectMenus()
-        mainMenuOpen = false
         if (currentPage !== 'home' && currentPage !== 'test') {
             if (window.pageYOffset === 0) navBar.classList.remove('sticky')
         }
+
         if (currentPage === 'home') {
             showIndexNavigation()
             vid.play()
-            sec0AnimElements.forEach((element) => {
-                element.classList.remove('animation-pause')
-            })
+            sectionAnimation.classList.remove('animation-pause')
+        }
+
+        // Enable scrolling of body -> remove scrollbar padding
+        if (currentPage !== 'home') {
+            if (document.body.scrollHeight > window.innerHeight) {
+                document.body.style.overflowY = 'visible'
+                document.body.style.paddingRight = '0px'
+            }
         }
     }
 
@@ -326,7 +340,15 @@
         loginForm = document.getElementById('loginForm'),
         loginCloseBtn = document.getElementById('loginCloseBtn'),
         userNameInput = document.getElementById('UserName'),
-        userPasswordInput = document.getElementById('UserPassword')
+        userPasswordInput = document.getElementById('UserPassword'),
+        focusOrder = [
+            userNameInput,
+            userPasswordInput,
+            loginSubmitBtn,
+            loginCloseBtn,
+        ]
+
+    let currentFocus
 
     // Open login
     openLoginBtn.addEventListener('click', () => {
@@ -338,36 +360,51 @@
     })
 
     function openLogin() {
-        disableScroll()
+        disableScroll([32])
         loginWrapper.style.display = 'flex'
         loginContainer.classList.remove('login-out')
         setTimeout(() => {
             loginWrapper.style.opacity = '1'
         }, 10)
-        window.addEventListener('keydown', clickLoginSubmitBtn)
-        window.addEventListener('keyup', releaseLoginSubmitBtn)
+        window.addEventListener('keydown', loginEnterKeyDown)
+        window.addEventListener('keyup', loginEnterKeyUp)
         window.addEventListener('keydown', escapeLogin)
 
-        // Focus first input field after animating in
-        setTimeout(() => {
-            userNameInput.focus()
-        }, 320)
         window.addEventListener('keydown', restrictFocus)
+
+        // Focus first input field
+        currentFocus = 1
+        focusOrder[currentFocus - 1].focus()
     }
 
     // Restrict focus within login form while open
+
     function restrictFocus(e) {
+        // Focus on tab key
         if (e.key === 'Tab') {
             if (e.shiftKey) {
-                if (document.activeElement === userNameInput) {
-                    loginCloseBtn.focus()
-                    e.preventDefault()
+                currentFocus--
+                if (currentFocus === 0) {
+                    currentFocus = focusOrder.length
                 }
             } else {
-                if (document.activeElement === loginCloseBtn) {
-                    userNameInput.focus()
-                    e.preventDefault()
+                currentFocus++
+                if (currentFocus > focusOrder.length) {
+                    currentFocus = 1
                 }
+            }
+            focusOrder[currentFocus - 1].focus()
+            e.preventDefault()
+            return
+        }
+
+        // Prevent scrolling on spacebar
+        if (
+            document.activeElement !== userNameInput &&
+            document.activeElement !== userPasswordInput
+        ) {
+            if ((e.keyCode = 32)) {
+                e.preventDefault()
             }
         }
     }
@@ -384,8 +421,8 @@
         loginMobile.parent.classList.remove('active')
         login.active = false
         loginMobile.active = false
-        window.removeEventListener('keydown', clickLoginSubmitBtn)
-        window.removeEventListener('keyup', releaseLoginSubmitBtn)
+        window.removeEventListener('keydown', loginEnterKeyDown)
+        window.removeEventListener('keyup', loginEnterKeyUp)
         window.removeEventListener('keydown', escapeLogin)
         window.removeEventListener('keydown', restrictFocus)
         deselectCategories()
@@ -429,7 +466,24 @@
     })
 
     // Submit form & style button on key press
-    function clickLoginSubmitBtn(e) {
+    function loginEnterKeyDown(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault()
+            if (
+                document.activeElement === loginSubmitBtn ||
+                document.activeElement === userNameInput ||
+                document.activeElement === userPasswordInput
+            ) {
+                loginSubmitBtn.classList.add('active')
+                currentFocus = 1
+            } else if (document.activeElement === loginCloseBtn) {
+                loginCloseBtn.classList.add('active')
+            }
+        }
+    }
+
+    // Remove style from button on keyup
+    function loginEnterKeyUp(e) {
         if (e.key === 'Enter') {
             if (
                 document.activeElement === loginSubmitBtn ||
@@ -437,15 +491,11 @@
                 document.activeElement === userPasswordInput
             ) {
                 loginSubmitBtn.click()
-                loginSubmitBtn.classList.add('active')
+                loginSubmitBtn.classList.remove('active')
+            } else if (document.activeElement === loginCloseBtn) {
+                loginCloseBtn.classList.remove('active')
+                closeLogin()
             }
-        }
-    }
-
-    // Remove style from button on keyup
-    function releaseLoginSubmitBtn(e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-            loginSubmitBtn.classList.remove('active')
         }
     }
 

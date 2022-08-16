@@ -37,7 +37,7 @@ function scrollToTop() {
 
 // left: 37, up: 38, right: 39, down: 40,
 // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
-var scrollKeys = {
+let scrollKeys = {
     32: true,
     33: true,
     34: true,
@@ -48,6 +48,8 @@ var scrollKeys = {
     40: true,
 }
 
+let allowedKeys = []
+
 function preventDefaultForScrollKeys(e) {
     if (scrollKeys[e.keyCode]) {
         preventDefault(e)
@@ -56,7 +58,7 @@ function preventDefaultForScrollKeys(e) {
 }
 
 // modern Chrome requires { passive: false } when adding event
-var supportsPassive = false
+let supportsPassive = false
 try {
     window.addEventListener(
         'test',
@@ -69,14 +71,29 @@ try {
     )
 } catch (e) {}
 
-var wheelOpt = supportsPassive ? { passive: false } : false
-var wheelEvent = 'onwheel' in document ? 'wheel' : 'mousewheel'
+// Prevent middle mouse button scrolling
+function preventMiddleMouseScroll(e) {
+    if (e.buttons === 4) {
+        preventDefault(e)
+    }
+}
 
-function disableScroll() {
+let wheelOpt = supportsPassive ? { passive: false } : false
+let wheelEvent = 'onwheel' in document ? 'wheel' : 'mousewheel'
+
+function disableScroll(allowArray) {
+    // Remove from scrollKeys => prevent disabling
+    if (allowArray && allowArray.length > 0) {
+        allowedKeys = allowArray
+        allowedKeys.forEach((key) => {
+            delete scrollKeys[key]
+        })
+    }
     window.addEventListener('DOMMouseScroll', preventDefault, false) // older FF
     window.addEventListener(wheelEvent, preventDefault, wheelOpt) // modern desktop
     window.addEventListener('touchmove', preventDefault, wheelOpt) // mobile
     window.addEventListener('keydown', preventDefaultForScrollKeys, false)
+    window.addEventListener('mousedown', preventMiddleMouseScroll, false)
 }
 
 function enableScroll() {
@@ -84,4 +101,32 @@ function enableScroll() {
     window.removeEventListener(wheelEvent, preventDefault, wheelOpt)
     window.removeEventListener('touchmove', preventDefault, wheelOpt)
     window.removeEventListener('keydown', preventDefaultForScrollKeys, false)
+    window.removeEventListener('mousedown', preventMiddleMouseScroll, false)
+
+    // Reset scrollKeys
+    allowedKeys.forEach((key) => {
+        scrollKeys[key] = true
+    })
+    allowedKeys = []
+}
+
+function getScrollbarWidth() {
+    // Creating invisible container
+    const outer = document.createElement('div')
+    outer.style.visibility = 'hidden'
+    outer.style.overflow = 'scroll' // forcing scrollbar to appear
+    outer.style.msOverflowStyle = 'scrollbar' // needed for WinJS apps
+    document.body.appendChild(outer)
+
+    // Creating inner element and placing it in the container
+    const inner = document.createElement('div')
+    outer.appendChild(inner)
+
+    // Calculating difference between container's full width and the child width
+    const scrollbarWidth = outer.offsetWidth - inner.offsetWidth
+
+    // Removing temporary elements
+    outer.remove()
+
+    return scrollbarWidth
 }

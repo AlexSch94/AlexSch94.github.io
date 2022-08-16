@@ -14,10 +14,7 @@ currentCategory = 'applications'
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('come-in')
-            } else if (
-                entry.target.getBoundingClientRect().top > 1 ||
-                entry.target === partnersSection
-            ) {
+            } else if (entry.target === partnersSection) {
                 entry.target.classList.remove('come-in')
             }
         })
@@ -28,10 +25,7 @@ currentCategory = 'applications'
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('come-in')
-            } else if (
-                entry.target.getBoundingClientRect().top > 1 ||
-                entry.target === partnersSection
-            ) {
+            } else if (entry.target === partnersSection) {
                 entry.target.classList.remove('come-in')
             }
         })
@@ -42,10 +36,7 @@ currentCategory = 'applications'
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('come-in')
-            } else if (
-                entry.target.getBoundingClientRect().top > 1 ||
-                entry.target === partnersSection
-            ) {
+            } else if (entry.target === partnersSection) {
                 entry.target.classList.remove('come-in')
             }
         })
@@ -54,7 +45,6 @@ currentCategory = 'applications'
     // -------------------
     // Advantages observer
     // -------------------
-
     const advantageWrappers = document.querySelectorAll('.advantage-wrapper')
 
     const largeAdvantageObserverOptions = { threshold: 0.3 }
@@ -62,8 +52,6 @@ currentCategory = 'applications'
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('come-in')
-            } else if (entry.target.getBoundingClientRect().top > 1) {
-                entry.target.classList.remove('come-in')
             }
         })
     }, largeAdvantageObserverOptions)
@@ -73,8 +61,6 @@ currentCategory = 'applications'
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('come-in')
-            } else if (entry.target.getBoundingClientRect().top > 1) {
-                entry.target.classList.remove('come-in')
             }
         })
     }, mediumAdvantageObserverOptions)

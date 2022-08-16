@@ -26,10 +26,7 @@ currentCategory = 'about'
                     incrementCounter(solarPowerCounter, 0, 2000000, 49)
                     countersRan = true
                 }
-            } else if (
-                entry.target.getBoundingClientRect().top > 1 ||
-                entry.target === partnersSection
-            ) {
+            } else if (entry.target === partnersSection) {
                 entry.target.classList.remove('come-in')
             }
         })

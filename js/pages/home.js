@@ -1,47 +1,59 @@
 currentPage = 'home'
 currentCategory = 'home'
 
-const vid = document.getElementById('introVideo'),
+const preloader = document.getElementById('preloader'),
+    sectionAnimation = document.getElementById('sectionAnimation'),
     overlayLogoContainer = document.querySelector('.overlay-logo'),
-    overlayTextContainer = document.querySelector('.overlay-text'),
-    sectionFade = document.querySelector('.section-fade'),
-    sec0AnimElements = [overlayLogoContainer, overlayTextContainer, sectionFade]
-
-// Set different img src for german version
-let overlayLogoSrc
-if (typeof germanVersion !== 'undefined' && germanVersion) {
-    overlayLogoSrc = '../images/logo_DOT.png'
-} else {
-    overlayLogoSrc = './images/logo_DOT.png'
-}
+    overlayLogo = overlayLogoContainer.querySelector('img'),
+    vid = document.getElementById('introVideo')
 
 // Main page functionality
 ;(function () {
-    // -----------
-    // Intro video
-    // -----------
-    const overlayLogo = overlayLogoContainer.querySelector('img')
+    // -------------------------
+    //  Page load / intro video
+    // -------------------------
+    const loadStart = new Date(),
+        preloader = document.getElementById('preloader'),
+        sectionAnimation = document.getElementById('sectionAnimation'),
+        overlayLogo = overlayLogoContainer.querySelector('img')
 
-    window.addEventListener('load', () => {
-        // Remove fade and add src to img late for visually smooth loading (img pops up if not delayed -> it already loads for navbar)
-        document.body.classList.add('ldd')
-        overlayLogo.setAttribute('src', overlayLogoSrc)
+    let loaderTimeout = 0
 
-        // Start Video
-        vid.currentTime = 1.5
-        vid.play()
-    })
-
-    // Loop Video
+    // Vid setup & loop
+    vid.currentTime = 1.5
+    vid.pause()
     vid.addEventListener('ended', () => {
         vid.currentTime = 8.3525
         vid.play()
     })
+
+    window.addEventListener('load', () => {
+        const loadEnd = new Date(),
+            loadTime = loadEnd - loadStart
+
+        // Add smoothing time if loader becomes visible
+        // if (loadTime > 200) {
+        //     loaderTimeout = 1000
+        // }
+        loaderTimeout = 100000
+
+        setTimeout(() => {
+            // Remove fade and add src to img late for visually smooth loading (img pops up if not delayed -> it already loads for navbar)
+            preloader.classList.add('ldd')
+            preloader.addEventListener('transitionend', () => {
+                preloader.remove()
+            })
+
+            // Start Video / Animations
+            vid.play()
+            sectionAnimation.classList.remove('animation-pause')
+        }, loaderTimeout)
+    })
 })()
 
-// ------------
-// Scroll prompt
-// -------------
+// ---------------
+//  Scroll prompt
+// ---------------
 const scrollPrompt = document.getElementById('scrollPrompt'),
     overlayText = document.querySelector('.overlay-text'),
     indexNavigationContainer = document.getElementById('fp-nav')
@@ -99,7 +111,6 @@ if (!localStorage.getItem('hideScrollPrompt')) {
 // ----------------------------------------
 // Hide index navigation while menu is open
 // ----------------------------------------
-
 function showIndexNavigation() {
     indexNavigationContainer.removeEventListener(
         'transitionend',

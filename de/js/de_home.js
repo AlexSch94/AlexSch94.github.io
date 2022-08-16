@@ -1,1 +1,0 @@
-const germanVersion = true

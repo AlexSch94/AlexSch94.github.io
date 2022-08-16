@@ -20,13 +20,26 @@
 	<script type="text/javascript" src="../plugins/js/fullpage.min.js" defer></script>
 	<script type="text/javascript" src="../plugins/js/fp-main.js" defer></script>
 	<script type="text/javascript" src="../js/app.js" defer></script>
-	<script type="text/javascript" src="./js/de_home.js" defer></script>
 	<script type="text/javascript" src="../js/pages/home.js" defer></script>
 	<script type="text/javascript" src="../js/nav.js" defer></script>
 	<title>Home | DOT</title>
 </head>
 
 <body>
+	<div class="preloader" id="preloader">
+		<div class="preloader-inner">
+			<div class="outer">
+				<div class="inner1">
+					<div class="inner-bar"></div>
+				</div>
+				<div class="inner2">
+					<div class="inner-bar"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- / Preloader -->
+
 	<header>
 		<div class="nav-bar sticky">            
 			<div class="nav-bar-inner">
@@ -160,7 +173,6 @@
 	<!-- / Header -->
 		
 	<div class="content-wrapper" id="fullpage">
-
 		<section class="section active sec0" id="section0">
 			<div class="section0-container">
 				<div class="intro-video-container">
@@ -168,17 +180,17 @@
 						<source src="../images/videos/cover-video.mp4">
 					</video>
 				</div>
-				<div class="section-fade"></div>
-
-				<div class="section-overlay">
-					<div class="overlay-logo">
-						<img src="../images/logo_DOT.png" alt="DOT logo">
-					</div>
-
-					<div class="overlay-text-container">
-						<h1 class="overlay-text">
-							Wir schaffen eine neue Dimension der Telematik.
-						</h1>
+				<div class="section-animation animation-pause" id="sectionAnimation">
+					<div class="video-fade"></div>
+					<div class="section-overlay">
+						<div class="overlay-logo">
+							<img src="../images/logo_DOT.png" alt="DOT logo">
+						</div>
+						<div class="overlay-text-container">
+							<h1 class="overlay-text">
+								Wir schaffen eine neue Dimension der Telematik.
+							</h1>
+						</div>
 					</div>
 				</div>
 

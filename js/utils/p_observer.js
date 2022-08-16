@@ -1,8 +1,6 @@
 ;(function () {
     const partnersSection = document.querySelector('.partners-section'),
-        partnersSectionObserverOptions = {
-            threshold: 0.3,
-        }
+        partnersSectionObserverOptions = { threshold: 0.3 }
 
     const partnersSectionObserver = new IntersectionObserver(function (
         entries,
@@ -11,7 +9,7 @@
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('come-in')
-            } else {
+            } else if (entry.target.getBoundingClientRect().top > 1) {
                 entry.target.classList.remove('come-in')
             }
         })

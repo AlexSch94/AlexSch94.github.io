@@ -64,26 +64,18 @@ currentCategory = 'about'
     const timeline = document.querySelector('.timeline'),
         [...timelineSegs] = document.querySelectorAll('.timeline-segment'),
         [...headers] = document.querySelectorAll('.sub-header-2'),
-        timelineOptions = {
-            threshold: 0.1,
-        },
-        timelineAfterOptions = {
-            threshold: 0.05,
-        }
+        timelineOptions = { threshold: 0.1 },
+        timelineAfterOptions = { threshold: 0.05 }
 
-    const mainObserver = new IntersectionObserver(function (
-        entries,
-        mainObserver
-    ) {
+    const mainObserver = new IntersectionObserver(function (entries) {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('come-in')
-            } else {
+            } else if (entry.target.getBoundingClientRect().top > 1) {
                 entry.target.classList.remove('come-in')
             }
         })
-    },
-    timelineOptions)
+    }, timelineOptions)
 
     const timelineAfterObserver = new IntersectionObserver(function (
         entries,
@@ -92,7 +84,7 @@ currentCategory = 'about'
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('come-in')
-            } else {
+            } else if (entry.target.getBoundingClientRect().top > 1) {
                 entry.target.classList.remove('come-in')
             }
         })

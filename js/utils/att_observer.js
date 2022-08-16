@@ -11,8 +11,6 @@
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('come-in')
-            } else if (entry.target.getBoundingClientRect().top > 1) {
-                entry.target.classList.remove('come-in')
             }
         })
     },
@@ -27,8 +25,6 @@
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('come-in')
-            } else if (entry.target.getBoundingClientRect().top > 1) {
-                entry.target.classList.remove('come-in')
             }
         })
     },

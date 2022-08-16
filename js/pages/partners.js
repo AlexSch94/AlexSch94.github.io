@@ -5,9 +5,7 @@ currentCategory = 'about'
     // Partners sections Observer
     // --------------------------
     const partnersSection = document.querySelector('.partners-section'),
-        partnersSectionObserverOptions = {
-            threshold: 0.1,
-        }
+        partnersSectionObserverOptions = {}
 
     const partnersSectionObserver = new IntersectionObserver(function (
         entries,
@@ -16,8 +14,6 @@ currentCategory = 'about'
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('come-in')
-            } else {
-                entry.target.classList.remove('come-in')
             }
         })
     },

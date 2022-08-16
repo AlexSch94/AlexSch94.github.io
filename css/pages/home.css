@@ -1,14 +1,102 @@
-body {
-    opacity: 0;
-}
-
-.ldd {
-    opacity: 1;
-}
-
 header {
     height: 0;
 }
+
+/* Preloader */
+
+.preloader {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    background-color: var(--brand-color5);
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.preloader.ldd {
+    opacity: 0;
+}
+
+.preloader-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: var(--FS10);
+    gap: 2em;
+    opacity: 0;
+    animation: fade-in 1.2s ease forwards 0.2s;
+}
+
+.preloader-logo {
+    max-width: 450px;
+}
+
+.preloader .outer {
+    position: relative;
+    padding: 0.1em;
+    height: 0.9em;
+    width: 75%;
+    width: 40vw;
+    max-width: 450px;
+    border-radius: 0.2em;
+    border: 1px solid white;
+    overflow: visible;
+    overflow: hidden;
+}
+
+.preloader .inner1 {
+    animation: innerAnim1;
+    transform: translateX(0);
+}
+
+.preloader .inner2 {
+    animation: innerAnim2;
+    transform: translateX(-100%);
+}
+
+.preloader .inner1,
+.preloader .inner2 {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    padding: 0.1em;
+    left: 0;
+    top: 0;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.preloader .inner1 .inner-bar,
+.preloader .inner2 .inner-bar {
+    left: 0;
+    top: 0;
+    width: 12%;
+    height: 100%;
+    left: 0;
+    border-radius: 0.1em;
+    background-color: white;
+}
+
+@keyframes innerAnim1 {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes innerAnim2 {
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/* General */
 
 .section {
     overflow: hidden;
@@ -148,7 +236,7 @@ section:first-of-type {
     object-position: top left;
 }
 
-.section-fade {
+.video-fade {
     position: absolute;
     z-index: 0;
     top: 0;
@@ -171,6 +259,7 @@ section:first-of-type {
     display: flex;
     justify-content: center;
     width: 40vw;
+    max-width: 450px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -230,21 +319,22 @@ section:first-of-type {
     }
 }
 
-.section-fade,
+.video-fade,
 .section-overlay,
 .overlay-logo,
 .overlay-text {
     animation-play-state: paused;
 }
 
-.fp-viewing-1 .section-fade,
+.fp-viewing-1 .video-fade,
 .fp-viewing-1 .section-overlay,
 .fp-viewing-1 .overlay-logo,
 .fp-viewing-1 .overlay-text {
     animation-play-state: running;
 }
 
-.animation-pause {
+.animation-pause,
+.animation-pause * {
     animation-play-state: paused !important;
 }
 
