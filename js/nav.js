@@ -360,7 +360,6 @@
     })
 
     function openLogin() {
-        disableScroll([32])
         loginWrapper.style.display = 'flex'
         loginContainer.classList.remove('login-out')
         setTimeout(() => {
@@ -375,6 +374,12 @@
         // Focus first input field
         currentFocus = 1
         focusOrder[currentFocus - 1].focus()
+
+        // Disable scrolling
+        disableScroll([32])
+        if (currentPage === 'home') {
+            myFullpage.setAllowScrolling(false)
+        }
     }
 
     // Restrict focus within login form while open
@@ -413,7 +418,6 @@
     loginCloseBtn.addEventListener('click', closeLogin)
 
     function closeLogin() {
-        enableScroll()
         loginForm.reset()
         loginContainer.classList.add('login-out')
         loginWrapper.style.opacity = '0'
@@ -427,6 +431,12 @@
         window.removeEventListener('keydown', restrictFocus)
         deselectCategories()
         highlightCurrentCategory()
+
+        // Enable scrolling
+        enableScroll()
+        if (currentPage === 'home') {
+            myFullpage.setAllowScrolling(true)
+        }
     }
 
     // Close on click outside
