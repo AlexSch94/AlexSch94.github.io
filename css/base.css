@@ -14,19 +14,22 @@
     --FS9: clamp(21px, 3vw, 30px);
     --FS10: clamp(17px, 2.5vw, 25px);
     --FS11: clamp(16px, 2vw, 20px);
+    --FS11-2: clamp(15px, 1.875vw, 18px);
     --FS12: clamp(14px, 1.75vw, 17px);
 
     --brand-color: hsl(211, 100%, 17%);
     --brand-color-transparent: hsla(211, 100%, 17%, 0.3);
+    --brand-color1-2: hsl(208, 100%, 23%);
     --brand-color2: hsl(206, 100%, 30%);
     --brand-color3: hsl(211, 100%, 25%);
     --brand-color4: hsl(206, 90%, 57%);
     --brand-color5: hsl(211, 100%, 10%);
+    --brand-color6: hsl(211, 100%, 5%);
+    --accent-color1: hsl(259, 69%, 63%);
+    --accent-color2: hsla(259, 69%, 63%, 50%);
     --page-background: hsl(0, 0%, 100%);
     --page-background2: hsl(210, 20%, 98%);
     --page-background3: hsl(198, 57%, 95%);
-    --accent-color1: hsl(259, 69%, 63%);
-    --accent-color2: hsla(259, 69%, 63%, 50%);
 
     --shadow-100: rgba(0, 0, 0, 0.07);
     --shadow-200: rgba(0, 0, 0, 0.1);
@@ -54,6 +57,49 @@ body {
     overflow-x: hidden;
     min-height: 100vh;
     transition: opacity 0.3s ease;
+}
+
+noscript {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999999;
+    background-color: var(--brand-color5);
+    color: white;
+}
+
+.noscript-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.noscript-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: var(--FS10);
+    width: 80%;
+    gap: 2em;
+}
+
+.noscript-logo {
+    width: 10em;
+    height: auto;
+}
+
+.noscript-prompt {
+    font-size: var(--FS7);
+    margin-bottom: 0.5em;
+}
+
+noscript .link1 {
+    color: var(--brand-color4);
+    margin: 0.4em 0;
 }
 
 /* text elements */
@@ -167,11 +213,12 @@ a[href^='mailto:']:hover {
     position: relative;
     display: block;
     width: fit-content;
-    background-color: transparent;
-    border: none;
-    padding-bottom: 0.1em;
     cursor: pointer;
-    font-size: var(--FS11);
+    border: none;
+    background-color: transparent;
+    font-size: var(--FS12);
+    padding-bottom: 0.1em;
+    line-height: 1;
     transition: all 0.2s ease;
 }
 
@@ -295,7 +342,7 @@ header {
     height: var(--nav-bar-height);
     font-size: 17px;
     user-select: none;
-    transition: all 0.3s ease;
+    transition: box-shadow, border 0.3s ease;
 }
 
 .nav-bar.sticky {
@@ -827,20 +874,21 @@ header {
 
 .login-close-btn {
     position: absolute;
-    color: white;
-    border: 2px solid var(--brand-color2);
-    background-color: var(--brand-color2);
-    border-radius: 0 3px 0 5px;
-    height: 2.5rem;
-    width: 4rem;
-    padding: 0 1px 2px 0;
-    top: 0px;
-    right: 0px;
     display: grid;
     place-items: center;
-    transition: transform 0.1s ease;
+    top: 0px;
+    right: 0px;
+    font-size: var(--FS10);
+    height: 1.8em;
+    width: 3em;
+    padding: 0 1px 2px 0;
+    color: white;
+    border-radius: 0 3px 0 5px;
+    background-color: var(--brand-color2);
+    border: 2px solid var(--brand-color2);
     transform: scale(1) translate(2px, -2px);
     transform-origin: top right;
+    transition: transform 0.1s ease;
 }
 
 .login-close-btn:focus {
@@ -858,7 +906,8 @@ header {
 }
 
 .x-icon {
-    width: 1.3rem;
+    font-size: var(--FS10);
+    width: 0.9em;
     height: auto;
     aspect-ratio: 1 / 1;
 }
