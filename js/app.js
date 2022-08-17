@@ -18,17 +18,38 @@ if (navigator.userAgent.match(/(iPhone|iPad)/)) {
 if (scrollToTopBtns) {
     scrollToTopBtns.forEach((button) => {
         button.addEventListener('click', () => {
-            window.scrollTo(0, 0)
+            scrollToTop()
         })
     })
+}
+
+function scrollToTop() {
+    window.scrollTo(0, 0)
 }
 
 function preventDefault(e) {
     e.preventDefault()
 }
 
-function scrollToTop() {
-    window.scrollTo(0, 0)
+function getScrollbarWidth() {
+    // Creating invisible container
+    const outer = document.createElement('div')
+    outer.style.visibility = 'hidden'
+    outer.style.overflow = 'scroll' // forcing scrollbar to appear
+    outer.style.msOverflowStyle = 'scrollbar' // needed for WinJS apps
+    document.body.appendChild(outer)
+
+    // Creating inner element and placing it in the container
+    const inner = document.createElement('div')
+    outer.appendChild(inner)
+
+    // Calculating difference between container's full width and the child width
+    const scrollbarWidth = outer.offsetWidth - inner.offsetWidth
+
+    // Removing temporary elements
+    outer.remove()
+
+    return scrollbarWidth
 }
 
 // -----------------------------
@@ -108,25 +129,4 @@ function enableScroll() {
         scrollKeys[key] = true
     })
     allowedKeys = []
-}
-
-function getScrollbarWidth() {
-    // Creating invisible container
-    const outer = document.createElement('div')
-    outer.style.visibility = 'hidden'
-    outer.style.overflow = 'scroll' // forcing scrollbar to appear
-    outer.style.msOverflowStyle = 'scrollbar' // needed for WinJS apps
-    document.body.appendChild(outer)
-
-    // Creating inner element and placing it in the container
-    const inner = document.createElement('div')
-    outer.appendChild(inner)
-
-    // Calculating difference between container's full width and the child width
-    const scrollbarWidth = outer.offsetWidth - inner.offsetWidth
-
-    // Removing temporary elements
-    outer.remove()
-
-    return scrollbarWidth
 }
