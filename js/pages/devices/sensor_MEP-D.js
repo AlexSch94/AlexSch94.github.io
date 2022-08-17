@@ -1,4 +1,4 @@
-currentPage = 'sensor_MEP-D.js'
+currentPage = 'sensor_MEP-D'
 currentCategory = 'devices'
 
 // --------------------

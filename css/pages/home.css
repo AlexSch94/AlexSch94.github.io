@@ -721,7 +721,7 @@ section:first-of-type {
     }
 
     .bg-wrapper3 {
-        background-image: url(../../images/sustainability.svg);
+        background-image: url(../../images/sustainability.svg?v=170822);
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
