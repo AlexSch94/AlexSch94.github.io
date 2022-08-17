@@ -88,11 +88,11 @@ section:nth-child(even) {
 }
 
 .attribute {
-    justify-content: space-between;
-    gap: 1em;
+    gap: 0.75em;
 }
 
-.attribute-main {
+.attribute-main,
+.popout-main {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -100,12 +100,22 @@ section:nth-child(even) {
 }
 
 .attribute-text-container {
+    gap: 0.5em;
+}
+
+.attribute-text-container.no-sh {
     gap: 1em;
 }
 
-.attribute-description p.bold {
+.attribute-description p {
+    margin-bottom: 0.2em;
+}
+
+.attribute-description p.subheader {
     text-align: center;
-    margin-bottom: 0.4em;
+    margin-bottom: 0.75em;
+    color: var(--brand-color1-2);
+    font-weight: 600;
 }
 
 .appstore-link-container {
@@ -115,7 +125,6 @@ section:nth-child(even) {
 
 .appstore-link {
     display: inline;
-    font-size: var(--FS12);
 }
 
 .more-info-links {
@@ -126,6 +135,18 @@ section:nth-child(even) {
     font-size: var(--FS11);
 }
 
+/* Data processing and presentation section */
+
+.attributes-wrapper.dpp-attributes {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr));
+}
+
+/* ACM Section */
+
+.acm-text-container {
+    margin-bottom: 2em;
+}
+
 /* Popout read more */
 
 .popout-wrapper {
@@ -134,7 +155,7 @@ section:nth-child(even) {
     justify-content: center;
     align-items: center;
     z-index: 2;
-    top: 0;
+    top: var(--nav-bar-height);
     left: 0;
     right: 0;
     bottom: 0;
@@ -157,17 +178,17 @@ section:nth-child(even) {
     border: 4px solid var(--brand-color2);
     background-color: var(--page-background);
     opacity: 0;
-    transform: scale(0.5) translateX(20vw);
-    animation: popoutIn 0.3s ease forwards;
+    transform: scale(0.5);
+    animation: popoutIn 0.25s ease forwards;
 }
 
 .popout-out {
-    animation: popoutOut 0.3s ease forwards;
+    animation: popoutOut 0.25s ease forwards;
 }
 
 @keyframes popoutIn {
     0% {
-        transform: translateX(20vw);
+        transform: scale(0.5);
         opacity: 0;
     }
 
@@ -176,19 +197,19 @@ section:nth-child(even) {
     }
 
     100% {
-        transform: translateX(0px);
+        transform: scale(1);
         opacity: 1;
     }
 }
 
 @keyframes popoutOut {
     0% {
-        transform: translateX(0px);
+        transform: scale(1);
         opacity: 1;
     }
 
     100% {
-        transform: translateX(20vw);
+        transform: scale(0.3);
         opacity: 0;
     }
 }
@@ -217,26 +238,48 @@ section:nth-child(even) {
 }
 
 .popout-description p {
-    font-size: var(--FS12);
+    font-size: var(--FS11-2);
     line-height: 1.5;
+    margin-bottom: 0.3em;
+}
+
+.popout-description p.bold {
+    text-align: center;
+    margin-bottom: 0.4em;
+}
+
+.popout-description p.light {
+    font-size: var(--FS12);
+    font-weight: 200;
+    color: var(--text-color);
+}
+
+.popout-description ul {
+    padding-left: 1em;
+    margin-top: 0.6em;
+}
+
+.popout-description li {
+    margin-bottom: 0.4em;
 }
 
 .popout-close-btn {
     position: absolute;
-    color: white;
-    border: 2px solid var(--brand-color2);
-    background-color: var(--brand-color2);
-    border-radius: 0 3px 0 5px;
-    height: 2.5rem;
-    width: 4rem;
-    padding: 0 1px 2px 0;
-    top: 0px;
-    right: 0px;
     display: grid;
     place-items: center;
-    transition: transform 0.1s ease;
+    top: 0px;
+    right: 0px;
+    font-size: var(--FS10);
+    height: 1.8em;
+    width: 3em;
+    padding: 0 1px 2px 0;
+    color: white;
+    border-radius: 0 3px 0 5px;
+    background-color: var(--brand-color2);
+    border: 2px solid var(--brand-color2);
     transform: scale(1) translate(2px, -2px);
     transform-origin: top right;
+    transition: transform 0.1s ease;
 }
 
 .popout-close-btn:focus {
@@ -252,24 +295,6 @@ section:nth-child(even) {
     transform: scale(0.97);
 }
 
-.x-icon {
-    width: 1.3rem;
-    height: auto;
-    aspect-ratio: 1 / 1;
-}
-
-/* Data processing and presentation section */
-
-.attributes-wrapper.dpp-attributes {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr));
-}
-
-/* ACM Section */
-
-.acm-text-container {
-    margin-bottom: 2em;
-}
-
 /* Media Queries */
 
 @media (max-width: 1180px) {
@@ -281,6 +306,16 @@ section:nth-child(even) {
 @media (max-width: 1000px) {
     .attribute-header h3::after {
         height: 0.1em;
+    }
+}
+
+@media (max-width: 650px) {
+    .popout {
+        max-width: 90%;
+        min-width: 300px;
+        max-height: 85%;
+        overflow-y: auto;
+        overflow-x: hidden;
     }
 }
 
