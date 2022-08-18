@@ -542,10 +542,6 @@
                 if (heroSection) {
                     heroSection.classList.remove('fade')
                 }
-                // Fade out preview
-                if (hasPreview) {
-                    previewWrapper.classList.remove('come-in')
-                }
             }
         }
 
