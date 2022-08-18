@@ -60,19 +60,14 @@
             languageMobile,
         ]
 
-    /* ------------------
-    Nav links & Dropdowns 
-    ------------------- */
     // Init
-    setupNoDropdown(home)
-    setupNoDropdown(login)
-    setupNoDropdown(loginMobile)
-    setupDropdown(applications)
-    setupDropdown(products)
-    setupDropdown(devices)
-    setupDropdown(about)
-    setupDropdown(language)
-    setupDropdown(languageMobile)
+    categories.forEach((category) => {
+        if (category.menu) {
+            setupDropdown(category)
+        } else {
+            setupNoDropdown(category)
+        }
+    })
 
     // Add eventlisteners to nav links without dropdown
     function setupNoDropdown(element) {
