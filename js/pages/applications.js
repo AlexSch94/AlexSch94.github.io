@@ -1,7 +1,7 @@
 currentPage = 'applications'
 currentCategory = 'applications'
 
-// Main page functionality
+// Page closure
 ;(function () {
     // -----------------
     // Sections Observer

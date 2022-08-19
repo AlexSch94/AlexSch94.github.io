@@ -1,6 +1,6 @@
 import incrementCounter from '../utils/incrementCounter.js'
 
-// Page Closure
+// Page closure
 ;(function () {
     // -----------------
     // Sections Observer

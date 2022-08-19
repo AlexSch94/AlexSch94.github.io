@@ -5,7 +5,7 @@ const preloader = document.getElementById('preloader'),
     sectionAnimation = document.getElementById('sectionAnimation'),
     vid = document.getElementById('introVideo')
 
-// Main page functionality
+// Page closure
 ;(function () {
     // -------------------------
     //  Page load / intro video

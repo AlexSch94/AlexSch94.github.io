@@ -1,7 +1,7 @@
 currentPage = 'products'
 currentCategory = 'products'
 
-// Main page functionality
+// Page closure
 ;(function () {
     // -----------------
     // Sections Observer
@@ -68,6 +68,7 @@ currentCategory = 'products'
         popoutCloseBtn.addEventListener('click', () => {
             closePopout()
         })
+
         // Stop closeBtn transition from affecting popoutWrapper
         popoutCloseBtn.addEventListener('transitionend', (e) => {
             e.stopPropagation()
@@ -139,10 +140,13 @@ currentCategory = 'products'
         if (e.target === popoutWrapper) closePopout()
     })
 
+    // Determine language
+    let currentLanguage = document.documentElement.getAttribute('lang')
+
     const attributes = {
         mileage: {
             button: document.getElementById('mileageBtn'),
-            content: `
+            contentEN: `
                 <div class="popout-main">
                     <div class="popout-icon-container">
                         <img src="./images/icons/icon-mileage.png" alt="" class="popout-icon">
@@ -164,10 +168,36 @@ currentCategory = 'products'
                 </div>
                 
                 <button id="popoutCloseBtn" class="popout-close-btn"><span class="iconify x-icon" data-icon="akar-icons:circle-x"></span></button>`,
+
+            contentDE: `
+                <div class="popout-main">
+                    <div class="popout-icon-container">
+                        <img src="../images/icons/icon-mileage.png" alt="" class="popout-icon">
+                    </div>
+                    
+                    <div class="popout-text-container">
+                        <div class="popout-header">
+                        <h3>Berechnung des Kilometerstandes</h3>
+                        </div>
+                        
+                        <div class="popout-description">
+                            <p class="light">Schienengebundene Fahrzeuge sind Schwankungen in der Auslastung unterworfen, was zu großen Unterschieden in der monatlich zurückgelegten Strecke führt. Die Anlagen können stationär bleiben oder viele tausend Kilometer zurücklegen und sind dabei erheblichen Belastungen ausgesetzt. Derzeit muss das Schienenfahrzeug mit all seinen Komponenten in regelmäßigen Abständen gewartet werden, nicht zuletzt aus Sicherheitsgründen...</p>
+
+                            <p>Wenn die Laufleistung jedes einzelnen Waggons genau bekannt ist, kann die Wartung gezielt erfolgen und muss nicht blind nach fixen Intervallen durchgeführt werden, wodurch sich erhebliche Einsparpotenziale realisieren lassen.</p>
+                            
+                            <p>DOT hat einen getesteten und verifizierten Algorithmus entwickelt, der es erlaubt, den Kilometerstand mit einer Genauigkeit von über 98% zu erfassen.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="popoutCloseBtn" class="popout-close-btn"><span class="iconify x-icon" data-icon="akar-icons:circle-x"></span></button>`,
         },
+        // ----------------------------------------------------------
+        //      TODO - Change text DE in product documentation
+        // ----------------------------------------------------------
         startStop: {
             button: document.getElementById('startStopBtn'),
-            content: `
+            contentEN: `
                 <div class="popout-main">
                     <div class="popout-icon-container">
                         <img src="./images/icons/icon-start-stop.png" alt="" class="popout-icon">
@@ -192,7 +222,7 @@ currentCategory = 'products'
         },
         brkHealthIndic: {
             button: document.getElementById('brkHealthIndicBtn'),
-            content: `
+            contentEN: `
                 <div class="popout-main">
                     <div class="popout-icon-container">
                         <img src="./images/icons/icon-health.png" alt="" class="popout-icon">
@@ -215,7 +245,7 @@ currentCategory = 'products'
         },
         ctHeatingAnalysis: {
             button: document.getElementById('ctHeatingAnalysisBtn'),
-            content: `
+            contentEN: `
                     <div class="popout-main">
                         <div class="popout-icon-container">
                             <img src="./images/icons/icon-temperature.png" alt="" class="popout-icon">
@@ -237,7 +267,7 @@ currentCategory = 'products'
         },
         shockDetection: {
             button: document.getElementById('shockDetectionBtn'),
-            content: `
+            contentEN: `
                     <div class="popout-main">
                         <div class="popout-icon-container">
                             <img src="./images/icons/icon-shock.png" alt="" class="popout-icon">
@@ -261,7 +291,7 @@ currentCategory = 'products'
         },
         wagHealthIndic: {
             button: document.getElementById('wagHealthIndicBtn'),
-            content: `
+            contentEN: `
                     <div class="popout-main">
                         <div class="popout-icon-container">
                             <img src="./images/icons/icon-health.png" alt="" class="popout-icon">
@@ -287,7 +317,7 @@ currentCategory = 'products'
         },
         brkHealthIndic2: {
             button: document.getElementById('brkHealthIndic2Btn'),
-            content: `
+            contentEN: `
                     <div class="popout-main">
                         <div class="popout-icon-container">
                             <img src="./images/icons/icon-brake.png" alt="" class="popout-icon">
@@ -309,7 +339,7 @@ currentCategory = 'products'
         },
         sub1GhzPrep: {
             button: document.getElementById('sub1GhzPrepBtn'),
-            content: `
+            contentEN: `
                     <div class="popout-main">
                         <div class="popout-icon-container">
                             <img src="./images/icons/icon-frequency.png" alt="" class="popout-icon">
@@ -340,7 +370,11 @@ currentCategory = 'products'
     // Add eventlisteners to each button and assign / update content based on attribute
     Object.keys(attributes).forEach((key) => {
         attributes[key].button.addEventListener('click', () => {
-            popout.innerHTML = attributes[key].content
+            if (currentLanguage === 'en') {
+                popout.innerHTML = attributes[key].contentEN
+            } else if (currentLanguage === 'de') {
+                popout.innerHTML = attributes[key].contentDE
+            }
             openPopout()
         })
     })
