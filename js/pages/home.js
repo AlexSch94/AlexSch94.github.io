@@ -16,7 +16,7 @@ const preloader = document.getElementById('preloader'),
 
     let loaderTimeout = 0
 
-    // Disable fullpage scrolling during load
+    // Disable fullpage scrolling until loaded
     myFullpage.setAllowScrolling(false)
 
     // Vid setup & loop
@@ -31,15 +31,10 @@ const preloader = document.getElementById('preloader'),
         const loadEnd = new Date(),
             loadTime = loadEnd - loadStart
 
-        // Let preloader run out smoothly if loadtime is long enough for animation to start
-        if (loadTime > 200) {
-            if (loadTime < 400) {
-                loaderTimeout = 700
-            } else if (loadTime < 700) {
-                loaderTimeout = 300
-            } else {
-                loaderTimeout = 0
-            }
+        // Let preloader run for min 1s if loadtime is long enough for animation to start
+        if (loadTime >= 200) {
+            loaderTimeout = 1200 - loadTime
+            if (loaderTimeout < 0) loaderTimeout = 0
         }
 
         setTimeout(() => {
@@ -54,6 +49,7 @@ const preloader = document.getElementById('preloader'),
 
             // Start video / animations
             vid.play()
+            vid.setAttribute('data-autoplay', true)
             sectionAnimation.classList.remove('animation-pause')
         }, loaderTimeout)
     })

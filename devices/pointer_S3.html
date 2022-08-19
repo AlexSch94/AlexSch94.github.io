@@ -16,16 +16,15 @@
     <link rel="stylesheet" type="text/css" href="../css/utils/keyframes.css?v=170822" media="screen">
     <link rel="stylesheet" type="text/css" href="../css/utils/carousel.css?v=170822" media="screen">
     <link rel="stylesheet" type="text/css" href="../css/utils/attributes.css?v=170822" media="screen">
-    <link rel="stylesheet" type="text/css" href="../css/pages/devices/devices.css?v=170822" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/utils/autoSlider.css?v=170822" media="screen">
     <link rel="stylesheet" type="text/css" href="../css/pages/devices/pointer_S3.css?v=170822" media="screen">
     <link rel="stylesheet" type="text/css" href="../plugins/fontello/css/dropdown.css?v=170822" media="screen">
     <script type="text/javascript" src="https://code.iconify.design/2/2.2.1/iconify.min.js?v=170822"></script>
     <script type="text/javascript" src="../js/app.js?v=170822" defer></script>
-    <script type="text/javascript" src="../js/pages/devices/pointer_S3.js?v=170822" defer></script>
+    <script type="module" src="../js/pages/devices/pointer_S3.js?v=170822" defer></script>
     <script type="text/javascript" src="../js/utils/att_observer.js?v=170822" defer></script>
     <script type="text/javascript" src="../js/nav.js?v=170822" defer></script>
     <script type="text/javascript" src="../js/utils/p_observer.js?v=170822" defer></script>
-    <script type="text/javascript" src="../js/utils/slider.js?v=170822" defer></script>
     <title>X-Rayl® Pointer S3 | DOT</title>
 </head>
 <body>
@@ -157,32 +156,29 @@
             <div class="hero-text-wrapper">
                 <div class="hero-text">
                     <h1 class="hero-h1"><span class="nowrap">X-Rayl</span>® <span class="nowrap">Pointer S3</span></h1>
-                    <h3>The cornerstone of the <span class="nowrap"><span class="nowrap">X-Rayl</span>®</span> telematics system.</h3>
+                    <h3>The cornerstone of the <span class="nowrap">X-Rayl®</span> telematics system.</h3>
                 </div>
             </div>
 
             <div class="hero-img-wrapper">
                 <div class="preview-section ">
-                    <div class="slider-wrapper">
-                        <div class="slider-container">
-                            <div class="slider">
-                                <div class="slide" name="slide">
-                                    <div class="slide-img-wrapper">
-                                        <img src="../images/pointer_side_transparent_rotated.png?v=170822" alt="Pointer S3 Milled" class="slide-img dropshadow dst">
-                                    </div>
-                                </div>
-                    
-                                <div class="slide" name="slide">
-                                    <div class="slide-img-wrapper">
-                                        <img src="../images/pointer_cast_side_transparent_rotated.png?v=170822" alt="Pointer S3 Cast" class="slide-img dropshadow tmp">
-                                    </div>
-                                </div> 
+                    <div data-slider-wrapper>
+                        <div data-slide>
+                            <div class="slide-img-wrapper">
+                                <img src="../images/pointer_side_transparent_rotated.png?v=170822" alt="Pointer S3 Milled" class="slide-img">
                             </div>
-                            <!-- / Slider -->
                         </div>
-                        <!-- / slider-container -->                    
+                
+                        <div data-slide>
+                            <div class="slide-img-wrapper">
+                                <img src="../images/pointer_cast_side_transparent_rotated.png?v=170822" alt="Pointer S3 Cast" class="slide-img">
+                            </div>
+                        </div>
+                        <!-- Slides -->
+                        
                     </div>
-                    <!-- / Preview-wrapper -->
+                    <!-- / Slider wrapper -->
+
                 </div>
             <!-- / Hero section preview -->
             </div>
@@ -223,7 +219,7 @@
                     </p>
                 </div>
 
-                <div class="preview-wrapper">
+                <div class="main-img-wrapper">
                     <img src="../images/pointers_frontal_combined.png?v=170822" alt="Pointers S3" class="main-img dropshadow">
                 </div>
             </div>
@@ -389,7 +385,7 @@
         <section class="partners-section">  
             <div class="section-inner">
                 <div class="partners-wrapper" id="partnersWrapper">
-                    <h2 class="partners-title">Trusted by several leading companies in the field</h2>
+                    <h2 class="partners-title">Trusted by leading companies in the field</h2>
                     <div class="partners-carousel">
                         <div class="carousel-wrapper">
                             <div class="fade-bar fb-left"></div>

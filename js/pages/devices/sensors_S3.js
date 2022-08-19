@@ -1,22 +1,14 @@
-currentPage = 'sensors_S3'
-currentCategory = 'devices'
-hasPreview = true
+// -------------------
+//  Initialise slider
+// -------------------
+import Slider from '../../utils/autoSlider.js'
 
-const heroImgContainer = document.querySelector('.hero-img-container'),
-    previewWrapper = document.querySelector('.preview-wrapper')
-
-// --------------------
-// Preview Slider Setup
-// --------------------
-const slider = document.querySelector('.slider')
-
-let slides = document.getElementsByName('slide')
-
-const clonedSlide = slides[0].cloneNode(true)
-slider.append(clonedSlide)
-
-let interval = 3700,
-    transitionDuration = 1100
+const slider = new Slider(document.querySelector('[data-slider-wrapper]'), {
+    interval: 3700,
+    transitionDuration: 1100,
+    delay: 2500,
+    controls: false,
+})
 
 // Set smooth scroll behavior late (not performant while slider starts)
 setTimeout(() => {
@@ -25,6 +17,20 @@ setTimeout(() => {
 
 // Closure page functions
 ;(function () {
+    const header = document.querySelector('header'),
+        mainImgWrapper = document.querySelector('.main-img-wrapper'),
+        observerOptions = { threshold: 0.9 }
+
+    const navBarObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+                mainImgWrapper.classList.add('come-in')
+            }
+        })
+    }, observerOptions)
+
+    navBarObserver.observe(header)
+
     // -----------------
     // Portfolio section
     // -----------------

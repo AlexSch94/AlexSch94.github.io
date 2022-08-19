@@ -228,7 +228,7 @@ currentCategory = 'products'
                             <div class="popout-description">
                                 <p class="light">For some substances, transported by containers and railcars, the temperature must be within specified limits. Tank-containers might require heating to achieve this. The heating process is done by the means of a pipe which runs through the tank-container guiding hot water or steam. Since this process involves costs and is also invoiced, it is advantageous to record the exact start, the temperature of the heating medium and the end of the heating process...</p>
 
-                                <p>This feature allows just that. For this purpose, a sensor box is screwed onto a specially developed device and attached directly to the steam or water pipe. A gradient recognition system detects the start and end of the heating process with great precision and records the temperature profile. This can then be viewed and reused in the <span class="nowrap">DOT-Link</span> web portal.</p>
+                                <p>For this purpose, a sensor box is screwed onto a specially developed device and attached directly to the steam or water pipe. A gradient recognition system detects the start and end of the heating process with great precision and records the temperature profile. This can then be viewed and reused in the <span class="nowrap">DOT-Link</span> web portal.</p>
                             </div>
                         </div>
                     </div>
@@ -320,7 +320,7 @@ currentCategory = 'products'
                                 <h3>Sub 1GHz preparation</h3>
                             </div>
                             <div class="popout-description">
-                                <p class="light">From today's point of view, it is not yet clearly defined which technology will be used for intra-train communication, i.e. communication between freight wagons and/or the locomotive. In Working Group 4 of the ITSS, it is currently being considered to solve this via the 2.4 GHz interface, in which each telematics device serves as a relay to bridge the length of a train in several hops. The LM-EJ takes this uncertainty into account by providing a dedicated radio transmitter and receiver for sub 1Ghz with a power of 20 dBm. Although an external antenna is required, the Sub 1Ghz offers several advantages over the 2.4Ghz spectrum.</p>
+                                <p class="light">From today's point of view, it is not yet clearly defined which technology will be used for intra-train communication, i.e. communication between freight wagons and/or the locomotive. In Working Group 4 of the ITSS, it is currently being considered to solve this via the 2.4 GHz interface, in which each telematics device serves as a relay to bridge the length of a train in several hops. The LM-EJ takes this uncertainty into account by providing a dedicated radio transmitter and receiver for sub 1Ghz with a power of 20 dBm. Although an external antenna is required, the Sub 1Ghz offers several advantages over the 2.4Ghz spectrum...</p>
 
                                 <ul>
                                     <li>Range of Sub 1Ghz Wireless: Sub 1Ghz offers more range than 2.4Ghz. Sub 1Ghz wireless transmission provides 1.5-2 times the distance coverage than 2.4Ghz spectrum. In addition, the Sub 1Ghz wireless spectrum has a Long-Range mode, which can have a range of more than 100 km, if the power is sufficient.</>

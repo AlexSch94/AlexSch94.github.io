@@ -2,15 +2,7 @@ html {
     scroll-behavior: auto;
 }
 
-.dropshadow {
-    filter: drop-shadow(10px 20px 15px var(--shadow));
-}
-
 /* Hero section preview */
-
-.hero-img-wrapper {
-    overflow: hidden;
-}
 
 .preview-section {
     height: 100%;
@@ -18,63 +10,6 @@ html {
     transform: translateX(10vw);
     opacity: 0;
     animation: fade-move-in 2s ease-in-out forwards;
-}
-
-.slider-wrapper {
-    position: relative;
-}
-
-.slider-container {
-    position: relative;
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-}
-
-.slider {
-    display: flex;
-    height: 100%;
-    will-change: transform;
-    overflow: visible;
-}
-
-.slide {
-    display: flex;
-    flex: 0 0 100%;
-    padding: 0 3px;
-    overflow: visible;
-    opacity: 0;
-    transition: opacity 0.8s ease;
-}
-
-.slide.active {
-    opacity: 1;
-    transition: opacity 1.2s ease;
-}
-
-.slide.fixed {
-    opacity: 1;
-    transition: opacity 0s;
-}
-
-.slide-img-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 0 0 auto;
-    width: 100%;
-    padding: 15px 0;
-    height: calc(var(--header-height) - var(--nav-bar-height));
-}
-
-.slide-img {
-    max-width: 50%;
-    max-height: 70%;
-    filter: drop-shadow(0 0 1vw rgba(255, 255, 255, 0.1.5));
-}
-
-.slide-img.mep {
-    max-height: 60%;
 }
 
 /* Intro section */
@@ -91,7 +26,7 @@ html {
     margin-top: 1em;
 }
 
-.preview-wrapper {
+.main-img-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,17 +34,19 @@ html {
     margin: 2em 0;
 }
 
-.preview-wrapper.come-in .main-img {
+.main-img-wrapper.come-in .main-img {
     transform: translate(0);
     opacity: 1;
 }
 
 .main-img {
-    transition: opacity, transform ease;
-    transition-duration: 1.2s, 1.5s;
-    max-width: 100%;
+    max-height: 700px;
     font-size: var(--FS10);
     filter: drop-shadow(0 0 0.5em var(--shadow-500));
+    opacity: 0;
+    transform: translate(10vw, 0);
+    transition: opacity, transform ease;
+    transition-duration: 1.2s, 1.5s;
 }
 
 /* Sensor Portfolio */
@@ -257,6 +194,12 @@ html {
     .intro-section {
         padding-bottom: 0;
     }
+
+    .main-img {
+        transform: none;
+        opacity: 1;
+        max-height: 100%;
+    }
 }
 
 @media (max-width: 680px) {
@@ -298,7 +241,7 @@ html {
 }
 
 @media (max-width: 450px) {
-    .preview-wrapper {
+    .main-img-wrapper {
         display: none;
     }
 }

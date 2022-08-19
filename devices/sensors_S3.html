@@ -16,15 +16,14 @@
     <link rel="stylesheet" type="text/css" href="../css/utils/keyframes.css?v=170822" media="screen">
     <link rel="stylesheet" type="text/css" href="../css/utils/carousel.css?v=170822" media="screen">
     <link rel="stylesheet" type="text/css" href="../css/utils/attributes.css?v=170822" media="screen">
-    <link rel="stylesheet" type="text/css" href="../css/pages/devices/devices.css?v=170822" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/utils/autoSlider.css?v=170822" media="screen">
     <link rel="stylesheet" type="text/css" href="../css/pages/devices/sensors_S3.css?v=170822" media="screen">
     <link rel="stylesheet" type="text/css" href="../plugins/fontello/css/dropdown.css?v=170822" media="screen">
     <script type="text/javascript" src="https://code.iconify.design/2/2.2.1/iconify.min.js?v=170822"></script>
     <script type="text/javascript" src="../js/app.js?v=170822" defer></script>
-    <script type="text/javascript" src="../js/pages/devices/sensors_S3.js?v=170822" defer></script>
+    <script type="module" src="../js/pages/devices/sensors_S3.js?v=170822" defer></script>
     <script type="text/javascript" src="../js/utils/p_observer.js?v=170822" defer></script>
     <script type="text/javascript" src="../js/utils/att_observer.js?v=170822" defer></script>
-    <script type="text/javascript" src="../js/utils/slider.js?v=170822" defer></script>
     <script type="text/javascript" src="../js/nav.js?v=170822" defer></script>
     <title>X-Rayl® Sensors S3 | DOT</title>
 </head>
@@ -163,62 +162,58 @@
 
             <div class="hero-img-wrapper">
                 <div class="preview-section">
-                    <div class="slider-wrapper">
-                        <div class="slider-container">
-                            <div class="slider">
-                                <div class="slide" name="slide">
-                                    <div class="slide-img-wrapper">
-                                        <img src="../images/sensor_DST(1).png?v=170822" alt="Sensor S3DST" class="slide-img dropshadow dst">
-                                    </div>
-                                </div>
-                    
-                                <div class="slide" name="slide">
-                                    <div class="slide-img-wrapper">
-                                        <img src="../images/sensor_TMP(1)_crop.png?v=170822" alt="Sensor S3TMP-D" class="slide-img dropshadow tmp">
-                                    </div>
-                                </div>
-                    
-                                <div class="slide" name="slide">
-                                    <div class="slide-img-wrapper">
-                                        <img src="../images/sensor_PRS_frontal.png?v=170822" alt="Sensor S3PRS-D" class="slide-img dropshadow prs">
-                                    </div>
-                                </div>
-                    
-                                <div class="slide" name="slide">
-                                    <div class="slide-img-wrapper">
-                                        <img src="../images/sensor_MEP(0).png?v=170822" alt="Sensor S3MEP-D" class="slide-img dropshadow mep">
-                                    </div>
-                                </div>
-                    
-                                <div class="slide" name="slide">
-                                    <div class="slide-img-wrapper">
-                                        <img src="../images/sensor_ACC(1).png?v=170822" alt="Sensor S3ACC-D" class="slide-img dropshadow">
-                                    </div>
-                                </div>
-                    
-                                <div class="slide" name="slide">
-                                    <div class="slide-img-wrapper">
-                                        <img src="../images/sensor_DSP(+)_frontal.png?v=170822" alt="Sensor S3DSP" class="slide-img dropshadow">
-                                    </div>
-                                </div>                        
-                    
-                                <div class="slide" name="slide">
-                                    <div class="slide-img-wrapper">
-                                        <img src="../images/sensor_ATT(1).png?v=170822" alt="Sensor S3ATT-D" class="slide-img dropshadow">
-                                    </div>
-                                </div>
-                    
-                                <div class="slide" name="slide">
-                                    <div class="slide-img-wrapper">
-                                        <img src="../images/sensor_HUM(1).png?v=170822" alt="Sensor S3HUM-D" class="slide-img dropshadow">
-                                    </div>
-                                </div>
+                    <div data-slider-wrapper>
+                        <div data-slide>
+                            <div class="slide-img-wrapper">
+                                <img src="../images/sensor_DST(1).png?v=170822" alt="Sensor S3DST" class="slide-img dst">
                             </div>
-                            <!-- / Slider -->
                         </div>
-                        <!-- / Slider-container -->                    
+                
+                        <div data-slide>
+                            <div class="slide-img-wrapper">
+                                <img src="../images/sensor_TMP(1)_crop.png?v=170822" alt="Sensor S3TMP-D" class="slide-img tmp">
+                            </div>
+                        </div>
+                
+                        <div data-slide>
+                            <div class="slide-img-wrapper">
+                                <img src="../images/sensor_PRS_frontal.png?v=170822" alt="Sensor S3PRS-D" class="slide-img prs">
+                            </div>
+                        </div>
+                
+                        <div data-slide>
+                            <div class="slide-img-wrapper">
+                                <img src="../images/sensor_MEP(0).png?v=170822" alt="Sensor S3MEP-D" class="slide-img mep">
+                            </div>
+                        </div>
+                
+                        <div data-slide>
+                            <div class="slide-img-wrapper">
+                                <img src="../images/sensor_ACC(1).png?v=170822" alt="Sensor S3ACC-D" class="slide-img">
+                            </div>
+                        </div>
+                
+                        <div data-slide>
+                            <div class="slide-img-wrapper">
+                                <img src="../images/sensor_DSP(+)_frontal.png?v=170822" alt="Sensor S3DSP" class="slide-img">
+                            </div>
+                        </div>
+                
+                        <div data-slide>
+                            <div class="slide-img-wrapper">
+                                <img src="../images/sensor_ATT(1).png?v=170822" alt="Sensor S3ATT-D" class="slide-img">
+                            </div>
+                        </div>
+                
+                        <div data-slide>
+                            <div class="slide-img-wrapper">
+                                <img src="../images/sensor_HUM(1).png?v=170822" alt="Sensor S3HUM-D" class="slide-img">
+                            </div>
+                        </div>
+                        <!-- Slides -->
+                        
                     </div>
-                    <!-- / Slider-wrapper -->
+                    <!-- / Slider wrapper -->
                 </div>
                 <!-- / Hero section preview -->
             </div>
@@ -246,7 +241,7 @@
                     </p>               
                 </div>
                 
-                <div class="preview-wrapper">
+                <div class="main-img-wrapper">
                     <img src="../images/sensor_collection.png?v=170822" alt="DOT-Link" class="main-img dropshadow">
                 </div>
             </div>
@@ -647,7 +642,7 @@
         <section class="partners-section">  
             <div class="section-inner">
                 <div class="partners-wrapper" id="partnersWrapper">
-                    <h2 class="partners-title">Trusted by several leading companies in the field</h2>
+                    <h2 class="partners-title">Trusted by leading companies in the field</h2>
                     <div class="partners-carousel">
                         <div class="carousel-wrapper">
                             <div class="fade-bar fb-left"></div>

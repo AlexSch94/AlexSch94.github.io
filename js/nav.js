@@ -1,44 +1,61 @@
 ;(function () {
+    let categories = []
+
     class Category {
-        constructor(parent, menu, items) {
+        constructor(name, parent, menu, items) {
+            this.name = name
             this.parent = parent
             this.menu = menu
             this.items = items
             this.active = false
+
+            categories.push(this)
         }
     }
 
-    const home = new Category(document.getElementById('homeLink')),
-        login = new Category(document.querySelector('.login-btn-container')),
+    const home = new Category('home', document.getElementById('homeLink')),
+        login = new Category(
+            'login',
+            document.querySelector('.login-btn-container')
+        ),
         openLoginBtn = login.parent,
-        loginMobile = new Category(document.getElementById('loginMobile')),
+        loginMobile = new Category(
+            'loginMobile',
+            document.getElementById('loginMobile')
+        ),
         openLoginMobileBtn = loginMobile.parent,
         applications = new Category(
+            'applications',
             document.getElementById('applicationsLink'),
             document.getElementById('applicationsDropdown'),
             [...document.querySelectorAll('.app-dd-item')]
         ),
         products = new Category(
+            'products',
             document.getElementById('productsLink'),
             document.getElementById('productsDropdown'),
             [...document.querySelectorAll('.prod-dd-item')]
         ),
         devices = new Category(
+            'devices',
             document.getElementById('devicesLink'),
             document.getElementById('devicesDropdown'),
             [...document.querySelectorAll('.dev-dd-item')]
         ),
         about = new Category(
+            'about',
             document.getElementById('aboutLink'),
             document.getElementById('aboutDropdown'),
             [...document.querySelectorAll('.about-dd-item')]
         ),
         language = new Category(
+            'language',
             document.getElementById('languageLink'),
             document.getElementById('languageDropdown'),
             [...document.querySelectorAll('.lang-dd-item')]
         ),
         languageMobile = new Category(
+            'languageMobile',
             document.getElementById('languageMobile'),
             document.getElementById('languageDropdownMobile'),
             [...document.querySelectorAll('.lang-dd-item-mobile')]
@@ -47,18 +64,7 @@
         dropDownItems = document.querySelectorAll('.dropdown-link'),
         menuFader = document.querySelector('.menu-fader'),
         menuBtn = document.querySelector('.menu-icon-container'),
-        topNav = document.querySelector('.top-nav'),
-        categories = [
-            home,
-            login,
-            loginMobile,
-            applications,
-            products,
-            devices,
-            about,
-            language,
-            languageMobile,
-        ]
+        topNav = document.querySelector('.top-nav')
 
     // Init
     categories.forEach((category) => {
@@ -300,7 +306,7 @@
         menuFader.classList.remove('visible')
         deselectCategories()
         deselectMenus()
-        if (currentPage !== 'home' && currentPage !== 'test') {
+        if (currentPage !== 'home') {
             if (window.pageYOffset === 0) navBar.classList.remove('sticky')
         }
 
@@ -512,9 +518,7 @@
             navBar = document.querySelector('.nav-bar'),
             heroSection = document.querySelector('.hero-section')
 
-        let observerOptions = {
-            threshold: 0.9,
-        }
+        let observerOptions = { threshold: 0.9 }
 
         function handleAnyScrollEntry(entry) {
             if (!entry.isIntersecting) {
@@ -523,10 +527,6 @@
                 // Fade out hero section
                 if (heroSection) {
                     heroSection.classList.add('fade')
-                }
-                // Fade in preview
-                if (hasPreview) {
-                    previewWrapper.classList.add('come-in')
                 }
             } else {
                 if (!mainMenuOpen && currentPage !== 'home') {
