@@ -91,8 +91,7 @@ section:nth-child(even) {
     gap: 0.75em;
 }
 
-.attribute-main,
-.popout-main {
+.attribute-main {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -169,11 +168,11 @@ section:nth-child(even) {
     width: 90%;
     min-width: 310px;
     max-width: 750px;
-    height: auto;
+    max-height: 85%;
     flex-direction: column;
     gap: 1em;
     font-size: var(--FS11);
-    padding: 2em;
+    padding-top: 2em;
     border-radius: 10px;
     border: 4px solid var(--brand-color2);
     background-color: var(--page-background);
@@ -212,6 +211,39 @@ section:nth-child(even) {
         transform: scale(0.3);
         opacity: 0;
     }
+}
+
+.popout-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2em 2em 2em;
+    gap: 1em;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.popout-main::-webkit-scrollbar {
+    background: white;
+}
+
+.popout-main::-webkit-scrollbar-track {
+    background: hsl(198, 57%, 95%);
+    /* box-shadow: inset 0 0 4px var(--brand-color2); */
+}
+
+.popout-main::-webkit-scrollbar-thumb {
+    background: var(--brand-color2);
+    border-radius: 10px;
+    border: 3px solid hsl(198, 57%, 95%);
+}
+
+.popout-main::-webkit-scrollbar-thumb:hover {
+    background: var(--brand-color3);
+}
+
+.popout-main::-webkit-scrollbar-thumb:active {
+    background: var(--brand-color3-2);
 }
 
 .popout-icon-container {
@@ -269,8 +301,8 @@ section:nth-child(even) {
     place-items: center;
     top: 0px;
     right: 0px;
-    font-size: var(--FS10);
-    height: 1.8em;
+    font-size: var(--FS11);
+    height: 2em;
     width: 3em;
     padding: 0 1px 2px 0;
     color: white;
@@ -309,13 +341,10 @@ section:nth-child(even) {
     }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 650px), (max-height: 700px) {
     .popout {
         max-width: 90%;
         min-width: 300px;
-        max-height: 85%;
-        overflow-y: auto;
-        overflow-x: hidden;
     }
 }
 
