@@ -1,5 +1,6 @@
-currentPage = 'sustainability'
-currentCategory = 'about'
+import incrementCounter from '../utils/incrementCounter.js'
+
+// Page Closure
 ;(function () {
     // -----------------
     // Sections Observer

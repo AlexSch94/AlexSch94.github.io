@@ -1,4 +1,4 @@
-function incrementCounter(
+export default function incrementCounter(
     element,
     currentVal,
     finalVal,

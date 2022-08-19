@@ -1,5 +1,6 @@
-currentPage = 'company'
-currentCategory = 'about'
+import incrementCounter from '../utils/incrementCounter.js'
+
+// Page closure
 ;(function () {
     // -------------
     // Stat Counters
