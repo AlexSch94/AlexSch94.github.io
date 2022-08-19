@@ -45,6 +45,7 @@
     max-width: 50%;
     max-height: 70%;
     filter: drop-shadow(0 0 1vw rgba(255, 255, 255, 0.15));
+    user-select: none;
 }
 
 .slide-img.mep {
