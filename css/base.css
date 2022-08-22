@@ -856,6 +856,8 @@ header {
 .login-heading h3 {
     color: var(--brand-color3);
     font-size: var(--FS7);
+    line-height: 1.2;
+    margin-bottom: 0.15em;
 }
 
 .login-prompt {
@@ -918,13 +920,12 @@ header {
 
 .login-form input[type='text'],
 .login-form input[type='password'] {
+    width: 100%;
+    font-size: var(--FS11);
+    padding: 0.2em;
+    margin: 0.3em 0 0.5em 0;
     border: 2px solid var(--brand-color2);
     border-radius: 3px;
-    margin: 5px 0 10px 0;
-    width: 100%;
-    padding: 0.3rem;
-    color: var(--brand-color);
-    font-size: clamp(16px, 2vw, 20px);
 }
 
 .login-form input[type='text']:focus,
@@ -1348,5 +1349,25 @@ footer .scroll-to-top-btn:hover {
 
     .dropdown-link a {
         font-size: 15px;
+    }
+
+    .login-container {
+        padding: 2.25em 1.75em 1em 1.75em;
+    }
+
+    .login-heading {
+        margin-bottom: 0.4em;
+    }
+
+    .login-prompt {
+        font-size: var(--FS11);
+    }
+
+    .login-form label {
+        font-size: var(--FS12);
+    }
+
+    .submit-btn-wrapper {
+        margin-top: 0.6em;
     }
 }
