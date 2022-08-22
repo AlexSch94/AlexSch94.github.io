@@ -471,7 +471,6 @@
 
         // Set currentFocus based on element autofocused by browser
         currentFocus = focusOrder.indexOf(document.activeElement) + 1
-        console.log(currentFocus)
     }
 
     // Style button on pointer interaction
@@ -533,7 +532,7 @@
             navBar = document.querySelector('.nav-bar'),
             heroSection = document.querySelector('.hero-section')
 
-        let observerOptions = { threshold: 0.9 }
+        let observerOptions = { threshold: 0.95 }
 
         function handleAnyScrollEntry(entry) {
             if (!entry.isIntersecting) {
