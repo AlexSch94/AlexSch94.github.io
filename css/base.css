@@ -807,7 +807,8 @@ header {
 
 .login-container {
     max-width: 90%;
-    padding: 2.5rem 4rem;
+    font-size: var(--FS10);
+    padding: 2em 2.5em;
     background-color: var(--page-background);
     border-radius: 10px;
     border: 4px solid var(--brand-color2);
@@ -849,7 +850,7 @@ header {
 }
 
 .login-heading {
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.8em;
 }
 
 .login-heading h3 {
@@ -935,7 +936,7 @@ header {
     position: relative;
     display: flex;
     justify-content: flex-end;
-    padding-top: 1rem;
+    margin-top: 1em;
     transform-origin: center;
     transition: transform 0.2s ease;
 }
@@ -949,7 +950,6 @@ header {
     border: 2px solid var(--brand-color);
     border-radius: 0.3em;
     padding: 0.3em 1em;
-    margin: 0.5em 0 0;
     transition: color 0.4s ease, background-color 0.4s ease, transform 0.2s;
     right: 0;
 }
@@ -1340,10 +1340,6 @@ footer .scroll-to-top-btn:hover {
 
     .logo-container {
         margin-left: 20px;
-    }
-
-    .login-container {
-        padding: 2.5rem;
     }
 
     .nav-link {
