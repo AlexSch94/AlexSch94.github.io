@@ -457,18 +457,30 @@
         loginWrapper.removeEventListener('transitionend', hideLoginWrapper)
     }
 
-    // Stop close button bubbling -> Prevent prematurely removing loginwrapper
+    // Stop close button bubbling -> Prevent its transitionend from immediately closing loginwrapper
     loginCloseBtn.addEventListener('transitionend', (e) => {
         e.stopPropagation()
     })
 
+    function onLoginSubmitPress() {
+        loginSubmitBtn.classList.add('active')
+    }
+
+    function onLoginSubmitRelease() {
+        loginSubmitBtn.classList.remove('active')
+
+        // Set currentFocus based on element autofocused by browser
+        currentFocus = focusOrder.indexOf(document.activeElement) + 1
+        console.log(currentFocus)
+    }
+
     // Style button on pointer interaction
     loginSubmitBtn.addEventListener('pointerdown', () => {
-        loginSubmitBtn.classList.add('active')
+        onLoginSubmitPress()
     })
 
     loginSubmitBtn.addEventListener('pointerup', () => {
-        loginSubmitBtn.classList.remove('active')
+        onLoginSubmitRelease()
     })
 
     loginSubmitBtn.addEventListener('pointerleave', () => {
@@ -481,13 +493,14 @@
         if (e.key === 'Enter') {
             e.preventDefault()
             if (
+                // If form is focused
                 document.activeElement === loginSubmitBtn ||
                 document.activeElement === userNameInput ||
                 document.activeElement === userPasswordInput
             ) {
-                loginSubmitBtn.classList.add('active')
-                currentFocus = 1
+                onLoginSubmitPress()
             } else if (document.activeElement === loginCloseBtn) {
+                // If close btn is focused
                 loginCloseBtn.classList.add('active')
             }
         }
@@ -497,13 +510,15 @@
     function loginEnterKeyUp(e) {
         if (e.key === 'Enter') {
             if (
+                // If form is focused
                 document.activeElement === loginSubmitBtn ||
                 document.activeElement === userNameInput ||
                 document.activeElement === userPasswordInput
             ) {
                 loginSubmitBtn.click()
-                loginSubmitBtn.classList.remove('active')
+                onLoginSubmitRelease()
             } else if (document.activeElement === loginCloseBtn) {
+                // If close btn is focused
                 loginCloseBtn.classList.remove('active')
                 closeLogin()
             }
