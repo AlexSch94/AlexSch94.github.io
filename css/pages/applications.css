@@ -84,7 +84,7 @@ section:nth-child(even) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0.2em;
+    gap: 0.4em;
 }
 
 .advantage-text-container h3 {
