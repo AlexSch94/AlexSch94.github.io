@@ -362,19 +362,15 @@
 
     function openLogin() {
         loginWrapper.style.display = 'flex'
-        loginContainer.classList.remove('login-out')
         setTimeout(() => {
             loginWrapper.style.opacity = '1'
         }, 10)
+        loginContainer.classList.remove('login-out')
         window.addEventListener('keydown', loginEnterKeyDown)
         window.addEventListener('keyup', loginEnterKeyUp)
         window.addEventListener('keydown', escapeLogin)
-
         window.addEventListener('keydown', restrictFocus)
-
-        // Focus first input field
-        currentFocus = 1
-        focusOrder[currentFocus - 1].focus()
+        loginContainer.addEventListener('animationend', focusLoginForm)
 
         // Disable scrolling
         disableScroll([32])
@@ -383,8 +379,13 @@
         }
     }
 
-    // Restrict focus within login form while open
+    // Focus first input field
+    function focusLoginForm() {
+        currentFocus = 1
+        focusOrder[currentFocus - 1].focus()
+    }
 
+    // Restrict focus within login form while open
     function restrictFocus(e) {
         // Focus on tab key
         if (e.key === 'Tab') {
@@ -430,6 +431,8 @@
         window.removeEventListener('keyup', loginEnterKeyUp)
         window.removeEventListener('keydown', escapeLogin)
         window.removeEventListener('keydown', restrictFocus)
+        loginContainer.removeEventListener('animationend', focusLoginForm)
+
         deselectCategories()
         highlightCurrentCategory()
 
@@ -462,6 +465,9 @@
         e.stopPropagation()
     })
 
+    loginCloseBtn.addEventListener('mouseleave', () => loginCloseBtn.blur())
+
+    // Submit login
     function onLoginSubmitPress() {
         loginSubmitBtn.classList.add('active')
     }

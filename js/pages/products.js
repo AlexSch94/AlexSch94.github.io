@@ -52,7 +52,9 @@ currentCategory = 'products'
         popout = document.getElementById('popout'),
         navBar = document.querySelector('.nav-bar'),
         footer = document.querySelector('footer'),
-        scrollBarPaddingEls = [popoutWrapper, navBar, footer]
+        scrollBarPaddingEls = [popoutWrapper, navBar, footer],
+        openLoginBtn = document.querySelector('.login-btn-container'),
+        openLoginMobileBtn = document.getElementById('loginMobile')
 
     function openPopout() {
         popoutOpen = true
@@ -124,6 +126,18 @@ currentCategory = 'products'
         }
     }
 
+    // Close popout on opening login
+    openLoginBtn.addEventListener('click', () => {
+        if (popoutOpen) {
+            closePopout()
+        }
+    })
+    openLoginMobileBtn.addEventListener('click', () => {
+        if (popoutOpen) {
+            closePopout()
+        }
+    })
+
     function escapePopout(e) {
         if (e.key === 'Escape') {
             closePopout()
@@ -167,7 +181,7 @@ currentCategory = 'products'
                     </div>
                 </div>
                 
-                <button id="popoutCloseBtn" class="popout-close-btn"><span class="iconify x-icon" data-icon="akar-icons:circle-x"></span></button>`,
+                <button id="popoutCloseBtn" class="popout-close-btn"><img src="./images/icons/icon-xmark.png" class="x-icon" draggable="false"></span></button>`,
 
             contentDE: `
                 <div class="popout-main">
@@ -190,7 +204,7 @@ currentCategory = 'products'
                     </div>
                 </div>
                 
-                <button id="popoutCloseBtn" class="popout-close-btn"><span class="iconify x-icon" data-icon="akar-icons:circle-x"></span></button>`,
+                <button id="popoutCloseBtn" class="popout-close-btn"><img src="./images/icons/icon-xmark.png" class="x-icon" draggable="false"></span></button>`,
         },
         // ----------------------------------------------------------
         //      TODO - Change text DE in product documentation
@@ -218,7 +232,7 @@ currentCategory = 'products'
                     </div>
                 </div>
 
-                <button id="popoutCloseBtn" class="popout-close-btn"><span class="iconify x-icon" data-icon="akar-icons:circle-x"></span></button>`,
+                <button id="popoutCloseBtn" class="popout-close-btn"><img src="./images/icons/icon-xmark.png" class="x-icon" draggable="false"></span></button>`,
         },
         brkHealthIndic: {
             button: document.getElementById('brkHealthIndicBtn'),
@@ -241,7 +255,7 @@ currentCategory = 'products'
                     </div>
                 </div>
 
-                <button id="popoutCloseBtn" class="popout-close-btn"><span class="iconify x-icon" data-icon="akar-icons:circle-x"></span></button>`,
+                <button id="popoutCloseBtn" class="popout-close-btn"><img src="./images/icons/icon-xmark.png" class="x-icon" draggable="false"></span></button>`,
         },
         ctHeatingAnalysis: {
             button: document.getElementById('ctHeatingAnalysisBtn'),
@@ -263,7 +277,7 @@ currentCategory = 'products'
                         </div>
                     </div>
 
-                    <button id="popoutCloseBtn" class="popout-close-btn"><span class="iconify x-icon" data-icon="akar-icons:circle-x"></span></button>`,
+                    <button id="popoutCloseBtn" class="popout-close-btn"><img src="./images/icons/icon-xmark.png" class="x-icon" draggable="false"></span></button>`,
         },
         shockDetection: {
             button: document.getElementById('shockDetectionBtn'),
@@ -287,7 +301,7 @@ currentCategory = 'products'
                         </div>
                     </div>
 
-                    <button id="popoutCloseBtn" class="popout-close-btn"><span class="iconify x-icon" data-icon="akar-icons:circle-x"></span></button>`,
+                    <button id="popoutCloseBtn" class="popout-close-btn"><img src="./images/icons/icon-xmark.png" class="x-icon" draggable="false"></span></button>`,
         },
         wagHealthIndic: {
             button: document.getElementById('wagHealthIndicBtn'),
@@ -313,7 +327,7 @@ currentCategory = 'products'
                         </div>
                     </div>
 
-                <button id="popoutCloseBtn" class="popout-close-btn"><span class="iconify x-icon" data-icon="akar-icons:circle-x"></span></button>`,
+                <button id="popoutCloseBtn" class="popout-close-btn"><img src="./images/icons/icon-xmark.png" class="x-icon" draggable="false"></span></button>`,
         },
         brkHealthIndic2: {
             button: document.getElementById('brkHealthIndic2Btn'),
@@ -335,7 +349,7 @@ currentCategory = 'products'
                         </div>
                     </div>
 
-                    <button id="popoutCloseBtn" class="popout-close-btn"><span class="iconify x-icon" data-icon="akar-icons:circle-x"></span></button>`,
+                    <button id="popoutCloseBtn" class="popout-close-btn"><img src="./images/icons/icon-xmark.png" class="x-icon" draggable="false"></span></button>`,
         },
         sub1GhzPrep: {
             button: document.getElementById('sub1GhzPrepBtn'),
@@ -363,7 +377,7 @@ currentCategory = 'products'
                         </div>
                     </div>
 
-                    <button id="popoutCloseBtn" class="popout-close-btn"><span class="iconify x-icon" data-icon="akar-icons:circle-x"></span></button>`,
+                    <button id="popoutCloseBtn" class="popout-close-btn"><img src="./images/icons/icon-xmark.png" class="x-icon" draggable="false"></span></button>`,
         },
     }
 
