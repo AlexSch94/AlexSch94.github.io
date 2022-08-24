@@ -4,7 +4,7 @@ export default class Slider {
         this.options = sliderOptions
         this.container = document.createElement('div')
 
-        // Get slides and convert to live NodeList via name
+        // Get slides and add name attribute to convert them to a live NodeList
         this.initialSlides = this.wrapper.querySelectorAll('[data-slide]')
         this.initialSlides.forEach((attribute) =>
             attribute.setAttribute('name', 'slide')
