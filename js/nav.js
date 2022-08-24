@@ -381,8 +381,10 @@
 
     // Focus first input field
     function focusLoginForm() {
-        currentFocus = 1
-        focusOrder[currentFocus - 1].focus()
+        if (!focusOrder.includes(document.activeElement)) {
+            currentFocus = 1
+            focusOrder[currentFocus - 1].focus()
+        }
     }
 
     // Restrict focus within login form while open
