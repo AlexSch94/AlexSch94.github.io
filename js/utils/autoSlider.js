@@ -61,13 +61,23 @@ export default class Slider {
             }, 40)
         }
 
-        this.setSliderPosition = function () {
+        this.setSliderPosition = () => {
             this.container.style.transform = `translateX(${this.currentTranslate}px)`
         }
 
-        this.setPositionByIndex = function () {
+        this.setPositionByIndex = () => {
             this.currentTranslate = this.currentIndex * -this.getSliderWidth()
             this.setSliderPosition()
+        }
+
+        this.pauseSlider = () => {
+            clearInterval(this.autoSlideTimer)
+        }
+
+        this.resumeSlider = () => {
+            this.autoSlideTimer = setInterval(() => {
+                this.nextSlide()
+            }, this.interval)
         }
 
         this.controlSlider = function (newIndex) {
@@ -76,9 +86,7 @@ export default class Slider {
             // Set Index and restart
             this.currentIndex = newIndex
             this.setPositionByIndex()
-            this.autoSlideTimer = setInterval(() => {
-                this.nextSlide()
-            }, this.interval)
+            this.resumeSlider()
 
             // Active class slide
             this.slides.forEach((slide) => {
@@ -135,6 +143,15 @@ function setUpSlider(slider) {
             }, slider.interval)
         }, 50)
         slider.setPositionByIndex()
+    })
+
+    //Pause in background
+    document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState !== 'visible') {
+            slider.pauseSlider()
+        } else {
+            slider.resumeSlider()
+        }
     })
 
     // Controls

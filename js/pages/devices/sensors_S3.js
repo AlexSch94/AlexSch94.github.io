@@ -42,8 +42,11 @@ setTimeout(() => {
         sensorObserver
     ) {
         entries.forEach((entry) => {
+            entry.imgEl = entry.target.querySelector('img')
+            entry.imgSrc = entry.imgEl.dataset.src
             if (entry.isIntersecting) {
                 entry.target.classList.add('come-in')
+                entry.imgEl.setAttribute('src', entry.imgSrc)
             }
         })
     },
