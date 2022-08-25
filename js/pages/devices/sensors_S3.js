@@ -56,7 +56,7 @@ setTimeout(() => {
         sensorImages.push(container.querySelector('img'))
     })
 
-    const sensorImageObserverOptions = { rootMargin: '200px' }
+    const sensorImageObserverOptions = { rootMargin: '300px' }
     const sensorImageObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             entry.imgSrc = entry.target.dataset.src
