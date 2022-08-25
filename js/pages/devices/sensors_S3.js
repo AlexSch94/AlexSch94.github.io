@@ -36,25 +36,37 @@ setTimeout(() => {
     // -----------------
     const sensorContainers = document.querySelectorAll('.sensor-container')
 
-    const sensorObserverOptions = { threshold: 0.3 }
-    const sensorObserver = new IntersectionObserver(function (
-        entries,
-        sensorObserver
-    ) {
+    // Animate in cards
+    const sensorCardObserverOptions = { threshold: 0.3 }
+    const sensorCardObserver = new IntersectionObserver(function (entries) {
         entries.forEach((entry) => {
-            entry.imgEl = entry.target.querySelector('img')
-            entry.imgSrc = entry.imgEl.dataset.src
             if (entry.isIntersecting) {
                 entry.target.classList.add('come-in')
-                entry.imgEl.setAttribute('src', entry.imgSrc)
             }
         })
-    },
-    sensorObserverOptions)
+    }, sensorCardObserverOptions)
 
     sensorContainers.forEach((sensorContainer) =>
-        sensorObserver.observe(sensorContainer)
+        sensorCardObserver.observe(sensorContainer)
     )
+
+    // Lazy load images
+    let sensorImages = []
+    sensorContainers.forEach((container) => {
+        sensorImages.push(container.querySelector('img'))
+    })
+
+    const sensorImageObserverOptions = { rootMargin: '200px' }
+    const sensorImageObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            entry.imgSrc = entry.target.dataset.src
+            if (entry.isIntersecting) {
+                entry.target.setAttribute('src', entry.imgSrc)
+            } else entry.target.removeAttribute('src')
+        })
+    }, sensorImageObserverOptions)
+
+    sensorImages.forEach((img) => sensorImageObserver.observe(img))
 
     // -----------------
     // Attribute section
@@ -63,17 +75,13 @@ setTimeout(() => {
     const attributeHeader = document.querySelector('.sub-header-2')
 
     const attributeHeaderObserverOptions = { threshold: 0.1 }
-    const attributeHeaderObserver = new IntersectionObserver(function (
-        entries,
-        sensorObserver
-    ) {
+    const attributeHeaderObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('come-in')
             }
         })
-    },
-    attributeHeaderObserverOptions)
+    }, attributeHeaderObserverOptions)
 
     attributeHeaderObserver.observe(attributeHeader)
 })()
