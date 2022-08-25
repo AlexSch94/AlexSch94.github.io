@@ -4,6 +4,10 @@ html {
 
 /* Hero section preview */
 
+.hero-img-wrapper {
+    overflow: hidden;
+}
+
 .preview-section {
     height: 100%;
     width: 100%;

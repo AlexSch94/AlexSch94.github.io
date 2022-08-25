@@ -342,14 +342,14 @@
         loginCloseBtn = document.getElementById('loginCloseBtn'),
         userNameInput = document.getElementById('UserName'),
         userPasswordInput = document.getElementById('UserPassword'),
-        focusOrder = [
+        loginFocusOrder = [
             userNameInput,
             userPasswordInput,
             loginSubmitBtn,
             loginCloseBtn,
         ]
 
-    let currentFocus
+    let currentFocusLogin
 
     // Open login
     openLoginBtn.addEventListener('click', () => {
@@ -381,9 +381,9 @@
 
     // Focus first input field
     function focusLoginForm() {
-        if (!focusOrder.includes(document.activeElement)) {
-            currentFocus = 1
-            focusOrder[currentFocus - 1].focus()
+        if (!loginFocusOrder.includes(document.activeElement)) {
+            currentFocusLogin = 1
+            loginFocusOrder[currentFocusLogin - 1].focus()
         }
     }
 
@@ -392,17 +392,17 @@
         // Focus on tab key
         if (e.key === 'Tab') {
             if (e.shiftKey) {
-                currentFocus--
-                if (currentFocus === 0) {
-                    currentFocus = focusOrder.length
+                currentFocusLogin--
+                if (currentFocusLogin === 0) {
+                    currentFocusLogin = loginFocusOrder.length
                 }
             } else {
-                currentFocus++
-                if (currentFocus > focusOrder.length) {
-                    currentFocus = 1
+                currentFocusLogin++
+                if (currentFocusLogin > loginFocusOrder.length) {
+                    currentFocusLogin = 1
                 }
             }
-            focusOrder[currentFocus - 1].focus()
+            loginFocusOrder[currentFocusLogin - 1].focus()
             e.preventDefault()
             return
         }
@@ -477,8 +477,8 @@
     function onLoginSubmitRelease() {
         loginSubmitBtn.classList.remove('active')
 
-        // Set currentFocus based on element autofocused by browser
-        currentFocus = focusOrder.indexOf(document.activeElement) + 1
+        // Set currentFocusLogin based on element autofocused by browser
+        currentFocusLogin = loginFocusOrder.indexOf(document.activeElement) + 1
     }
 
     // Style button on pointer interaction

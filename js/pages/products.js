@@ -204,7 +204,7 @@ currentCategory = 'products'
                     </div>
                 </div>
                 
-                <button id="popoutCloseBtn" class="popout-close-btn"><img src="./images/icons/icon-xmark.png" class="x-icon" draggable="false"></span></button>`,
+                <button id="popoutCloseBtn" class="popout-close-btn"><img src="../images/icons/icon-xmark.png" class="x-icon" draggable="false"></span></button>`,
         },
         // ----------------------------------------------------------
         //      TODO - Change text DE in product documentation
@@ -232,7 +232,7 @@ currentCategory = 'products'
                     </div>
                 </div>
 
-                <button id="popoutCloseBtn" class="popout-close-btn"><img src="./images/icons/icon-xmark.png" class="x-icon" draggable="false"></span></button>`,
+                <button id="popoutCloseBtn" class="popout-close-btn"><img src="../images/icons/icon-xmark.png" class="x-icon" draggable="false"></span></button>`,
         },
         brkHealthIndic: {
             button: document.getElementById('brkHealthIndicBtn'),

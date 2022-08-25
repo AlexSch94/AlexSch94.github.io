@@ -135,6 +135,12 @@ p {
 }
 
 .page-header {
+    line-height: 1.1;
+    margin: 0 0 0.3em 0;
+    font-size: var(--FS2);
+}
+
+.page-header {
     line-height: 1;
     margin: 0 0 0.4em 0;
     font-size: var(--FS2);
@@ -1150,6 +1156,7 @@ footer .scroll-to-top-btn:hover {
         transform: translateX(100%);
         border-left: 1px solid var(--brand-color);
         transition: all 0.3s ease;
+        overflow-y: auto;
     }
 
     .top-nav::before {
@@ -1172,7 +1179,6 @@ footer .scroll-to-top-btn:hover {
 
     .nav-links-container {
         justify-content: flex-start;
-        overflow-y: auto;
     }
 
     .top-nav-links {
