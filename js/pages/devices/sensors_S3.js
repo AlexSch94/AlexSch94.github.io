@@ -61,7 +61,9 @@ setTimeout(() => {
         entries.forEach((entry) => {
             entry.imgSrc = entry.target.dataset.src
             if (entry.isIntersecting) {
-                entry.target.setAttribute('src', entry.imgSrc)
+                if (!entry.target.getAttribute('src')) {
+                    entry.target.setAttribute('src', entry.imgSrc)
+                }
             }
         })
     }, sensorImageObserverOptions)
