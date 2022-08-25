@@ -62,7 +62,7 @@ setTimeout(() => {
             entry.imgSrc = entry.target.dataset.src
             if (entry.isIntersecting) {
                 entry.target.setAttribute('src', entry.imgSrc)
-            } else entry.target.removeAttribute('src')
+            }
         })
     }, sensorImageObserverOptions)
 
