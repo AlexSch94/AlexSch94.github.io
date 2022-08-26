@@ -1,2 +1,1 @@
-currentPage = 'team'
-currentCategory = 'about'
+

@@ -1,5 +1,3 @@
-currentPage = 'partners'
-currentCategory = 'about'
 ;(function () {
     // --------------------------
     // Partners sections Observer

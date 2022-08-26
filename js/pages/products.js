@@ -1,6 +1,3 @@
-currentPage = 'products'
-currentCategory = 'products'
-
 // Page closure
 ;(function () {
     // -----------------

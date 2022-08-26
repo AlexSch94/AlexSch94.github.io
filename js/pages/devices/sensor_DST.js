@@ -1,6 +1,3 @@
-currentPage = 'sensor_DST'
-currentCategory = 'devices'
-
 // --------------------
 // Preview Slider Setup
 // --------------------

@@ -1,6 +1,3 @@
-currentPage = 'home'
-currentCategory = 'home'
-
 const preloader = document.getElementById('preloader'),
     sectionAnimation = document.getElementById('sectionAnimation'),
     vid = document.getElementById('introVideo')

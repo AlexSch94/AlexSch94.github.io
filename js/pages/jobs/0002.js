@@ -1,5 +1,3 @@
-currentPage = 'job0002'
-currentCategory = 'about'
 ;(function () {
     // -----------------
     // Sections Observer

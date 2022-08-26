@@ -1,6 +1,3 @@
-currentPage = 'sensor_MEP-D'
-currentCategory = 'devices'
-
 // --------------------
 // Preview Slider Setup
 // --------------------

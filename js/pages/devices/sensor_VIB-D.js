@@ -1,6 +1,3 @@
-currentPage = 'sensor_VIB-D'
-currentCategory = 'devices'
-
 // --------------------
 // Preview Slider Setup
 // --------------------

@@ -1,6 +1,3 @@
-currentPage = 'sensor_TMP-D'
-currentCategory = 'devices'
-
 // --------------------
 // Preview Slider Setup
 // --------------------

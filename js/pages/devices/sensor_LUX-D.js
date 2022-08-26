@@ -1,6 +1,3 @@
-currentPage = 'sensor_LUX-D'
-currentCategory = 'devices'
-
 // --------------------
 // Preview Slider Setup
 // --------------------

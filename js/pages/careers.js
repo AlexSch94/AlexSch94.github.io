@@ -1,2 +1,0 @@
-currentPage = 'careers'
-currentCategory = 'about'

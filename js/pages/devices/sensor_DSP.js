@@ -1,6 +1,3 @@
-currentPage = 'sensor_DSP'
-currentCategory = 'devices'
-
 // --------------------
 // Preview Slider Setup
 // --------------------

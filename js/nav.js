@@ -1,3 +1,11 @@
+const currentUrlPath = window.location.pathname,
+    currentCategory = document.body.dataset.category
+
+let isHomePage = false
+if (currentUrlPath === '/index.html' || currentUrlPath === '/de/index.html') {
+    isHomePage = true
+}
+
 ;(function () {
     let categories = []
 
@@ -252,6 +260,9 @@
             case 'language':
                 language.parent.classList.add('active')
                 break
+
+            default:
+                return
         }
     }
 
@@ -265,6 +276,8 @@
     // ------------------
     //  Smallscreen menu
     // ------------------
+    let mainMenuOpen = false
+
     menuBtn.addEventListener('click', (e) => {
         if (!mainMenuOpen) {
             openMenu()
@@ -283,14 +296,14 @@
         }, 10)
         navBar.classList.add('sticky')
 
-        if (currentPage === 'home') {
+        if (isHomePage) {
             hideIndexNavigation()
             vid.pause()
             sectionAnimation.classList.add('animation-pause')
         }
 
         // Disable scrolling of body -> add padding instead of scrollbar width
-        if (currentPage !== 'home') {
+        if (!isHomePage) {
             if (document.body.scrollHeight > window.innerHeight) {
                 document.body.style.overflowY = 'hidden'
                 document.body.style.paddingRight = getScrollbarWidth() + 'px'
@@ -306,18 +319,18 @@
         menuFader.classList.remove('visible')
         deselectCategories()
         deselectMenus()
-        if (currentPage !== 'home') {
+        if (!isHomePage) {
             if (window.pageYOffset === 0) navBar.classList.remove('sticky')
         }
 
-        if (currentPage === 'home') {
+        if (isHomePage) {
             showIndexNavigation()
             vid.play()
             sectionAnimation.classList.remove('animation-pause')
         }
 
         // Enable scrolling of body -> remove scrollbar padding
-        if (currentPage !== 'home') {
+        if (!isHomePage) {
             if (document.body.scrollHeight > window.innerHeight) {
                 document.body.style.overflowY = 'visible'
                 document.body.style.paddingRight = '0px'
@@ -374,7 +387,7 @@
 
         // Disable scrolling
         disableScroll([32])
-        if (currentPage === 'home') {
+        if (isHomePage) {
             myFullpage.setAllowScrolling(false)
         }
     }
@@ -440,7 +453,7 @@
 
         // Enable scrolling
         enableScroll()
-        if (currentPage === 'home') {
+        if (isHomePage) {
             myFullpage.setAllowScrolling(true)
         }
     }
@@ -551,7 +564,7 @@
                     heroSection.classList.add('fade')
                 }
             } else {
-                if (!mainMenuOpen && currentPage !== 'home') {
+                if (!mainMenuOpen && !isHomePage) {
                     // Remove sticky nav
                     navBar.classList.remove('sticky')
                 }

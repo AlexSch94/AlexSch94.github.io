@@ -1,5 +1,3 @@
-currentPage = 'dot_link'
-currentCategory = 'devices'
 hasPreview = true
 
 const heroImgContainer = document.querySelector('.hero-img-container'),

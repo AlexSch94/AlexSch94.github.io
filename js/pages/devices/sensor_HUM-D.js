@@ -1,6 +1,3 @@
-currentPage = 'sensor_HUM-D'
-currentCategory = 'devices'
-
 // --------------------
 // Preview Slider Setup
 // --------------------

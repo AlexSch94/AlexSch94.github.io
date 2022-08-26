@@ -1,6 +1,3 @@
-currentPage = 'sensor_PRS-D'
-currentCategory = 'devices'
-
 // --------------------
 // Preview Slider Setup
 // --------------------

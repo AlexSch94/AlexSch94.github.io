@@ -1,6 +1,3 @@
-currentPage = 'applications'
-currentCategory = 'applications'
-
 // Page closure
 ;(function () {
     // -----------------

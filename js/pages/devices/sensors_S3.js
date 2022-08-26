@@ -1,8 +1,8 @@
+import Slider from '../../utils/autoSlider.js'
+
 // -------------------
 //  Initialise slider
 // -------------------
-import Slider from '../../utils/autoSlider.js'
-
 const slider = new Slider(document.querySelector('[data-slider-wrapper]'), {
     interval: 3700,
     transitionDuration: 1100,
@@ -17,6 +17,7 @@ setTimeout(() => {
 
 // Closure page functions
 ;(function () {
+    // Main image observer
     const header = document.querySelector('header'),
         mainImgWrapper = document.querySelector('.main-img-wrapper'),
         observerOptions = { threshold: 0.9 }

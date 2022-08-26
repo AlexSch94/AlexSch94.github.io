@@ -17,6 +17,7 @@ setTimeout(() => {
 
 // Closure page functions
 ;(function () {
+    // Main image observer
     const header = document.querySelector('header'),
         mainImgWrapper = document.querySelector('.main-img-wrapper'),
         observerOptions = { threshold: 0.9 }

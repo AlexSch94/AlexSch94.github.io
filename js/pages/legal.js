@@ -1,5 +1,3 @@
-currentPage = 'legal'
-currentCategory = 'none'
 ;(function () {
     // -----------------
     // Sections Observer

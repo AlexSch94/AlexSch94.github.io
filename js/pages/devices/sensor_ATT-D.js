@@ -1,6 +1,3 @@
-currentPage = 'sensor_ATT-D'
-currentCategory = 'devices'
-
 // --------------------
 // Preview Slider Setup
 // --------------------

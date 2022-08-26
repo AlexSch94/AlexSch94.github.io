@@ -1,5 +1,3 @@
-currentPage = 'contact'
-currentCategory = 'about'
 ;(function () {
     // -----------------
     // Sections Observer

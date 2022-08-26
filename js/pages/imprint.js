@@ -1,5 +1,3 @@
-currentPage = 'imprint'
-currentCategory = 'none'
 ;(function () {
     // Adjust padding to fit footer in 1 viewport
     const mainWrapper = document.querySelector('#mainWrapper'),

@@ -1,11 +1,6 @@
 // --------------------
 //  Initialise globals
 // --------------------
-let currentPage = '',
-    currentCategory = '',
-    hasPreview = false,
-    mainMenuOpen = false
-
 const isTouch = 'ontouchstart' in window || 0 < navigator.msMaxTouchPoints,
     navBar = document.querySelector('.nav-bar'),
     scrollToTopBtns = document.querySelectorAll('.scroll-to-top-btn')

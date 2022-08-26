@@ -1,7 +1,3 @@
-currentPage = 'scanner'
-currentCategory = 'devices'
-hasPreview = true
-
 const previewWrapper = document.querySelector('.preview-wrapper')
 
 ;(function checkAppLinks() {

@@ -1,6 +1,3 @@
-currentPage = 'sensor_ACC-D'
-currentCategory = 'devices'
-
 // --------------------
 // Preview Slider Setup
 // --------------------
