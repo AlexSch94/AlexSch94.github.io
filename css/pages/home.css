@@ -493,12 +493,6 @@ section:first-of-type {
     transition: all 0.7s ease-in;
 }
 
-/* sec5 anim */
-
-/* .fp-viewing-6 #fp-nav {
-    transform: rotate(-90deg) translateX(60px) translateY(-15%);
-} */
-
 /* Media Queries */
 @media (max-width: 1000px) {
     .img-wrapper {
@@ -506,7 +500,7 @@ section:first-of-type {
     }
 
     .scroll-prompt {
-        bottom: 60px;
+        bottom: 80px;
         right: auto;
     }
 
@@ -697,7 +691,7 @@ section:first-of-type {
     }
 
     .bg-wrapper3 {
-        background-image: url(../../images/sustainability.svg?v=170822);
+        background-image: url(../../images/sustainability.svg?v=290822);
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
