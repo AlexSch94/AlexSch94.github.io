@@ -33,9 +33,18 @@
         ),
         enableGoogleMapsBtn = document.getElementById('gmAcceptBtn')
 
+    enableGoogleMapsBtn.addEventListener('transitionend', (e) => {
+        e.stopPropagation()
+    })
+
     function enableGoogleMaps() {
         googleMapsModule.setAttribute('src', googleMapsSrc)
-        googleMapsPlaceholder.style.display = 'none'
+
+        googleMapsPlaceholder.style.opacity = '0'
+        googleMapsPlaceholder.addEventListener('transitionend', () => {
+            googleMapsPlaceholder.style.display = 'none'
+        })
+
         localStorage.setItem('allowMaps', true)
     }
 

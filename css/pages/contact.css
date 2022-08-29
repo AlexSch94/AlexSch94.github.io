@@ -41,6 +41,7 @@
     align-items: center;
     gap: 2em;
     padding: 2em 3em;
+    transition: opacity 0.3s ease;
 }
 
 .gm-placeholder-header {

@@ -105,6 +105,7 @@ function disableScroll(allowArray) {
             delete scrollKeys[key]
         })
     }
+
     window.addEventListener('DOMMouseScroll', preventDefault, false) // older FF
     window.addEventListener(wheelEvent, preventDefault, wheelOpt) // modern desktop
     window.addEventListener('touchmove', preventDefault, wheelOpt) // mobile
