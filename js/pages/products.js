@@ -285,7 +285,7 @@
 
                     <div class="popout-text-container">
                         <div class="popout-header">
-                            <h3>Brake Health Indikator</h3>
+                            <h3>Brake Health Indicator</h3>
                         </div>
 
                         <div class="popout-description">

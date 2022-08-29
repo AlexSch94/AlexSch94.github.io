@@ -355,7 +355,7 @@
                                         </div>
                                         
                                         <div class="attribute-description">
-                                            <p class="subheader">Erkennung, ob ein Asset sich in Bewegung setzt oder ob es gerade stehen geblieben ist.</p>
+                                            <p class="subheader">Optimierung von Energieverbrauch, anhand von Bewegung oder Stillstand des Assets.</p>
 
                                             <p>Pointer ab der Serie S17 verfügen über einen integrierten hochpräzisen Beschleunigungssensor, der jede Form von Bewegung erkennt. Mit dem Leistungsmerkmal „<span class="nowrap">Start-Stop</span>“ lässt sich die Sendefrequenz im Stillstand reduzieren, um signifikant Energie zu sparen. Zudem werden die Ereignisse Start und Stop sofort gemeldet. Die Reduktion des Sendeintervalls wird mit einem konfigurierbaren Faktor eingegeben. </p>
                                         </div>
@@ -381,6 +381,8 @@
                                         </div>
 
                                         <div class="attribute-description">
+                                            <p class="subheader">Definition geographischer Bereiche und diesbezüglichen Benachrichtigungen.</p>
+
                                             <p>Geofencing erzeugt ein Ereignis oder einen Alarm, wenn ein Asset (Container, Güterwagen usw.) in eine geografische Barriere oder Zone eintritt, sie verlässt oder überquert. Die Geo-Zonen können frei definiert werden, entweder mit einem Editor in der DOT-Link Plattform oder über den zugehörigen DOT Unified API-Endpunkt. Benachrichtigungen können für jede Art von Geofencing-Ereignis konfiguriert werden, um Benutzer sofort über wichtige Ereignisse zu informieren.</p>
                                         </div>
                                     </div>
@@ -401,6 +403,8 @@
                                         </div>
 
                                         <div class="attribute-description">
+                                            <p class="subheader">Herleitung der Bremszustände, basierend auf zurückgelegten Höhenmetern.</p>
+
                                             <p>Die Belastung von Güterwagen ist von einer Vielzahl von Faktoren abhängig. Ein wesentlicher Faktor, der die Abnützung der Bremsanlage beeinflusst, sind hierbei die zurückgelegten Höhenmeter. Damit man diesen Verschleiß besser abschätzen und somit die Instandhaltung optimieren kann, hat DOT den <span class="nowrap">X-Rayl</span> DOT-Link Altimeter Algorithmus entwickelt, der exakt die zurückgelegten Höhenmeter anhand der gefahrenen Strecke errechnet.</p>
                                         </div>
                                     </div>
@@ -425,7 +429,7 @@
                                         </div>
 
                                         <div class="attribute-description">
-                                            <p class="subheader">Alarmierung bei längeren Standzeiten.</p>
+                                            <p class="subheader">Reduktion von Ausfallzeit durch automatische Benachrichtungen.</p>
 
                                             <p>Unseren Kunden können die Standzeiten ihrer Assets (Container, Güterwagen) überwachen und automatische Alarme generieren, falls gewisse Maximalzeiten überschritten werden. In Kombination mit Geofencing und Beladungserkennung ermöglicht dieses Leistungsmerkmal eine schnelle Benachrichtigung, und zwar nur dort und dann, wenn dies gewünscht und erforderlich ist.</p>
                                         </div>
@@ -492,7 +496,7 @@
                                         </div>
 
                                         <div class="attribute-description"> 
-                                            <p>Kesselbeladungserkennung mit einem Algorithmus zur Analyse des zeitlichen Temperaturverlaufs.</p>                                           
+                                            <p class="subheader">Beladungserkennung und Analyse von Temperaturschwankungen bei Kesselwagen.</p>                                           
 
                                             <p>Kesselwagen sind häufig mit Temperatursensoren ausgestattet. Ist dies der Fall, kann die Beladung und Entladung durch einen ausgeklügelten Algorithmus erkannt werden, der das Temperaturverhalten mit gespeicherten Erfahrungswerten vergleicht und damit eine treffsichere Aussage über den Beladungszustand erlaubt. Wenn nur der Beladungszustand und nicht die genaue Verwiegung gefordert ist, werden durch dieses Leistungsmerkmal aufwändigere Systeme, die den Füllstand über Tauchstäbe oder Ähnliches erfassen hinfällig.</p>
                                         </div>
@@ -513,6 +517,8 @@
                                             <h3>Beladungserkennung</h3>
                                         </div>
                                         <div class="attribute-description">
+                                            <p class="subheader">Genaue Einsichten in den Beladungszustand eines Triebwagens.</p>
+
                                             <p>Durch den Einsatz eines <span class="nowrap">X-Rayl</span>-Sensors S3DST auf einem Triebwagen kann der Abstand zwischen dem Wagenaufbau und dem Radsatz mit einer Genauigkeit von Millimetern gemessen werden. Anhand der gemessenen Daten kann festgestellt werden, wann der Waggon be- oder entladen wird, und es kann eine grobe Schätzung des Beladungsgrades einschließlich der Überlastungserkennung vorgenommen werden.</p>
                                         </div>
                                     </div>
@@ -532,6 +538,8 @@
                                             <h3>Überlasterkennung</h3>
                                         </div>
                                         <div class="attribute-description">
+                                            <p class="subheader">Vermeidung von Überladung verhindert Schäden und erhöht Sicherheitszustände.</p>
+
                                             <p>Durch die Erfassung der Daten des <span class="nowrap">X-Rayl</span> Sensors S3DST an einem Triebwagen kann nicht nur der Beladungszustand (siehe „Lastüberwachung“) erkannt werden, sondern auch eine mögliche Überlast, die zu Schäden am Triebwagen führen kann.</p>
                                         </div>
                                     </div>
@@ -551,7 +559,7 @@
                                             <h3>Container- / Tank- Beheizungsanalyse</h3>
                                         </div>
                                         <div class="attribute-description">
-                                            <p class="subheader">Beheizungsstart und Ende können für z.B. für die Verrechnung automatisiert erfasst werden.</p>
+                                            <p class="subheader">Automatische Nachverfolgung von Heizprozessen erlaubt z.B. für Verrechnungszwecke.</p>
                                             
                                             <p>Tankcontainer und Kesselwagen werden verwendet, um unterschiedliche flüssige Stoffe zu transportieren. Bei manchen dieser Stoffe muss sich deren Temperatur innerhalb von vorgegebenen Grenzen befinden. Um dies zu bewerkstelligen, müssen Tankcontainer z.B. beheizt werden. Dies erfolgt mit Hilfe einer Rohrleitung, die im Inneren des Tankcontainer verläuft und in welche warmes Wasser oder heißer Dampf gepumpt wird. Da dieser Vorgang mit Kosten verbunden ist und auch abgerechnet wird, ist es von Vorteil, den genauen Start, die Temperatur des Heizmediums sowie das Ende der Beheizung zu erfassen.</p>
                                         </div>
@@ -594,6 +602,8 @@
                                         </div>
                                     
                                         <div class="attribute-description">
+                                            <p class="subheader">Verbessern Sie den logistischen Überblick und vereinfachen Sie die Einhaltung von Vorschriften.</p>
+
                                             <p>Unterschiedliche Regularien erfordern z.B. die Erfassung der gefahrenen Kilometer auf Landesebene i.e. wie viele Kilometer ist der Wagen in Deutschland, oder Ungarn gefahren, wieviel davon war der Wagen beladen oder unbeladen. Um dies zu bewerkstelligen, muss nicht nur die Strecke genau erfasst werden, viel mehr muss bei jedem Grenzübertritt eine Markierung erfolgen, um die Geostatistik zu ermöglichen.</p>
                                         </div>
                                     </div>
@@ -610,10 +620,10 @@
                                     
                                     <div class="attribute-text-container">
                                         <div class="attribute-header">
-                                            <h3>Start-Stop Erkennung</h3>
+                                            <h3>Analyse von Asset Nutzungsraten</h3>
                                         </div>
                                         <div class="attribute-description">
-                                            <p class="subheader">Erkennung, ob Assets genutzt werden oder nicht.</p>
+                                            <p class="subheader">Erkennung und Optimierung der Nutzungsraten von Assets.</p>
 
                                             <p>Ein Depot ist ein spezieller Geofence, mit dem die Nutzungsrate gerechnet werden kann. Befindet sich ein Asset innerhalb des Depots, gilt es z.B. als ungenutzt. Befindet es sich außerhalb, gilt es als genutzt. Mit diesem Leistungsmerkmal kann auf einfache Weise für jedes Asset eine Statistik über die Nutzung abgelegt werden.</p>
                                         </div>
@@ -650,7 +660,7 @@
                                             <h3>Erweiterte Schock-Erfassung</h3>
                                         </div>
                                         <div class="attribute-description">
-                                            <p class="subheader">Simultanes Erfassen von Beschleunigungen mit unterschiedlichen Konfigurationen und Filtereinstellungen .</p>
+                                            <p class="subheader">Simultanes Erfassen von Beschleunigungen mit unterschiedlichen Konfigurationen und Filtereinstellungen.</p>
 
                                             <p>Sowohl die <span class="nowrap">X-Rayl</span> Pointer als auch der <span class="nowrap">X-Rayl</span> Sensor S3ACC-D enthalten drei hochpräzise <span class="nowrap">3-Achsen-Beschleunigungssensoren</span> mit einer breiten Palette von Erfassungsbereichen. Alle Sensoren wurden speziell ausgewählt, um verschiedene Schockszenarien abzudecken, die in der Eisenbahnumgebung zu erwarten sind, von der Messung kleiner Änderungen im mg-Bereich bis hin zu Schocks von bis zu 200g mit einer hohen Auflösung.</p>
                                         </div>
@@ -675,7 +685,7 @@
                                             <h3>Entgleisungserkennung und Diebstahlserkennung</h3>
                                         </div>
                                         <div class="attribute-description">
-                                            <p class="subheader">Frühalarmierung bei übermäßiger Veränderung der Lage des Wagens.</p>
+                                            <p class="subheader">Rechtzeitige Benachrichtigung bei übermäßiger Veränderung der Lage des Wagens.</p>
 
                                             <p><span class="nowrap">X-Rayl</span> Pointer verfügen über einen <span class="nowrap">3-Achsen</span> Beschleunigungssensor, der eine präzise <span class="nowrap">(+/- 1°)</span> Lage des Wagens erkennt. Bei einer Entgleisung ändert sich die Lage des Wagens signifikant, wodurch eine Frühalarmierung möglich wird. Auch die Demontage des Gerätes führt zu einer Alarmierung (Diebstahlserkennung).</p>
                                         </div>
@@ -696,6 +706,8 @@
                                             <h3>Wagon Health Indicator</h3>
                                         </div>
                                         <div class="attribute-description">
+                                            <p class="subheader">Bestimmen Sie den Zustand eines Wagens, unter Berücksichtigung einer Vielzahl von Faktoren.</p>
+
                                             <p>Da Bahnanlagen sehr unterschiedlichen Bedingungen und Nutzungsmustern unterliegen, ist es schwierig festzustellen, ob ein Triebwagen einer zusätzlichen Wartung bedarf. Die reine Betrachtung der gefahrenen Kilometer gibt kein umfassendes Bild des aktuellen Zustands des Wagens, da der Anteil der beladenen/unbeladenen Fahrten, die Gleisbedingungen und verschiedene andere Parameter den Zustand einer Anlage beeinflussen können. Um einen Einblick in den aktuellen "Gesundheitszustand" eines Fahrzeugs zu erhalten, sind die <span class="nowrap">X-Rayl</span> Pointer so konfiguriert, dass sie regelmäßig die Vibrationsmuster des Fahrzeugs messen.</p>
 
                                             <p>Da Schäden an den Radsätzen (z. B. Flachstellen), Drehgestellen oder Aufbauten das Schwingungsmuster deutlich verändern, hat das DOT einen Algorithmus entwickelt, um diese Veränderungen zu erkennen. </p>
@@ -721,6 +733,8 @@
                                             <h3>Break Health Indicator</h3>
                                         </div>
                                         <div class="attribute-description">
+                                            <p class="subheader">Reduktion von Wartungsaufwand, Verbesserung der Sicherheit und Beseitigung von logistischen Unterbrechungen.</p>
+
                                             <p>Die rechtzeitige Wartung des Bremssystems eines Eisenbahnwagens ist ein wichtiger Faktor für die Aufrechterhaltung des Betriebs und der optimalen Auslastung der Wagen, da ungeplante Wartungsarbeiten zu schwerwiegenden Unterbrechungen der Logistikströme führen können. Um die Auslastung des Bremssystems zu überwachen, hat DOT einen Algorithmus entwickelt, der die Daten analysiert, die von einem Röntgensensor S3PRS-D erzeugt werden, der in der Bremsluftleitung eines Schienenfahrzeugs installiert ist. Jedes Mal, wenn die Bremse betätigt wird, steigt der Druck in dieser Luftleitung entsprechend an, eine stärkere Bremsbetätigung führt zu einem höheren Druck als bei einer leichten Bremsung.</p>
                                         </div>
                                     </div>
@@ -744,7 +758,7 @@
                                             <h3>Erweitertes Event-Handling</h3>
                                         </div>
                                         <div class="attribute-description">
-                                            <p class="subheader">Eingabe eigener Alarmierungsschwellen von Sensoren.</p>
+                                            <p class="subheader">Konfigurierbare Schwellenwerte und Übertragungsprotokolle für Alarme.</p>
 
                                             <p>Über das Web-Portal DOT-Link können standardmäßig Ereignisse (Geofence, Türöffnungen, etc.) mit SMS- oder E-Mail-Adressaten gekoppelt werden, die alarmiert werden, wenn ein Ereignis eintritt. Das Leistungsmerkmal Erweitertes Event-Handling ist notwendig, wenn z.B. Schwellen, wie Temperaturgrenzen eingestellt werden sollen, die eine Übertragung eines Schwellenwertes an einen Sensor erfordern. Dies ist typischerweise dann der Fall, wenn ein Temperatursensor eines Tankcontainers überwachen soll.</p>
                                         </div>

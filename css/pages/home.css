@@ -63,10 +63,11 @@ section:first-of-type {
     margin: 0;
 }
 
-#fp-nav {
-    transition: opacity, transform ease;
-    transition-duration: 0.3s, 0.6s;
-    transform: rotate(-90deg) translateX(-45px) translateY(-15%) !important;
+#fp-nav.fp-left {
+    transition: opacity, transform;
+    transition-timing-function: ease;
+    transition-duration: 0.3s, 0.7s;
+    transform: translateX(-50%);
 }
 
 .bg-wrapper {
@@ -366,10 +367,20 @@ section:first-of-type {
     transition-delay: 0.5s;
 }
 
-.fp-viewing-5 .img-sec4 {
+.fp-viewing-5 .img-sec4,
+.fp-viewing-6 .img-sec4 {
     transition: all 2s ease-in-out;
     transform: scale(3.3) translateY(-22.7%) translateX(-0.75%);
     transition-delay: 1.2s;
+}
+
+/* Section 5 (footer) */
+
+.index-footer {
+    background-color: var(--brand-color);
+    color: white;
+    display: flex;
+    justify-content: center;
 }
 
 /* Etc */
@@ -471,57 +482,22 @@ section:first-of-type {
 .fp-viewing-1 #bg-sec4,
 .fp-viewing-2 #bg-sec4,
 .fp-viewing-3 #bg-sec4,
-.fp-viewing-4 #bg-sec4,
-.fp-viewing-6 #bg-sec4,
-.fp-viewing-7 #bg-sec4,
-.fp-viewing-8 #bg-sec4,
-.fp-viewing-9 #bg-sec4 {
+.fp-viewing-4 #bg-sec4 {
     opacity: 0;
     transition: all 0.5s ease-out;
 }
 
-.fp-viewing-5 #bg-sec4 {
+.fp-viewing-5 #bg-sec4,
+.fp-viewing-6 #bg-sec4 {
     opacity: 1;
     transition: all 0.7s ease-in;
 }
 
 /* sec5 anim */
 
-.fp-viewing-1 #bg-sec5,
-.fp-viewing-2 #bg-sec5,
-.fp-viewing-3 #bg-sec5,
-.fp-viewing-4 #bg-sec5,
-.fp-viewing-5 #bg-sec5,
-.fp-viewing-7 #bg-sec5,
-.fp-viewing-8 #bg-sec5,
-.fp-viewing-9 #bg-sec5 {
-    opacity: 0;
-    transition: all 0.5s ease-out;
-}
-
-.fp-viewing-6 #bg-sec5 {
-    opacity: 1;
-    transition: all 0.7s ease-in;
-}
-
-/* sec6 anim */
-
-.fp-viewing-1 #bg-sec6,
-.fp-viewing-2 #bg-sec6,
-.fp-viewing-3 #bg-sec6,
-.fp-viewing-4 #bg-sec6,
-.fp-viewing-5 #bg-sec6,
-.fp-viewing-6 #bg-sec6,
-.fp-viewing-8 #bg-sec6,
-.fp-viewing-9 #bg-sec6 {
-    opacity: 0;
-    transition: all 0.5s ease-out;
-}
-
-.fp-viewing-7 #bg-sec6 {
-    opacity: 1;
-    transition: all 0.7s ease-in;
-}
+/* .fp-viewing-6 #fp-nav {
+    transform: rotate(-90deg) translateX(60px) translateY(-15%);
+} */
 
 /* Media Queries */
 @media (max-width: 1000px) {
@@ -554,7 +530,7 @@ section:first-of-type {
     }
 
     #fp-nav {
-        transform: rotate(-90deg) translateX(-55px) translateY(-15%) !important;
+        bottom: 10px;
     }
 
     .scroll-prompt {

@@ -56,8 +56,7 @@ const preloader = document.getElementById('preloader'),
 //  Scroll prompt
 // ---------------
 const scrollPrompt = document.getElementById('scrollPrompt'),
-    overlayText = document.querySelector('.overlay-text'),
-    indexNavigationContainer = document.getElementById('fp-nav')
+    overlayText = document.querySelector('.overlay-text')
 
 function showScrollPrompt() {
     setTimeout(() => {
@@ -109,9 +108,12 @@ if (!localStorage.getItem('hideScrollPrompt')) {
     indexNavigationContainer.addEventListener('click', validateScroll)
 }
 
-// ----------------------------------------
-// Hide fullpage index navigation while menu is open
-// ----------------------------------------
+// ----------
+//  Fullpage
+// ----------
+const indexNavigationContainer = document.getElementById('fp-nav')
+
+//  Hide fullpage index navigation while menu is open
 function showIndexNavigation() {
     indexNavigationContainer.removeEventListener(
         'transitionend',
@@ -134,3 +136,25 @@ function hideIndexNavigation() {
 function removeIndexNavigation() {
     indexNavigationContainer.style.display = 'none'
 }
+
+// Set fp-nav position according to footer height
+const footer = document.getElementById('footer')
+
+function setIndexNavPosition() {
+    footerHeight = footer.clientHeight
+    setTimeout(() => {
+        if (document.body.classList.contains('fp-viewing-6')) {
+            let transform = `translateX(-50%) translateY(${-footerHeight}px)`
+            indexNavigationContainer.style.transform = transform
+        } else {
+            indexNavigationContainer.style.transform =
+                'translateX(-50%) translateY(0)'
+        }
+    }, 10)
+}
+
+window.addEventListener('wheel', setIndexNavPosition)
+window.addEventListener('resize', setIndexNavPosition)
+window.addEventListener('load', setIndexNavPosition)
+window.addEventListener('touchmove', setIndexNavPosition)
+indexNavigationContainer.addEventListener('click', setIndexNavPosition)

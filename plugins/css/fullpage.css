@@ -102,7 +102,7 @@ html.fp-enabled,
 #fp-nav {
     position: fixed;
     z-index: 100;
-    bottom: 0px;
+    bottom: 20px;
     opacity: 1;
 }
 
@@ -112,7 +112,6 @@ html.fp-enabled,
 
 #fp-nav.fp-left {
     left: 50%;
-    transform: rotate(-90deg) translateX(-50%);
 }
 
 .fp-slidesNav {
@@ -126,28 +125,35 @@ html.fp-enabled,
     right: 0;
     margin: 0 auto !important;
 }
+
 .fp-slidesNav.fp-bottom {
     bottom: 17px;
 }
+
 .fp-slidesNav.fp-top {
     top: 17px;
 }
+
 #fp-nav ul,
 .fp-slidesNav ul {
+    display: flex;
     margin: 0;
     padding: 0;
 }
+
 #fp-nav ul li,
 .fp-slidesNav ul li {
     display: block;
     width: 16px;
     height: 16px;
-    margin: 12px;
+    margin: 8px;
     position: relative;
 }
+
 .fp-slidesNav ul li {
     display: inline-block;
 }
+
 #fp-nav ul li a,
 .fp-slidesNav ul li a {
     display: flex;
@@ -160,12 +166,14 @@ html.fp-enabled,
     cursor: pointer;
     text-decoration: none;
 }
+
 #fp-nav ul li a.active span,
 .fp-slidesNav ul li a.active span,
 #fp-nav ul li:hover a.active span,
 .fp-slidesNav ul li:hover a.active span {
     transform: scale(2);
 }
+
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
     display: block;
