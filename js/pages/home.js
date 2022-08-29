@@ -153,7 +153,7 @@ function setIndexNavPosition() {
     }, 10)
 }
 
-window.addEventListener('wheel', setIndexNavPosition)
+window.addEventListener(wheelEvent, setIndexNavPosition)
 window.addEventListener('resize', setIndexNavPosition)
 window.addEventListener('load', setIndexNavPosition)
 window.addEventListener('touchmove', setIndexNavPosition)

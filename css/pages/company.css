@@ -179,7 +179,7 @@ span.plus {
     margin: 0 8rem 3rem 0;
     border-radius: 3px;
     background-color: var(--page-background2);
-    box-shadow: 0 0 40px var(--shadow-100), 0 0 50px var(--shadow-200);
+    box-shadow: 0 0 40px var(--shadow-100), 0 0 50px var(--shadow-100);
     transform-origin: top;
     transform: scale(0.4) translateY(20px);
     transition: transform 0.5s ease;
@@ -280,12 +280,13 @@ span.plus {
         transition-delay: 0.1s;
         margin: 0 0 3rem 0;
         width: 100%;
+        box-shadow: 0 0 20px var(--shadow-100), 0 0 40px var(--shadow-100);
     }
 
     .timeline-description::after,
     .timeline-segment.right .timeline-description::after {
         border: 10px solid transparent;
-        border-bottom: 10px solid white;
+        border-bottom: 10px solid var(--page-background2);
         bottom: 100%;
         top: auto;
         left: 50%;
