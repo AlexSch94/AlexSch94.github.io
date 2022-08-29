@@ -59,6 +59,10 @@
     gap: 0.5em;
 }
 
+.btn1 {
+    font-size: var(--FS12);
+}
+
 /* Cards */
 
 .contact-card {
@@ -144,10 +148,6 @@
         padding: 1em;
         gap: 1.5em;
     }
-
-    .btn1 {
-        font-size: var(--FS12);
-    }
 }
 
 @media (max-width: 550px) {
@@ -156,7 +156,7 @@
     }
 
     .google-map {
-        aspect-ratio: 1.1 / 1;
+        aspect-ratio: 1 / 1.1;
     }
 }
 
