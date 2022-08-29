@@ -25,6 +25,32 @@ const preloader = document.getElementById('preloader'),
         vid.play()
     })
 
+    function waitForElement(querySelector) {
+        return new Promise((resolve) => {
+            if (document.querySelectorAll(querySelector).length)
+                return resolve()
+            const observer = new MutationObserver(() => {
+                if (document.querySelectorAll(querySelector).length) {
+                    observer.disconnect()
+                    if (timer !== false) clearTimeout(timer)
+                    return resolve()
+                }
+            })
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true,
+            })
+        })
+    }
+
+    waitForElement('#introVideo', 3000)
+        .then(function () {
+            alert('element is loaded.. do stuff')
+        })
+        .catch(() => {
+            alert('element did not load in 3 seconds')
+        })
+
     window.addEventListener('load', () => {
         const loadEnd = new Date(),
             loadTime = loadEnd - loadStart

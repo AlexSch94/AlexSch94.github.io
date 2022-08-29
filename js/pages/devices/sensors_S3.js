@@ -64,6 +64,7 @@ setTimeout(() => {
             if (entry.isIntersecting) {
                 if (!entry.target.getAttribute('src')) {
                     entry.target.setAttribute('src', entry.imgSrc)
+                    entry.target.removeAttribute('data-src')
                 }
             }
         })
