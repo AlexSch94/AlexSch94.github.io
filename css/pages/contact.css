@@ -16,6 +16,7 @@
 }
 
 .google-map-container {
+    position: relative;
     width: 50%;
 }
 
@@ -25,6 +26,17 @@
     border-radius: 0.3rem;
     border: 1px solid white;
     box-shadow: 0 0 1em var(--shadow-300);
+}
+
+.google-map-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Cards */
@@ -85,7 +97,7 @@
 
 /* Contact form */
 
-.sub-header {
+/* .sub-header {
     font-size: var(--FS7);
     margin-bottom: 1em;
 }
@@ -227,7 +239,7 @@
     left: 105%;
     height: 1em;
     width: fit-content;
-}
+} */
 
 /* Media Queries */
 

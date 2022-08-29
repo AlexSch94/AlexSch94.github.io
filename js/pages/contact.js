@@ -22,4 +22,28 @@
     sections.forEach((section) => {
         sectionObserver.observe(section)
     })
+
+    // -------------
+    //  Google maps
+    // -------------
+    const googleMapsModule = document.querySelector('.google-map'),
+        googleMapsSrc = googleMapsModule.dataset.src,
+        googleMapsPlaceholder = document.querySelector(
+            '.google-map-placeholder'
+        ),
+        enableGoogleMapsBtn = document.getElementById('googleMapsBtn')
+
+    function enableGoogleMaps() {
+        googleMapsModule.setAttribute('src', googleMapsSrc)
+        googleMapsPlaceholder.style.display = 'none'
+        localStorage.setItem('allowMaps', true)
+    }
+
+    if (localStorage.getItem('allowMaps') === 'true') {
+        enableGoogleMaps()
+    }
+
+    enableGoogleMapsBtn.addEventListener('click', () => {
+        enableGoogleMaps()
+    })
 })()
