@@ -280,7 +280,8 @@ a[href^='mailto:']:hover {
     border: 1px solid var(--brand-color);
     color: var(--brand-color);
     font-size: var(--FS11);
-    transition: all 0.2s ease;
+    transition: background-color, border, transform ease;
+    transition-duration: 0.2s, 0.2s, 0.1s;
     width: fit-content;
     cursor: pointer;
     user-select: none;

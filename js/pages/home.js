@@ -1,6 +1,7 @@
 const preloader = document.getElementById('preloader'),
     sectionAnimation = document.getElementById('sectionAnimation'),
-    vid = document.getElementById('introVideo')
+    vid = document.getElementById('introVideo'),
+    indexNavigationContainer = document.getElementById('fp-nav')
 
 // Page closure
 ;(function () {
@@ -111,7 +112,6 @@ if (!localStorage.getItem('hideScrollPrompt')) {
 // ----------
 //  Fullpage
 // ----------
-const indexNavigationContainer = document.getElementById('fp-nav')
 
 //  Hide fullpage index navigation while menu is open
 function showIndexNavigation() {

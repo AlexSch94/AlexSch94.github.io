@@ -31,7 +31,7 @@
         googleMapsPlaceholder = document.querySelector(
             '.google-map-placeholder'
         ),
-        enableGoogleMapsBtn = document.getElementById('googleMapsBtn')
+        enableGoogleMapsBtn = document.getElementById('gmAcceptBtn')
 
     function enableGoogleMaps() {
         googleMapsModule.setAttribute('src', googleMapsSrc)
@@ -41,6 +41,8 @@
 
     if (localStorage.getItem('allowMaps') === 'true') {
         enableGoogleMaps()
+    } else {
+        googleMapsPlaceholder.style.display = 'flex'
     }
 
     enableGoogleMapsBtn.addEventListener('click', () => {

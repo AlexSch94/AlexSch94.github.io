@@ -2,11 +2,7 @@ const currentUrlPath = window.location.pathname,
     currentCategory = document.body.dataset.category
 
 let isHomePage = false
-if (
-    currentUrlPath === '/index.html' ||
-    currentUrlPath === '/de/index.html' ||
-    '#'
-) {
+if (currentUrlPath === '/index.html' || currentUrlPath === '/de/index.html') {
     isHomePage = true
 }
 
@@ -149,7 +145,7 @@ if (
                 return
             }
             if (window.innerWidth <= 1000 || isTouch) {
-                //allow to toggle menu without following link for touchscreens and in small screen menu
+                // allow to toggle menu without following link for touchscreens and in small screen menu
                 let [...list] = e.target.classList
                 if (
                     list.includes('nav-link') ||
@@ -199,7 +195,7 @@ if (
         })
     }
 
-    //Highlight dropdown items
+    // Highlight dropdown items
     dropDownItems.forEach((item) => {
         item.addEventListener('mouseenter', function (e) {
             dropDownItems.forEach((item) => {
