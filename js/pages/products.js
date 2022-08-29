@@ -47,11 +47,11 @@
 
     const popoutWrapper = document.getElementById('popoutWrapper'),
         popout = document.getElementById('popout'),
+        openLoginBtn = document.querySelector('.login-btn-container'),
+        openLoginMobileBtn = document.getElementById('loginMobile'),
         navBar = document.querySelector('.nav-bar'),
         footer = document.querySelector('footer'),
-        scrollBarPaddingEls = [popoutWrapper, navBar, footer],
-        openLoginBtn = document.querySelector('.login-btn-container'),
-        openLoginMobileBtn = document.getElementById('loginMobile')
+        scrollBarPaddingEls = [navBar, footer]
 
     function openPopout() {
         popoutOpen = true
@@ -74,19 +74,17 @@
         })
 
         // Disable scrolling of body -> add padding instead of scrollbar width
-        if (currentPage !== 'home') {
-            if (document.body.scrollHeight > window.innerHeight) {
-                document.body.style.overflowY = 'hidden'
+        if (document.body.scrollHeight > window.innerHeight) {
+            document.body.style.overflowY = 'hidden'
 
-                scrollBarPaddingEls.forEach((el) => {
-                    el.style.paddingRight = getScrollbarWidth() + 'px'
-                })
+            scrollBarPaddingEls.forEach((el) => {
+                el.style.paddingRight = getScrollbarWidth() + 'px'
+            })
 
-                // Sections
-                sections.forEach((section) => {
-                    section.style.paddingRight = getScrollbarWidth() + 'px'
-                })
-            }
+            // Sections
+            sections.forEach((section) => {
+                section.style.paddingRight = getScrollbarWidth() + 'px'
+            })
         }
     }
 
@@ -107,19 +105,17 @@
         })
 
         // Enable scrolling of body -> remove scrollbar padding
-        if (currentPage !== 'home') {
-            if (document.body.scrollHeight > window.innerHeight) {
-                document.body.style.overflowY = 'visible'
+        if (document.body.scrollHeight > window.innerHeight) {
+            document.body.style.overflowY = 'visible'
 
-                scrollBarPaddingEls.forEach((el) => {
-                    el.style.paddingRight = '0px'
-                })
+            scrollBarPaddingEls.forEach((el) => {
+                el.style.paddingRight = '0px'
+            })
 
-                // Sections
-                document.querySelectorAll('section').forEach((section) => {
-                    section.style.paddingRight = '0px'
-                })
-            }
+            // Sections
+            document.querySelectorAll('section').forEach((section) => {
+                section.style.paddingRight = '0px'
+            })
         }
     }
 
@@ -218,8 +214,7 @@
                         </div>
 
                         <div class="popout-description">
-                            <p class="light">Pointers from the S17 series upwards have an integrated high-precision acceleration sensor that detects any form of movement. With the "<span class="nowrap">start-stop</span>" feature, the transmission frequency can be reduced at standstill to save significant energy. In addition, the Start and Stop events are reported immediately. The reduction of the transmission interval is entered with a configurable factor...</p>
-
+                        <p class="light">...</p>
                             <p>For example, by entering a factor of 48, a travel transmission interval of 30 minutes (one message every 30 minutes) can be increased to 24 hours at standstill.</p>
 
                             <p>When the object (container, freight wagon, etc.) starts, the trip is reported within 2 minutes. The standstill is reported after about 5 minutes.</p>
@@ -242,9 +237,7 @@
                         </div>
 
                         <div class="popout-description">
-                        <p class="light">Pointer ab der Serie S17 verfügen über einen integrierten hochpräzisen Beschleunigungssensor, der jede Form von Bewegung erkennt. Mit dem Leistungsmerkmal „<span class="nowrap">Start-Stop</span>“ lässt sich die Sendefrequenz im Stillstand reduzieren, um signifikant Energie zu sparen. Zudem werden die Ereignisse Start und Stop sofort gemeldet. Die Reduktion des Sendeintervalls wird mit einem konfigurierbaren Faktor eingegeben...</p>
-
-                        <p>So kann durch Eingabe des Faktors 48 ein Fahrt-Sende-Intervall von 30 Minuten (eine Nachricht alle 30 Minuten) auf 24 Stunden im Stillstand erhöht werden.</p>
+                        <p>... So kann durch Eingabe des Faktors 48 ein Fahrt-Sende-Intervall von 30 Minuten (eine Nachricht alle 30 Minuten) auf 24 Stunden im Stillstand erhöht werden.</p>
 
                         <p>Wenn das Objekt (Container, Güterwagen, etc.) losfährt, wir die Fahrt innerhalb von 2 Minuten gemeldet. Der eingetretene Stillstand wird nach rund 5 Minuten gemeldet.</p>
                         </div>
