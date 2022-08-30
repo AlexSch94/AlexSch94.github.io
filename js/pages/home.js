@@ -49,8 +49,7 @@ const preloader = document.getElementById('preloader'),
             console.log(
                 document.querySelectorAll('#introVideo') +
                     'was loaded at ' +
-                    new Date() +
-                    'from waitForElement'
+                    new Date()
             )
         })
         .catch(() => {
@@ -64,8 +63,6 @@ const preloader = document.getElementById('preloader'),
     window.addEventListener('load', () => {
         const loadEnd = new Date(),
             loadTime = loadEnd - loadStart
-
-        console.log('loadend window at' + loadEnd)
 
         // Let preloader run for min 1s if loadtime is long enough for animation to start
         if (loadTime >= 200) {
