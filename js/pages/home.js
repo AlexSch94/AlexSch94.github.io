@@ -32,24 +32,33 @@ const preloader = document.getElementById('preloader'),
             const observer = new MutationObserver(() => {
                 if (document.querySelectorAll(querySelector).length) {
                     observer.disconnect()
-                    if (timer !== false) clearTimeout(timer)
+
                     return resolve()
                 }
             })
-            observer.observe(document.body, {
+            observer.observe('#introVideo', {
                 childList: true,
                 subtree: true,
             })
         })
     }
 
-    waitForElement('#introVideo', 3000)
+    waitForElement('#introVideo')
         .then(function () {
-            alert('element is loaded.. do stuff')
+            console.log(loadStart + ' = loadstart')
+            console.log(
+                document.querySelectorAll('#introVideo') +
+                    'was loaded at ' +
+                    new Date()
+            )
         })
         .catch(() => {
             alert('element did not load in 3 seconds')
         })
+
+    vid.addEventListener('canplaythrough', () => {
+        console.log('ready at ' + new Date())
+    })
 
     window.addEventListener('load', () => {
         const loadEnd = new Date(),
