@@ -64,6 +64,7 @@ setTimeout(() => {
             if (entry.isIntersecting) {
                 if (!entry.target.getAttribute('src')) {
                     entry.target.setAttribute('src', entry.imgSrc)
+                    entry.target.removeAttribute('data-src')
                 }
             }
         })
@@ -74,7 +75,6 @@ setTimeout(() => {
     // -----------------
     // Attribute section
     // -----------------
-
     const attributeHeader = document.querySelector('.sub-header-2')
 
     const attributeHeaderObserverOptions = { threshold: 0.1 }
