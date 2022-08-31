@@ -9,10 +9,8 @@ const previewWrapper = document.querySelector('.preview-wrapper')
             if (link.getAttribute('data-linktype') === 'iOS') {
                 link.style.display = 'initial'
             }
-        } else {
-            if (link.getAttribute('data-linktype') !== 'iOS') {
-                link.style.display = 'initial'
-            }
+        } else if (link.getAttribute('data-linktype') !== 'iOS') {
+            link.style.display = 'initial'
         }
     })
 })()
