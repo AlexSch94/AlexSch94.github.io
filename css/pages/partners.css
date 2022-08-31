@@ -62,6 +62,10 @@ section {
     animation-delay: 1.6s;
 }
 
+.partner-container:nth-of-type(9) {
+    animation-delay: 1.8s;
+}
+
 .partner-logo-wrapper {
     display: flex;
     align-items: center;
