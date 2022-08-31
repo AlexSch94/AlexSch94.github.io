@@ -1,4 +1,9 @@
+YAML Resources:
+    YAML Specifications:
+        - YAML 1.2:
+              - Revision 1.2.2 # Oct 1, 2021
+
 sources:
-    #Files or Directories to be Excluded are mentioned in exclusions
-    exclusions:
-        - 'plugins'
+#Files or Directories to be Excluded are mentioned in exclusions
+exclusions:
+    - 'plugins'
