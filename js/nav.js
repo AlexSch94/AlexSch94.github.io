@@ -275,14 +275,12 @@ if (currentCategory === 'home') {
     // ------------------
     //  Smallscreen menu
     // ------------------
-    let mainMenuOpen = false,
-        mainMenuOpening = false,
-        mainMenuClosing = false
+    let mainMenuOpen = false
 
     menuBtn.addEventListener('click', (e) => {
-        if (!mainMenuOpen && !mainMenuClosing) {
+        if (!mainMenuOpen) {
             openMenu()
-        } else if (mainMenuOpen && !mainMenuOpening) {
+        } else if (mainMenuOpen) {
             closeMenu()
         }
     })
@@ -290,13 +288,6 @@ if (currentCategory === 'home') {
     function openMenu() {
         mainMenuOpen = true
         mainMenuOpening = true
-        topNav.addEventListener(
-            'transitionend',
-            () => {
-                mainMenuOpening = false
-            },
-            { once: true }
-        )
 
         topNav.classList.add('open')
         menuBtn.classList.add('active')
@@ -305,6 +296,7 @@ if (currentCategory === 'home') {
             menuFader.classList.add('visible')
         }, 10)
         navBar.classList.add('sticky')
+        menuFader.removeEventListener('transitionend', hideMenuFader)
 
         if (isHomePage) {
             hideIndexNavigation()
@@ -324,20 +316,10 @@ if (currentCategory === 'home') {
 
     function closeMenu() {
         mainMenuOpen = false
-        mainMenuClosing = true
-        topNav.addEventListener(
-            'transitionend',
-            () => {
-                mainMenuClosing = false
-            },
-            { once: true }
-        )
 
         topNav.classList.remove('open')
         menuBtn.classList.remove('active')
-        menuFader.addEventListener('transitionend', hideMenuFader, {
-            once: true,
-        })
+        menuFader.addEventListener('transitionend', hideMenuFader)
         menuFader.classList.remove('visible')
         deselectCategories()
         deselectMenus()

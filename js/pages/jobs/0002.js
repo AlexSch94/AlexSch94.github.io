@@ -7,17 +7,13 @@
             threshold: 0.07,
         }
 
-    const sectionObserver = new IntersectionObserver(function (
-        entries,
-        sectionObserver
-    ) {
+    const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('come-in')
             }
         })
-    },
-    sectionObserverOptions)
+    }, sectionObserverOptions)
 
     sections.forEach((section) => {
         sectionObserver.observe(section)
