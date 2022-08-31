@@ -200,13 +200,13 @@ section:first-of-type {
     right: 0;
     background-color: rgba(0, 0, 0, 0.4);
     opacity: 0;
-    animation: fade-in 1s ease-in 3.5s forwards;
+    animation: fade-in 1s ease-in 1.5s forwards;
 }
 
 .section-overlay {
     z-index: 1;
     opacity: 0;
-    animation: fade-in 1s ease 0.5s forwards;
+    animation: fade-in 1s ease 1.5s forwards;
 }
 
 .overlay-logo-container {
@@ -218,7 +218,7 @@ section:first-of-type {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: moveLogo 1.5s ease 3.5s forwards;
+    animation: moveLogo 1.5s ease 4.5s forwards;
 }
 
 .overlay-logo-container img {
@@ -244,7 +244,7 @@ section:first-of-type {
     opacity: 0;
     transform: translateY(-20vh);
     will-change: transform;
-    animation: moveOverlayText 2.5s ease 5.3s forwards;
+    animation: moveOverlayText 2.5s ease 6.3s forwards;
 }
 
 .overlay-text a {
@@ -263,7 +263,7 @@ section:first-of-type {
         opacity: 0;
     }
 
-    80% {
+    50% {
         opacity: 1;
     }
 
