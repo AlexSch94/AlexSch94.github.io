@@ -16,10 +16,7 @@ import incrementCounter from '../utils/incrementCounter.js'
     let delay = 0,
         countersRan = false
 
-    const statObserver = new IntersectionObserver(function (
-        entries,
-        statObserver
-    ) {
+    const statObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             window.addEventListener(
                 'load',
@@ -54,8 +51,7 @@ import incrementCounter from '../utils/incrementCounter.js'
                 }, 10)
             }
         })
-    },
-    statOptions)
+    }, statOptions)
 
     statObserver.observe(statsContainer)
 
@@ -78,10 +74,7 @@ import incrementCounter from '../utils/incrementCounter.js'
         })
     }, timelineOptions)
 
-    const timelineAfterObserver = new IntersectionObserver(function (
-        entries,
-        timelineAfterObserver
-    ) {
+    const timelineAfterObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('come-in')
@@ -89,8 +82,7 @@ import incrementCounter from '../utils/incrementCounter.js'
                 entry.target.classList.remove('come-in')
             }
         })
-    },
-    timelineAfterOptions)
+    }, timelineAfterOptions)
 
     headers.forEach((header) => mainObserver.observe(header))
     timelineSegs.forEach((segment) => mainObserver.observe(segment))
@@ -100,14 +92,9 @@ import incrementCounter from '../utils/incrementCounter.js'
     // Partners sections Observer
     // --------------------------
     const partnersSection = document.querySelector('.partners-section'),
-        partnersSectionObserverOptions = {
-            threshold: 0.3,
-        }
+        partnersSectionObserverOptions = { threshold: 0.3 }
 
-    const partnersSectionObserver = new IntersectionObserver(function (
-        entries,
-        sectionObserver
-    ) {
+    const partnersSectionObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('come-in')
@@ -115,8 +102,7 @@ import incrementCounter from '../utils/incrementCounter.js'
                 entry.target.classList.remove('come-in')
             }
         })
-    },
-    partnersSectionObserverOptions)
+    }, partnersSectionObserverOptions)
 
     partnersSectionObserver.observe(partnersSection)
 })()

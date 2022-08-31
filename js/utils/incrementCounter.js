@@ -1,3 +1,5 @@
+// Final val must be lower than 1 billion, or the function needs extending
+
 export default function incrementCounter(
     element,
     currentVal,
@@ -5,14 +7,6 @@ export default function incrementCounter(
     steps = 40,
     duration = 3000
 ) {
-    if (finalVal > 1000000000) {
-        return console.warn(
-            'Function needs to be extended for values over 1 billion (at ' +
-                element.id +
-                ')'
-        )
-    }
-
     const timeout = duration / steps,
         increment = (finalVal - currentVal) / steps
 
@@ -74,11 +68,4 @@ export default function incrementCounter(
             clearInterval(counterInterval)
         }
     }, timeout)
-}
-
-function replaceElement(e) {
-    const element = e,
-        copy = e.clone()
-
-    copy.replaceElement(element)
 }

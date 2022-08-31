@@ -48,9 +48,6 @@
     opacity: 0;
     transition: all 1s ease;
     max-height: 700px;
-}
-
-.main-img {
     max-width: 60%;
 }
 

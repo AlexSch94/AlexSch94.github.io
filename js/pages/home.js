@@ -30,7 +30,9 @@ const preloader = document.getElementById('preloader'),
         // Let preloader run for min 1s if loadtime is long enough for animation to start
         if (loadTime >= 200) {
             loaderTimeout = 1200 - loadTime
-            if (loaderTimeout < 0) loaderTimeout = 0
+            if (loaderTimeout < 0) {
+                loaderTimeout = 0
+            }
         }
 
         setTimeout(() => {

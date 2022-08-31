@@ -122,7 +122,9 @@
 
     // Close on click outside
     popoutWrapper.addEventListener('pointerdown', (e) => {
-        if (e.target === popoutWrapper) closePopout()
+        if (e.target === popoutWrapper) {
+            closePopout()
+        }
     })
 
     // Close popout on opening login

@@ -63,7 +63,7 @@
 }
 
 .stat-counter-container {
-    font-family: 'roboto mono', 'courier new';
+    font-family: 'roboto mono', courier;
     display: flex;
     justify-content: center;
     font-size: var(--FS9);

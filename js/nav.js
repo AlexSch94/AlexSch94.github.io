@@ -86,14 +86,18 @@ if (currentCategory === 'home') {
     function setupNoDropdown(element) {
         // Desktop Hover
         element.parent.addEventListener('mouseenter', (e) => {
-            if (window.innerWidth <= 1000 || isTouch) return
+            if (window.innerWidth <= 1000 || isTouch) {
+                return
+            }
             deselectCategories()
             element.parent.classList.add('active')
             element.active = true
         })
 
         element.parent.addEventListener('mouseleave', (e) => {
-            if (window.innerWidth <= 1000 || isTouch) return
+            if (window.innerWidth <= 1000 || isTouch) {
+                return
+            }
             if (e.relatedTarget !== loginWrapper) {
                 element.parent.classList.remove('active')
                 element.active = false
@@ -103,7 +107,9 @@ if (currentCategory === 'home') {
 
         // Mobile selection / higlighting
         element.parent.addEventListener('click', (e) => {
-            if (window.innerWidth > 1000 && !isTouch) return
+            if (window.innerWidth > 1000 && !isTouch) {
+                return
+            }
             if (element.active === false) {
                 deselectCategories()
                 deselectMenus()
@@ -121,7 +127,9 @@ if (currentCategory === 'home') {
         // Desktop hover (open / close)
         element.parent.addEventListener('mouseenter', (e) => {
             if (!isTouch) {
-                if (window.innerWidth <= 1000) return
+                if (window.innerWidth <= 1000) {
+                    return
+                }
                 deselectAll(element)
                 element.parent.classList.add('active')
                 element.items[0].classList.add('selected')
@@ -131,7 +139,9 @@ if (currentCategory === 'home') {
         })
 
         element.parent.addEventListener('mouseleave', (e) => {
-            if (window.innerWidth <= 1000) return
+            if (window.innerWidth <= 1000) {
+                return
+            }
             element.parent.classList.remove('active')
             element.menu.classList.remove('open')
             highlightCurrentCategory()
@@ -230,7 +240,10 @@ if (currentCategory === 'home') {
     }
 
     function highlightCurrentCategory() {
-        if (window.innerWidth <= 1000) return
+        if (window.innerWidth <= 1000) {
+            return
+        }
+
         switch (currentCategory) {
             case 'home':
                 home.parent.classList.add('active')
@@ -250,10 +263,6 @@ if (currentCategory === 'home') {
 
             case 'about':
                 about.parent.classList.add('active')
-                break
-
-            case 'contact':
-                contact.parent.classList.add('active')
                 break
 
             case 'language':
@@ -287,7 +296,6 @@ if (currentCategory === 'home') {
 
     function openMenu() {
         mainMenuOpen = true
-        mainMenuOpening = true
 
         topNav.classList.add('open')
         menuBtn.classList.add('active')
@@ -324,7 +332,9 @@ if (currentCategory === 'home') {
         deselectCategories()
         deselectMenus()
         if (!isHomePage) {
-            if (window.pageYOffset === 0) navBar.classList.remove('sticky')
+            if (window.pageYOffset === 0) {
+                navBar.classList.remove('sticky')
+            }
         }
 
         if (isHomePage) {
@@ -469,7 +479,9 @@ if (currentCategory === 'home') {
 
     // Close on click outside
     loginWrapper.addEventListener('pointerdown', (e) => {
-        if (e.target === loginWrapper) closeLogin()
+        if (e.target === loginWrapper) {
+            closeLogin()
+        }
     })
 
     // Close on Esc key

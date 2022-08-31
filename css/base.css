@@ -59,7 +59,7 @@ html {
 body {
     position: relative;
     background-color: var(--page-background);
-    font-family: 'libre franklin', 'sans-serif';
+    font-family: libre franklin, sans-serif;
     overflow-x: hidden;
     min-height: 100vh;
     transition: opacity 0.3s ease;
@@ -324,7 +324,7 @@ hr {
 header {
     position: relative;
     height: var(--header-height);
-    background-color: var(--brand-color);
+    /* background-color: var(--brand-color); */
     display: flex;
     flex-direction: column;
     color: white;

@@ -26,6 +26,14 @@ function preventDefault(e) {
     e.preventDefault()
 }
 
+// Force refresh of DOM element by replacing itself
+function replaceElement(e) {
+    const element = e,
+        copy = e.clone()
+
+    copy.replaceElement(element)
+}
+
 function getScrollbarWidth() {
     // Creating invisible container
     const outer = document.createElement('div')
@@ -74,12 +82,16 @@ function preventDefaultForScrollKeys(e) {
 }
 
 // modern Chrome requires { passive: false } when adding event
-let supportsPassive = false
+var supportsPassive = false
 try {
     window.addEventListener(
         'test',
         null,
-        Object.defineProperty({}, 'passive', (supportsPassive = true))
+        Object.defineProperty({}, 'passive', {
+            get: function () {
+                supportsPassive = true
+            },
+        })
     )
 } catch (e) {}
 
