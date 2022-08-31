@@ -2,7 +2,7 @@ const currentUrlPath = window.location.pathname,
     currentCategory = document.body.dataset.category
 
 let isHomePage = false
-if (currentUrlPath === '/index.html' || currentUrlPath === '/de/index.html') {
+if (currentCategory === 'home') {
     isHomePage = true
 }
 
