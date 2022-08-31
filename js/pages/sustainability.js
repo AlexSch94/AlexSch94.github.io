@@ -13,10 +13,7 @@ import incrementCounter from '../utils/incrementCounter.js'
     let countersRan = false
 
     const sectionObserverOptions = { threshold: 0.2 }
-    const sectionObserver = new IntersectionObserver(function (
-        entries,
-        sectionObserver
-    ) {
+    const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('come-in')
@@ -31,8 +28,7 @@ import incrementCounter from '../utils/incrementCounter.js'
                 entry.target.classList.remove('come-in')
             }
         })
-    },
-    sectionObserverOptions)
+    }, sectionObserverOptions)
 
     sections.forEach((section) => {
         sectionObserver.observe(section)

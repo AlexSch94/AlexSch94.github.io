@@ -250,7 +250,6 @@ section:first-of-type {
 .overlay-text a {
     display: block;
     font-size: var(--FS10);
-    font-size: 400;
     transition: all 0.3s ease;
 }
 
@@ -513,9 +512,6 @@ section:first-of-type {
     .fp-viewing-5 .img-sec4 {
         transform: scale(3.36) translateY(-22.5%) translateX(0.5%);
     }
-}
-
-@media (max-width: 900px) {
 }
 
 @media (max-width: 750px) {

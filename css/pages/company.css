@@ -1,5 +1,5 @@
 @font-face {
-    font-family: roboto mono;
+    font-family: 'roboto mono';
     src: url(../../fonts/robotoMono/RobotoMono-VariableFont_wght.ttf);
     font-weight: 100 1000;
 }
@@ -63,7 +63,7 @@
 }
 
 .stat-counter-container {
-    font-family: roboto mono;
+    font-family: 'roboto mono', 'courier new';
     display: flex;
     justify-content: center;
     font-size: var(--FS9);
@@ -128,7 +128,7 @@ span.plus {
 
 .timeline-segment:last-of-type {
     padding-bottom: 0;
-    margin: 0 0.5rem 0rem;
+    margin: 0 0.5rem 1rem;
 }
 
 .timeline-segment:last-of-type::after {
@@ -191,11 +191,7 @@ span.plus {
 }
 
 .timeline-segment.come-in .timeline-description {
-    transform: scale(1) translateY(0px);
-}
-
-.timeline-segment:last-of-type {
-    margin-bottom: 1rem;
+    transform: scale(1) translateY(0);
 }
 
 .timeline-segment:last-of-type .timeline-description {

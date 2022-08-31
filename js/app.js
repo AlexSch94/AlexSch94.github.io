@@ -79,11 +79,7 @@ try {
     window.addEventListener(
         'test',
         null,
-        Object.defineProperty({}, 'passive', {
-            get: function () {
-                supportsPassive = true
-            },
-        })
+        Object.defineProperty({}, 'passive', (supportsPassive = true))
     )
 } catch (e) {}
 

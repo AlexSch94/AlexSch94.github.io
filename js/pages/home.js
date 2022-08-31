@@ -8,9 +8,7 @@ const preloader = document.getElementById('preloader'),
     // -------------------------
     //  Page load / intro video
     // -------------------------
-    const loadStart = new Date(),
-        preloader = document.getElementById('preloader'),
-        sectionAnimation = document.getElementById('sectionAnimation')
+    const loadStart = new Date()
 
     let loaderTimeout = 0
 

@@ -209,7 +209,6 @@ function initSlider(slider) {
 
     // Set translate to reflect starting slide
     if (slider.options.startingSlide) {
-        console.log('running')
         slider.container.style.transition = 'none'
         slider.currentTranslate = slider.setCurrentTranslate()
         slider.setSliderPosition()

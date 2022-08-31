@@ -424,7 +424,7 @@ if (currentCategory === 'home') {
             document.activeElement !== userNameInput &&
             document.activeElement !== userPasswordInput
         ) {
-            if ((e.keyCode = 32)) {
+            if (e.keyCode === 32) {
                 e.preventDefault()
             }
         }
@@ -574,35 +574,23 @@ if (currentCategory === 'home') {
             }
         }
 
-        const desktopAnyScrollObserver = new IntersectionObserver(function (
-            entries,
-            desktopAnyScrollObserver
-        ) {
+        const desktopAnyScrollObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 handleAnyScrollEntry(entry)
             })
-        },
-        observerOptions)
+        }, observerOptions)
 
-        const tabletAnyScrollObserver = new IntersectionObserver(function (
-            entries,
-            tabletAnyScrollObserver
-        ) {
+        const tabletAnyScrollObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 handleAnyScrollEntry(entry)
             })
-        },
-        observerOptions)
+        }, observerOptions)
 
-        const mobileAnyScrollObserver = new IntersectionObserver(function (
-            entries,
-            mobileAnyScrollObserver
-        ) {
+        const mobileAnyScrollObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 handleAnyScrollEntry(entry)
             })
-        },
-        observerOptions)
+        }, observerOptions)
 
         function switchObservers(size) {
             if (size === 'desktop') {
