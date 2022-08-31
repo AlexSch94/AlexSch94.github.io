@@ -1,9 +1,21 @@
-YAML Resources:
-    YAML Specifications:
-        - YAML 1.2:
-              - Revision 1.2.2 # Oct 1, 2021
-
+version: '3.8'
 sources:
-#Files or Directories to be Excluded are mentioned in exclusions
-exclusions:
-    - 'plugins'
+    #Files or Directories to be Excluded are mentioned in exclusions
+    exclusions:
+        - 'test'
+        - 'generated'
+        - 'mock'
+        - 'thirdparty'
+        - 'third-party'
+        - '3rd-party'
+        - '3rdparty'
+        - 'external'
+        - 'build'
+        - 'node_modules'
+        - 'assets'
+        - 'gulp'
+        - 'grunt'
+        - 'library'
+        - 'libs'
+        - '.git'
+        - 'demosubproject'

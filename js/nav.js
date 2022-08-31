@@ -275,18 +275,29 @@ if (currentCategory === 'home') {
     // ------------------
     //  Smallscreen menu
     // ------------------
-    let mainMenuOpen = false
+    let mainMenuOpen = false,
+        mainMenuOpening = false,
+        mainMenuClosing = false
 
     menuBtn.addEventListener('click', (e) => {
-        if (!mainMenuOpen) {
+        if (!mainMenuOpen && !mainMenuClosing) {
             openMenu()
-        } else {
+        } else if (mainMenuOpen && !mainMenuOpening) {
             closeMenu()
         }
     })
 
     function openMenu() {
         mainMenuOpen = true
+        mainMenuOpening = true
+        topNav.addEventListener(
+            'transitionend',
+            () => {
+                mainMenuOpening = false
+            },
+            { once: true }
+        )
+
         topNav.classList.add('open')
         menuBtn.classList.add('active')
         menuFader.style.display = 'initial'
@@ -306,15 +317,27 @@ if (currentCategory === 'home') {
             if (document.body.scrollHeight > window.innerHeight) {
                 document.body.style.overflowY = 'hidden'
                 document.body.style.paddingRight = getScrollbarWidth() + 'px'
+                navBar.style.paddingRight = getScrollbarWidth() + 'px'
             }
         }
     }
 
     function closeMenu() {
         mainMenuOpen = false
+        mainMenuClosing = true
+        topNav.addEventListener(
+            'transitionend',
+            () => {
+                mainMenuClosing = false
+            },
+            { once: true }
+        )
+
         topNav.classList.remove('open')
         menuBtn.classList.remove('active')
-        menuFader.addEventListener('transitionend', hideMenuFader)
+        menuFader.addEventListener('transitionend', hideMenuFader, {
+            once: true,
+        })
         menuFader.classList.remove('visible')
         deselectCategories()
         deselectMenus()
@@ -333,6 +356,7 @@ if (currentCategory === 'home') {
             if (document.body.scrollHeight > window.innerHeight) {
                 document.body.style.overflowY = 'visible'
                 document.body.style.paddingRight = '0px'
+                navBar.style.paddingRight = '0px'
             }
         }
     }
@@ -377,6 +401,8 @@ if (currentCategory === 'home') {
         setTimeout(() => {
             loginWrapper.style.opacity = '1'
         }, 10)
+
+        // Add login-specific behaviour
         loginContainer.classList.remove('login-out')
         window.addEventListener('keydown', loginEnterKeyDown)
         window.addEventListener('keyup', loginEnterKeyUp)
@@ -441,6 +467,8 @@ if (currentCategory === 'home') {
         loginMobile.parent.classList.remove('active')
         login.active = false
         loginMobile.active = false
+
+        // Remove login-specific behaviour
         window.removeEventListener('keydown', loginEnterKeyDown)
         window.removeEventListener('keyup', loginEnterKeyUp)
         window.removeEventListener('keydown', escapeLogin)

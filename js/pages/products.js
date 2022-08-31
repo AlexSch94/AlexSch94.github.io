@@ -47,6 +47,7 @@
 
     const popoutWrapper = document.getElementById('popoutWrapper'),
         popout = document.getElementById('popout'),
+        menuBtn = document.querySelector('.menu-icon-container'),
         openLoginBtn = document.querySelector('.login-btn-container'),
         openLoginMobileBtn = document.getElementById('loginMobile'),
         navBar = document.querySelector('.nav-bar'),
@@ -119,6 +120,11 @@
         }
     }
 
+    // Close on click outside
+    popoutWrapper.addEventListener('pointerdown', (e) => {
+        if (e.target === popoutWrapper) closePopout()
+    })
+
     // Close popout on opening login
     openLoginBtn.addEventListener('click', () => {
         if (popoutOpen) {
@@ -126,6 +132,13 @@
         }
     })
     openLoginMobileBtn.addEventListener('click', () => {
+        if (popoutOpen) {
+            closePopout()
+        }
+    })
+
+    // Close on opening main menu
+    menuBtn.addEventListener('click', () => {
         if (popoutOpen) {
             closePopout()
         }
@@ -141,11 +154,6 @@
         popoutWrapper.style.display = 'none'
         popoutWrapper.removeEventListener('transitionend', hidePopoutWrapper)
     }
-
-    // Close on click outside
-    popoutWrapper.addEventListener('pointerdown', (e) => {
-        if (e.target === popoutWrapper) closePopout()
-    })
 
     // Determine language
     let currentLanguage = document.documentElement.getAttribute('lang')
