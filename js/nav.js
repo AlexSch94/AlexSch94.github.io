@@ -1,5 +1,4 @@
-const currentUrlPath = window.location.pathname,
-    currentCategory = document.body.dataset.category
+const currentCategory = document.body.dataset.category
 
 let isHomePage = false
 if (currentCategory === 'home') {
