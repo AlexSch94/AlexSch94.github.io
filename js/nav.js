@@ -567,73 +567,52 @@ if (currentCategory === 'home') {
     }
 
     // ------------------------------
-    //  Navbar intersectionObservers
+    //  Header intersectionObservers
     // ------------------------------
     ;(function () {
         const header = document.querySelector('header'),
             navBar = document.querySelector('.nav-bar'),
             heroSection = document.querySelector('.hero-section')
 
-        let observerOptions = { threshold: 0.95 }
+        const navBarObserverOptions = { threshold: 1 }
+        const navBarObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                handleAnyScrollEntry(entry)
+            })
+        }, navBarObserverOptions)
+
+        navBarObserver.observe(header)
 
         function handleAnyScrollEntry(entry) {
             if (!entry.isIntersecting) {
                 // Add sticky nav
                 navBar.classList.add('sticky')
-                // Fade out hero section
-                if (heroSection) {
-                    heroSection.classList.add('fade')
-                }
             } else {
                 if (!mainMenuOpen && !isHomePage) {
                     // Remove sticky nav
                     navBar.classList.remove('sticky')
                 }
-                // Fade in hero section
-                if (heroSection) {
+            }
+        }
+
+        const heroSecObserverOptions = { threshold: 0.85 }
+        const heroSecObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) {
+                    heroSection.classList.add('fade')
+                } else {
                     heroSection.classList.remove('fade')
                 }
-            }
-        }
-
-        const desktopAnyScrollObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                handleAnyScrollEntry(entry)
             })
-        }, observerOptions)
+        }, heroSecObserverOptions)
 
-        const tabletAnyScrollObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                handleAnyScrollEntry(entry)
-            })
-        }, observerOptions)
-
-        const mobileAnyScrollObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                handleAnyScrollEntry(entry)
-            })
-        }, observerOptions)
-
-        function switchObservers(size) {
-            if (size === 'desktop') {
-                desktopAnyScrollObserver.observe(header)
-                tabletAnyScrollObserver.unobserve(header)
-                mobileAnyScrollObserver.unobserve(header)
-            } else if (size === 'tablet') {
-                tabletAnyScrollObserver.observe(header)
-                desktopAnyScrollObserver.unobserve(header)
-                mobileAnyScrollObserver.unobserve(header)
-            } else {
-                mobileAnyScrollObserver.observe(header)
-                desktopAnyScrollObserver.unobserve(header)
-                tabletAnyScrollObserver.unobserve(header)
-            }
-        }
+        heroSecObserver.observe(header)
 
         // Resize handling
         ;(function () {
             let newScreenSize
             let screenSize
+            let prevScreenSize
 
             window.addEventListener('resize', () => {
                 getScreenSize()
@@ -657,16 +636,20 @@ if (currentCategory === 'home') {
             })
 
             // Get Screen width -> react if significant change is detected
+
             function getScreenSize() {
                 let width = window.innerWidth
 
                 if (width > 1000) {
                     newScreenSize = 'desktop'
                     if (newScreenSize !== screenSize) {
+                        // Save old screensize
+                        prevScreenSize = screenSize
+                        // Changes based on new screensize
                         onScreenSizeChange(newScreenSize)
+                        // Set current screensize
                         screenSize = 'desktop'
                     }
-                    highlightCurrentCategory()
 
                     if (mainMenuOpen) {
                         closeMenu()
@@ -674,12 +657,14 @@ if (currentCategory === 'home') {
                 } else if (width > 500) {
                     newScreenSize = 'tablet'
                     if (newScreenSize !== screenSize) {
+                        prevScreenSize = screenSize
                         onScreenSizeChange(newScreenSize)
                         screenSize = 'tablet'
                     }
                 } else {
                     newScreenSize = 'mobile'
                     if (newScreenSize !== screenSize) {
+                        prevScreenSize = screenSize
                         onScreenSizeChange(newScreenSize)
                         screenSize = 'mobile'
                     }
@@ -688,14 +673,12 @@ if (currentCategory === 'home') {
 
             function onScreenSizeChange(size) {
                 if (size === 'desktop') {
-                    switchObservers(size)
+                    highlightCurrentCategory()
                 }
-                if (size === 'tablet') {
-                    switchObservers(size)
+                if (size === 'tablet' && prevScreenSize === 'desktop') {
                     deselectCategories()
                 }
-                if (size === 'mobile') {
-                    switchObservers(size)
+                if (size === 'mobile' && prevScreenSize === 'desktop') {
                     deselectCategories()
                 }
             }

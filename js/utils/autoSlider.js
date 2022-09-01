@@ -71,14 +71,32 @@ export default class Slider {
         }
 
         this.pauseSlider = () => {
-            clearInterval(this.autoSlideTimer)
+            if (this.active) {
+                clearInterval(this.autoSlideTimer)
+                clearInterval(this.startingTimeout)
+
+                this.active = false
+            }
         }
 
         this.resumeSlider = () => {
-            this.autoSlideTimer = setInterval(() => {
-                this.nextSlide()
-            }, this.interval)
+            if (!this.active) {
+                this.autoSlideTimer = setInterval(() => {
+                    this.nextSlide()
+                }, this.interval)
+
+                this.active = true
+            }
         }
+
+        //Pause in background
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState !== 'visible') {
+                this.pauseSlider()
+            } else {
+                this.resumeSlider()
+            }
+        })
 
         this.controlSlider = function (newIndex) {
             // Stop
@@ -96,6 +114,7 @@ export default class Slider {
         }
 
         // Init
+        this.startingTimeout = null
         setUpSlider(this)
         initSlider(this)
     }
@@ -143,15 +162,6 @@ function setUpSlider(slider) {
             }, slider.interval)
         }, 50)
         slider.setPositionByIndex()
-    })
-
-    //Pause in background
-    document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState !== 'visible') {
-            slider.pauseSlider()
-        } else {
-            slider.resumeSlider()
-        }
     })
 
     // Controls
@@ -203,6 +213,8 @@ function setUpSlider(slider) {
 }
 
 function initSlider(slider) {
+    slider.active = true
+
     slider.slides[slider.currentIndex].classList.add('active')
     // Set transition duration
     slider.container.style.transition = `transform ${slider.transitionDuration}ms ease-in-out`
@@ -217,14 +229,12 @@ function initSlider(slider) {
         }, 550)
     }
 
-    setTimeout(() => {
+    slider.startingTimeout = setTimeout(() => {
         // Start slider
         slider.nextSlide()
 
         slider.autoSlideTimer = setInterval(() => {
             slider.nextSlide()
         }, slider.interval)
-
-        slider.active = true
     }, slider.delay)
 }

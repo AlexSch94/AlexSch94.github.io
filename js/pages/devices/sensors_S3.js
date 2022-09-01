@@ -20,12 +20,15 @@ setTimeout(() => {
     // Main image observer
     const header = document.querySelector('header'),
         mainImgWrapper = document.querySelector('.main-img-wrapper'),
-        observerOptions = { threshold: 0.9 }
+        observerOptions = { threshold: 0.85 }
 
     const navBarObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (!entry.isIntersecting) {
                 mainImgWrapper.classList.add('come-in')
+                slider.pauseSlider()
+            } else {
+                slider.resumeSlider()
             }
         })
     }, observerOptions)

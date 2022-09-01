@@ -324,7 +324,7 @@ hr {
 header {
     position: relative;
     height: var(--header-height);
-    /* background-color: var(--brand-color); */
+    background-color: var(--brand-color);
     display: flex;
     flex-direction: column;
     color: white;

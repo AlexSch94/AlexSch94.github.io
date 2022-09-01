@@ -89,7 +89,7 @@ try {
         null,
         Object.defineProperty({}, 'passive', {
             get: function () {
-                supportsPassive = true
+                return (supportsPassive = true)
             },
         })
     )
