@@ -18,17 +18,13 @@
 
     // Small size observer
     const smallAttributeObserverOptions = { threshold: 0.1 }
-    const smallAttributeObserver = new IntersectionObserver(function (
-        entries,
-        attibuteObserver
-    ) {
+    const smallAttributeObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('come-in')
             }
         })
-    },
-    smallAttributeObserverOptions)
+    }, smallAttributeObserverOptions)
 
     // ----------------
     //  Responsiveness
@@ -53,7 +49,7 @@
         }
     }
 
-    const solResizeHandler = (function () {
+    ;(function () {
         let newScreenSize
         let screenSize
 
