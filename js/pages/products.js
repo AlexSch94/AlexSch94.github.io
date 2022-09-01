@@ -224,7 +224,8 @@
                         </div>
 
                         <div class="popout-description">
-                        <p class="light">...</p>
+                            <p class="light">Pointers from the S17 series upwards have an integrated high-precision acceleration sensor that detects any form of movement. With the "<span class="nowrap">start-stop</span>" feature, the transmission frequency can be reduced at standstill to save significant energy. In addition, the Start and Stop events are reported immediately. The reduction of the transmission interval is entered with a configurable factor...</p>
+                        
                             <p>For example, by entering a factor of 48, a travel transmission interval of 30 minutes (one message every 30 minutes) can be increased to 24 hours at standstill.</p>
 
                             <p>When the object (container, freight wagon, etc.) starts, the trip is reported within 2 minutes. The standstill is reported after about 5 minutes.</p>

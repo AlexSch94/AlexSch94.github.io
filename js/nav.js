@@ -10,10 +10,9 @@ if (currentCategory === 'home') {
 
     class Category {
         constructor(name, parent, menu, items) {
-            this.name = name
-            this.parent = parent
-            this.menu = menu
-            this.items = items
+            const obj = { name, parent, menu, items }
+            Object.assign(this, obj)
+
             this.active = false
 
             categories.push(this)
@@ -606,7 +605,9 @@ if (currentCategory === 'home') {
             })
         }, heroSecObserverOptions)
 
-        heroSecObserver.observe(header)
+        if (heroSection) {
+            heroSecObserver.observe(header)
+        }
 
         // Resize handling
         ;(function () {
