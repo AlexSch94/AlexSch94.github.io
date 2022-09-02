@@ -275,14 +275,14 @@ section:first-of-type {
 
 .video-fade,
 .section-overlay,
-.overlay-logo,
+.overlay-logo-container,
 .overlay-text {
     animation-play-state: paused;
 }
 
 .fp-viewing-1 .video-fade,
 .fp-viewing-1 .section-overlay,
-.fp-viewing-1 .overlay-logo,
+.fp-viewing-1 .overlay-logo-container,
 .fp-viewing-1 .overlay-text {
     animation-play-state: running;
 }
