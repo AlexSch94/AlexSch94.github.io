@@ -408,12 +408,24 @@ if (currentCategory === 'home') {
         }
     }
 
-    // Focus first input field
+    // Focus appropriate input field
     function focusLoginForm() {
         if (!loginFocusOrder.includes(document.activeElement)) {
-            currentFocusLogin = 1
-            loginFocusOrder[currentFocusLogin - 1].focus()
+            if (userNameInput.value) {
+                if (userPasswordInput.value) {
+                    // Form filled
+                    currentFocusLogin = 3
+                } else {
+                    // Only username present
+                    currentFocusLogin = 2
+                }
+            } else {
+                // No username
+                currentFocusLogin = 1
+            }
         }
+
+        loginFocusOrder[currentFocusLogin - 1].focus()
     }
 
     // Restrict focus within login form while open
