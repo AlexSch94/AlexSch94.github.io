@@ -248,7 +248,9 @@
                         </div>
 
                         <div class="popout-description">
-                        <p>... So kann durch Eingabe des Faktors 48 ein Fahrt-Sende-Intervall von 30 Minuten (eine Nachricht alle 30 Minuten) auf 24 Stunden im Stillstand erhöht werden.</p>
+                        <p class="light">Pointer ab der Serie S17 verfügen über einen integrierten hochpräzisen Beschleunigungssensor, der jede Form von Bewegung erkennt. Mit dem Leistungsmerkmal „<span class="nowrap">Start-Stop</span>“ lässt sich die Sendefrequenz im Stillstand reduzieren, um signifikant Energie zu sparen. Zudem werden die Ereignisse Start und Stop sofort gemeldet. Die Reduktion des Sendeintervalls wird mit einem konfigurierbaren Faktor eingegeben...</p>
+
+                        <p>So kann durch Eingabe des Faktors 48 ein Fahrt-Sende-Intervall von 30 Minuten (eine Nachricht alle 30 Minuten) auf 24 Stunden im Stillstand erhöht werden.</p>
 
                         <p>Wenn das Objekt (Container, Güterwagen, etc.) losfährt, wir die Fahrt innerhalb von 2 Minuten gemeldet. Der eingetretene Stillstand wird nach rund 5 Minuten gemeldet.</p>
                         </div>
@@ -525,7 +527,7 @@
                             <h3>Sub 1GHz Vorbereitung</h3>
                         </div>
                         <div class="popout-description">
-                            <p class="light">Aus heutiger Sicht ist noch nicht klar definiert, mit welcher Technologie <span class="nowrap">Intra-Train-Kommunikation</span> – also die Kommunikation zwischen Güterwagen untereinander <span class="nowrap">und / oder</span> der Lok – bewerkstelligt werden wird. In der Working Group 4 der ITSS wird derzeit angedacht, dies über die 2,4 GHz Schnittstelle zu lösen, in dem jedes Telematik Gerät als Relay dient, um die Länge eines Zuges in mehreren Sprüngen (engl. Hops) zu überbrücken. Mit dem LM-EJ wurde dieser Unsicherheit Rechnung getragen und ein eigener Funksender und Empfänger für Sub 1Ghz mit einer Leistung von 20 dBm vorgesehen. Obwohl eine externe Antenne benötigt wird, bietet der Sub 1Ghz mehrere Vorteile gegenüber dem 2,4Ghz-Spektrum...</p>
+                            <p class="light">Aus heutiger Sicht ist noch nicht klar definiert, mit welcher Technologie <span class="nowrap">Intra-Train-Kommunikation</span>, also die Kommunikation zwischen Güterwagen untereinander <span class="nowrap">und / oder</span> der Lok, bewerkstelligt werden wird. In der Working Group 4 der ITSS wird derzeit angedacht, dies über die 2,4 GHz Schnittstelle zu lösen, in dem jedes Telematik Gerät als Relay dient, um die Länge eines Zuges in mehreren Sprüngen (engl. Hops) zu überbrücken. Mit dem LM-EJ wurde dieser Unsicherheit Rechnung getragen und ein eigener Funksender und Empfänger für Sub 1Ghz mit einer Leistung von 20 dBm vorgesehen. Obwohl eine externe Antenne benötigt wird, bietet der Sub 1Ghz mehrere Vorteile gegenüber dem 2,4Ghz-Spektrum...</p>
 
                             <ul>
                                 <li>Reichweite von Sub 1Ghz Wireless: Sub 1Ghz bietet mehr Reichweite als 2.4Ghz. Die drahtlose Sub 1Ghz Übertragung bietet eine 1,5-2-fache Entfernungsabdeckung als das 2,4Ghz Spektrum. Außerdem verfügt das Sub 1Ghz Funkspektrum bei entsprechender Leistung über einen Long Range Modus, der mehr als 100 km Reichweite haben kann.</li>
@@ -597,13 +599,12 @@
         }
     }
 
-    const solResizeHandler = (function () {
+    ;(function () {
         let newScreenSize
         let screenSize
 
         function getScreenSize() {
-            let width = window.innerWidth,
-                height = window.innerHeight
+            let width = window.innerWidth
 
             if (width > 1200) {
                 newScreenSize = 'large'

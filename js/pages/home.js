@@ -46,17 +46,13 @@ const preloader = document.getElementById('preloader'),
             myFullpage.setAllowScrolling(true)
 
             // Start video / animations
-            vid.play()
+            if (document.body.classList.contains('fp-viewing-1')) {
+                vid.play()
+            }
             vid.setAttribute('data-autoplay', true)
+
             sectionAnimation.classList.remove('animation-pause')
         }, loaderTimeout)
-
-        // Pause vid if it is not in view initially
-        setTimeout(() => {
-            if (!document.body.classList.contains('fp-viewing-1')) {
-                vid.pause()
-            }
-        }, 50)
     })
 })()
 

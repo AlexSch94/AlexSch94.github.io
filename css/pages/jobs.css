@@ -46,4 +46,5 @@
 .return-link {
     font-size: var(--FS11);
     margin-top: 1.5em;
+    color: var(--brand-color2);
 }

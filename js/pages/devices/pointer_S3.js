@@ -26,6 +26,9 @@ setTimeout(() => {
         entries.forEach((entry) => {
             if (!entry.isIntersecting) {
                 mainImgWrapper.classList.add('come-in')
+                slider.pauseSlider()
+            } else {
+                slider.resumeSlider()
             }
         })
     }, observerOptions)

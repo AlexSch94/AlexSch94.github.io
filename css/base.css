@@ -924,7 +924,7 @@ header {
     outline: 1px solid var(--brand-color2);
 }
 
-.submit-btn-wrapper {
+.login-ui-wrapper {
     position: relative;
     display: flex;
     justify-content: flex-end;
@@ -1351,7 +1351,7 @@ footer .scroll-to-top-btn:hover {
         margin: 0.2em 0 0.3em 0;
     }
 
-    .submit-btn-wrapper {
+    .login-ui-wrapper {
         margin-top: 0.6em;
     }
 }

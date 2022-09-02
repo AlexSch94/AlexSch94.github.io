@@ -378,6 +378,7 @@ if (currentCategory === 'home') {
 
     let currentFocusLogin
 
+    // ----------
     // Open login
     openLoginBtn.addEventListener('click', () => {
         openLogin()
@@ -459,11 +460,11 @@ if (currentCategory === 'home') {
         }
     }
 
+    // ----------
     // Close login
     loginCloseBtn.addEventListener('click', closeLogin)
 
     function closeLogin() {
-        loginForm.reset()
         loginContainer.classList.add('login-out')
         loginWrapper.style.opacity = '0'
         loginWrapper.addEventListener('transitionend', hideLoginWrapper)
