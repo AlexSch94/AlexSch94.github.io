@@ -1,5 +1,5 @@
 const preloader = document.getElementById('preloader'),
-    sectionAnimation = document.getElementById('sectionAnimation'),
+    introAnimation = document.getElementById('introAnimation'),
     vid = document.getElementById('introVideo'),
     indexNavigationContainer = document.getElementById('fp-nav')
 
@@ -51,7 +51,7 @@ const preloader = document.getElementById('preloader'),
             }
             vid.setAttribute('data-autoplay', true)
 
-            sectionAnimation.classList.remove('animation-pause')
+            introAnimation.classList.remove('animation-pause')
         }, loaderTimeout)
     })
 })()

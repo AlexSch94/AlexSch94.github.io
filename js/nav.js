@@ -310,7 +310,8 @@ if (currentCategory === 'home') {
         if (isHomePage) {
             hideIndexNavigation()
             vid.pause()
-            sectionAnimation.classList.add('animation-pause')
+            introAnimation.classList.add('animation-pause')
+            myFullpage.setAllowScrolling(false)
         }
 
         // Disable scrolling only if expanded menu fits in viewport
@@ -337,7 +338,8 @@ if (currentCategory === 'home') {
         if (isHomePage) {
             showIndexNavigation()
             vid.play()
-            sectionAnimation.classList.remove('animation-pause')
+            introAnimation.classList.remove('animation-pause')
+            myFullpage.setAllowScrolling(true)
         }
 
         if (!isHomePage) {
@@ -345,7 +347,14 @@ if (currentCategory === 'home') {
         }
     }
 
-    // Enable / disable if resize allows expanded menu to fit in viewport
+    menuFader.addEventListener('click', closeMenu)
+
+    function hideMenuFader() {
+        menuFader.style.display = 'none'
+        menuFader.removeEventListener('transitionend', hideMenuFader)
+    }
+
+    // Enable scroll if expanded menu fits on resize -> else disable
     window.addEventListener('resize', () => {
         if (window.innerHeight < maxMenuHeight) {
             if (mainMenuOpen) {
@@ -358,12 +367,23 @@ if (currentCategory === 'home') {
         }
     })
 
-    menuFader.addEventListener('click', closeMenu)
+    const navLinksContainer = document.querySelector('.nav-links-container'),
+        navParents = document.querySelectorAll('.nav-parent')
 
-    function hideMenuFader() {
-        menuFader.style.display = 'none'
-        menuFader.removeEventListener('transitionend', hideMenuFader)
-    }
+    let menuExpanded = false
+    navLinksContainer.addEventListener('click', () => {
+        menuExpanded = false
+        navParents.forEach((parent) => {
+            if (parent.classList.contains('active')) {
+                menuExpanded = true
+            }
+        })
+        if (menuExpanded) {
+            topNav.style.touchAction = 'auto'
+        } else {
+            topNav.style.touchAction = 'none'
+        }
+    })
 
     // ------------
     //  Login form
@@ -371,7 +391,6 @@ if (currentCategory === 'home') {
     const loginSubmitBtn = document.getElementById('loginSubmitBtn'),
         loginContainer = document.querySelector('.login-container'),
         loginWrapper = document.querySelector('.login-wrapper'),
-        loginForm = document.getElementById('loginForm'),
         loginCloseBtn = document.getElementById('loginCloseBtn'),
         userNameInput = document.getElementById('UserName'),
         userPasswordInput = document.getElementById('UserPassword'),
