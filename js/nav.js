@@ -70,6 +70,7 @@ if (currentCategory === 'home') {
         dropDownItems = document.querySelectorAll('.dropdown-link'),
         menuFader = document.querySelector('.menu-fader'),
         menuBtn = document.querySelector('.menu-icon-container'),
+        navBar = document.querySelector('.nav-bar'),
         topNav = document.querySelector('.top-nav')
 
     // Init
@@ -283,19 +284,20 @@ if (currentCategory === 'home') {
     // ------------------
     //  Smallscreen menu
     // ------------------
-    let mainMenuOpen = false
+    let mainMenuOpen = false,
+        maxMenuHeight = navBar.clientHeight + 850
 
     menuBtn.addEventListener('click', (e) => {
         if (!mainMenuOpen) {
+            mainMenuOpen = true
             openMenu()
         } else if (mainMenuOpen) {
             closeMenu()
+            mainMenuOpen = false
         }
     })
 
     function openMenu() {
-        mainMenuOpen = true
-
         topNav.classList.add('open')
         menuBtn.classList.add('active')
         menuFader.style.display = 'initial'
@@ -311,19 +313,15 @@ if (currentCategory === 'home') {
             sectionAnimation.classList.add('animation-pause')
         }
 
-        // Disable scrolling of body -> add padding instead of scrollbar width
+        // Disable scrolling only if expanded menu fits in viewport
         if (!isHomePage) {
-            if (document.body.scrollHeight > window.innerHeight) {
-                document.body.style.overflowY = 'hidden'
-                document.body.style.paddingRight = getScrollbarWidth() + 'px'
-                navBar.style.paddingRight = getScrollbarWidth() + 'px'
+            if (window.innerHeight > maxMenuHeight) {
+                disableScroll()
             }
         }
     }
 
     function closeMenu() {
-        mainMenuOpen = false
-
         topNav.classList.remove('open')
         menuBtn.classList.remove('active')
         menuFader.addEventListener('transitionend', hideMenuFader)
@@ -342,15 +340,23 @@ if (currentCategory === 'home') {
             sectionAnimation.classList.remove('animation-pause')
         }
 
-        // Enable scrolling of body -> remove scrollbar padding
         if (!isHomePage) {
-            if (document.body.scrollHeight > window.innerHeight) {
-                document.body.style.overflowY = 'visible'
-                document.body.style.paddingRight = '0px'
-                navBar.style.paddingRight = '0px'
-            }
+            enableScroll()
         }
     }
+
+    // Enable / disable if resize allows expanded menu to fit in viewport
+    window.addEventListener('resize', () => {
+        if (window.innerHeight < maxMenuHeight) {
+            if (mainMenuOpen) {
+                enableScroll()
+            }
+        } else {
+            if (mainMenuOpen) {
+                disableScroll()
+            }
+        }
+    })
 
     menuFader.addEventListener('click', closeMenu)
 
