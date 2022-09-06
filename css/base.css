@@ -1133,7 +1133,6 @@ footer .scroll-to-top-btn:hover {
         border-left: 1px solid var(--brand-color);
         transition: all 0.3s ease;
         overflow-y: auto;
-        touch-action: none;
     }
 
     .top-nav::before {

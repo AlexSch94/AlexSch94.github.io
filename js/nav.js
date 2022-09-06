@@ -70,7 +70,6 @@ if (currentCategory === 'home') {
         dropDownItems = document.querySelectorAll('.dropdown-link'),
         menuFader = document.querySelector('.menu-fader'),
         menuBtn = document.querySelector('.menu-icon-container'),
-        navBar = document.querySelector('.nav-bar'),
         topNav = document.querySelector('.top-nav')
 
     // Init
@@ -284,13 +283,12 @@ if (currentCategory === 'home') {
     // ------------------
     //  Smallscreen menu
     // ------------------
-    let mainMenuOpen = false,
-        maxMenuHeight = navBar.clientHeight + 850
+    let mainMenuOpen = false
 
     menuBtn.addEventListener('click', (e) => {
         if (!mainMenuOpen) {
-            mainMenuOpen = true
             openMenu()
+            mainMenuOpen = true
         } else if (mainMenuOpen) {
             closeMenu()
             mainMenuOpen = false
@@ -313,13 +311,6 @@ if (currentCategory === 'home') {
             introAnimation.classList.add('animation-pause')
             myFullpage.setAllowScrolling(false)
         }
-
-        // Disable scrolling only if expanded menu fits in viewport
-        if (!isHomePage) {
-            if (window.innerHeight > maxMenuHeight) {
-                disableScroll()
-            }
-        }
     }
 
     function closeMenu() {
@@ -341,10 +332,6 @@ if (currentCategory === 'home') {
             introAnimation.classList.remove('animation-pause')
             myFullpage.setAllowScrolling(true)
         }
-
-        if (!isHomePage) {
-            enableScroll()
-        }
     }
 
     menuFader.addEventListener('click', closeMenu)
@@ -353,37 +340,6 @@ if (currentCategory === 'home') {
         menuFader.style.display = 'none'
         menuFader.removeEventListener('transitionend', hideMenuFader)
     }
-
-    // Enable scroll if expanded menu fits on resize -> else disable
-    window.addEventListener('resize', () => {
-        if (window.innerHeight < maxMenuHeight) {
-            if (mainMenuOpen) {
-                enableScroll()
-            }
-        } else {
-            if (mainMenuOpen) {
-                disableScroll()
-            }
-        }
-    })
-
-    const navLinksContainer = document.querySelector('.nav-links-container'),
-        navParents = document.querySelectorAll('.nav-parent')
-
-    let menuExpanded = false
-    navLinksContainer.addEventListener('click', () => {
-        menuExpanded = false
-        navParents.forEach((parent) => {
-            if (parent.classList.contains('active')) {
-                menuExpanded = true
-            }
-        })
-        if (menuExpanded) {
-            topNav.style.touchAction = 'auto'
-        } else {
-            topNav.style.touchAction = 'none'
-        }
-    })
 
     // ------------
     //  Login form

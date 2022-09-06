@@ -73,20 +73,6 @@
         popoutCloseBtn.addEventListener('transitionend', (e) => {
             e.stopPropagation()
         })
-
-        // Disable scrolling of body -> add padding instead of scrollbar width
-        if (document.body.scrollHeight > window.innerHeight) {
-            document.body.style.overflowY = 'hidden'
-
-            scrollBarPaddingEls.forEach((el) => {
-                el.style.paddingRight = getScrollbarWidth() + 'px'
-            })
-
-            // Sections
-            sections.forEach((section) => {
-                section.style.paddingRight = getScrollbarWidth() + 'px'
-            })
-        }
     }
 
     function closePopout() {
@@ -104,20 +90,6 @@
         popoutCloseBtn.removeEventListener('transitionend', (e) => {
             e.stopPropagation()
         })
-
-        // Enable scrolling of body -> remove scrollbar padding
-        if (document.body.scrollHeight > window.innerHeight) {
-            document.body.style.overflowY = 'visible'
-
-            scrollBarPaddingEls.forEach((el) => {
-                el.style.paddingRight = '0px'
-            })
-
-            // Sections
-            document.querySelectorAll('section').forEach((section) => {
-                section.style.paddingRight = '0px'
-            })
-        }
     }
 
     // Close on click outside
