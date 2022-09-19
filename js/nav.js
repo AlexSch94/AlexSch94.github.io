@@ -683,3 +683,210 @@ if (currentCategory === 'home') {
         })()
     })()
 })()
+
+// ---------------
+//  First version
+// ---------------
+function findFirstDivisor(dividend, part, start) {
+    let functionStart = new Date()
+
+    if (start > dividend || part > dividend) {
+        return console.warn(
+            'The part and the starting point can not be greater than the dividend'
+        )
+    }
+
+    let loops = 0
+    for (let i = start; i < dividend; i++) {
+        loops++
+        if (dividend % i === 0 && i % part === 0) {
+            console.log(
+                'The first divisor of ' +
+                    dividend +
+                    ', after the starting point of ' +
+                    start +
+                    ', that is a multiple of ' +
+                    part +
+                    ' is ' +
+                    i +
+                    ' (a multiple of ' +
+                    i / part +
+                    ' times)'
+            )
+            return console.log('it took ' + loops + ' loops to find the value')
+        }
+    }
+
+    console.log('There was no match')
+}
+
+console.log('First version')
+findFirstDivisor(4465, 47, 50)
+console.log(' ')
+console.log(' ')
+console.log(' ')
+
+// ----------------
+//  Second version
+// ----------------
+function findFirstDivisorRef(dividend, part, start) {
+    if (start > dividend || part > dividend) {
+        return console.warn(
+            'The part and the starting point can not be greater than the dividend'
+        )
+    }
+
+    let loops = 0
+
+    let d
+
+    if (start > part) {
+        for (let i = start; i <= start + part; i++) {
+            loops++
+
+            if (i % part === 0) {
+                d = i
+
+                if (d > dividend) {
+                    return console.log(
+                        'There is no matching result after the starting point'
+                    )
+                }
+
+                console.log(
+                    'The first multiple of ' +
+                        part +
+                        ' after the starting point is ' +
+                        d +
+                        ', it took ' +
+                        loops +
+                        ' loops to assess this'
+                )
+                console.log(' ')
+                break
+            }
+        }
+    }
+
+    let c
+    if (d) {
+        c = d
+    } else {
+        c = part
+    }
+    for (let i = c; i <= dividend; i += part) {
+        loops++
+
+        if (dividend % i === 0 && i % part === 0) {
+            console.log(
+                'The first divisor of ' +
+                    dividend +
+                    ', after the starting point of ' +
+                    start +
+                    ', that is a multiple of ' +
+                    part +
+                    ' is ' +
+                    i +
+                    ' (a multiple of ' +
+                    i / part +
+                    ' times)'
+            )
+            console.log(
+                'It took a total of ' + loops + ' loops to find the value'
+            )
+            return
+        }
+    }
+
+    console.log('There was no match')
+}
+
+console.log('Second version')
+findFirstDivisorRef(4465, 47, 50)
+console.log(' ')
+console.log(' ')
+console.log(' ')
+
+// ---------------
+//  Third version
+// ---------------
+function findFirstDivisorRef2(dividend, part, start) {
+    if (start > dividend || part > dividend) {
+        return console.warn(
+            'The part and the starting point can not be greater than the dividend'
+        )
+    }
+
+    let loops = 0
+
+    let d
+
+    if (start > part) {
+        for (let i = start; i >= 0 + part; i--) {
+            loops++
+
+            if (i % part === 0) {
+                i += part
+                d = i
+
+                if (d > dividend) {
+                    return console.log(
+                        'There is no matching result after the starting point'
+                    )
+                }
+
+                console.log(
+                    'The first multiple of ' +
+                        part +
+                        ' after the starting point is ' +
+                        d +
+                        ', it took ' +
+                        loops +
+                        ' loops to assess this'
+                )
+                console.log(' ')
+                break
+            }
+        }
+    }
+
+    let c
+    if (d) {
+        c = d
+    } else {
+        c = part
+    }
+
+    for (let i = c; i <= dividend; i += part) {
+        loops++
+
+        if (dividend % i === 0 && i % part === 0) {
+            console.log(
+                'The first divisor of ' +
+                    dividend +
+                    ', after the starting point of ' +
+                    start +
+                    ', that is a multiple of ' +
+                    part +
+                    ' is ' +
+                    i +
+                    ' (a multiple of ' +
+                    i / part +
+                    ' times)'
+            )
+            console.log(
+                'It took a total of ' + loops + ' loops to find the value'
+            )
+
+            return
+        }
+    }
+
+    console.log('There was no match')
+}
+
+console.log('Third version')
+findFirstDivisorRef2(4465, 47, 50)
+
+// High loop count example
+// findFirstDivisorRef2(446534, 11, 5000)
