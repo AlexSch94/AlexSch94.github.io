@@ -31,8 +31,7 @@ section:nth-child(even) {
     word-wrap: break-word;
 }
 
-.section-header::after {
-    content: '';
+.section-header .underline {
     position: absolute;
     left: 0;
     bottom: 0;

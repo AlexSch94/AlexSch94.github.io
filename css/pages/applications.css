@@ -17,8 +17,7 @@ section:nth-child(even) {
     padding-bottom: 0.1em;
 }
 
-.section-header::after {
-    content: '';
+.section-header .underline {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -69,14 +68,17 @@ section:nth-child(even) {
     opacity: 0;
     transform: scale(0.6);
     transform-origin: center;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    will-change: transform;
 }
 
 .advantage-wrapper.come-in .advantage {
-    transition: all 0.6s ease;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    transform-origin: center;
+    transition-delay: calc(0.2s * var(--i));
     opacity: 1;
     transform: scale(1);
-    transition-delay: calc(0.2s * var(--i));
+    -moz-transform: scale(1);
 }
 
 .advantage-text-container {

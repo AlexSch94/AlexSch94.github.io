@@ -13,6 +13,14 @@ if (currentCategory === 'home') {
             const obj = { name, parent, menu, items }
             Object.assign(this, obj)
 
+            this.subLinks = []
+
+            if (this.items) {
+                this.items.forEach((item) => {
+                    this.subLinks.push(item.querySelector('a'))
+                })
+            }
+
             this.active = false
 
             categories.push(this)
@@ -70,7 +78,19 @@ if (currentCategory === 'home') {
         dropDownItems = document.querySelectorAll('.dropdown-link'),
         menuFader = document.querySelector('.menu-fader'),
         menuBtn = document.querySelector('.menu-icon-container'),
-        topNav = document.querySelector('.top-nav')
+        topNav = document.querySelector('.top-nav'),
+        subLinks = []
+
+    categories.forEach((ctg) => {
+        if (ctg.items) {
+            ctg.items.forEach((item) => {
+                subLinks.push(item.querySelector('a'))
+            })
+        }
+    })
+
+    let mainMenuOpen = false,
+        loginOpen = false
 
     // Init
     categories.forEach((category) => {
@@ -161,18 +181,27 @@ if (currentCategory === 'home') {
                 ) {
                     e.preventDefault()
                 }
-                // set / unset active states
+                // set / unset active states - manage subLink tabIndex
+                setSubLinkTabIndex('off')
                 if (element.active === false) {
                     deselectAll(element)
                     element.parent.classList.add('active')
                     element.menu.classList.add('open')
                     element.active = true
+                    // Make subLinks tabbable
+                    element.subLinks.forEach((link) =>
+                        link.setAttribute('tabindex', '0')
+                    )
                     return false
                 } else {
                     element.parent.classList.remove('active')
                     element.menu.classList.remove('open')
                     element.active = false
                     highlightCurrentCategory()
+                    // Make subLinks untabbable
+                    element.subLinks.forEach((link) =>
+                        link.setAttribute('tabindex', '-1')
+                    )
                 }
             }
         })
@@ -273,6 +302,18 @@ if (currentCategory === 'home') {
         }
     }
 
+    function setSubLinkTabIndex(state) {
+        if (state === 'on') {
+            subLinks.forEach((link) => link.setAttribute('tabindex', '0'))
+        } else if (state === 'off') {
+            subLinks.forEach((link) => link.setAttribute('tabindex', '-1'))
+        }
+    }
+
+    if (window.innerWidth <= 1000) {
+        setSubLinkTabIndex('off')
+    }
+
     // Active class used for highlighting on desktop = open dropdown on mobile -> remove
     window.addEventListener('load', () => {
         if (window.innerWidth <= 1000) {
@@ -280,22 +321,59 @@ if (currentCategory === 'home') {
         }
     })
 
-    // ------------------
-    //  Smallscreen menu
-    // ------------------
-    let mainMenuOpen = false
+    // Keyboard control
+    window.addEventListener('keyup', (e) => {
+        if (e.key !== 'Tab' || window.innerWidth <= 1000) return
 
+        for (let c = 0; c < categories.length; c++) {
+            if (categories[c].items) {
+                categories[c].items.forEach((item) =>
+                    item.classList.remove('selected')
+                )
+
+                for (let i = 0; i < categories[c].items.length; i++) {
+                    if (
+                        categories[c].items[i].contains(document.activeElement)
+                    ) {
+                        categories[c].menu.classList.add('open')
+                        document.activeElement.parentNode.classList.add(
+                            'selected'
+                        )
+                        break
+                    } else {
+                        categories[c].menu.classList.remove('open')
+                    }
+                }
+            }
+        }
+    })
+
+    window.addEventListener('keydown', (e) => {
+        if (e.key !== 'Escape') return
+
+        for (let c = 0; c < categories.length; c++) {
+            if (categories[c].menu) {
+                categories[c].menu.classList.remove('open')
+                categories[c].items.forEach((item) =>
+                    item.classList.remove('selected')
+                )
+            }
+        }
+    })
+
+    // ------------------------------------------------------------------------
+    // --------------------------- Smallscreen menu ---------------------------
+    // ------------------------------------------------------------------------
     menuBtn.addEventListener('click', (e) => {
         if (!mainMenuOpen) {
             openMenu()
-            mainMenuOpen = true
         } else if (mainMenuOpen) {
             closeMenu()
-            mainMenuOpen = false
         }
     })
 
     function openMenu() {
+        mainMenuOpen = true
         topNav.classList.add('open')
         menuBtn.classList.add('active')
         menuFader.style.display = 'initial'
@@ -311,9 +389,13 @@ if (currentCategory === 'home') {
             introAnimation.classList.add('animation-pause')
             myFullpage.setAllowScrolling(false)
         }
+
+        // Close on Esc
+        window.addEventListener('keydown', closeMenuOnEsc)
     }
 
     function closeMenu() {
+        mainMenuOpen = false
         topNav.classList.remove('open')
         menuBtn.classList.remove('active')
         menuFader.addEventListener('transitionend', hideMenuFader)
@@ -332,6 +414,8 @@ if (currentCategory === 'home') {
             introAnimation.classList.remove('animation-pause')
             myFullpage.setAllowScrolling(true)
         }
+
+        window.removeEventListener('keydown', closeMenuOnEsc)
     }
 
     menuFader.addEventListener('click', closeMenu)
@@ -341,9 +425,20 @@ if (currentCategory === 'home') {
         menuFader.removeEventListener('transitionend', hideMenuFader)
     }
 
-    // ------------
-    //  Login form
-    // ------------
+    function closeMenuOnEsc(e) {
+        if (e.key === 'Escape' && !loginOpen) {
+            closeMenu()
+            menuBtn.focus()
+        }
+    }
+
+    menuBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') openMenu()
+    })
+
+    // ------------------------------------------------------------------------
+    // ------------------------------ Login form ------------------------------
+    // ------------------------------------------------------------------------
     const loginSubmitBtn = document.getElementById('loginSubmitBtn'),
         loginContainer = document.querySelector('.login-container'),
         loginWrapper = document.querySelector('.login-wrapper'),
@@ -357,19 +452,12 @@ if (currentCategory === 'home') {
             loginCloseBtn,
         ]
 
-    let currentFocusLogin
+    let currentFocusLogin, prevFocusEl
 
     // ----------
     // Open login
-    openLoginBtn.addEventListener('click', () => {
-        openLogin()
-    })
-
-    openLoginMobileBtn.addEventListener('click', () => {
-        openLogin()
-    })
-
     function openLogin() {
+        loginOpen = true
         loginWrapper.style.display = 'flex'
         setTimeout(() => {
             loginWrapper.style.opacity = '1'
@@ -388,7 +476,29 @@ if (currentCategory === 'home') {
         if (isHomePage) {
             myFullpage.setAllowScrolling(false)
         }
+
+        prevFocusEl = document.activeElement
     }
+
+    openLoginBtn.addEventListener('click', () => {
+        openLogin()
+    })
+
+    openLoginBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            openLogin()
+        }
+    })
+
+    openLoginMobileBtn.addEventListener('click', () => {
+        openLogin()
+    })
+
+    openLoginMobileBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            openLogin()
+        }
+    })
 
     // Focus appropriate input field
     function focusLoginForm() {
@@ -446,6 +556,7 @@ if (currentCategory === 'home') {
     loginCloseBtn.addEventListener('click', closeLogin)
 
     function closeLogin() {
+        loginOpen = false
         loginContainer.classList.add('login-out')
         loginWrapper.style.opacity = '0'
         loginWrapper.addEventListener('transitionend', hideLoginWrapper)
@@ -468,6 +579,9 @@ if (currentCategory === 'home') {
         if (isHomePage) {
             myFullpage.setAllowScrolling(true)
         }
+
+        // Refocus in window
+        prevFocusEl.focus()
     }
 
     // Close on click outside
@@ -626,6 +740,12 @@ if (currentCategory === 'home') {
                         dropDownMenus.forEach((menu) => {
                             menu.classList.remove('animation-stop')
                         })
+
+                        if (window.innerWidth <= 1000) {
+                            setSubLinkTabIndex('off')
+                        } else {
+                            setSubLinkTabIndex('on')
+                        }
                     }, 50)
                 })
             })
@@ -683,210 +803,3 @@ if (currentCategory === 'home') {
         })()
     })()
 })()
-
-// ---------------
-//  First version
-// ---------------
-function findFirstDivisor(dividend, part, start) {
-    let functionStart = new Date()
-
-    if (start > dividend || part > dividend) {
-        return console.warn(
-            'The part and the starting point can not be greater than the dividend'
-        )
-    }
-
-    let loops = 0
-    for (let i = start; i < dividend; i++) {
-        loops++
-        if (dividend % i === 0 && i % part === 0) {
-            console.log(
-                'The first divisor of ' +
-                    dividend +
-                    ', after the starting point of ' +
-                    start +
-                    ', that is a multiple of ' +
-                    part +
-                    ' is ' +
-                    i +
-                    ' (a multiple of ' +
-                    i / part +
-                    ' times)'
-            )
-            return console.log('it took ' + loops + ' loops to find the value')
-        }
-    }
-
-    console.log('There was no match')
-}
-
-console.log('First version')
-findFirstDivisor(4465, 47, 50)
-console.log(' ')
-console.log(' ')
-console.log(' ')
-
-// ----------------
-//  Second version
-// ----------------
-function findFirstDivisorRef(dividend, part, start) {
-    if (start > dividend || part > dividend) {
-        return console.warn(
-            'The part and the starting point can not be greater than the dividend'
-        )
-    }
-
-    let loops = 0
-
-    let d
-
-    if (start > part) {
-        for (let i = start; i <= start + part; i++) {
-            loops++
-
-            if (i % part === 0) {
-                d = i
-
-                if (d > dividend) {
-                    return console.log(
-                        'There is no matching result after the starting point'
-                    )
-                }
-
-                console.log(
-                    'The first multiple of ' +
-                        part +
-                        ' after the starting point is ' +
-                        d +
-                        ', it took ' +
-                        loops +
-                        ' loops to assess this'
-                )
-                console.log(' ')
-                break
-            }
-        }
-    }
-
-    let c
-    if (d) {
-        c = d
-    } else {
-        c = part
-    }
-    for (let i = c; i <= dividend; i += part) {
-        loops++
-
-        if (dividend % i === 0 && i % part === 0) {
-            console.log(
-                'The first divisor of ' +
-                    dividend +
-                    ', after the starting point of ' +
-                    start +
-                    ', that is a multiple of ' +
-                    part +
-                    ' is ' +
-                    i +
-                    ' (a multiple of ' +
-                    i / part +
-                    ' times)'
-            )
-            console.log(
-                'It took a total of ' + loops + ' loops to find the value'
-            )
-            return
-        }
-    }
-
-    console.log('There was no match')
-}
-
-console.log('Second version')
-findFirstDivisorRef(4465, 47, 50)
-console.log(' ')
-console.log(' ')
-console.log(' ')
-
-// ---------------
-//  Third version
-// ---------------
-function findFirstDivisorRef2(dividend, part, start) {
-    if (start > dividend || part > dividend) {
-        return console.warn(
-            'The part and the starting point can not be greater than the dividend'
-        )
-    }
-
-    let loops = 0
-
-    let d
-
-    if (start > part) {
-        for (let i = start; i >= 0 + part; i--) {
-            loops++
-
-            if (i % part === 0) {
-                i += part
-                d = i
-
-                if (d > dividend) {
-                    return console.log(
-                        'There is no matching result after the starting point'
-                    )
-                }
-
-                console.log(
-                    'The first multiple of ' +
-                        part +
-                        ' after the starting point is ' +
-                        d +
-                        ', it took ' +
-                        loops +
-                        ' loops to assess this'
-                )
-                console.log(' ')
-                break
-            }
-        }
-    }
-
-    let c
-    if (d) {
-        c = d
-    } else {
-        c = part
-    }
-
-    for (let i = c; i <= dividend; i += part) {
-        loops++
-
-        if (dividend % i === 0 && i % part === 0) {
-            console.log(
-                'The first divisor of ' +
-                    dividend +
-                    ', after the starting point of ' +
-                    start +
-                    ', that is a multiple of ' +
-                    part +
-                    ' is ' +
-                    i +
-                    ' (a multiple of ' +
-                    i / part +
-                    ' times)'
-            )
-            console.log(
-                'It took a total of ' + loops + ' loops to find the value'
-            )
-
-            return
-        }
-    }
-
-    console.log('There was no match')
-}
-
-console.log('Third version')
-findFirstDivisorRef2(4465, 47, 50)
-
-// High loop count example
-// findFirstDivisorRef2(446534, 11, 5000)

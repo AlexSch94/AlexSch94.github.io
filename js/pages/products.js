@@ -615,4 +615,12 @@
 
         window.addEventListener('resize', getScreenSize)
     })()
+
+    // Disable headers::after in Firefox
+    underlines = document.querySelectorAll('.underline')
+    if (window.navigator.userAgent.indexOf('Firefox') !== -1) {
+        underlines.forEach((line) => {
+            line.style.display = 'none'
+        })
+    }
 })()
