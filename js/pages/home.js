@@ -1,13 +1,16 @@
 const preloader = document.getElementById('preloader'),
-    introAnimation = document.getElementById('introAnimation'),
+    sectionAnimation = document.getElementById('sectionAnimation'),
     vid = document.getElementById('introVideo'),
-    indexNavigationContainer = document.getElementById('fp-nav')
+    indexNavigationContainer = document.getElementById('fp-nav'),
+    indexNavigationLinks = indexNavigationContainer.querySelectorAll('a'),
+    footer = document.getElementById('footer'),
+    footerLinks = footer.querySelectorAll('a')
 
 // Page closure
 ;(function () {
-    // -------------------------
-    //  Page load / intro video
-    // -------------------------
+    // ------------------------------------------------------------
+    // ----------------- Page load / intro video ------------------
+    // ------------------------------------------------------------
     const loadStart = new Date()
 
     let loaderTimeout = 0
@@ -51,98 +54,95 @@ const preloader = document.getElementById('preloader'),
             }
             vid.setAttribute('data-autoplay', true)
 
-            introAnimation.classList.remove('animation-pause')
+            sectionAnimation.classList.remove('animation-pause')
         }, loaderTimeout)
     })
+    // ----------------------------------------
+    // ------------ Scroll prompt -------------
+    // ----------------------------------------
+    const scrollPrompt = document.getElementById('scrollPrompt'),
+        overlayText = document.querySelector('.overlay-text')
+
+    function showScrollPrompt() {
+        setTimeout(() => {
+            scrollPrompt.style.display = 'flex'
+            setTimeout(() => {
+                scrollPrompt.style.opacity = '1'
+                scrollPrompt.style.transform = 'scale(1)'
+            }, 10)
+        }, 200)
+    }
+
+    function disableScrollPrompt() {
+        scrollPrompt.addEventListener('transitionend', () => {
+            scrollPrompt.style.display = 'none'
+        })
+        scrollPrompt.style.opacity = '0'
+        scrollPrompt.style.transform = 'scale(0)'
+
+        window.removeEventListener('keyup', validateScroll)
+        window.removeEventListener('touchmove', validateScroll)
+        window.removeEventListener('DOMMouseScroll', validateScroll)
+        window.removeEventListener(wheelEvent, validateScroll)
+        indexNavigationContainer.removeEventListener('click', validateScroll)
+
+        localStorage.setItem('hideScrollPrompt', true)
+    }
+
+    function validateScroll() {
+        setTimeout(() => {
+            if (!document.body.classList.contains('fp-viewing-1')) {
+                disableScrollPrompt()
+            }
+        }, 80)
+    }
+
+    if (!localStorage.getItem('hideScrollPrompt')) {
+        overlayText.addEventListener('animationend', () => {
+            showScrollPrompt()
+        })
+
+        scrollPrompt.addEventListener('click', () => {
+            disableScrollPrompt()
+        })
+
+        window.addEventListener('keyup', validateScroll)
+        window.addEventListener('touchmove', validateScroll)
+        window.addEventListener('DOMMouseScroll', validateScroll)
+        window.addEventListener(wheelEvent, validateScroll)
+        indexNavigationContainer.addEventListener('click', validateScroll)
+    }
 })()
 
-// ---------------
-//  Scroll prompt
-// ---------------
-const scrollPrompt = document.getElementById('scrollPrompt'),
-    overlayText = document.querySelector('.overlay-text')
-
-function showScrollPrompt() {
-    setTimeout(() => {
-        scrollPrompt.style.display = 'flex'
-        setTimeout(() => {
-            scrollPrompt.style.opacity = '1'
-            scrollPrompt.style.transform = 'scale(1)'
-        }, 10)
-    }, 200)
+// ----------------------------------------
+// --------------- Fullpage ---------------
+// ----------------------------------------
+function handleSlideChange() {
+    setIndexNavPosition()
+    setFPTabIndex()
 }
 
-function disableScrollPrompt() {
-    scrollPrompt.addEventListener('transitionend', () => {
-        scrollPrompt.style.display = 'none'
-    })
-    scrollPrompt.style.opacity = '0'
-    scrollPrompt.style.transform = 'scale(0)'
+// Set tabindex
+indexNavigationLinks.forEach((link) => {
+    link.tabIndex = '-1'
+})
 
-    window.removeEventListener('keyup', validateScroll)
-    window.removeEventListener('touchmove', validateScroll)
-    window.removeEventListener('DOMMouseScroll', validateScroll)
-    window.removeEventListener(wheelEvent, validateScroll)
-    indexNavigationContainer.removeEventListener('click', validateScroll)
-
-    localStorage.setItem('hideScrollPrompt', true)
-}
-
-function validateScroll() {
+function setFPTabIndex() {
     setTimeout(() => {
-        if (!document.body.classList.contains('fp-viewing-1')) {
-            disableScrollPrompt()
+        if (document.body.classList.contains('fp-viewing-6')) {
+            footerLinks.forEach((link) => {
+                link.tabIndex = '0'
+            })
+        } else {
+            footerLinks.forEach((link) => {
+                link.tabIndex = '-1'
+            })
         }
-    }, 80)
-}
-
-if (!localStorage.getItem('hideScrollPrompt')) {
-    overlayText.addEventListener('animationend', () => {
-        showScrollPrompt()
-    })
-
-    scrollPrompt.addEventListener('click', () => {
-        disableScrollPrompt()
-    })
-
-    window.addEventListener('keyup', validateScroll)
-    window.addEventListener('touchmove', validateScroll)
-    window.addEventListener('DOMMouseScroll', validateScroll)
-    window.addEventListener(wheelEvent, validateScroll)
-    indexNavigationContainer.addEventListener('click', validateScroll)
-}
-
-// ----------
-//  Fullpage
-// ----------
-
-//  Hide fullpage index navigation while menu is open
-function showIndexNavigation() {
-    indexNavigationContainer.removeEventListener(
-        'transitionend',
-        removeIndexNavigation
-    )
-    indexNavigationContainer.style.display = 'initial'
-    setTimeout(() => {
-        indexNavigationContainer.style.opacity = '1'
     }, 10)
 }
-
-function hideIndexNavigation() {
-    indexNavigationContainer.style.opacity = '0'
-    indexNavigationContainer.addEventListener(
-        'transitionend',
-        removeIndexNavigation
-    )
-}
-
-function removeIndexNavigation() {
-    indexNavigationContainer.style.display = 'none'
-}
+setFPTabIndex()
 
 // Set fp-nav position according to footer height
-const footer = document.getElementById('footer')
-
 function setIndexNavPosition() {
     footerHeight = footer.clientHeight
     setTimeout(() => {
@@ -150,14 +150,42 @@ function setIndexNavPosition() {
             let transform = `translateX(-50%) translateY(${-footerHeight}px)`
             indexNavigationContainer.style.transform = transform
         } else {
-            indexNavigationContainer.style.transform =
-                'translateX(-50%) translateY(0)'
+            indexNavigationContainer.style.transform = 'translateX(-50%) translateY(0)'
         }
     }, 10)
 }
 
-window.addEventListener(wheelEvent, setIndexNavPosition)
-window.addEventListener('resize', setIndexNavPosition)
-window.addEventListener('load', setIndexNavPosition)
-window.addEventListener('touchmove', setIndexNavPosition)
-indexNavigationContainer.addEventListener('click', setIndexNavPosition)
+window.addEventListener(wheelEvent, handleSlideChange)
+window.addEventListener('resize', handleSlideChange)
+window.addEventListener('load', handleSlideChange)
+window.addEventListener('touchmove', handleSlideChange)
+indexNavigationContainer.addEventListener('click', handleSlideChange)
+window.addEventListener('keyup', (e) => {
+    if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+        setTimeout(() => {
+            handleSlideChange()
+        }, 100)
+    }
+})
+
+//  Hide fullpage index navigation while menu is open
+function showIndexNavigation() {
+    indexNavigationContainer.removeEventListener('transitionend', removeIndexNavigation)
+    indexNavigationContainer.style.display = 'initial'
+    setTimeout(() => {
+        addIndexNavigation()
+    }, 10)
+}
+
+function hideIndexNavigation() {
+    indexNavigationContainer.style.opacity = '0'
+    indexNavigationContainer.addEventListener('transitionend', removeIndexNavigation)
+}
+
+function addIndexNavigation() {
+    indexNavigationContainer.style.opacity = '1'
+}
+
+function removeIndexNavigation() {
+    indexNavigationContainer.style.display = 'none'
+}

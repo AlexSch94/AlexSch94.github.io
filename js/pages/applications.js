@@ -177,9 +177,15 @@
         window.addEventListener('resize', getScreenSize)
     })()
 
-    // Disable headers::after in Firefox
-    underlines = document.querySelectorAll('.underline')
-    if (window.navigator.userAgent.indexOf('Firefox') !== -1) {
+    // Disable headers underline in Firefox
+    const headerContainers = document.querySelectorAll(
+            '.section-header-container'
+        ),
+        underlines = document.querySelectorAll('.underline')
+    if (isFirefox) {
+        headerContainers.forEach((cont) => {
+            cont.style.marginBottom = '0'
+        })
         underlines.forEach((line) => {
             line.style.display = 'none'
         })

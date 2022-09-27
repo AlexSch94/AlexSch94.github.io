@@ -407,6 +407,7 @@ header {
     position: relative;
     display: flex;
     height: 100%;
+    align-items: center;
 }
 
 .nav-bar-right {
@@ -535,7 +536,7 @@ header {
 }
 
 .dropdown-link a:focus {
-    outline: none;
+    outline-offset: -3px;
 }
 
 .dropdown-link:first-of-type::before {
@@ -552,6 +553,13 @@ header {
 
 .dropdown-link.selected,
 .dropdown-link:has(a:focus) {
+    background-color: var(--brand-color2);
+    color: white;
+}
+
+/* For Firefox until has: selector is supported (remove JS class allocation) */
+.dropdown-link.selected,
+.dropdown-link a.ff-styling:focus {
     background-color: var(--brand-color2);
     color: white;
 }
@@ -576,7 +584,6 @@ header {
 .language-icon {
     height: 1em;
     width: auto;
-    margin-top: 0.2em;
     box-shadow: 0 0.05em 0.5em rgba(255, 255, 255, 0.3);
 }
 
@@ -643,6 +650,11 @@ header {
 
 .menu-icon-container:focus {
     outline: none;
+    transform: scale(1.02);
+}
+
+.menu-icon-container:focus .icon-span {
+    box-shadow: 0 0 0.3em white;
 }
 
 .icon-span {
@@ -934,7 +946,7 @@ header {
     outline: 1px solid var(--brand-color2);
 }
 
-.login-ui-wrapper {
+.submit-btn-wrapper {
     position: relative;
     display: flex;
     justify-content: flex-end;
@@ -1362,7 +1374,13 @@ footer .scroll-to-top-btn:hover {
         margin: 0.2em 0 0.3em 0;
     }
 
-    .login-ui-wrapper {
+    .submit-btn-wrapper {
         margin-top: 0.6em;
+    }
+}
+
+@media (min-width: 1001px) {
+    .nav-link:focus {
+        outline-offset: 5px;
     }
 }

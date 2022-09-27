@@ -40,11 +40,6 @@ section:nth-child(even) {
     background-color: currentcolor;
 }
 
-.section-header,
-.section-header::after {
-    transition: all 0.3s ease;
-}
-
 .section-content {
     font-size: var(--FS10);
     margin-top: 1em;
@@ -167,7 +162,7 @@ section:nth-child(even) {
     width: 90%;
     min-width: 310px;
     max-width: 750px;
-    max-height: 90%;
+    max-height: 85%;
     flex-direction: column;
     gap: 1em;
     font-size: var(--FS11);
@@ -291,6 +286,7 @@ section:nth-child(even) {
 
 .popout-description li {
     margin-bottom: 0.4em;
+    font-size: var(--FS11-2);
 }
 
 .popout-close-btn {
@@ -342,8 +338,7 @@ section:nth-child(even) {
 @media (max-width: 650px), (max-height: 700px) {
     .popout {
         max-width: 90%;
-        width: 90%;
-        min-width: unset;
+        min-width: 300px;
     }
 }
 

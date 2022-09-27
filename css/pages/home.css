@@ -39,11 +39,11 @@ header {
     border-radius: 50%;
     opacity: 0.2;
     transform: scale(0.2);
-    animation: preloadBlink 1.5s ease infinite;
+    animation: preloadAnim 1.5s ease infinite;
     animation-delay: calc(0.2s * var(--i));
 }
 
-@keyframes preloadBlink {
+@keyframes preloadAnim {
     50% {
         opacity: 1;
         transform: scale(1);
@@ -510,7 +510,8 @@ section:first-of-type {
         max-width: 65%;
     }
 
-    .fp-viewing-5 .img-sec4 {
+    .fp-viewing-5 .img-sec4,
+    .fp-viewing-6 .img-sec4 {
         transform: scale(3.36) translateY(-22.5%) translateX(0.5%);
     }
 }
@@ -661,6 +662,12 @@ section:first-of-type {
     }
 }
 
+@media (max-height: 800px) {
+    .overlay-logo-container {
+        max-width: 300px;
+    }
+}
+
 /* mixed media queries */
 
 @media (max-width: 800px) and (min-height: 1000px) {
@@ -671,6 +678,12 @@ section:first-of-type {
 
     .bg-wrapper:not(.bg-wrapper0) {
         gap: 100px;
+    }
+}
+
+@media (max-width: 1200px) and (max-height: 600px) and (min-width: 600px) {
+    .overlay-text {
+        font-size: clamp(25px, 6.3vw, 63px);
     }
 }
 
@@ -690,7 +703,7 @@ section:first-of-type {
     }
 
     .bg-wrapper3 {
-        background-image: url(../../images/sustainability.svg?v=060922);
+        background-image: url(../../images/sustainability.svg?v=010922);
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;

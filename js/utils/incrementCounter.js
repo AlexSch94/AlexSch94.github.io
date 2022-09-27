@@ -1,5 +1,3 @@
-// Final val must be lower than 1 billion, or the function needs extending
-
 export default function incrementCounter(
     element,
     currentVal,
@@ -10,11 +8,7 @@ export default function incrementCounter(
     const timeout = duration / steps,
         increment = (finalVal - currentVal) / steps
 
-    let array = [],
-        valString = '',
-        part1 = 0,
-        part2 = 0,
-        part3 = 0
+    let array = []
 
     if (increment < 0.5) {
         for (let i = 0; i < steps; i++) {
@@ -25,37 +19,17 @@ export default function incrementCounter(
         for (let i = 0; i < steps; i++) {
             currentVal += increment
             currentVal = Math.floor(currentVal)
-            valString = currentVal.toString()
-            if (currentVal > 999 && currentVal <= 999999) {
-                part1 = valString.slice(-6, -3)
-                part2 = valString.slice(-3)
+            let formattedVal = new Intl.NumberFormat('en-EN', {})
+                .format(currentVal)
+                .replaceAll(',', '.')
 
-                valString = part1 + '.' + part2
-            } else if (currentVal > 999999) {
-                part1 = valString.slice(-9, -6)
-                part2 = valString.slice(-6, -3)
-                part3 = valString.slice(-3)
-
-                valString = part1 + '.' + part2 + '.' + part3
-            }
-
-            array.push(valString)
+            array.push(formattedVal)
         }
     }
 
-    finalVal = finalVal.toString()
-    if (finalVal > 999 && currentVal <= 999999) {
-        part1 = finalVal.slice(-6, -3)
-        part2 = finalVal.slice(-3)
-
-        finalVal = part1 + '.' + part2
-    } else if (finalVal > 999999) {
-        part1 = finalVal.slice(-9, -6)
-        part2 = finalVal.slice(-6, -3)
-        part3 = finalVal.slice(-3)
-
-        finalVal = part1 + '.' + part2 + '.' + part3
-    }
+    finalVal = new Intl.NumberFormat('en-EN', {})
+        .format(finalVal)
+        .replaceAll(',', '.')
 
     array.pop()
     array.push(finalVal)

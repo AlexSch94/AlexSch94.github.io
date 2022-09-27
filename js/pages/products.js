@@ -49,10 +49,7 @@
         popout = document.getElementById('popout'),
         menuBtn = document.querySelector('.menu-icon-container'),
         openLoginBtn = document.querySelector('.login-btn-container'),
-        openLoginMobileBtn = document.getElementById('loginMobile'),
-        navBar = document.querySelector('.nav-bar'),
-        footer = document.querySelector('footer'),
-        scrollBarPaddingEls = [navBar, footer]
+        openLoginMobileBtn = document.getElementById('loginMobile')
 
     function openPopout() {
         popoutOpen = true
@@ -147,9 +144,9 @@
                         </div>
                         
                         <div class="popout-description">
-                            <p class="light">Rail based assets are susceptible to fluctuations in utilisation leading to large discrepancies in the distance travelled each month. The assets might stay stationary or travel many thousands of kilometers and be exposed to considerable stress. Currently the rolling stock with all its components must be maintained at regular intervals, not least for safety reasons...</p>
+                            <p class="light">Rail based assets are susceptible to fluctuations in utilisation leading to large discrepancies in the distance traveled each month. The assets might stay stationary or travel many thousands of kilometers and be exposed to considerable stress. As it stands, the rolling stock with all its components must be maintained at regular intervals, not least for safety reasons...</p>
 
-                            <p>If the mileage of each individual wagon is known exactly, maintenance can be carried out in a targeted manner and does not have to be carried out blindly based on fixed intervals, which allows for considerable savings potentials to be realized.</p>
+                            <p>If the mileage of each individual wagon is known exactly, maintenance can be executed in a targeted manner and does not have to be carried out blindly based on fixed intervals, allowing the realisation of considerable saving potentials.</p>
                             
                             <p>DOT has developed a tested a verified algorithm that allows the mileage to be recorded with an accuracy of over 98%.</p>
                         </div>
@@ -171,11 +168,11 @@
                         </div>
                         
                         <div class="popout-description">
-                            <p class="light">Schienengebundene Fahrzeuge sind Schwankungen in der Auslastung unterworfen, was zu großen Unterschieden in der monatlich zurückgelegten Strecke führt. Die Anlagen können stationär bleiben oder viele tausend Kilometer zurücklegen und sind dabei erheblichen Belastungen ausgesetzt. Derzeit muss das Schienenfahrzeug mit all seinen Komponenten in regelmäßigen Abständen gewartet werden, nicht zuletzt aus Sicherheitsgründen...</p>
+                            <p class="light">Schienengebundene Fahrzeuge sind Schwankungen in der Auslastung unterworfen, was zu großen Unterschieden in der monatlich zurückgelegten Strecke führt. Die Anlagen können stationär bleiben oder viele tausend Kilometer zurücklegen und dabei erheblichen Belastungen ausgesetzt werden. Derzeit muss das Schienenfahrzeug mit all seinen Komponenten in regelmäßigen Abständen gewartet werden, nicht zuletzt aus Sicherheitsgründen...</p>
 
                             <p>Wenn die Laufleistung jedes einzelnen Waggons genau bekannt ist, kann die Wartung gezielt erfolgen und muss nicht blind nach fixen Intervallen durchgeführt werden, wodurch sich erhebliche Einsparpotenziale realisieren lassen.</p>
                             
-                            <p>DOT hat einen getesteten und verifizierten Algorithmus entwickelt, der es erlaubt, den Kilometerstand mit einer Genauigkeit von über 98% zu erfassen.</p>
+                            <p>DOT hat einen getesteten und verifizierten Algorithmus entwickelt, der erlaubt den Kilometerstand mit einer Genauigkeit von über 98% zu erfassen.</p>
                         </div>
                     </div>
                 </div>
@@ -245,9 +242,9 @@
                         </div>
 
                         <div class="popout-description">
-                            <p class="light">The strain on freight wagons depends on a variety of factors. A significant factor in terms of wear on brake systems is the amount of scaled altitude. To better estimate this wear and consequently optimise maintenance, DOT has developed the <span class="nowrap">X-Rayl</span> DOT-Link Altimeter algorithm, which precisely calculates the meters of altitude covered based on the trip...</p>
+                            <p class="light">The strain on freight wagons depends on a variety of factors. A significant factor in terms of wear on brake systems is the amount of scaled altitude. To better estimate this wear and consequently optimise maintenance, DOT has developed the <span class="nowrap">X-Rayl</span> DOT-Link Altimeter algorithm, which precisely calculates the meters of altitude covered based on the distance traveled...</p>
 
-                            <p>The basis for the scaled altitude is a high-resolution digital model with which the travelled distance is compared. To provide a high degree of accuracy, various route characteristics such as tunnels, are treated specially. This approach is far superior to a purely GPS-based solution due to the data accuracy and enables a view of the actual wear caused by the topography for the first time.</p>
+                            <p>The basis for the scaled altitude is a high-resolution digital model with which the traveled distance is compared. To provide a high degree of accuracy, various route characteristics such as tunnels, are treated specially. This approach is far superior to a purely GPS-based solution, due to the data accuracy, and enables a view of the actual wear caused by the topography for the first time.</p>
                         </div>
                     </div>
                 </div>
@@ -289,9 +286,9 @@
                             <h3>Container/tank heating analysis</h3>
                         </div>
                         <div class="popout-description">
-                            <p class="light">For some substances, transported by containers and railcars, the temperature must be within specified limits. Tank-containers might require heating to achieve this. The heating process is done by the means of a pipe which runs through the tank-container guiding hot water or steam. Since this process involves costs and is also invoiced, it is advantageous to record the exact start, the temperature of the heating medium and the end of the heating process...</p>
+                            <p class="light">For some substances, transported by containers and railcars, the temperature must be within specified limits. <span class="nowrap">Tank-containers</span> might require heating to achieve this. The heating process is done by the means of a pipe which runs through the <span class="nowrap">tank-container</span>, guiding hot water or steam. Since this process involves costs and is also invoiced, it is advantageous to record the exact start, the temperature of the heating medium and the end of the heating process...</p>
 
-                            <p>For this purpose, a sensor box is screwed onto a specially developed device and attached directly to the steam or water pipe. A gradient recognition system detects the start and end of the heating process with great precision and records the temperature profile. This can then be viewed and reused in the <span class="nowrap">DOT-Link</span> web portal.</p>
+                            <p>For this purpose, a sensor box is screwed onto a specially developed device and attached directly to the steam or water pipe. A gradient recognition system detects the start and end of the heating process with great precision and records the temperature profile. This data can then be viewed and reused in the <span class="nowrap">DOT-Link</span> web portal.</p>
                         </div>
                     </div>
                 </div>
@@ -332,9 +329,9 @@
                             <h3>Advanced shock detection</h3>
                         </div>
                         <div class="popout-description">
-                            <p class="light">The <span class="nowrap">X-Rayl</span> pointers as well as the <span class="nowrap">X-Rayl</span> Sensor S3ACC-D include three high-precision <span class="nowrap">3-axis</span> accelerometers featuring a wide array of detection ranges. All sensors have been specifically chosen to cover different shock detection scenarios, that can be expected in the railway environment, from measuring small changes in the mg range as well as shocks up to 200g with a high resolution...</p>
+                            <p class="light">The <span class="nowrap">X-Rayl</span> pointers as well as the <span class="nowrap">X-Rayl</span> Sensor S3ACC-D include three high-precision <span class="nowrap">3-axis</span> accelerometers, featuring a wide array of detection ranges. All sensors have been specifically chosen to cover different shock detection scenarios, that can be expected in the railway environment, from measuring small changes in the mg range as well as shocks up to 200g with a high resolution...</p>
 
-                            <p>Different configurable frequency filters allow not only the detection of relatively slow shunting shocks, but also the detection of fast shocks which might lead to superstructure damage. Adjustable thresholds allow immediate alarming when exceeded.</p>
+                            <p>Different configurable frequency filters allow not only the detection of relatively slow shunting shocks, but also the detection of fast shocks which might lead to superstructure damage.</p>
 
                             <p>Adjustable thresholds allow immediate alarming when exceeded.</p>
                         </div>
@@ -379,13 +376,13 @@
                         <h3>Wagon Health Indicator</h3>
                     </div>
                     <div class="popout-description">
-                        <p class="light">Since rail assets are subject to very diverse conditions and usage patterns, it is difficult to ascertain whether a railcar is in need to extra maintenance. The travelled mileage alone does not provide a comprehensive picture of the current state of the car since the percentage of loaded/unloaded travel, track conditions and various other parameters can influence the state of an asset. <span class="nowrap">X-Rayl</span> Pointers regularly measure vibrations patterns occurring on the asset, to determine the current “health state” of an asset.</p>
+                        <p class="light">Since rail assets are subject to very diverse conditions and usage patterns, it is difficult to ascertain whether a railcar is in need to extra maintenance. The traveled mileage alone does not provide a comprehensive picture of the current state of the car since the percentage of loaded / unloaded travel, track conditions and various other parameters can influence the state of an asset. <span class="nowrap">X-Rayl</span> Pointers regularly measure vibrations patterns occurring on the asset, to determine the current “health state” of an asset.</p>
 
                         <p class="light">DOT has developed an algorithm to detect changes in such patterns, which are caused by damage of the wheel sets, bogies or the superstructure...</p>
 
-                        <p>The final product is the Wagon Health Indicator which starts at 100% for newly equipped wagons, and if damage is detected the indicator is decreased over time. For each asset that is equipped with a <span class="nowrap">X-Rayl</span> Pointer this value is calculated on a daily basis, providing our customers with a comprehensive overview of the health of all parts of their fleet, allowing them to identify assets that might be in need of extra maintenance. In case of longer cars with more than 2 bogies, the mounting of additional vibration sensor S3VIB-D might be needed to capture a full “picture” of the wagons state.</p>
+                        <p>The final product is the Wagon Health Indicator which starts at 100% for newly equipped wagons, and decreases over time if damage is detected. This value is calculated on a daily basis for each asset that is equipped with a <span class="nowrap">X-Rayl</span> Pointer,  providing our customers with a comprehensive overview of the health of all parts of their fleet, allowing them to identify assets that might be in need of extra maintenance. In case of longer cars with more than two bogies, the mounting of additional vibration sensor S3VIB-D might be needed to capture a full “picture” of the wagons state.</p>
 
-                        <p>This index is a measure of the vibrations on board and is automatically recorded for a few seconds each time the vehicle travels above 40 km/h. The index is used to measure the vibration level on board. This provides a practical indication of the smooth running of the car fleet and its development over time. If this index suddenly deteriorates, then it is reasonable to assume that a flat spot has occurred on one of the wheel sets.</p>
+                        <p>This index is a measure of the vibrations on board and is automatically recorded for a few seconds each time the vehicle travels above 40 km/h. The index is used to measure the vibration level on board. This provides a practical indication of the smooth operation of the car fleet and its development over time. If this index suddenly deteriorates, then it is reasonable to assume that a flat spot has occurred on one of the wheel sets.</p>
                     </div>
                 </div>
             </div>
@@ -404,10 +401,11 @@
                             <h3>Wagon Health Indicator</h3>
                         </div>
                         <div class="popout-description">
-                            <p class="light">Da Bahnanlagen sehr unterschiedlichen Bedingungen und Nutzungsmustern unterliegen, ist es schwierig festzustellen, ob ein Triebwagen einer zusätzlichen Wartung bedarf. Die reine Betrachtung der gefahrenen Kilometer gibt kein umfassendes Bild des aktuellen Zustands des Wagens, da der Anteil der beladenen/unbeladenen Fahrten, die Gleisbedingungen und verschiedene andere Parameter den Zustand einer Anlage beeinflussen können. Um einen Einblick in den aktuellen "Gesundheitszustand" eines Fahrzeugs zu erhalten, sind die <span class="nowrap">X-Rayl</span> Pointer so konfiguriert, dass sie regelmäßig die Vibrationsmuster des Fahrzeugs messen. </p>
+                            <p class="light">Da Bahnanlagen sehr unterschiedlichen Bedingungen und Nutzungsmustern unterliegen, ist es schwierig festzustellen, ob ein Triebwagen einer zusätzlichen Wartung bedarf. Die reine Betrachtung der gefahrenen Kilometer gibt kein umfassendes Bild des aktuellen Zustands des Wagens, da der Anteil der beladenen / unbeladenen Fahrten, die Gleisbedingungen und verschiedene andere Parameter den Zustand einer Anlage beeinflussen können. Um einen Einblick in den aktuellen "Gesundheitszustand" eines Fahrzeugs zu erhalten, sind die <span class="nowrap">X-Rayl</span> Pointer so konfiguriert, dass sie regelmäßig die Vibrationsmuster des Fahrzeugs messen. </p>
 
                             <p class="light">Da Schäden an den Radsätzen (z. B. Flachstellen), Drehgestellen oder Aufbauten das Schwingungsmuster deutlich verändern, hat das DOT einen Algorithmus entwickelt, um diese Veränderungen zu erkennen...</p>
-                            Das Endprodukt ist der "Wagon Health Indicator", der bei neu ausgerüsteten Waggons bei 100% beginnt und bei festgestellten Schäden im Laufe der Zeit verringert wird. Für jeden mit einem <span class="nowrap">X-Rayl</span> Pointer ausgerüsteten Wagen wird dieser Wert täglich berechnet, so dass unsere Kunden einen umfassenden Überblick über den Zustand aller Teile ihres Fuhrparks erhalten und erkennen können, welche Wagen möglicherweise einer zusätzlichen Wartung bedürfen. Bei längeren Wagen mit mehr als 2 Drehgestellen kann die Montage eines zusätzlichen Schwingungssensors S3VIB-D erforderlich sein, um ein vollständiges "Bild" des Wagenzustands zu erhalten.</p>
+
+                            <p>Das Endprodukt ist der "Wagon Health Indicator", der bei neu ausgerüsteten Waggons bei 100% beginnt und bei festgestellten Schäden im Laufe der Zeit verringert wird. Für jeden mit einem <span class="nowrap">X-Rayl</span> Pointer ausgerüsteten Wagen wird dieser Wert täglich berechnet, so dass unsere Kunden einen umfassenden Überblick über den Zustand aller Teile ihres Fuhrparks erhalten und erkennen können, welche Wagen möglicherweise einer zusätzlichen Wartung bedürfen. Bei längeren Wagen mit mehr als 2 Drehgestellen kann die Montage eines zusätzlichen Schwingungssensors S3VIB-D erforderlich sein, um ein vollständiges "Bild" des Wagenzustands zu erhalten.</p>
 
                             <p>Dieser Index ist ein Maß für die Schwingungen an Bord und wird jedes Mal, wenn das Fahrzeug mit mehr als 40 km/h fährt, automatisch für einige Sekunden aufgezeichnet. Der Index wird zur Messung des Vibrationsniveaus an Bord verwendet. Dies ist ein praktischer Indikator für das reibungslose Funktionieren der Fahrzeugflotte und ihre Entwicklung im Laufe der Zeit. Wenn sich dieser Index plötzlich verschlechtert, liegt die Vermutung nahe, dass ein Plattfuß an einem der Radsätze aufgetreten ist.</p>
                         </div>
@@ -429,7 +427,7 @@
                             <h3>Brake Health Indicator</h3>
                         </div>
                         <div class="popout-description">
-                            <p class="light">The timely maintenance of a railcars brake system is an important factor in keeping the cars operational and working at optimal utilisation, since unplanned maintenance can lead to severe interruptions in logistics flows. To monitor the utilisation of the brake system DOT has developed an algorithm that analyses the data generated by an <span class="nowrap">X-Rayl</span> Sensor S3PRS-D installed in the brake air conduct of a rail asset. Every time the brake is applied the pressure in this air conduct rises accordingly, a stronger brake activation leads to a higher pressure, then when braking lightly...</p>
+                            <p class="light">The timely maintenance of a railcars brake system is an important factor in keeping the cars operational and working at optimal utilisation, since unplanned maintenance can lead to severe interruptions in logistics flows. To monitor the utilisation of the brake system DOT has developed an algorithm that analyses the data generated by an <span class="nowrap">X-Rayl</span> Sensor S3PRS-D installed in the brake air conduct of a rail asset. Every time the brake is applied the pressure in this air conduct rises accordingly, a stronger brake activation leads to a higher pressure, than when braking lightly...</p>
 
                             <p>By analysing the pressure profile and the brake application frequency, which is higher in hilly or mountainous terrain, the algorithm can estimate the resulting brake wear of each asset over time. This Brake Health Indicator is calculated continuously for each equipped asset, allowing our customers to predictively send cars with high brake utilisation to a workshop for brake maintenance, before they are put out of service due to worn down brakes.</p>
                         </div>
@@ -450,7 +448,7 @@
                             <h3>Brake Health Indicator</h3>
                         </div>
                         <div class="popout-description">
-                            <p class="light">Die rechtzeitige Wartung des Bremssystems eines Eisenbahnwagens ist ein wichtiger Faktor für die Aufrechterhaltung des Betriebs und der optimalen Auslastung der Wagen, da ungeplante Wartungsarbeiten zu schwerwiegenden Unterbrechungen der Logistikströme führen können. Um die Auslastung des Bremssystems zu überwachen, hat DOT einen Algorithmus entwickelt, der die Daten analysiert, die von einem Röntgensensor S3PRS-D erzeugt werden, der in der Bremsluftleitung eines Schienenfahrzeugs installiert ist. Jedes Mal, wenn die Bremse betätigt wird, steigt der Druck in dieser Luftleitung entsprechend an, eine stärkere Bremsbetätigung führt zu einem höheren Druck als bei einer leichten Bremsung...</p>
+                            <p class="light">Die rechtzeitige Wartung des Bremssystems eines Eisenbahnwagens ist ein wichtiger Faktor für die Aufrechterhaltung des Betriebs und der optimalen Auslastung der Wagen, da ungeplante Wartungsarbeiten zu schwerwiegenden Unterbrechungen der Logistikströme führen können. Um die Auslastung des Bremssystems zu überwachen, hat DOT einen Algorithmus entwickelt, der die Daten analysiert, die von einem Röntgensensor S3PRS-D erzeugt werden, der in der Bremsluftleitung eines Schienenfahrzeugs installiert ist. Jedes Mal, wenn die Bremse betätigt wird, steigt der Druck in dieser Luftleitung entsprechend an, eine stärkere Bremsbetätigung führt zu einem höheren Druck als eine leichte Bremsung...</p>
 
                             <p>Durch die Analyse des Druckprofils und der Häufigkeit der Bremsbetätigung, die in hügeligem oder bergigem Gelände höher ist, kann der Algorithmus den daraus resultierenden Bremsenverschleiß jeder Anlage im Laufe der Zeit abschätzen. Dieser "Brake Health Indicator" wird kontinuierlich für jedes ausgerüstete Fahrzeug berechnet und ermöglicht es unseren Kunden, Fahrzeuge mit hoher Bremsenauslastung vorausschauend zur Bremsenwartung in eine Werkstatt zu schicken, bevor sie aufgrund verschlissener Bremsen außer Betrieb genommen werden.</p>
                         </div>
@@ -472,7 +470,7 @@
                             <h3>Sub 1GHz preparation</h3>
                         </div>
                         <div class="popout-description">
-                            <p class="light">From today's point of view, it is not yet clearly defined which technology will be used for intra-train communication, i.e. communication between freight wagons and/or the locomotive. The Working Group 4 of the ITSS is currently considering to solve this via the 2.4 GHz interface, in which each telematics device serves as a relay to bridge the length of a train in several hops. The LM-EJ takes this uncertainty into account by providing a dedicated radio transmitter and receiver for sub 1Ghz with a power of 20 dBm. Although an external antenna is required, the Sub 1Ghz offers several advantages over the 2.4Ghz spectrum...</p>
+                            <p class="light">As of today, it is not yet clearly defined which technology will be used for intra-train communication, i.e. communication between freight wagons and / or the locomotive. The Working Group 4 of the ITSS is currently considering to solve this via the 2.4 GHz interface, in which each telematics device serves as a relay to bridge the length of a train in several hops. The LM-EJ takes this uncertainty into account by providing a dedicated radio transmitter and receiver for sub 1Ghz with a power of 20 dBm. Although an external antenna is required, the Sub 1Ghz offers several advantages over the 2.4Ghz spectrum...</p>
 
                             <ul>
                                 <li>Range of Sub 1Ghz Wireless: Sub 1Ghz offers more range than 2.4Ghz. Sub 1Ghz wireless transmission provides 1.5-2 times the distance coverage than 2.4Ghz spectrum. In addition, the Sub 1Ghz wireless spectrum has a Long-Range mode, which can have a range of more than 100 km, if the power is sufficient.</li>
@@ -616,9 +614,13 @@
         window.addEventListener('resize', getScreenSize)
     })()
 
-    // Disable headers::after in Firefox
-    underlines = document.querySelectorAll('.underline')
-    if (window.navigator.userAgent.indexOf('Firefox') !== -1) {
+    // Disable headers underline in Firefox
+    const headerContainers = document.querySelectorAll('.section-header-container'),
+        underlines = document.querySelectorAll('.underline')
+    if (isFirefox) {
+        headerContainers.forEach((cont) => {
+            cont.style.marginBottom = '0'
+        })
         underlines.forEach((line) => {
             line.style.display = 'none'
         })

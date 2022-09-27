@@ -3,6 +3,7 @@
 // --------------------
 const isTouch = 'ontouchstart' in window || 0 < navigator.msMaxTouchPoints,
     navBar = document.querySelector('.nav-bar'),
+    logoLink = document.querySelector('.logo-container').querySelector('a'),
     scrollToTopBtns = document.querySelectorAll('.scroll-to-top-btn')
 
 let isIOS = false
@@ -10,10 +11,28 @@ if (navigator.userAgent.match(/(iPhone|iPad)/)) {
     isIOS = true
 }
 
+let isFirefox = false
+if (window.navigator.userAgent.indexOf('Firefox') !== -1) {
+    isFirefox = true
+}
+
 if (scrollToTopBtns) {
     scrollToTopBtns.forEach((button) => {
         button.addEventListener('click', () => {
             scrollToTop()
+        })
+    })
+
+    scrollToTopBtns.forEach((button) => {
+        button.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                scrollToTop()
+
+                if (logoLink) {
+                    logoLink.focus()
+                    document.activeElement.blur()
+                }
+            }
         })
     })
 }
@@ -23,6 +42,7 @@ function scrollToTop() {
 }
 
 function preventDefault(e) {
+    console.log(e)
     e.preventDefault()
 }
 

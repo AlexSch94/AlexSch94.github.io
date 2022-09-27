@@ -68,17 +68,14 @@ section:nth-child(even) {
     opacity: 0;
     transform: scale(0.6);
     transform-origin: center;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    will-change: transform;
+    will-change: transform, opacity;
 }
 
 .advantage-wrapper.come-in .advantage {
     transition: transform 0.6s ease, opacity 0.6s ease;
-    transform-origin: center;
-    transition-delay: calc(0.2s * var(--i));
     opacity: 1;
     transform: scale(1);
-    -moz-transform: scale(1);
+    transition-delay: calc(0.2s * var(--i));
 }
 
 .advantage-text-container {

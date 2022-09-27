@@ -246,6 +246,12 @@ span.plus {
     }
 }
 
+@media (min-height: 1350px) {
+    .intro-section {
+        min-height: unset;
+    }
+}
+
 @media (max-width: 1200px) {
     .intro-section {
         min-height: unset;

@@ -28,15 +28,9 @@ if (currentCategory === 'home') {
     }
 
     const home = new Category('home', document.getElementById('homeLink')),
-        login = new Category(
-            'login',
-            document.querySelector('.login-btn-container')
-        ),
+        login = new Category('login', document.querySelector('.login-btn-container')),
         openLoginBtn = login.parent,
-        loginMobile = new Category(
-            'loginMobile',
-            document.getElementById('loginMobile')
-        ),
+        loginMobile = new Category('loginMobile', document.getElementById('loginMobile')),
         openLoginMobileBtn = loginMobile.parent,
         applications = new Category(
             'applications',
@@ -79,15 +73,27 @@ if (currentCategory === 'home') {
         menuFader = document.querySelector('.menu-fader'),
         menuBtn = document.querySelector('.menu-icon-container'),
         topNav = document.querySelector('.top-nav'),
+        mainLinks = [],
         subLinks = []
 
     categories.forEach((ctg) => {
+        // setup mainLinks
+        if (ctg.parent.querySelector('a')) {
+            mainLinks.push(ctg.parent.querySelector('a'))
+        } else if (ctg.parent.querySelector('div')) {
+            mainLinks.push(ctg.parent.querySelector('div'))
+        }
+        // setup subLink
         if (ctg.items) {
             ctg.items.forEach((item) => {
                 subLinks.push(item.querySelector('a'))
             })
         }
     })
+
+    if (isFirefox) {
+        subLinks.forEach((link) => link.classList.add('ff-styling'))
+    }
 
     let mainMenuOpen = false,
         loginOpen = false
@@ -175,23 +181,18 @@ if (currentCategory === 'home') {
             if (window.innerWidth <= 1000 || isTouch) {
                 // allow to toggle menu without following link for touchscreens and in small screen menu
                 let [...list] = e.target.classList
-                if (
-                    list.includes('nav-link') ||
-                    list.includes('icon-dropdown')
-                ) {
+                if (list.includes('nav-link') || list.includes('icon-dropdown')) {
                     e.preventDefault()
                 }
                 // set / unset active states - manage subLink tabIndex
-                setSubLinkTabIndex('off')
+                setSubLinkTabIndex([subLinks], 'hide')
                 if (element.active === false) {
                     deselectAll(element)
                     element.parent.classList.add('active')
                     element.menu.classList.add('open')
                     element.active = true
                     // Make subLinks tabbable
-                    element.subLinks.forEach((link) =>
-                        link.setAttribute('tabindex', '0')
-                    )
+                    element.subLinks.forEach((link) => link.setAttribute('tabindex', '0'))
                     return false
                 } else {
                     element.parent.classList.remove('active')
@@ -199,9 +200,7 @@ if (currentCategory === 'home') {
                     element.active = false
                     highlightCurrentCategory()
                     // Make subLinks untabbable
-                    element.subLinks.forEach((link) =>
-                        link.setAttribute('tabindex', '-1')
-                    )
+                    element.subLinks.forEach((link) => link.setAttribute('tabindex', '-1'))
                 }
             }
         })
@@ -218,9 +217,7 @@ if (currentCategory === 'home') {
         // Close menu / highlight dropdown item on click (for mobile view)
         element.items.forEach((item) => {
             item.addEventListener('pointerup', (e) => {
-                element.items.forEach((item) =>
-                    item.classList.remove('selected')
-                )
+                element.items.forEach((item) => item.classList.remove('selected'))
                 item.classList.add('selected')
 
                 if (window.innerWidth <= 1000 || isTouch) {
@@ -237,6 +234,7 @@ if (currentCategory === 'home') {
         item.addEventListener('mouseenter', function (e) {
             dropDownItems.forEach((item) => {
                 item.classList.remove('selected')
+                document.activeElement.blur()
             })
             e.target.classList.add('selected')
         })
@@ -302,16 +300,22 @@ if (currentCategory === 'home') {
         }
     }
 
-    function setSubLinkTabIndex(state) {
-        if (state === 'on') {
-            subLinks.forEach((link) => link.setAttribute('tabindex', '0'))
-        } else if (state === 'off') {
-            subLinks.forEach((link) => link.setAttribute('tabindex', '-1'))
+    function setSubLinkTabIndex(targets, state) {
+        if (state === 'show') {
+            targets.forEach((target) => {
+                target.forEach((link) => link.removeAttribute('tabindex'))
+            })
+            // subLinks.forEach((link) => link.removeAttribute('tabindex'))
+        } else if (state === 'hide') {
+            targets.forEach((target) => {
+                target.forEach((link) => link.setAttribute('tabindex', '-1'))
+            })
+            // subLinks.forEach((link) => link.setAttribute('tabindex', '-1'))
         }
     }
 
     if (window.innerWidth <= 1000) {
-        setSubLinkTabIndex('off')
+        setSubLinkTabIndex([mainLinks, subLinks], 'hide')
     }
 
     // Active class used for highlighting on desktop = open dropdown on mobile -> remove
@@ -322,30 +326,26 @@ if (currentCategory === 'home') {
     })
 
     // Keyboard control
-    window.addEventListener('keyup', (e) => {
+    window.addEventListener('keydown', (e) => {
         if (e.key !== 'Tab' || window.innerWidth <= 1000) return
 
-        for (let c = 0; c < categories.length; c++) {
-            if (categories[c].items) {
-                categories[c].items.forEach((item) =>
-                    item.classList.remove('selected')
-                )
+        setTimeout(() => {
+            for (let c = 0; c < categories.length; c++) {
+                if (categories[c].items) {
+                    categories[c].items.forEach((item) => item.classList.remove('selected'))
 
-                for (let i = 0; i < categories[c].items.length; i++) {
-                    if (
-                        categories[c].items[i].contains(document.activeElement)
-                    ) {
-                        categories[c].menu.classList.add('open')
-                        document.activeElement.parentNode.classList.add(
-                            'selected'
-                        )
-                        break
-                    } else {
-                        categories[c].menu.classList.remove('open')
+                    for (let i = 0; i < categories[c].items.length; i++) {
+                        if (categories[c].items[i].contains(document.activeElement)) {
+                            categories[c].menu.classList.add('open')
+                            document.activeElement.parentNode.classList.add('selected')
+                            break
+                        } else {
+                            categories[c].menu.classList.remove('open')
+                        }
                     }
                 }
             }
-        }
+        }, 5)
     })
 
     window.addEventListener('keydown', (e) => {
@@ -354,9 +354,7 @@ if (currentCategory === 'home') {
         for (let c = 0; c < categories.length; c++) {
             if (categories[c].menu) {
                 categories[c].menu.classList.remove('open')
-                categories[c].items.forEach((item) =>
-                    item.classList.remove('selected')
-                )
+                categories[c].items.forEach((item) => item.classList.remove('selected'))
             }
         }
     })
@@ -364,16 +362,10 @@ if (currentCategory === 'home') {
     // ------------------------------------------------------------------------
     // --------------------------- Smallscreen menu ---------------------------
     // ------------------------------------------------------------------------
-    menuBtn.addEventListener('click', (e) => {
-        if (!mainMenuOpen) {
-            openMenu()
-        } else if (mainMenuOpen) {
-            closeMenu()
-        }
-    })
-
     function openMenu() {
         mainMenuOpen = true
+
+        menuBtn.focus()
         topNav.classList.add('open')
         menuBtn.classList.add('active')
         menuFader.style.display = 'initial'
@@ -386,16 +378,18 @@ if (currentCategory === 'home') {
         if (isHomePage) {
             hideIndexNavigation()
             vid.pause()
-            introAnimation.classList.add('animation-pause')
-            myFullpage.setAllowScrolling(false)
+            sectionAnimation.classList.add('animation-pause')
         }
 
         // Close on Esc
         window.addEventListener('keydown', closeMenuOnEsc)
+
+        setSubLinkTabIndex([mainLinks], 'show')
     }
 
     function closeMenu() {
         mainMenuOpen = false
+
         topNav.classList.remove('open')
         menuBtn.classList.remove('active')
         menuFader.addEventListener('transitionend', hideMenuFader)
@@ -411,12 +405,28 @@ if (currentCategory === 'home') {
         if (isHomePage) {
             showIndexNavigation()
             vid.play()
-            introAnimation.classList.remove('animation-pause')
-            myFullpage.setAllowScrolling(true)
+            sectionAnimation.classList.remove('animation-pause')
         }
 
         window.removeEventListener('keydown', closeMenuOnEsc)
+
+        setSubLinkTabIndex([mainLinks], 'hide')
     }
+
+    function onMenuBtnClick() {
+        if (!mainMenuOpen) {
+            openMenu()
+        } else if (mainMenuOpen) {
+            closeMenu()
+        }
+    }
+    menuBtn.addEventListener('click', (e) => {
+        onMenuBtnClick()
+    })
+
+    menuBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') onMenuBtnClick()
+    })
 
     menuFader.addEventListener('click', closeMenu)
 
@@ -432,10 +442,6 @@ if (currentCategory === 'home') {
         }
     }
 
-    menuBtn.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') openMenu()
-    })
-
     // ------------------------------------------------------------------------
     // ------------------------------ Login form ------------------------------
     // ------------------------------------------------------------------------
@@ -445,14 +451,10 @@ if (currentCategory === 'home') {
         loginCloseBtn = document.getElementById('loginCloseBtn'),
         userNameInput = document.getElementById('UserName'),
         userPasswordInput = document.getElementById('UserPassword'),
-        loginFocusOrder = [
-            userNameInput,
-            userPasswordInput,
-            loginSubmitBtn,
-            loginCloseBtn,
-        ]
+        loginFocusOrder = [userNameInput, userPasswordInput, loginSubmitBtn, loginCloseBtn]
 
-    let currentFocusLogin, prevFocusEl
+    let currentFocusLogin = 1,
+        prevFocusEl
 
     // ----------
     // Open login
@@ -515,9 +517,9 @@ if (currentCategory === 'home') {
                 // No username
                 currentFocusLogin = 1
             }
-        }
 
-        loginFocusOrder[currentFocusLogin - 1].focus()
+            loginFocusOrder[currentFocusLogin - 1].focus()
+        }
     }
 
     // Restrict focus within login form while open
@@ -541,22 +543,20 @@ if (currentCategory === 'home') {
         }
 
         // Prevent scrolling on spacebar
-        if (
-            document.activeElement !== userNameInput &&
-            document.activeElement !== userPasswordInput
-        ) {
+        if (document.activeElement !== userNameInput && document.activeElement !== userPasswordInput) {
             if (e.keyCode === 32) {
                 e.preventDefault()
             }
         }
     }
 
-    // ----------
+    // -----------
     // Close login
     loginCloseBtn.addEventListener('click', closeLogin)
 
     function closeLogin() {
         loginOpen = false
+
         loginContainer.classList.add('login-out')
         loginWrapper.style.opacity = '0'
         loginWrapper.addEventListener('transitionend', hideLoginWrapper)
@@ -742,9 +742,10 @@ if (currentCategory === 'home') {
                         })
 
                         if (window.innerWidth <= 1000) {
-                            setSubLinkTabIndex('off')
+                            setSubLinkTabIndex([mainLinks, subLinks], 'hide')
+                            deselectAll()
                         } else {
-                            setSubLinkTabIndex('on')
+                            setSubLinkTabIndex([mainLinks, subLinks], 'show')
                         }
                     }, 50)
                 })
@@ -757,6 +758,10 @@ if (currentCategory === 'home') {
 
                 if (width > 1000) {
                     newScreenSize = 'desktop'
+                    if (mainMenuOpen) {
+                        closeMenu()
+                    }
+
                     if (newScreenSize !== screenSize) {
                         // Save old screensize
                         prevScreenSize = screenSize
@@ -764,10 +769,6 @@ if (currentCategory === 'home') {
                         onScreenSizeChange(newScreenSize)
                         // Set current screensize
                         screenSize = 'desktop'
-                    }
-
-                    if (mainMenuOpen) {
-                        closeMenu()
                     }
                 } else if (width > 500) {
                     newScreenSize = 'tablet'
