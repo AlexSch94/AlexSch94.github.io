@@ -1,0 +1,141 @@
+@font-face {
+    font-family: 'roboto mono';
+    src: url(../../fonts/robotoMono/RobotoMono-VariableFont_wght.ttf);
+    font-weight: 100 1000;
+}
+
+.page-header {
+    margin: 0 0 0.7em 0;
+}
+
+section {
+    font-size: var(--FS9);
+    padding: 1em 0;
+}
+
+.solarpark-section {
+    padding: 50px 0 30px;
+}
+
+.section-header {
+    font-size: var(--FS5);
+}
+
+.sub-header {
+    text-align: left;
+    transform: none;
+    animation: none;
+    width: fit-content;
+}
+
+.sub-header::after {
+    margin: 0.3em 0 0;
+    height: 2px;
+    width: 75%;
+}
+
+/* Intro section */
+
+.intro-section {
+    padding-bottom: 20px;
+}
+
+/* Solarpark section */
+
+.solarpark-content {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    gap: 0.5em;
+    margin-bottom: 2em;
+}
+
+.solarpark-header {
+    margin-bottom: 0.4em;
+}
+
+.solarpark-description {
+    margin: 0 auto 3rem auto;
+}
+
+.solarpark-text p {
+    padding-right: 5ch;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column: 2;
+    grid-row: 1/3;
+    justify-self: end;
+    width: 100%;
+    opacity: 0;
+    transform: translate(3rem, 0);
+    transition: all 3s ease;
+}
+
+.stat-counter-container {
+    font-family: 'roboto mono', courier;
+    display: flex;
+    justify-content: center;
+    font-size: var(--FS9);
+    color: var(--brand-color3);
+}
+
+.stat-counter {
+    display: block;
+    width: fit-content;
+    text-align: center;
+}
+
+.counter-suffix {
+    margin-left: 0.2em;
+}
+
+span.plus {
+    margin-left: 0.1em;
+}
+
+.solarpark-section.come-in .stat {
+    animation: fade-move-in 2s ease forwards;
+}
+
+.stat-name {
+    text-align: center;
+    font-size: var(--FS11);
+}
+
+.solarpark-image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.solarpark-img {
+    font-size: var(--FS10);
+    width: 100%;
+    border-radius: 0.3em;
+}
+
+/* Media Queries */
+
+@media (max-width: 1400px) {
+    .solarpark-content {
+        grid-template-columns: 1fr;
+        gap: 0.5em;
+        margin-bottom: 1.5em;
+    }
+
+    .solarpar-text {
+        grid-row: 2;
+    }
+
+    .stat {
+        grid-column: 1;
+        grid-row: 3;
+        padding: 0.5em 0;
+    }
+
+    .solarpark-text p {
+        padding-right: 0;
+    }
+}

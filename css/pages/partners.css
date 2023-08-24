@@ -1,0 +1,156 @@
+.main-wrapper {
+    padding: 0;
+}
+
+section {
+    margin: 20px 0;
+}
+
+.sub-header {
+    margin-bottom: 2em;
+}
+
+.partners-section.come-in .section-inner {
+    transition: all 1.5s ease;
+}
+
+.partner-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10vw;
+    max-width: 1000px;
+    font-size: var(--FS11);
+    margin-bottom: 5rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .partner-container {
+        transform: translateX(10vw);
+        opacity: 0;
+        animation: fade-move-in 1.5s ease-out forwards;
+    }
+}
+
+.partner-container:last-of-type {
+    margin-bottom: 0;
+}
+
+.partner-container:first-of-type {
+    animation-delay: 0.2s;
+}
+
+.partner-container:nth-of-type(2) {
+    animation-delay: 0.4s;
+}
+
+.partner-container:nth-of-type(3) {
+    animation-delay: 0.6s;
+}
+
+.partner-container:nth-of-type(4) {
+    animation-delay: 0.8s;
+}
+
+.partner-container:nth-of-type(5) {
+    animation-delay: 1s;
+}
+
+.partner-container:nth-of-type(6) {
+    animation-delay: 1.2s;
+}
+
+.partner-container:nth-of-type(7) {
+    animation-delay: 1.4s;
+}
+
+.partner-container:nth-of-type(8) {
+    animation-delay: 1.6s;
+}
+
+.partner-container:nth-of-type(9) {
+    animation-delay: 1.8s;
+}
+
+.partner-container:nth-of-type(10) {
+    animation-delay: 2s;
+}
+
+.partner-container:nth-of-type(11) {
+    animation-delay: 2.2s;
+}
+
+.partner-logo-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.partner-logo {
+    width: auto;
+    height: auto;
+    max-width: 220px;
+    max-height: 70px;
+}
+
+.square-logo {
+    max-height: 90px;
+}
+
+.partner-name-wrapper {
+    width: fit-content;
+}
+
+.partner-name-wrapper a {
+    text-decoration: underline;
+}
+
+.partner-name-wrapper a:hover {
+    color: var(--brand-color2);
+}
+
+/* Media Queries */
+
+@media (max-width: 1000px) {
+    .partner-logo-container {
+        width: 60%;
+    }
+}
+
+@media (max-width: 900px) {
+    .partner-container,
+    .partner-container:first-of-type {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 1.5rem;
+        margin-bottom: 4rem;
+    }
+}
+
+@media (max-width: 750px) {
+    .partner-logo-container {
+        width: 70%;
+    }
+
+    .partner-logo {
+        max-height: 80px;
+    }
+}
+
+@media (max-width: 500px) {
+    .partner-logo-container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 400px) {
+    .partner-logo-container {
+        width: 90%;
+    }
+}
+
+/* min-width */
+
+@media (min-width: 1800px) {
+    .partner-container {
+        transform: translateX(180px);
+    }
+}

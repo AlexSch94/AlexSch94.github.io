@@ -1,0 +1,10 @@
+.viewport-height-wrapper {
+    min-height: calc(100vh - var(--header-height));
+}
+
+footer {
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

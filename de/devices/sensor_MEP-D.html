@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="de" translate="no">
+<head>
+    <meta name="viewport" content="width=device-width" initial-scale="1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="DOT; telematic; telematics; system; system technology; rail; GPS; sensor; logistics; transportation; software; energy managment; IoT; automisation; cargo; freight; data">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="../../images/logos/logo_DOT_greyscale.png?v=04.07.2023">
+    <link rel="stylesheet" type="text/css" href="../../css/utils/reset.css?v=04.07.2023" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../css/base.css?v=04.07.2023" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../css/utils/utils.css?v=04.07.2023" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../css/utils/keyframes.css?v=04.07.2023" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../css/utils/carousel.css?v=04.07.2023" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../css/utils/attributes.css?v=04.07.2023" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../css/pages/devices/sensors_individual.css?v=04.07.2023" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../plugins/fontello/css/dropdown.css?v=04.07.2023" media="screen">   
+    <script type="text/javascript" src="../../js/app.js?v=04.07.2023" defer></script>
+    <script type="text/javascript" src="../../js/pages/devices/sensor_MEP-D.js?v=04.07.2023" defer></script>
+    <script type="text/javascript" src="../../js/utils/att_observer.js?v=04.07.2023" defer></script>
+    <script type="text/javascript" src="../../js/nav.js?v=04.07.2023" defer></script>
+    <script type="text/javascript" src="../../js/utils/p_observer.js?v=04.07.2023" defer></script>
+    <script type="text/javascript" src="../../js/utils/slider.js?v=04.07.2023" defer></script>
+    <title>X-Rayl® Sensor S3MEP-D | DOT</title>
+</head>
+
+<body data-category="devices">
+    <header>
+        <div class="nav-bar">            
+			<div class="nav-bar-inner">
+				<div class="logo-container">
+					<a href="../index" class="logo-link" tabindex="1">
+                        <img src="../../images/logos/logo_DOT.png?v=04.07.2023" alt="DOT Logo" id="dotLogo">
+                    </a>
+                    <div class="skip-link-container">
+                        <a href="#mainWrapper" class="skip-link" tabindex="2">Navigation überspringen</a>
+                    </div>
+				</div>
+				
+				<nav class="top-nav">
+                    <div class="nav-links-container">
+                        <ul role="list" class="top-nav-links">
+                            <li id="homeLink" class="nav-parent">
+                                <a href="../index" class="nav-link">Home</a>
+                            </li>
+
+                            <li id="applicationsLink" class="nav-parent">
+                                <a href="../applications" class="nav-link">Anwendungen<i class="icon-dropdown"> </i></a>
+
+                                <ul role="list" class="nav-dropdown-menu applications-dropdown" id="applicationsDropdown">
+                                    <li class="dropdown-link app-dd-item"><a href="../applications#railLogistics">Bahnlogistik</a></li>
+                                    <li class="dropdown-link app-dd-item"><a href="../applications#containerLogistics">Containerlogistik</a></li>
+                                    <li class="dropdown-link app-dd-item"><a href="../applications#propertyEnergyManagement">Energiemanagement für Gebäude</a></li>
+                                    <li class="dropdown-link app-dd-item"><a href="../applications#constructionAutomation">Bau-Automatisierung</a></li>
+                                    <li class="dropdown-link app-dd-item"><a href="../applications#freightLogistics">Empfindliche Güter</a></li>
+                                </ul>
+                            </li>
+
+                            <li id="productsLink" class="nav-parent">
+                                <a href="../products" class="nav-link">Produkte<i class="icon-dropdown"> </i></a>
+
+                                <ul role="list" class="nav-dropdown-menu products-dropdown" id="productsDropdown">
+                                    <li class="dropdown-link prod-dd-item"><a href="../products#dppSection">Datenverarbeitung und -darstellung</a></li>
+                                    <li class="dropdown-link prod-dd-item"><a href="../products#dataEnrichmentSection">Datenaggregierung</a></li>
+                                    <li class="dropdown-link prod-dd-item"><a href="../products#srSection">Statistiken und Berichte</a></li>
+                                    <li class="dropdown-link prod-dd-item"><a href="../products#acmSection">Überwachung des Anlagenzustandes</a></li>
+                                    <li class="dropdown-link prod-dd-item"><a href="../products#dataSharingSection">Datenaustausch</a></li>
+                                </ul>
+                            </li>
+    
+                            <li id="devicesLink" class="nav-parent">
+                                <a href="./pointer_S3" class="nav-link">Geräte<i class="icon-dropdown"></i></a>
+
+                                <ul role="list" class="nav-dropdown-menu devices-dropdown" id="devicesDropdown">
+                                    <li class="dropdown-link dev-dd-item"><a href="./pointer_S3">X-Rayl® Pointer S3</a></li>
+                                    <li class="dropdown-link dev-dd-item"><a href="./sensors_S3">X-Rayl® Sensoren S3</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-parent" id="aboutLink">
+                                <a href="../company" class="nav-link">Über<i class="icon-dropdown"></i></a>
+                                <ul role="list" class="nav-dropdown-menu about-dropdown" id="aboutDropdown">
+                                    <li class="dropdown-link about-dd-item"><a href="../company">Company</a></li>
+                                    <li class="dropdown-link about-dd-item"><a href="../team">Team</a></li>
+                                    <li class="dropdown-link about-dd-item"><a href="../sustainability">Nachhaltigkeit</a></li>
+                                    <li class="dropdown-link about-dd-item"><a href="../careers">Careers</a></li>
+                                    <li class="dropdown-link about-dd-item"><a href="../partners">Partners</a></li>
+                                    <li class="dropdown-link about-dd-item"><a href="../contact">Contact</a></li>
+                                </ul>
+                            </li>
+
+                            <li id="loginMobile" class="nav-parent mobile-only">
+                                <a href="#" id="loginBtnMobile" class="nav-link login-btn-mobile">Login</a>
+                            </li>
+                            
+                            <li id="languageMobile" class="nav-parent language-mobile mobile-only">
+                                <a href="#" class="nav-link">
+                                    <img src="../../images/icons/icon-flag-de.svg?v=04.07.2023" alt="German flag" class="language-icon main-icon">
+                                    <i class="icon-dropdown"></i>
+                                </a>
+                                <ul role="list" class="nav-dropdown-menu language-dropdown" id="languageDropdownMobile">
+                                    <li class="dropdown-link lang-dd-item-mobile">
+                                        <a href="./sensor_MEP-D">
+                                            <img src="../../images/icons/icon-flag-de.svg?v=04.07.2023" alt="German Flag" class="language-icon">
+                                            Deutsch
+                                        </a>
+                                    </li>
+                                    
+                                    <li class="dropdown-link lang-dd-item-mobile">
+                                        <a href="../../devices/sensor_MEP-D">
+                                            <img src="../../images/icons/icon-flag-gb.svg?v=04.07.2023" alt="English Flag" class="language-icon">
+                                            English
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>                            
+                        </ul>
+                    </div>
+                </nav>
+
+				<nav class="nav-bar-right">                    
+                    <div class="login-btn-wrapper">
+                        <div class="login-btn-container">
+                            <div class="nav-link login-btn" tabindex="0">Login</div>
+                        </div>
+                    </div>
+                    
+                    <div id="languageLink" class="nav-parent language-link">
+                        <a href="#" class="nav-link">
+                            <img src="../../images/icons/icon-flag-de.svg?v=04.07.2023" alt="German flag" class="language-icon main-icon">
+                            <i class="icon-dropdown"></i>
+                        </a>
+                        <ul role="list" class="nav-dropdown-menu language-dropdown" id="languageDropdown">
+                            <li class="dropdown-link lang-dd-item">
+                                <a href="./sensor_MEP-D">
+                                    <img src="../../images/icons/icon-flag-de.svg?v=04.07.2023" alt="German flag" class="language-icon">Deutsch
+                                </a>
+                            </li>
+
+                            <li class="dropdown-link lang-dd-item">
+                                <a href="../../devices/sensor_MEP-D">
+                                    <img src="../../images/icons/icon-flag-gb.svg?v=04.07.2023" alt="English flag" class="language-icon">English
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+				<div class="menu-icon-wrapper">
+					<div class="menu-icon-container" tabindex="3">
+						<span class="icon-span"></span>
+						<span class="icon-span"></span>
+						<span class="icon-span"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+        <!-- / NavBar -->
+
+        <div class="hero-section">
+            <div class="hero-text-wrapper">
+                <div class="hero-text">
+                    <h1 class="hero-h1"><span class="nowrap"><span class="nowrap">X-Rayl</span>®</span> Sensor <span class="nowrap">S3MEP-D</span></h1>
+                </div>
+            </div>
+
+            <div class="hero-img-wrapper">
+                <div class="preview-section ">
+                    <div class="slider-wrapper">
+                        <div class="slider-container">
+                            <div class="slider">
+                                <div class="slide" name="slide">
+                                    <div class="slide-img-wrapper">
+                                        <img src="../../images/devices/sensor_MEP(0).png?v=04.07.2023" alt="Sensor S3MEP-D" class="slide-img dropshadow tmp">
+                                    </div>
+                                </div>
+
+                                <div class="slide" name="slide">
+                                    <div class="slide-img-wrapper">
+                                        <img src="../../images/devices/sensor_MEP(2).png?v=04.07.2023" alt="Sensor S3MEP-D" class="slide-img dropshadow dst">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- / Slider -->
+                        </div>
+                        <!-- / Slider-container -->                    
+                    </div>
+                    <!-- / Preview-wrapper -->                            
+                </div>
+                <!-- / Hero section preview -->
+            </div>
+        </div>
+
+        <!-- / Hero Section -->
+        
+        <div class="menu-fader"></div>
+    </header>
+    <!-- / Header -->
+
+    <main class="main-wrapper" id="mainWrapper">
+        <section class="intro-section" id="introSection">
+            <div class="section-inner">
+                <div class="intro-text">
+                    <h1 class="page-header">
+                        Detects <span class="brand-color">Contact</span>
+                    </h1>
+                    
+                    <p class="intro-paragraph">
+                        The <span class="nowrap">X-Rayl</span> Sensor S3MEP-D is a contact sensor, developed to detect the presence of ferromagnetic metals.
+                    </p>
+
+                    <p class="intro-paragraph">
+                        From monitoring door states to assessing the lock state of a King Pin - the use cases for the S3MEP-D sensor are numerous.
+                    </p>
+
+                    <p class="intro-paragraph">
+                        The maximum detection distance is 5mm for ferrous metals and can be increased to 20mm by employing neodymium magnets (NdFeB) on the detected surface.
+                    </p>
+
+                    <p class="intro-paragraph">
+                        The <span class="nowrap">X-Rayl</span> Sensor S3MEP-D is equipped with a super-low-power TFT-LCD Panel, which allows for easy evaluation of the contact state.
+                    </p>
+                </div>
+                <!-- / Intro -->            
+
+                <div class="attributes-wrapper">
+                    <div class="attribute-container">
+                        <div class="attribute">
+                            <div class="attribute-icon-container">
+                                <img src="../../images/icons/icon-maintenance.png?v=04.07.2023" alt="Decorative icon" class="attribute-icon">
+                            </div>
+                            <div class="attribute-text-container">
+                                <div class="attribute-header">
+                                    <h3>Wartungsfrei</h3>
+                                </div>
+                                <div class="attribute-description">
+                                    <p>Der <span class="nowrap">X-Rayl</span> Sensor S3MEP-D ist konzipiert, sodass er während seiner Lebensdauer von über <span class="nowrap">10 Jahren</span> zu <span class="nowrap">100 Prozent</span> wartungsfrei ist. Es ist kein Batteriewechsel oder Aufladen erforderlich. Die Aktivierung und Deaktivierung sowie die Konfiguration erfolgt automatisch, oder über die Luft.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attribute-container">
+                        <div class="attribute">
+                            <div class="attribute-icon-container">
+                                <img src="../../images/icons/icon-atex.png?v=04.07.2023" alt="Decorative icon" class="attribute-icon">
+                            </div>
+                            <div class="attribute-text-container">
+                                <div class="attribute-header">
+                                    <h3>Höchste Zertifizierung</h3>
+                                </div>
+                                <div class="attribute-description">
+                                    <p>Der <span class="nowrap">X-Rayl</span> Sensor S3MEP-D ist nach ATEX, UKEX und IECEx zertifiziert. <br> 
+                                        Er entspricht den Normen: <br>
+                                        <span class="nowrap">EN IEC 60079-0:2018 / </span> <span class="nowrap">EN 60079-11:2012</span> <br>
+                                        Category: <span class="nowrap">II 2G Ex ib IIC T6 Gb / </span> <span class="nowrap">II 2D Ex ib IIIC T85°C Db / </span> <br> 
+                                        -40°C ≤ Ta ≤ +60°C.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attribute-container">
+                        <div class="attribute">
+                            <div class="attribute-icon-container">
+                                <img src="../../images/icons/icon-spanner.png?v=04.07.2023" alt="Decorative icon" class="attribute-icon">
+                            </div>
+                            <div class="attribute-text-container">
+                                <div class="attribute-header">
+                                    <h3>Einfache Montage</h3>
+                                </div>
+                                <div class="attribute-description">
+                                    <p>Der <span class="nowrap">X-Rayl</span> Sensor S3MEP-D ist durch eine Vielzahl von verfügbaren Montageplatten einfach zu montieren. Bei besonderen Montageanforderungen können individuelle Montageplatten nach Kundenwunsch angefertigt werden.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attribute-container">
+                        <div class="attribute">
+                            <div class="attribute-icon-container">
+                                <img src="../../images/icons/icon-security.png?v=04.07.2023" alt="Decorative icon" class="attribute-icon">
+                            </div>
+                            <div class="attribute-text-container">
+                                <div class="attribute-header">
+                                    <h3>Sicherheit</h3>
+                                </div>
+                                <div class="attribute-description">
+                                    <p>Von der Datenübertragung zum X-Rayl Pointer bis zur Weitergabe der Daten an die DOT-Backend-Dienste werden die vom <span class="nowrap">X-Rayl</span> Sensor S3MEP-D erzeugten Daten stets mit einer starken, dem Industriestandard entsprechenden Verschlüsselung übertragen.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attribute-container">
+                        <div class="attribute">
+                            <div class="attribute-icon-container">
+                                <img src="../../images/icons/icon-display.png?v=04.07.2023" alt="Decorative icon" class="attribute-icon">
+                            </div>
+                            <div class="attribute-text-container">
+                                <div class="attribute-header">
+                                    <h3>Großes Display</h3>
+                                </div>
+                                <div class="attribute-description">
+                                    <p>Das große LCD-Display des <span class="nowrap">X-Rayl</span> Sensor S3MEP-D ermöglicht es dem Benutzer, die vom Sensor gemessenen Werte leicht zu überprüfen, wenn er vor dem Objekt steht, an dem der Sensor montiert ist. So kann das Personal vor Ort die Sensorwerte überwachen und den Betrieb des Sensors überprüfen.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attribute-container">
+                        <div class="attribute">
+                            <div class="attribute-icon-container">
+                                <img src="../../images/icons/icon-feather.png?v=04.07.2023" alt="Decorative icon" class="attribute-icon">
+                            </div>
+                            <div class="attribute-text-container">
+                                <div class="attribute-header">
+                                    <h3>Leichtgewicht</h3>
+                                </div>
+                                <div class="attribute-description">
+                                    <p>Der gesamte <span class="nowrap">X-Rayl</span> Sensor S3MEP-D wiegt nur 280 Gramm und hat einen sehr kleinen Formfaktor, der die Installation auch an Orten ermöglicht, an denen herkömmliche Hardware zu schwer sein könnte (z.B. Rohre).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="attribute-container">
+                        <div class="attribute">
+                            <div class="attribute-icon-container">
+                                <img src="../../images/icons/icon-frequency.png?v=04.07.2023" alt="Decorative icon" class="attribute-icon">
+                            </div>
+                            <div class="attribute-text-container">
+                                <div class="attribute-header">
+                                    <h3>Hohe Abtastfrequenz</h3>
+                                </div>
+                                <div class="attribute-description">
+                                    <p>Standardmäßig ist der <span class="nowrap">X-Rayl</span> Sensor S3MEP-D so konfiguriert, sodass er Daten in <span class="nowrap">10-Sekunden-Intervallen</span> erfasst. Die integrierte Differenz- und Neigungserkennung ermöglicht eine reduzierte Abtastung, wenn sich der Messwert seit der letzten Messung nicht geändert hat, was Energie und Daten spart.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attribute-container">
+                        <div class="attribute">
+                            <div class="attribute-icon-container">
+                                <img src="../../images/icons/icon-piggy-bank.png?v=04.07.2023" alt="Decorative icon" class="attribute-icon">
+                            </div>
+                            <div class="attribute-text-container">
+                                <div class="attribute-header">
+                                    <h3>Keine Servicegebühren</h3>
+                                </div>
+                                <div class="attribute-description">
+                                    <p>In Kombination mit einem X-Rayl Pointer ist der Betrieb vom <span class="nowrap">X-Rayl</span> Sensor S3MEP-D kostenlos. Bei der Kopplung von Fremdsensoren mit X-Rayl Pointers kann eine Servicegebühr anfallen.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attribute-container">
+                        <div class="attribute">
+                            <div class="attribute-icon-container">
+                                <img src="../../images/icons/icon-placeholder.png?v=04.07.2023" alt="Decorative icon" class="attribute-icon">
+                            </div>
+                            <div class="attribute-text-container">
+                                <div class="attribute-header">
+                                    <h3>Future proof</h3>
+                                </div>
+                                <div class="attribute-description">
+                                    <p>Alle Geräte von DOT verfügen über die Möglichkeit des Over-the-air Firmware-Update, was sicher stellt das unseren Kunden von neuen Features, verbesserter Zuverlässigkeit und höchster Sicherheit zu profitieren, und zwar aus der Ferne ohne physischen Kontakt. Die Aktualisierungen erfolgen selbstverständlich verschlüsselt, von einem gesicherten Server.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- / Attributes wrapper -->
+
+                <a href="./sensors_S3#sensorPortfolio" class="link1 return-link">Zurück zum Sensor S3 Portfolio</a>
+            </div>
+            <!-- / Section-inner -->
+
+        </section>
+        <!-- / Intro section --> 
+        
+        <hr>
+        <section class="partners-section">  
+            <div class="section-inner">
+                <div class="partners-wrapper" id="partnersWrapper">
+                    <h2 class="partners-title">Wir haben das Vertrauen multipler Marktführer</h2>
+                    <div class="partners-carousel">
+                        <div class="carousel-wrapper">
+                            <div class="fade-bar fb-left"></div>
+
+                            <div class="carousel">
+                                <div class="carousel-content carouselpart1">
+                                    <div class="carousel-item">
+                                        <a href="https://www.aretzwaggon.de/" target="_blank" tabindex="-1">
+                                            <img src="../../../../images/logos/logo-aretz.gif?v=04.07.2023" alt="Aretz GmbH & Co logo">
+                                        </a>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <a href="https://www.bahn.de/" target="_blank" tabindex="-1">
+                                            <img src="../../../../images/logos/logo-DB.png?v=04.07.2023" alt="DB logo">
+                                        </a>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <a href="https://railrent.com/en" target="_blank" tabindex="-1">
+                                            <img src="../../../../images/logos/logo-ERR.png?v=04.07.2023" alt="ERR logo">
+                                        </a>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <a href="https://www.gatx.eu/" target="_blank" tabindex="-1">
+                                            <img src="../../../../images/logos/logo-gatx.png?v=04.07.2023" alt="GATX logo">
+                                        </a>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <a href="https://mfdrail.ch/de" target="_blank" tabindex="-1">
+                                            <img src="../../../../images/logos/logo-mfd.png?v=04.07.2023" alt="MFD logo">
+                                        </a>
+                                    </div>
+
+
+                                    <div class="carousel-item">
+                                        <a href="https://www.orv-moers.de/" target="_blank" tabindex="-1">
+                                            <img src="../../../../images/logos/logo-orv.png?v=04.07.2023" alt="ORV Moers logo">
+                                        </a>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <a href="https://www.tramesa.com/inicio" target="_blank" tabindex="-1">
+                                            <img src="../../../../images/logos/logo-tramesa.jpg?v=04.07.2023" alt="Tramesa logo">
+                                        </a>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <a href="https://www.wascosa.ch/" target="_blank" tabindex="-1">
+                                            <img src="../../../../images/logos/logo-wascosa.png?v=04.07.2023" alt="Wascosa logo" class="wide">
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-content carouselpart2">
+                                    <div class="carousel-item">
+                                        <a href="https://www.aretzwaggon.de/" target="_blank" tabindex="-1">
+                                            <img src="../../../../images/logos/logo-aretz.gif?v=04.07.2023" alt="Aretz GmbH & Co logo">
+                                        </a>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <a href="https://www.bahn.de/" target="_blank" tabindex="-1">
+                                            <img src="../../../../images/logos/logo-DB.png?v=04.07.2023" alt="DB logo">
+                                        </a>
+                                    </div>
+                                    
+                                    <div class="carousel-item">
+                                        <a href="https://railrent.com/en" target="_blank" tabindex="-1">
+                                            <img src="../../../../images/logos/logo-ERR.png?v=04.07.2023" alt="ERR logo">
+                                        </a>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <a href="https://www.gatx.eu/" target="_blank" tabindex="-1">
+                                            <img src="../../../../images/logos/logo-gatx.png?v=04.07.2023" alt="GATX logo">
+                                        </a>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <a href="https://mfdrail.ch/de" target="_blank" tabindex="-1">
+                                            <img src="../../../../images/logos/logo-mfd.png?v=04.07.2023" alt="MFD logo">
+                                        </a>
+                                    </div>
+
+
+                                    <div class="carousel-item">
+                                        <a href="https://www.orv-moers.de/" target="_blank" tabindex="-1">
+                                            <img src="../../../../images/logos/logo-orv.png?v=04.07.2023" alt="ORV Moers logo">
+                                        </a>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <a href="https://www.tramesa.com/inicio" target="_blank" tabindex="-1">
+                                            <img src="../../../../images/logos/logo-tramesa.jpg?v=04.07.2023" alt="Tramesa logo">
+                                        </a>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <a href="https://www.wascosa.ch/" target="_blank" tabindex="-1">
+                                            <img src="../../../../images/logos/logo-wascosa.png?v=04.07.2023" alt="Wascosa logo" class="wide">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fade-bar fb-right"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- / Carousel -->
+
+    </main>
+    <!-- / Main Wrapper -->
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-links">
+                    <a href="../../imprint" style="text-decoration: none; color:inherit">Impressum</a>
+                    <a href="../../legal" style="text-decoration: none; color:inherit">Datenschutz</a>
+                    <a href="../../contact">Kontakt</a>
+                </div>
+                <div class="footer-copyright">Copyright © DOT Telematik und Systemtechnik GmbH</div>
+            </div>
+    
+            <div class="footer-right">
+                <div class="scroll-to-top-btn" id="scrollToTopBtn" tabindex="0">
+                    Zum Anfang scrollen
+                </div>
+    
+                <div class="footer-socials">
+                    <a class="social-icon-container" href="https://www.linkedin.com/company/dot-telematik-gmbh" target="_blank">
+                        <div class="social-icon-front">
+                            <img src="../../../../images/icons/icon-linkedin.png?v=04.07.2023" class="social-icon" alt="linkedin icon">
+                        </div>
+                        <div class="social-icon-back">
+                            <img src="../../../../images/icons/icon-linkedin.png?v=04.07.2023" class="social-icon" alt="linkedin icon">
+                        </div>
+                    </a>                        
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- / Footer -->
+
+    <div class="login-wrapper">
+        <div class="login-container">
+            <div class="login-heading">
+                <h3>DOT-Link Login</h3>
+                <p class="login-prompt">Geben Sie Ihren Nutzernamen und Passwort ein</p>
+            </div>
+            <form action="https://dotlink.dot-telematik.com/users/login" id="loginForm" class="login-form" method="post" accept-charset="utf-8" autocomplete="on">
+            <fieldset>
+            <div class="input-text-div">
+                <label for="UserName">Nutzername</label>
+                <br>
+                <input name="data[User][name]" type="text" maxlength="50" required="required" value id="UserName"
+                class="input-text-field">
+            </div>
+            <div class="input-text-div">
+                <label for="UserPassword">Passwort</label>
+                <br>
+                <input name="data[User][password]" type="password" required="required" value id="UserPassword"
+                class="input-text-field">
+            </div>
+            </fieldset>
+            <div class="submit-btn-wrapper">
+                <input type="submit" value="Login" class="login-submit-btn" id="loginSubmitBtn">
+            </div>
+        </form>
+            <button id="loginCloseBtn" class="login-close-btn"><img src="../../images/icons/icon-xmark.png?v=04.07.2023" class="x-icon" draggable="false"></span></button>
+        </div>
+    </div>  
+    <!-- / Login -->
+
+    <noscript>
+        <div class="noscript-wrapper">
+            <div class="noscript-container">
+                <img src="../../images/logos/logo_DOT.png?v=04.07.2023" alt="DOT Logo" class="noscript-logo">
+                <div class="noscript-txt">
+                    <div class="noscript-prompt">Der Browser braucht JavaScript um diese Seite anzuzeigen.</div>
+                    <div class="links">
+                        <p>Links zu Anleitungen, um JavaScript in Ihrem Browser zu aktivieren.</p>
+                        <a class="link1" href="https://support.google.com/adsense/answer/12654?hl=en-GB" target="_blank">Google Chrome</a>
+
+                        <a class="link1" href="https://support.mozilla.org/en-US/kb/javascript-settings-for-interactive-web-pages" target="_blank">Firefox</a>
+
+                        <a class="link1" href="https://www.enablejavascript.io/en/how-to-enable-javascript-on-apple-safari-ipad-iphone-ios" target="_blank">Safari</a>
+                        
+                        <a class="link1" href="https://www.enablejavascript.io/en/how-to-enable-javascript-on-an-android-phonetablet" target="_blank">Android</a>
+                        
+                        <a class="link1" href="https://www.enablejavascript.io/en/how-to-enable-javascript-on-opera" target="_blank">Opera</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </noscript>
+    <!-- / Noscript -->     
+    
+    
+</body>
+</html>  

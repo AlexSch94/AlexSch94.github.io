@@ -1,0 +1,174 @@
+/* Main section */
+
+.contact-wrapper {
+    padding: 0.5em 0 1em;
+    font-size: var(--FS8);
+    display: flex;
+}
+
+.details-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+    gap: 1em;
+    width: 50%;
+    padding-right: 3rem;
+}
+
+.google-map-container {
+    position: relative;
+    width: 50%;
+}
+
+.google-map {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    border: 1px solid white;
+    box-shadow: 0 0 1em var(--shadow-300);
+}
+
+.google-map-placeholder {
+    position: absolute;
+    font-size: var(--FS10);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    padding: 2em 3em;
+    transition: opacity 0.3s ease;
+}
+
+.gm-placeholder-header {
+    color: var(--brand-color2);
+    margin-bottom: 0.2em;
+}
+
+.google-map-placeholder p {
+    font-size: var(--FS12);
+}
+
+.google-map-container .gm-cookies-btns {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    gap: 0.5em;
+}
+
+.btn1 {
+    font-size: var(--FS12);
+}
+
+/* Cards */
+
+.contact-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1.5em auto;
+    width: 100%;
+    font-size: var(--FS10);
+    padding: 1em;
+    border-radius: 0.3em;
+    box-shadow: 0 0 1em var(--shadow-100);
+}
+
+.card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.5em;
+    padding: 0 0.6em 0 0;
+}
+
+.card-icon-img {
+    font-size: var(--FS9);
+    height: 1em;
+    min-width: 1em;
+}
+
+.card-header {
+    font-size: var(--FS9);
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.card-header h3 {
+    line-height: 1;
+    white-space: nowrap;
+    font-size: var(--FS9);
+}
+
+.card-content p {
+    font-size: var(--FS12);
+}
+
+.card-content {
+    grid-column: 2;
+    margin-top: 0.2em;
+}
+
+.card-header h3,
+.card-content,
+.card-content p {
+    width: fit-content;
+}
+
+/* Media Queries */
+
+@media (max-width: 1300px) {
+    .contact-wrapper {
+        flex-direction: column;
+    }
+
+    .details-container {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 4rem;
+    }
+
+    .google-map-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .google-map {
+        width: 100%;
+        aspect-ratio: 2 / 1;
+    }
+}
+
+@media (max-width: 650px) {
+    .google-map-placeholder {
+        padding: 1em;
+        gap: 1.5em;
+    }
+}
+
+@media (max-width: 550px) {
+    .google-map-placeholder {
+        gap: 1em;
+    }
+
+    .google-map {
+        aspect-ratio: 1 / 1.1;
+    }
+}
+
+@media (max-width: 450px) {
+    .submit-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1em;
+    }
+
+    .submit-indicator-container {
+        position: relative;
+    }
+}
