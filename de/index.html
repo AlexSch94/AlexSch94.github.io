@@ -6,19 +6,20 @@
 	<meta name="descripton" content="Wir schaffen eine neue Dimension der Telematik.">
 	<meta name="keywords" content="DOT; telematic; telematics; system; system technology; rail; GPS; sensor; logistics; transportation; software; energy managment; IoT; automisation; cargo; freight; data">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link rel="shortcut icon" type="image/x-icon" href="../images/logos/logo_DOT_greyscale.png?v=04.07.2023">
-	<link rel="stylesheet" type="text/css" href="../css/utils/reset.css?v=04.07.2023" media="screen">
-	<link rel="stylesheet" type="text/css" href="../css/base.css?v=04.07.2023" media="screen">
-	<link rel="stylesheet" type="text/css" href="../css/pages/home.css?v=04.07.2023" media="screen">
-	<link rel="stylesheet" type="text/css" href="../css/utils/utils.css?v=04.07.2023" media="screen">
-	<link rel="stylesheet" type="text/css" href="../css/utils/keyframes.css?v=04.07.2023" media="screen">
-	<link rel="stylesheet" type="text/css" href="../plugins/css/fullpage.css?v=04.07.2023" media="screen">
-	<link rel="stylesheet" type="text/css" href="../plugins/fontello/css/dropdown.css?v=04.07.2023" media="screen">
-	<script type="text/javascript" src="../plugins/js/fullpage.min.js?v=04.07.2023" defer></script>
-	<script type="text/javascript" src="../plugins/js/fp-main.js?v=04.07.2023" defer></script>
-	<script type="text/javascript" src="../js/app.js?v=04.07.2023" defer></script>
-	<script type="text/javascript" src="../js/pages/home.js?v=04.07.2023" defer></script>
-	<script type="text/javascript" src="../js/nav.js?v=04.07.2023" defer></script>
+	<link id="favicon" rel="icon" href="images/logos/dot_logo.svg?v=03.07.2023">
+	<link rel="stylesheet" type="text/css" href="../css/utils/reset.css?v=03.07.2023" media="screen">
+	<link rel="stylesheet" type="text/css" href="../css/base.css?v=03.07.2023" media="screen">
+	<link rel="stylesheet" type="text/css" href="../css/pages/home.css?v=03.07.2023" media="screen">
+	<link rel="stylesheet" type="text/css" href="../css/utils/utils.css?v=03.07.2023" media="screen">
+	<link rel="stylesheet" type="text/css" href="../css/utils/keyframes.css?v=03.07.2023" media="screen">
+	<link rel="stylesheet" type="text/css" href="../plugins/css/fullpage.css?v=03.07.2023" media="screen">
+	<link rel="stylesheet" type="text/css" href="../plugins/fontello/css/dropdown.css?v=03.07.2023" media="screen">
+	<script type="text/javascript" src="../plugins/js/fullpage.min.js?v=03.07.2023" defer></script>
+	<script type="text/javascript" src="../plugins/js/fp-main.js?v=03.07.2023" defer></script>
+	<script type="text/javascript" src="../js/app.js?v=03.07.2023" defer></script>
+	<script type="text/javascript" src="../js/pages/home.js?v=03.07.2023" defer></script>
+	<script type="text/javascript" src="../js/nav.js?v=03.07.2023" defer></script>
+	<script type="text/javascript" src="../js/utils/loginComponent.js?v=03.07.2023"></script>
 	<title>Home | DOT</title>
 </head>
 
@@ -37,7 +38,7 @@
 			<div class="nav-bar-inner">
 				<div class="logo-container">
 					<a href="./index" class="logo-link" tabindex="1">
-						<img src="../images/logos/logo_DOT.png?v=04.07.2023" alt="DOT Logo" id="dotLogo">
+						<img src="../images/logos/dot_logo_white.svg?v=03.07.2023" alt="DOT Logo" id="dotLogo">
 					</a>
 				</div>
 				
@@ -69,6 +70,7 @@
 									<li class="dropdown-link prod-dd-item"><a href="./products#srSection">Statistiken und Berichte</a></li>
 									<li class="dropdown-link prod-dd-item"><a href="./products#acmSection">Überwachung des Anlagenzustandes</a></li>
 									<li class="dropdown-link prod-dd-item"><a href="./products#dataSharingSection">Datenaustausch</a></li>
+                                    <li class="dropdown-link prod-dd-item"><a href="./products#useCasesSection">Alle Use Cases</a></li>
 								</ul>
 							</li>
 
@@ -100,20 +102,20 @@
                             
                             <li id="languageMobile" class="nav-parent language-mobile mobile-only">
                                 <a href="#" class="nav-link">
-									<img src="../images/icons/icon-flag-de.svg?v=04.07.2023" alt="German flag" class="language-icon main-icon">
+									<img src="../images/icons/icon-flag-de.svg?v=03.07.2023" alt="German flag" class="language-icon main-icon">
 									<i class="icon-dropdown"></i>
 								</a>
 
                                 <ul role="list" class="nav-dropdown-menu language-dropdown" id="languageDropdownMobile">
 									<li class="dropdown-link lang-dd-item-mobile">
 										<a href="./index">
-											<img src="../images/icons/icon-flag-de.svg?v=04.07.2023" alt="German Flag" class="language-icon">Deutsch
+											<img src="../images/icons/icon-flag-de.svg?v=03.07.2023" alt="German Flag" class="language-icon">Deutsch
 										</a>
 									</li>
 
                                     <li class="dropdown-link lang-dd-item-mobile">
 										<a href="../index">
-                                        	<img src="../images/icons/icon-flag-gb.svg?v=04.07.2023" alt="English Flag" class="language-icon">English
+                                        	<img src="../images/icons/icon-flag-gb.svg?v=03.07.2023" alt="English Flag" class="language-icon">English
 										</a>
                                     </li>									
                                 </ul>
@@ -131,19 +133,19 @@
                     
                     <div id="languageLink" class="nav-parent language-link">
                         <a href="#" class="nav-link" id="langLinkDesktop" tabindex="-1">
-                            <img src="../images/icons/icon-flag-de.svg?v=04.07.2023" alt="German flag" class="language-icon main-icon">
+                            <img src="../images/icons/icon-flag-de.svg?v=03.07.2023" alt="German flag" class="language-icon main-icon">
                             <i class="icon-dropdown"></i>
                         </a>
                         <ul role="list" class="nav-dropdown-menu language-dropdown" id="languageDropdown">
 							<li class="dropdown-link lang-dd-item">
 								<a href="./index">
-									<img src="../images/icons/icon-flag-de.svg?v=04.07.2023" alt="German flag" class="language-icon">Deutsch
+									<img src="../images/icons/icon-flag-de.svg?v=03.07.2023" alt="German flag" class="language-icon">Deutsch
 								</a>
 							</li>
 
                             <li class="dropdown-link lang-dd-item">
                                 <a href="../index">
-                                    <img src="../images/icons/icon-flag-gb.svg?v=04.07.2023" alt="English flag" class="language-icon">English
+                                    <img src="../images/icons/icon-flag-gb.svg?v=03.07.2023" alt="English flag" class="language-icon">English
                                 </a>
                             </li>
                         </ul>
@@ -173,11 +175,12 @@
 						<source src="../images/videos/cover-video.mp4">
 					</video>
 				</div>
+
 				<div class="section-animation animation-pause" id="sectionAnimation">
 					<div class="video-fade"></div>
 					<div class="section-overlay">
 						<div class="overlay-logo-container">
-							<img src="../images/logos/logo_DOT.png?v=04.07.2023" alt="DOT logo">
+							<img src="../images/logos/dot_logo_white.svg?v=03.07.2023" alt="DOT logo">
 						</div>
 						<div class="overlay-text-container">
 							<h1 class="overlay-text">
@@ -189,15 +192,15 @@
 
 				<a href="#2" class="scroll-prompt" id="scrollPrompt">
 					<p>Scrollen Sie, um mehr zu sehen</p>
-					<img src="../images/icons/icon-scroll-down.png?v=04.07.2023" alt="">
+					<img src="../images/icons/icon-scroll-down.png?v=03.07.2023" alt="">
 				</a>
 			</div>
 		</section>	
 		<!-- / Section0 -->		
 		
 		<section class="section sec1" id="section1">
-			<div class="bg-wrapper" id="bg-sec1">
-				<div class="text-segment" id="text-seg-sec1">
+			<div class="bg-wrapper bg-wrapper1" id="bg-sec1">
+				<div class="text-segment tex-seg1" id="text-seg-sec1">
 					<div class="text-wrapper tw1" id="section1-txt">
 						<div class="text-container1">
 							<h2 id="section1-h2">
@@ -213,9 +216,9 @@
 					</div>
 				</div>
 
-				<div class="img-segment">
+				<div class="img-segment img-seg1">
 					<div class="img-wrapper img-wrapper1">
-						<img class="section-img" id="img-sec1" src="../images/dotlink_multiple.png?v=04.07.2023" alt="DOT-Link">
+						<img class="section-img" id="img-sec1" src="../images/dotlink_4.0_multiple.png?v=03.07.2023" alt="DOT-Link">
 					</div>
 				</div>
 			</div>			
@@ -223,8 +226,8 @@
 		<!-- / Section1 -->				
 		
 		<section class="section sec2" id="section2">
-			<div class="bg-wrapper" id="bg-sec2">
-				<div class="text-segment" id="text-seg-sec2">
+			<div class="bg-wrapper bg-wrapper2" id="bg-sec2">
+				<div class="text-segment tex-seg2" id="text-seg-sec2">
 					<div class="text-wrapper tw2" id="section2Text">
 						<div class="text-container2">
 							<h2 class="main-text" id="section2-h2">
@@ -235,9 +238,9 @@
 					</div>
 				</div>
 
-				<div class="img-segment">
+				<div class="img-segment img-seg2">
 					<div class="img-wrapper img-wrapper2">
-						<img class="section-img dropshadow" id="img-sec2" src="../images/devices/device-collection.png?v=04.07.2023" alt="Device collection">
+						<img class="section-img dropshadow" id="img-sec2" src="../images/devices/device-collection.png?v=03.07.2023" alt="Device collection">
 					</div>
 				</div>
 			</div>			
@@ -250,11 +253,14 @@
 					<div class="text-wrapper tw3" id="section3Txt">
 						<div class="text-container3">
 							<h2>
-								<span class="brand-color">Nachhaltigkeit</span> an erster Stelle
+								<div class="text-hideable">
+									<span class="brand-color">Nachhaltigkeit</span> an erster Stelle
+								</div>
+								<div class="unhidden"><span class="brand-color">Nachhaltigkeit</span> zuerst</div>
 							</h2>
 							
 							<p>
-								Das operative Geschäft <span class="text-hideable">inklusive der Produktion mit Hardware- und Software-Ingenieuren</span> findet in unserem Werk in Leobendorf bei Wien statt, wo wir eine Photovoltaikanlage mit <span class="nowrap">178 kWp</span> auf unserem Firmengelände betreiben. Mit einer jährlichen Energieproduktion von <span class="nowrap">200.000 kWh</span> <span class="text-hideable">produzieren wir nachhaltig und</span> sind <span class="unhidden">wir</span> völlig energieautark.
+								Das operative Geschäft <span class="text-hideable">inklusive der Produktion mit Hardware- und Software-Ingenieuren</span> findet in unserem Werk in Leobendorf bei Wien statt, wo wir eine Photovoltaikanlage mit <span class="nowrap">178 kWp</span> betreiben. Mit einer jährlichen Energieproduktion von <span class="nowrap">200.000 kWh</span> <span class="text-hideable">produzieren wir nachhaltig und</span> sind <span class="unhidden">wir</span> völlig energieautark.
 							</p>						
 						</div>
 						<div class="buttons">
@@ -265,7 +271,7 @@
 
 				<div class="img-segment img-seg3">
 					<div class="img-wrapper img-wrapper3">
-						<img class="section-img dropshadow img-sec3" id="img-sec5" src="../images/sustainability.svg?v=04.07.2023" alt="Decorative image">
+						<img class="section-img dropshadow img-sec3" id="img-sec5" src="../images/sustainability.svg?v=03.07.2023" alt="Decorative image">
 					</div>
 				</div>
 			</div>
@@ -273,7 +279,7 @@
 		<!-- / Section3 -->
 
 		<section class="section" id="section4">
-			<div class="bg-wrapper" id="bg-sec4">
+			<div class="bg-wrapper bg-wrapper4" id="bg-sec4">
 				<div class="text-segment text-seg4" id="textSeg4">
 					<div class="text-wrapper tw4" id="section4Txt">
 						<div class="text-container4">
@@ -290,12 +296,12 @@
 
 				<div class="img-segment img-seg4">
 					<div class="img-wrapper img-wrapper4">
-						<img class="section-img img-sec4 rounded10" id="imgSec4" src="../images/devices/sensor_S3(1).png?v=04.07.2023" alt="Sensor S3">
+						<img class="section-img img-sec4 rounded10" id="imgSec4" src="../images/devices/sensor_S3(1).png?v=03.07.2023" alt="Sensor S3">
 					</div>
 				</div>
 
 				<div class="disclaimer">
-					<p>*Außer Sensor S3HUM</p>
+					<p>*Außer dem Sensor S3HUM</p>
 				</div>
 			</div>
 		</section>
@@ -316,10 +322,10 @@
 						<div class="footer-socials">
 							<a class="social-icon-container" href="https://www.linkedin.com/company/dot-telematik-gmbh" target="_blank" tabindex="-1">
 								<div class="social-icon-front">
-									<img src="../images/icons/icon-linkedin.png?v=04.07.2023" class="social-icon" alt="linkedin icon">
+									<img src="../images/icons/icon-linkedin.png?v=03.07.2023" class="social-icon" alt="linkedin icon">
 								</div>
 								<div class="social-icon-back">
-									<img src="../images/icons/icon-linkedin.png?v=04.07.2023" class="social-icon" alt="linkedin icon">
+									<img src="../images/icons/icon-linkedin.png?v=03.07.2023" class="social-icon" alt="linkedin icon">
 								</div>
 							</a>
 						</div>
@@ -332,40 +338,17 @@
 	</div>
 	<!-- / Content Wrapper -->
 
-	<div class="login-wrapper">
-        <div class="login-container">
-            <div class="login-heading">
-                <h3>DOT-Link Login</h3>
-                <p class="login-prompt">Geben Sie Ihren Nutzernamen und Passwort ein</p>
-            </div>
-            <form action="https://dotlink.dot-telematik.com/users/login" id="loginForm" class="login-form" method="post" accept-charset="utf-8" autocomplete="on">
-            <fieldset>
-            <div class="input-text-div">
-                <label for="UserName">Nutzername</label>
-                <br>
-                <input name="data[User][name]" type="text" maxlength="50" required="required" value id="UserName"
-                class="input-text-field">
-            </div>
-            <div class="input-text-div">
-                <label for="UserPassword">Passwort</label>
-                <br>
-                <input name="data[User][password]" type="password" required="required" value id="UserPassword"
-                class="input-text-field">
-            </div>
-            </fieldset>
-            <div class="submit-btn-wrapper">
-                <input type="submit" value="Login" class="login-submit-btn" id="loginSubmitBtn">
-            </div>
-        </form>
-            <button id="loginCloseBtn" class="login-close-btn"><img src="../images/icons/icon-xmark.png?v=04.07.2023" class="x-icon" draggable="false"></span></button>
-        </div>
-    </div>  
+	<div id="login-container"></div>
+    <script>
+        const loginComponent = new LoginComponent()
+        loginComponent.render(document.getElementById('login-container'))
+    </script>
     <!-- / Login -->
 
 	<noscript>
         <div class="noscript-wrapper">
             <div class="noscript-container">
-                <img src="../images/logos/logo_DOT.png?v=04.07.2023" alt="DOT Logo" class="noscript-logo">
+                <img src="../images/logos/dot_logo_white.svg?v=03.07.2023" alt="DOT Logo" class="noscript-logo">
                 <div class="noscript-txt">
                     <div class="noscript-prompt">Der Browser braucht JavaScript, um diese Seite anzuzeigen.</div>
                     <div class="links">

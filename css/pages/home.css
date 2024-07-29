@@ -222,8 +222,8 @@ section:first-of-type {
     position: absolute;
     display: flex;
     justify-content: center;
-    width: 35vw;
-    max-width: 450px;
+    width: 40vw;
+    max-width: 500px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -747,27 +747,82 @@ section:first-of-type {
         right: 0;
         bottom: 0;
         left: 0;
-        background-color: rgba(255, 255, 255, 0.9);
+        background-color: rgba(255, 255, 255, 0.95);
     }
-
-    .text-container3 * {
-        text-shadow: 0 0 0.1em var(--shadow-500);
-    }
-
     .bg-wrapper3 {
-        background-image: url(../../images/sustainability.svg?v=010922);
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
         background-origin: content-box;
         padding: 5vw;
     }
-
+    .bg-wrapper3 {
+        background-image: url(../../images/sustainability.svg?v=010922);
+    }
     .img-seg3 {
         display: none;
     }
-
     .tex-seg3 {
         max-height: unset;
+    }
+    .text-container3 * {
+        text-shadow: 0 0 0.1em var(--shadow-500);
+    }
+    .text-hideable {
+        display: none;
+    }
+    .unhidden {
+        display: initial;
+    }
+}
+
+@media (max-width: 800px) and (max-height: 600px) {
+    .bg-wrapper1::after,
+    .bg-wrapper2::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.95);
+    }
+
+    .bg-wrapper1,
+    .bg-wrapper2 {
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-origin: content-box;
+        padding: 5vw;
+    }
+    .bg-wrapper1 {
+        background-image: url(../../images/dotlink_multiple.png?v=03.07.2023);
+    }
+    .bg-wrapper2 {
+        background-image: url(../../images/devices/device-collection.png?v=03.07.2023);
+    }
+
+    .bg-wrapper4 {
+        justify-content: center;
+    }
+
+    .img-seg1,
+    .img-seg2,
+    .img-seg4 {
+        display: none;
+    }
+
+    .tex-seg1,
+    .tex-seg2,
+    .tex-seg4 {
+        max-height: unset;
+    }
+    .text-container1 *,
+    .text-container2 * {
+        text-shadow: 0 0 0.1em var(--shadow-500);
+    }
+    .text-seg4 {
+        margin-bottom: 20px;
     }
 }

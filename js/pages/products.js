@@ -169,7 +169,6 @@
                 case 'keydown':
                     if (scrollKeys[e.keyCode]) {
                         preventDefault(e)
-                        console.log('now')
                         return false
                     }
                     break

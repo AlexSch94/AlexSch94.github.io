@@ -92,10 +92,6 @@ span.plus {
 
 /* History-section */
 
-.history-section {
-    user-select: none;
-}
-
 .timeline {
     position: relative;
 }
@@ -230,7 +226,11 @@ span.plus {
     margin-bottom: 0.5em;
 }
 
-.timeline-description p::before {
+.timeline-description p.no-margin {
+    margin-bottom: 0em;
+}
+
+.timeline-description p:not(.extra)::before {
     content: '';
     display: block;
     position: absolute;
@@ -260,7 +260,7 @@ span.plus {
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1350px) {
     .intro-section {
         min-height: unset;
     }
@@ -268,6 +268,7 @@ span.plus {
     .timeline {
         margin-bottom: 40px;
     }
+
     .timeline-segment,
     .timeline-segment.right {
         display: flex;
@@ -340,8 +341,5 @@ span.plus {
     .timeline-description,
     .timeline-segment.right .timeline-description {
         margin: 0 0 1.5rem 0;
-    }
-    .team-section-container {
-        grid-template-columns: repeat(1, minmax(min(100%, 150px), 1fr));
     }
 }

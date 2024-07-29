@@ -1,6 +1,4 @@
 import incrementCounter from '../utils/incrementCounter.js'
-
-// Page closure
 ;(function () {
     // -------------
     // Stat Counters
@@ -36,16 +34,11 @@ import incrementCounter from '../utils/incrementCounter.js'
                     if (!countersRan) {
                         countersRan = true
                         setTimeout(() => {
-                            incrementCounter(activeDeviceCounter, 0, 50000, 51)
+                            incrementCounter(activeDeviceCounter, 0, 80000, 51)
                             incrementCounter(solarPowerCounter, 0, 2, 20)
                             incrementCounter(traveledCounter, 0, 875000000, 49)
                             incrementCounter(experienceCounter, 0, 20, 20)
-                            incrementCounter(
-                                dataPointsCounter,
-                                0,
-                                745000000,
-                                49
-                            )
+                            incrementCounter(dataPointsCounter, 0, 745000000, 49)
                         }, delay)
                     }
                 }, 10)

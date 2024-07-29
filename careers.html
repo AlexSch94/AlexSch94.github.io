@@ -6,34 +6,35 @@
     <meta name="keywords" content="DOT; telematic; telematics; system; system technology; rail; GPS; sensor; logistics; transportation; software; energy managment; IoT; automisation; cargo; freight; data">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Join a dynamic team and make your mark in a state of the art telematics company.">
-    <link rel="shortcut icon" type="image/x-icon" href="./images/logos/logo_DOT_greyscale.png?v=04.07.2023">
-    <link rel="stylesheet" type="text/css" href="./css/utils/reset.css?v=04.07.2023" media="screen">
-    <link rel="stylesheet" type="text/css" href="./css/base.css?v=04.07.2023" media="screen">
-    <link rel="stylesheet" type="text/css" href="./css/pages/careers.css?v=04.07.2023" media="screen">
-    <link rel="stylesheet" type="text/css" href="./css/utils/utils.css?v=04.07.2023" media="screen">
-    <link rel="stylesheet" type="text/css" href="./css/utils/keyframes.css?v=04.07.2023" media="screen">
-    <link rel="stylesheet" type="text/css" href="./css/utils/carousel.css?v=04.07.2023" media="screen">
-    <link rel="stylesheet" type="text/css" href="./plugins/fontello/css/dropdown.css?v=04.07.2023" media="screen">   
-    <script type="text/javascript" src="./js/app.js?v=04.07.2023" defer></script>
-    <script type="text/javascript" src="./js/pages/careers.js?v=04.07.2023" defer></script>
-    <script type="text/javascript" src="./js/utils/p_observer.js?v=04.07.2023" defer></script>
-    <script type="text/javascript" src="./js/nav.js?v=04.07.2023" defer></script>
+    <link id="favicon" rel="icon" href="images/logos/dot_logo.svg?v=03.07.2023">
+    <link rel="stylesheet" type="text/css" href="./css/utils/reset.css?v=03.07.2023" media="screen">
+    <link rel="stylesheet" type="text/css" href="./css/base.css?v=03.07.2023" media="screen">
+    <link rel="stylesheet" type="text/css" href="./css/pages/careers.css?v=03.07.2023" media="screen">
+    <link rel="stylesheet" type="text/css" href="./css/utils/utils.css?v=03.07.2023" media="screen">
+    <link rel="stylesheet" type="text/css" href="./css/utils/keyframes.css?v=03.07.2023" media="screen">
+    <link rel="stylesheet" type="text/css" href="./css/utils/carousel.css?v=03.07.2023" media="screen">
+    <link rel="stylesheet" type="text/css" href="./plugins/fontello/css/dropdown.css?v=03.07.2023" media="screen">
+    <script type="text/javascript" src="./js/app.js?v=03.07.2023" defer></script>
+    <script type="text/javascript" src="./js/pages/careers.js?v=03.07.2023" defer></script>
+    <script type="text/javascript" src="./js/utils/p_observer.js?v=03.07.2023" defer></script>
+    <script type="text/javascript" src="./js/nav.js?v=03.07.2023" defer></script>
+    <script type="text/javascript" src="./js/utils/loginComponent.js?v=03.07.2023"></script>
     <title>Careers | DOT</title>
 </head>
 
 <body data-category="about">
     <header>
-        <div class="nav-bar">            
+        <div class="nav-bar">
 			<div class="nav-bar-inner">
 				<div class="logo-container">
 					<a href="./index" class="logo-link" tabindex="1">
-                        <img src="./images/logos/logo_DOT.png?v=04.07.2023" alt="DOT Logo" id="dotLogo">
+                        <img src="./images/logos/dot_logo_white.svg?v=03.07.2023" alt="DOT Logo" id="dotLogo">
                     </a>
                     <div class="skip-link-container">
                         <a href="#mainWrapper" class="skip-link" tabindex="2">Skip to main content</a>
                     </div>
 				</div>
-				
+
 				<nav class="top-nav">
                     <div class="nav-links-container">
                         <ul role="list" class="top-nav-links">
@@ -62,6 +63,7 @@
                                     <li class="dropdown-link prod-dd-item"><a href="./products#srSection">Statistics and reports</a></li>
                                     <li class="dropdown-link prod-dd-item"><a href="./products#acmSection">Asset Condition Monitoring</a></li>
                                     <li class="dropdown-link prod-dd-item"><a href="./products#dataSharingSection">Data Sharing</a></li>
+                                    <li class="dropdown-link prod-dd-item"><a href="./products#useCasesSection">All Use Cases</a></li>
                                 </ul>
                             </li>
 
@@ -79,33 +81,33 @@
 
                                 <ul role="list" class="nav-dropdown-menu about-dropdown" id="aboutDropdown">
                                     <li class="dropdown-link about-dd-item"><a href="./company">Company</a></li>
-                                    <li class="dropdown-link about-dd-item"><a href="./team">Team</a></li>									
+                                    <li class="dropdown-link about-dd-item"><a href="./team">Team</a></li>
                                     <li class="dropdown-link about-dd-item"><a href="./sustainability">Sustainability</a></li>
                                     <li class="dropdown-link about-dd-item"><a href="./careers">Careers</a></li>
                                     <li class="dropdown-link about-dd-item"><a href="./partners">Partners</a></li>
                                     <li class="dropdown-link about-dd-item"><a href="./contact">Contact</a></li>
                                 </ul>
                             </li>
-                            
+
                             <li id="loginMobile" class="nav-parent mobile-only">
                                 <a href="#" id="loginBtnMobile" class="nav-link login-btn-mobile">Login</a>
                             </li>
-                            
+
                             <li id="languageMobile" class="nav-parent language-mobile mobile-only">
                                 <a href="#" class="nav-link">
-                                    <img src="./images/icons/icon-flag-gb.svg?v=04.07.2023" alt="English flag" class="language-icon main-icon">
+                                    <img src="./images/icons/icon-flag-gb.svg?v=03.07.2023" alt="English flag" class="language-icon main-icon">
 									<i class="icon-dropdown"></i>
 								</a>
 
                                 <ul role="list" class="nav-dropdown-menu language-dropdown" id="languageDropdownMobile">
                                     <li class="dropdown-link lang-dd-item-mobile">
 										<a href="./careers">
-                                        	<img src="./images/icons/icon-flag-gb.svg?v=04.07.2023" alt="English Flag" class="language-icon">English
+                                        	<img src="./images/icons/icon-flag-gb.svg?v=03.07.2023" alt="English Flag" class="language-icon">English
 										</a>
                                     </li>
                                     <li class="dropdown-link lang-dd-item-mobile">
 										<a href="./de/careers">
-                                        	<img src="./images/icons/icon-flag-de.svg?v=04.07.2023" alt="German Flag" class="language-icon">Deutsch
+                                        	<img src="./images/icons/icon-flag-de.svg?v=03.07.2023" alt="German Flag" class="language-icon">Deutsch
 										</a>
                                     </li>
                                 </ul>
@@ -113,28 +115,28 @@
                         </ul>
                     </div>
                 </nav>
-                
-                <nav class="nav-bar-right">                    
+
+                <nav class="nav-bar-right">
                     <div class="login-btn-wrapper">
                         <div class="login-btn-container">
                             <div class="nav-link login-btn" tabindex="0">Login</div>
                         </div>
                     </div>
-                    
+
                     <div id="languageLink" class="nav-parent language-link">
                         <a href="#" class="nav-link" id="langLinkDesktop" tabindex="-1">
-                            <img src="./images/icons/icon-flag-gb.svg?v=04.07.2023" alt="English flag" class="language-icon main-icon">
+                            <img src="./images/icons/icon-flag-gb.svg?v=03.07.2023" alt="English flag" class="language-icon main-icon">
                             <i class="icon-dropdown"></i>
                         </a>
                         <ul role="list" class="nav-dropdown-menu language-dropdown" id="languageDropdown">
                             <li class="dropdown-link lang-dd-item">
                                 <a href="./careers">
-                                    <img src="./images/icons/icon-flag-gb.svg?v=04.07.2023" alt="English flag" class="language-icon">English
+                                    <img src="./images/icons/icon-flag-gb.svg?v=03.07.2023" alt="English flag" class="language-icon">English
                                 </a>
                             </li>
                             <li class="dropdown-link lang-dd-item">
                                 <a href="./de/careers">
-                                    <img src="./images/icons/icon-flag-de.svg?v=04.07.2023" alt="German flag" class="language-icon">Deutsch
+                                    <img src="./images/icons/icon-flag-de.svg?v=03.07.2023" alt="German flag" class="language-icon">Deutsch
                                 </a>
                             </li>
                         </ul>
@@ -156,49 +158,50 @@
             <div class="hero-text-wrapper">
                 <div class="hero-text">
                     <h1 class="hero-h1">Careers</h1>
-                    <h3>Join a dynamic team and make your mark in a <span class="nowrap">state of the art</span> telematics company.</h3>
+                    <h3>Your chance to join a young and dynamic team in a leading telematics company. Apply now and help us shape the future!</h3>
                 </div>
             </div>
             <div class="hero-img-wrapper">
                 <div class="hero-img-container">
-                    <img src="./images/favpng_technology-mesh-clip-art.png?v=04.07.2023" class="hero-img" alt="Decorative image" draggable="false">
+                    <img src="./images/favpng_technology-mesh-clip-art.png?v=03.07.2023" class="hero-img" alt="Decorative image" draggable="false">
                 </div>
             </div>
         </div>
 
         <!-- / Hero Section -->
-        
+
         <div class="menu-fader"></div>
     </header>
     <!-- / Header -->
+
+    <div class="popout-wrapper" id="popoutWrapper">
+        <div class="popout" id="popout"></div>
+    </div>
+    <!-- / Popout wrapper -->
 
     <main class="main-wrapper" id="mainWrapper">
         <section class="intro-section" id="introSection">
             <div class="section-inner">
                 <div class="intro-text">
-                    <h1 class="page-header">
-                        Careers at DOT
-                    </h1>
-                    <p class="intro-paragraph">
-                        At DOT, a small and dynamic team works on cutting-edge technologies in the field of digital devices in the logistics industry, with a focus on railway systems.</p>
-                    <p class="intro-paragraph">
-                        Our working culture encourages the individuality and creativity of each and every person in our strong team. In a start-up like environment, contributing your own ideas and shaping your job is engaging and fun.
-                    </p>
-                    <p class="intro-paragraph">
-                        The well-being of our employees is important to us - we provide flexible working hours, opportunities to learn new things and to grow on a personal and professional level, as well as a pleasant working environment, in a sustainable business. Working conditions are adapted to your needs, allowing for a healthy life-work balance.
-                    </p>
+                    <h1 class="page-header">Careers at DOT</h1>
+
+                    <p class="intro-paragraph">At DOT, a small and dynamic team works on cutting-edge technologies in the field of digital devices in the logistics industry, with a focus on railway systems. Our working culture encourages individuality and creativity, providing an engaging and fun work experience, where you can contribute your ideas and shape your own job in a start-up like environment.</p>
+
+                    <p class="intro-paragraph">The well-being of our employees is important to us - we provide flexible working hours, opportunities to learn new things and to grow on a personal and professional level, as well as a pleasant working environment. Working conditions are adapted to your needs, allowing for a healthy life-work balance. This also means, that our requirements and expectations are flexible. In the case of interest in any of the offers below, please don't hesitate to contact us. We are looking forward to hearing from you!</p>
                 </div>
-        
+
                 <h3 class="jobs-header">What do we offer?</h3>
+
                 <ul class="job-list">
-                    <li><p>You can expect a diverse range of tasks in connection with the latest technologies.</p></li>
+                    <li><p>A diverse range of tasks in connection with the latest technologies.</p></li>
                     <li><p>The opportunity to help shape a young and dynamic team.</p></li>
                     <li><p>Workflows based on open communication and flat hierarchies.</p></li>
-                    <li><p>Free lunch and a selection of drinks and fresh fruits.</p></li>
+                    <li><p>Free lunch and a selection of drinks, cereal, and fresh fruits.</p></li>
+                    <li><p>Creative forum and chill area in our green courtyard.</p></li>
                     <li><p>Team events.</p></li>
                     <li><p>A modern workplace in a green area, in an energy self-sufficient office building, reachable within 25 minutes from Vienna by express train.</p></li>
                     <li><p>Private parking.</p></li>
-                    <li><p>The "Klimaticket", providing free, nationwide public transport for full-time employees.</p></li>                        
+                    <li><p>The "Klimaticket", providing free, nationwide public transport for full-time employees.</p></li>
                 </ul>
             </div>
         </section>
@@ -208,67 +211,58 @@
                 <div class="jobs-section-container">
                     <h2 class="jobs-header sub-header-2">Current Job Openings</h2>
                     <div class="jobs-wrapper">
-                        <!-- <div class="job-container">
-                            <a href="jobs/0001">
-                                <div class="job-description">
-                                    <div class="role">
-                                        <h3>Full Stack Developer</h3>
-                                    </div>
-                                    <div class="sector">
-                                        <div class="sector-span-container">
-                                            <span title="Software Development">Software Development</span>
-                                        </div>
-                                    </div>
+                        <button class="job-button"data-title="Head of Production">
+                            <div class="job-description">
+                                <div class="role">
+                                    <h3>Head of Production (m/f/d)</h3>
                                 </div>
-                            </a>
-                        </div>
-                        <div class="job-container">
-                            <a href="jobs/0002">
-                                <div class="job-description">
-                                    <div class="role">
-                                        <h3>Front End Developer</h3>
-                                    </div>
-                                    <div class="sector">
-                                        <div class="sector-span-container">
-                                            <span title="Software Development">Software Development</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div> -->
-                        <a href="mailto:karriere@dot-telematik.com?subject=Head of Production application">
-                            <div class="job-container">
-                                <div class="job-description">
-                                    <div class="role">
-                                        <h3>Head of Production</h3>
-                                    </div>
-                                    <div class="sector">
-                                        <div class="sector-span-container">
-                                            <span title="Software Development">Production</span>
-                                        </div>
+                                <div class="sector">
+                                    <div class="sector-span-container">
+                                        <span title="Software Development">Production</span>
                                     </div>
                                 </div>
                             </div>
-                        </a>
-                        <a href="mailto:karriere@dot-telematik.com?subject=Head of Hardware Engineering application">
-                            <div class="job-container">
-                                <div class="job-description">
-                                    <div class="role">
-                                        <h3>Head of Hardware Engineering</h3>
-                                    </div>
-                                    <div class="sector">
-                                        <div class="sector-span-container">
-                                            <span title="Software Development">Hardware</span>
-                                        </div>
+                        </button>
+                        <button class="job-button"data-title="Head of Hardware Engineering">
+                            <div class="job-description">
+                                <div class="role">
+                                    <h3>Head of Hardware Engineering (m/f/d)</h3>
+                                </div>
+                                <div class="sector">
+                                    <div class="sector-span-container">
+                                        <span title="Software Development">Hardware</span>
                                     </div>
                                 </div>
                             </div>
-                        </a>
-                        <a href="mailto:karriere@dot-telematik.com?subject=Product Manager application">
-                            <div class="job-container">
+                        </button>
+                        <!-- <button class="job-button"data-title="Product Manager">
+                            <div class="job-description">
+                                <div class="role">
+                                    <h3>Product Manager (m/f/d)</h3>
+                                </div>
+                                <div class="sector">
+                                    <div class="sector-span-container">
+                                        <span title="Software Development">Management</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                        <button class="job-button"data-title="Marketing Manager">
+                            <div class="job-description">
+                                <div class="role">
+                                    <h3>Marketing Manager (m/f/d)</h3>
+                                </div>
+                                <div class="sector">
+                                    <div class="sector-span-container">
+                                        <span title="Software Development">Management</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </button> -->
+                        <button class="job-button"data-title="Quality and Certification Manager">
                                 <div class="job-description">
                                     <div class="role">
-                                        <h3>Product Manager</h3>
+                                        <h3>Quality and Certification Manager (m/f/d)</h3>
                                     </div>
                                     <div class="sector">
                                         <div class="sector-span-container">
@@ -276,106 +270,67 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-                        <a href="mailto:karriere@dot-telematik.com?subject=Marketing Manager application">
-                            <div class="job-container">
-                                <div class="job-description">
-                                    <div class="role">
-                                        <h3>Marketing Manager</h3>
-                                    </div>
-                                    <div class="sector">
-                                        <div class="sector-span-container">
-                                            <span title="Software Development">Management</span>
-                                        </div>
+                        </button>
+                        <button class="job-button"data-title="Human Resources Manager">
+                            <div class="job-description">
+                                <div class="role">
+                                    <h3>Human Resources Manager (m/f/d)</h3>
+                                </div>
+                                <div class="sector">
+                                    <div class="sector-span-container">
+                                        <span title="Software Development">Management</span>
                                     </div>
                                 </div>
                             </div>
-                        </a>
-                        <a href="mailto:karriere@dot-telematik.com?subject=Quality and Certification Manager application">
-                            <div class="job-container">
-                                <div class="job-description">
-                                    <div class="role">
-                                        <h3>Quality and Certification Manager</h3>
-                                    </div>
-                                    <div class="sector">
-                                        <div class="sector-span-container">
-                                            <span title="Software Development">Management</span>
-                                        </div>
-                                    </div>
+                        </button>
+                        <button class="job-button"data-title="Business Development Manager">
+                            <div class="job-description">
+                                <div class="role">
+                                    <h3>Business Development Manager (m/f/d)</h3>
                                 </div>
-                            </a>
-                        </div>
-                        <a href="mailto:karriere@dot-telematik.com?subject=Human Resources Manager application">
-                            <div class="job-container">
-                                <div class="job-description">
-                                    <div class="role">
-                                        <h3>Human Resources Manager</h3>
-                                    </div>
-                                    <div class="sector">
-                                        <div class="sector-span-container">
-                                            <span title="Software Development">Management</span>
-                                        </div>
+                                <div class="sector">
+                                    <div class="sector-span-container">
+                                        <span title="Software Development">Management</span>
                                     </div>
                                 </div>
                             </div>
-                        </a>
-                        <a href="mailto:karriere@dot-telematik.com?subject=Business Development Manager application">
-                            <div class="job-container">
-                                <div class="job-description">
-                                    <div class="role">
-                                        <h3>Business Development Manager</h3>
-                                    </div>
-                                    <div class="sector">
-                                        <div class="sector-span-container">
-                                            <span title="Software Development">Management</span>
-                                        </div>
+                        </button>
+                        <button class="job-button"data-title="Accounting Specialist">
+                            <div class="job-description">
+                                <div class="role">
+                                    <h3>Accounting Specialist (m/f/d)</h3>
+                                </div>
+                                <div class="sector">
+                                    <div class="sector-span-container">
+                                        <span title="Software Development">Administration</span>
                                     </div>
                                 </div>
                             </div>
-                        </a>
-                        <a href="mailto:karriere@dot-telematik.com?subject=Accounting Specialist application">
-                            <div class="job-container">
-                                <div class="job-description">
-                                    <div class="role">
-                                        <h3>Accounting Specialist</h3>
-                                    </div>
-                                    <div class="sector">
-                                        <div class="sector-span-container">
-                                            <span title="Software Development">Administration</span>
-                                        </div>
+                        </button>
+                        <button class="job-button"data-title="Infrastructure Service Engineer">
+                            <div class="job-description">
+                                <div class="role">
+                                    <h3>Infrastructure Service Engineer (m/f/d)</h3>
+                                </div>
+                                <div class="sector">
+                                    <div class="sector-span-container">
+                                        <span title="Software Development">Information Technology</span>
                                     </div>
                                 </div>
-                            </div>                        
-                        </a>
-                        <a href="mailto:karriere@dot-telematik.com?subject=Infrastructure Service Engineer application">
-                            <div class="job-container">
-                                <div class="job-description">
-                                    <div class="role">
-                                        <h3>Infrastructure Service Engineer</h3>
-                                    </div>
-                                    <div class="sector">
-                                        <div class="sector-span-container">
-                                            <span title="Software Development">Information Technology</span>
-                                        </div>
+                            </div>
+                        </button>
+                        <button class="job-button"data-title="CAD Engineer">
+                            <div class="job-description">
+                                <div class="role">
+                                    <h3>CAD Engineer (m/f/d)</h3>
+                                </div>
+                                <div class="sector">
+                                    <div class="sector-span-container">
+                                        <span title="Software Development">Design</span>
                                     </div>
                                 </div>
-                            </div>                 
-                        </a>
-                        <a href="mailto:karriere@dot-telematik.com?subject=CAD Engineer application">
-                            <div class="job-container">
-                                <div class="job-description">
-                                    <div class="role">
-                                        <h3>CAD Engineer</h3>
-                                    </div>
-                                    <div class="sector">
-                                        <div class="sector-span-container">
-                                            <span title="Software Development">Design</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>                 
-                        </a>
+                            </div>
+                        </button>
                     </div>
                     <div class="careers-contact">
                         <p>We are looking forward to your application to: <a href="mailto:karriere@dot-telematik.com"><span class="nowrap">karriere@dot-telematik.com</span></a></p>
@@ -387,7 +342,7 @@
         <!-- / Jobs Section -->
 
         <hr>
-        <section class="partners-section">  
+        <section class="partners-section">
             <div class="section-inner">
                 <div class="partners-wrapper" id="partnersWrapper">
                     <h2 class="partners-title">Trusted by leading companies in the field</h2>
@@ -405,31 +360,31 @@
 
                                     <div class="carousel-item">
                                         <a href="https://www.bahn.de/" target="_blank" tabindex="-1">
-                                            <img src="./images/logos/logo-DB.png?v=04.07.2023" alt="DB logo">
+                                            <img src="./images/logos/logo-DB.png?v=03.07.2023" alt="DB logo">
                                         </a>
                                     </div>
 
                                     <div class="carousel-item">
                                         <a href="https://railrent.com/en" target="_blank" tabindex="-1">
-                                            <img src="./images/logos/logo-ERR.png?v=04.07.2023" alt="ERR logo">
+                                            <img src="./images/logos/logo-ERR.png?v=03.07.2023" alt="ERR logo">
                                         </a>
                                     </div>
 
                                     <div class="carousel-item">
                                         <a href="https://www.euro-wagon.com/" target="_blank" tabindex="-1">
-                                            <img src="./images/logos/logo-eurowagon.svg?v=04.07.2023" alt="Eurowagon logo" class="eurowagon-logo">
+                                            <img src="./images/logos/logo-eurowagon.svg?v=03.07.2023" alt="Eurowagon logo" class="eurowagon-logo">
                                         </a>
                                     </div>
 
                                     <div class="carousel-item">
                                         <a href="https://www.gatx.eu/" target="_blank" tabindex="-1">
-                                            <img src="./images/logos/logo-gatx.png?v=04.07.2023" alt="GATX logo">
+                                            <img src="./images/logos/logo-gatx.png?v=03.07.2023" alt="GATX logo">
                                         </a>
                                     </div>
 
                                     <div class="carousel-item">
                                         <a href="https://mfdrail.ch/de" target="_blank" tabindex="-1">
-                                            <img src="./images/logos/logo-mfd.png?v=04.07.2023" alt="MFD logo">
+                                            <img src="./images/logos/logo-mfd.png?v=03.07.2023" alt="MFD logo">
                                         </a>
                                     </div>
 
@@ -441,25 +396,25 @@
 
                                     <div class="carousel-item">
                                         <a href="https://www.orv-moers.de/" target="_blank" tabindex="-1">
-                                            <img src="./images/logos/logo-orv.png?v=04.07.2023" alt="ORV Moers logo">
+                                            <img src="./images/logos/logo-orv.png?v=03.07.2023" alt="ORV Moers logo">
                                         </a>
                                     </div>
 
                                     <div class="carousel-item">
                                         <a href="https://www.railtrans.eu/" target="_blank" tabindex="-1">
-                                            <img src="./images/logos/logo-RTI.jpg?v=04.07.2023" alt="Railtrans logo">
+                                            <img src="./images/logos/logo-RTI.jpg?v=03.07.2023" alt="Railtrans logo">
                                         </a>
                                     </div>
 
                                     <div class="carousel-item">
                                         <a href="https://www.tramesa.com/inicio" target="_blank" tabindex="-1">
-                                            <img src="./images/logos/logo-tramesa.jpg?v=04.07.2023" alt="Tramesa logo">
+                                            <img src="./images/logos/logo-tramesa.jpg?v=03.07.2023" alt="Tramesa logo">
                                         </a>
                                     </div>
 
                                     <div class="carousel-item">
                                         <a href="https://www.wascosa.ch/" target="_blank" tabindex="-1">
-                                            <img src="./images/logos/logo-wascosa.png?v=04.07.2023" alt="Wascosa logo" class="wide">
+                                            <img src="./images/logos/logo-wascosa.png?v=03.07.2023" alt="Wascosa logo" class="wide">
                                         </a>
                                     </div>
                                 </div>
@@ -473,31 +428,31 @@
 
                                     <div class="carousel-item">
                                         <a href="https://www.bahn.de/" target="_blank" tabindex="-1">
-                                            <img src="./images/logos/logo-DB.png?v=04.07.2023" alt="DB logo">
+                                            <img src="./images/logos/logo-DB.png?v=03.07.2023" alt="DB logo">
                                         </a>
                                     </div>
-                                    
+
                                     <div class="carousel-item">
                                         <a href="https://railrent.com/en" target="_blank" tabindex="-1">
-                                            <img src="./images/logos/logo-ERR.png?v=04.07.2023" alt="ERR logo">
+                                            <img src="./images/logos/logo-ERR.png?v=03.07.2023" alt="ERR logo">
                                         </a>
                                     </div>
-                                    
+
                                     <div class="carousel-item">
                                         <a href="https://www.euro-wagon.com/" target="_blank" tabindex="-1">
-                                            <img src="./images/logos/logo-eurowagon.svg?v=04.07.2023" alt="Eurowagon logo" class="eurowagon-logo">
+                                            <img src="./images/logos/logo-eurowagon.svg?v=03.07.2023" alt="Eurowagon logo" class="eurowagon-logo">
                                         </a>
                                     </div>
 
                                     <div class="carousel-item">
                                         <a href="https://www.gatx.eu/" target="_blank" tabindex="-1">
-                                            <img src="./images/logos/logo-gatx.png?v=04.07.2023" alt="GATX logo">
+                                            <img src="./images/logos/logo-gatx.png?v=03.07.2023" alt="GATX logo">
                                         </a>
                                     </div>
 
                                     <div class="carousel-item">
                                         <a href="https://mfdrail.ch/de" target="_blank" tabindex="-1">
-                                            <img src="./images/logos/logo-mfd.png?v=04.07.2023" alt="MFD logo">
+                                            <img src="./images/logos/logo-mfd.png?v=03.07.2023" alt="MFD logo">
                                         </a>
                                     </div>
 
@@ -509,30 +464,30 @@
 
                                     <div class="carousel-item">
                                         <a href="https://www.orv-moers.de/" target="_blank" tabindex="-1">
-                                            <img src="./images/logos/logo-orv.png?v=04.07.2023" alt="ORV Moers logo">
+                                            <img src="./images/logos/logo-orv.png?v=03.07.2023" alt="ORV Moers logo">
                                         </a>
                                     </div>
 
                                     <div class="carousel-item">
                                         <a href="https://www.railtrans.eu/" target="_blank" tabindex="-1">
-                                            <img src="./images/logos/logo-RTI.jpg?v=04.07.2023" alt="Railtrans logo">
+                                            <img src="./images/logos/logo-RTI.jpg?v=03.07.2023" alt="Railtrans logo">
                                         </a>
                                     </div>
 
                                     <div class="carousel-item">
                                         <a href="https://www.tramesa.com/inicio" target="_blank" tabindex="-1">
-                                            <img src="./images/logos/logo-tramesa.jpg?v=04.07.2023" alt="Tramesa logo">
+                                            <img src="./images/logos/logo-tramesa.jpg?v=03.07.2023" alt="Tramesa logo">
                                         </a>
                                     </div>
 
                                     <div class="carousel-item">
                                         <a href="https://www.wascosa.ch/" target="_blank" tabindex="-1">
-                                            <img src="./images/logos/logo-wascosa.png?v=04.07.2023" alt="Wascosa logo" class="wide">
+                                            <img src="./images/logos/logo-wascosa.png?v=03.07.2023" alt="Wascosa logo" class="wide">
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="fade-bar fb-right"></div>
                         </div>
                     </div>
@@ -548,67 +503,44 @@
         <div class="footer-content">
             <div class="footer-left">
                 <div class="footer-links">
-                    <a href="imprint" style="text-decoration: none; color:inherit">Imprint</a> 
-                    <a href="legal" style="text-decoration: none; color:inherit">Privacy Policy</a> 
+                    <a href="imprint" style="text-decoration: none; color:inherit">Imprint</a>
+                    <a href="legal" style="text-decoration: none; color:inherit">Privacy Policy</a>
                     <a href="contact">Contact</a>
                 </div>
                 <div class="footer-copyright">Copyright © DOT Telematik und Systemtechnik GmbH</div>
             </div>
-            
+
             <div class="footer-right">
                 <div class="scroll-to-top-btn" id="scrollToTopBtn" tabindex="0">
                     Scroll to top
                 </div>
-            
+
                 <div class="footer-socials">
                     <a class="social-icon-container" href="https://www.linkedin.com/company/dot-telematik-gmbh" target="_blank">
                         <div class="social-icon-front">
-                            <img src="./images/icons/icon-linkedin.png?v=04.07.2023" class="social-icon" alt="linkedin icon">
+                            <img src="./images/icons/icon-linkedin.png?v=03.07.2023" class="social-icon" alt="linkedin icon">
                         </div>
                         <div class="social-icon-back">
-                            <img src="./images/icons/icon-linkedin.png?v=04.07.2023" class="social-icon" alt="linkedin icon">
+                            <img src="./images/icons/icon-linkedin.png?v=03.07.2023" class="social-icon" alt="linkedin icon">
                         </div>
-                    </a>                
+                    </a>
                 </div>
             </div>
         </div>
-    </footer> 
-    <!-- / Footer -->	
+    </footer>
+    <!-- / Footer -->
 
-    <div class="login-wrapper">
-        <div class="login-container">
-            <div class="login-heading">
-                <h3>DOT-Link Login</h3>
-                <p class="login-prompt">Please enter your username and password</p>
-            </div>
-            <form action="https://dotlink.dot-telematik.com/users/login" id="loginForm" class="login-form" method="post" accept-charset="utf-8" autocomplete="on">
-            <fieldset>
-            <div class="input-text-div">
-                <label for="UserName">Username</label>
-                <br>
-                <input name="data[User][name]" type="text" maxlength="50" required="required" value id="UserName"
-                class="input-text-field">
-            </div>
-            <div class="input-text-div">
-                <label for="UserPassword">Password</label>
-                <br>
-                <input name="data[User][password]" type="password" required="required" value id="UserPassword"
-                class="input-text-field">
-            </div>
-            </fieldset>
-            <div class="submit-btn-wrapper">
-                <input type="submit" value="Login" class="login-submit-btn" id="loginSubmitBtn">
-            </div>
-        </form>
-            <button id="loginCloseBtn" class="login-close-btn"><img src="./images/icons/icon-xmark.png?v=04.07.2023" class="x-icon" draggable="false"></span></button>
-        </div>
-    </div>  
+    <div id="login-container"></div>
+    <script>
+        const loginComponent = new LoginComponent()
+        loginComponent.render(document.getElementById('login-container'))
+    </script>
     <!-- / Login -->
 
     <noscript>
         <div class="noscript-wrapper">
             <div class="noscript-container">
-                <img src="./images/logos/logo_DOT.png?v=04.07.2023" alt="DOT Logo" class="noscript-logo">
+                <img src="./images/logos/dot_logo_white.svg?v=03.07.2023" alt="DOT Logo" class="noscript-logo">
                 <div class="noscript-txt">
                     <div class="noscript-prompt">This site requires JavaScript to be enabled on your browser.</div>
                     <div class="links">
@@ -618,16 +550,16 @@
                         <a class="link1" href="https://support.mozilla.org/en-US/kb/javascript-settings-for-interactive-web-pages" target="_blank">Firefox</a>
 
                         <a class="link1" href="https://www.enablejavascript.io/en/how-to-enable-javascript-on-apple-safari-ipad-iphone-ios" target="_blank">Safari</a>
-                        
+
                         <a class="link1" href="https://www.enablejavascript.io/en/how-to-enable-javascript-on-an-android-phonetablet" target="_blank">Android</a>
-                        
+
                         <a class="link1" href="https://www.enablejavascript.io/en/how-to-enable-javascript-on-opera" target="_blank">Opera</a>
                     </div>
                 </div>
             </div>
         </div>
     </noscript>
-    <!-- / Noscript -->    
-    
+    <!-- / Noscript -->
+
 </body>
-</html>  
+</html>

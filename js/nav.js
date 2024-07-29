@@ -280,9 +280,7 @@ if (currentCategory === 'home') {
     }
 
     function highlightCurrentCategory() {
-        if (window.innerWidth <= 1000) {
-            return
-        }
+        if (window.innerWidth <= 1000) return
 
         switch (currentCategory) {
             case 'home':
@@ -723,102 +721,81 @@ if (currentCategory === 'home') {
             }
         }
 
-        const heroSecObserverOptions = { threshold: 0.85 }
-        const heroSecObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (!entry.isIntersecting) {
-                    heroSection.classList.add('fade')
-                } else {
-                    heroSection.classList.remove('fade')
-                }
-            })
-        }, heroSecObserverOptions)
+        function setHeroSectionOpacity() {
+            let navBarHeight = parseInt(window.getComputedStyle(navBar).height, 10)
+            let percentage = cubicEaseOut(calculateVisiblePercentage(heroSection, navBarHeight), 0)
+            heroSection.style.opacity = percentage + '%'
+            // Array.from(heroSection.children).forEach((component) => (component.style.opacity = percentage + '%'))
+        }
 
-        if (heroSection) {
-            heroSecObserver.observe(header)
+        if (!isHomePage) {
+            window.addEventListener('scroll', setHeroSectionOpacity)
         }
 
         // Resize handling
-        ;(function () {
-            let newScreenSize, screenSize, prevScreenSize
+        let newScreenSize, screenSize, prevScreenSize
+        window.addEventListener('resize', () => {
+            adaptScreensize()
 
-            window.addEventListener('resize', () => {
-                getScreenSize()
-
-                // Stop menu opening while resizing window
-                let resizeTimer
-                window.addEventListener('resize', (e) => {
-                    topNav.classList.add('animation-stop')
-                    dropDownMenus.forEach((menu) => {
-                        menu.classList.add('animation-stop')
-                    })
-
-                    clearTimeout(resizeTimer)
-                    resizeTimer = setTimeout(() => {
-                        topNav.classList.remove('animation-stop')
-                        dropDownMenus.forEach((menu) => {
-                            menu.classList.remove('animation-stop')
-                        })
-
-                        if (window.innerWidth <= 1000) {
-                            setLinkTabIndex([mainLinks, subLinks], 'hide')
-                            deselectAll()
-                        } else {
-                            setLinkTabIndex([mainLinks, subLinks], 'show')
-                        }
-                    }, 50)
-                })
+            // Stop menu opening while resizing window
+            let resizeTimer
+            window.addEventListener('resize', (e) => {
+                topNav.classList.add('animation-stop')
+                dropDownMenus.forEach((menu) => menu.classList.add('animation-stop'))
+                clearTimeout(resizeTimer)
+                resizeTimer = setTimeout(() => {
+                    topNav.classList.remove('animation-stop')
+                    dropDownMenus.forEach((menu) => menu.classList.remove('animation-stop'))
+                    if (window.innerWidth <= 1000) {
+                        setLinkTabIndex([mainLinks, subLinks], 'hide')
+                        deselectAll()
+                    } else {
+                        setLinkTabIndex([mainLinks, subLinks], 'show')
+                    }
+                }, 50)
             })
+        })
 
-            // Get Screen width -> react if significant change is detected
-            function getScreenSize() {
-                let width = window.innerWidth
+        // Get Screen width -> react if significant change is detected
+        function adaptScreensize() {
+            let width = window.innerWidth
 
-                if (width > 1000) {
-                    newScreenSize = 'desktop'
-                    if (mainMenuOpen) {
-                        closeMenu()
-                    }
+            if (width > 1000) {
+                newScreenSize = 'desktop'
+                if (mainMenuOpen) closeMenu()
 
-                    if (newScreenSize !== screenSize) {
-                        // Save old screensize
-                        prevScreenSize = screenSize
-                        // Changes based on new screensize
-                        onScreenSizeChange(newScreenSize)
-                        // Set current screensize
-                        screenSize = 'desktop'
-                    }
-                } else if (width > 500) {
-                    newScreenSize = 'tablet'
-                    if (newScreenSize !== screenSize) {
-                        prevScreenSize = screenSize
-                        onScreenSizeChange(newScreenSize)
-                        screenSize = 'tablet'
-                    }
-                } else {
-                    newScreenSize = 'mobile'
-                    if (newScreenSize !== screenSize) {
-                        prevScreenSize = screenSize
-                        onScreenSizeChange(newScreenSize)
-                        screenSize = 'mobile'
-                    }
+                if (newScreenSize !== screenSize) {
+                    // Save old screensize
+                    prevScreenSize = screenSize
+                    // Changes based on new screensize
+                    onScreenSizeChange(newScreenSize)
+                    // Set current screensize
+                    screenSize = 'desktop'
+                }
+            } else if (width > 500) {
+                newScreenSize = 'tablet'
+                if (newScreenSize !== screenSize) {
+                    prevScreenSize = screenSize
+                    onScreenSizeChange(newScreenSize)
+                    screenSize = 'tablet'
+                }
+            } else {
+                newScreenSize = 'mobile'
+                if (newScreenSize !== screenSize) {
+                    prevScreenSize = screenSize
+                    onScreenSizeChange(newScreenSize)
+                    screenSize = 'mobile'
                 }
             }
+        }
 
-            function onScreenSizeChange(size) {
-                if (size === 'desktop') {
-                    highlightCurrentCategory()
-                }
-                if (size === 'tablet' && prevScreenSize === 'desktop') {
-                    deselectCategories()
-                }
-                if (size === 'mobile' && prevScreenSize === 'desktop') {
-                    deselectCategories()
-                }
-            }
+        function onScreenSizeChange(size) {
+            if (size === 'desktop') highlightCurrentCategory()
+            if (size === 'tablet' && prevScreenSize === 'desktop') deselectCategories()
+            if (size === 'mobile' && prevScreenSize === 'desktop') deselectCategories()
+        }
 
-            // Assess size at load
-            getScreenSize()
-        })()
+        adaptScreensize() // Assess size at load
+        if (!isHomePage) setHeroSectionOpacity() // Set hero opacity at load
     })()
 })()

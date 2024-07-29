@@ -1,3 +1,10 @@
+.hero-text h1 {
+    margin-bottom: 0.1em;
+}
+.hero-text h3 {
+    font-size: var(--FS10);
+}
+
 .jobs-section {
     padding-top: 0px;
 }
@@ -35,7 +42,7 @@ h3.jobs-header {
     animation: fade-move-in 2s ease-in-out forwards;
 }
 
-.job-container {
+.job-button {
     background-color: hsl(208, 28%, 90%);
     border: 1px solid var(--brand-color);
     font-size: var(--FS10);
@@ -46,22 +53,13 @@ h3.jobs-header {
     transition: all 0.3s ease;
     overflow: hidden;
     user-select: none;
-}
-
-.job-container:hover,
-.job-container:active {
-    transform: translateY(-2px);
-    box-shadow: 0.4em 0.4em 1.2em var(--shadow-400);
-}
-
-.job-container a {
-    text-decoration: none;
-    height: 100%;
     width: 100%;
 }
 
-.job-container a:focus {
-    outline-offset: 4px;
+.job-button:hover,
+.job-button:active {
+    transform: translateY(-2px);
+    box-shadow: 0.4em 0.4em 1.2em var(--shadow-400);
 }
 
 .job-description {
@@ -78,8 +76,10 @@ h3.jobs-header {
 }
 
 .role h3 {
+    text-align: start;
     font-size: var(--FS10);
     font-weight: 600;
+    color: var(--text-color);
 }
 
 .sector-container {
@@ -114,11 +114,189 @@ h3.jobs-header {
     margin-top: 2rem;
 }
 
+/* Popout job info */
+
+.popout-wrapper {
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    top: var(--nav-bar-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background-fade);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.popout {
+    display: flex;
+    width: 90%;
+    min-width: 310px;
+    max-width: 750px;
+    max-height: 85%;
+    flex-direction: column;
+    gap: 1em;
+    font-size: var(--FS11);
+    padding-top: 2em;
+    border-radius: 10px;
+    border: 4px solid var(--brand-color2);
+    background-color: var(--page-background);
+    opacity: 0;
+    transform: scale(0.5);
+    animation: popoutIn 0.25s ease forwards;
+}
+
+.popout-out {
+    animation: popoutOut 0.25s ease forwards;
+}
+
+@keyframes popoutIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes popoutOut {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+}
+
+.popout-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2em 2em 2em;
+    gap: 1em;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.popout-main::-webkit-scrollbar {
+    background: white;
+}
+
+.popout-main::-webkit-scrollbar-track {
+    background: hsl(198, 57%, 95%);
+}
+
+.popout-main::-webkit-scrollbar-thumb {
+    background: var(--brand-color2);
+    border-radius: 10px;
+    border: 3px solid hsl(198, 57%, 95%);
+}
+
+.popout-main::-webkit-scrollbar-thumb:hover {
+    background: var(--brand-color3);
+}
+
+.popout-main::-webkit-scrollbar-thumb:active {
+    background: var(--brand-color3-2);
+}
+
+.popout-text-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.popout-header {
+    text-align: center;
+    font-size: var(--FS8);
+    color: var(--brand-color3);
+    line-height: 1;
+    margin-bottom: 0.6em;
+}
+
+.popout-description p {
+    font-size: var(--FS11-2);
+    line-height: 1.3;
+}
+.popout-description p:first-of-type {
+    margin-bottom: 0.6em;
+}
+
+.popout-description p.bold {
+    text-align: center;
+    margin-bottom: 0.4em;
+}
+
+.popout-description p.light {
+    font-size: var(--FS12);
+    font-weight: 200;
+    color: var(--text-color);
+}
+
+.popout-description ul {
+    padding-left: 1em;
+    margin-top: 0.6em;
+}
+
+.popout-description li {
+    margin-bottom: 0.4em;
+    font-size: var(--FS11-2);
+}
+
+.popout-close-btn {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    top: 0;
+    right: 0;
+    font-size: var(--FS11);
+    height: 2em;
+    width: 3em;
+    padding: 0 1px 2px 0;
+    color: white;
+    border-radius: 0 3px 0 5px;
+    background-color: var(--brand-color2);
+    border: 2px solid var(--brand-color2);
+    transform: scale(1) translate(2px, -2px);
+    transform-origin: top right;
+    transition: transform 0.1s ease;
+}
+
+.popout-close-btn:focus {
+    outline: none;
+    transform: scale(0.97) translate(2px, -2px);
+}
+
+.popout-close-btn:active {
+    transform: scale(0.95) translate(2px, -2px);
+}
+
+.popout-close-btn:active .x-icon {
+    transform: scale(0.97);
+}
+
 /* Media Queries */
 
 @media (max-width: 600px) {
-    .job-container {
+    .job-button {
         padding: 1em;
+    }
+
+    .role h3 {
+        text-align: center;
     }
 
     .job-description {

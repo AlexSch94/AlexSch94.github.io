@@ -19,6 +19,7 @@
     color: white;
     text-shadow: 0 0 5px black, 0 0 10px black, 0 0 15px black;
     user-select: none;
+    overflow: hidden;
 }
 
 .teammember-container {
@@ -32,6 +33,12 @@
     font-weight: 500;
     transition: 1s ease;
     will-change: transform;
+}
+
+.teammember-container.enlarged {
+    position: absolute;
+    height: 105%;
+    bottom: 0%;
 }
 
 .teammember.active .teammember-back {
@@ -57,7 +64,6 @@
     right: 0;
     padding: 0 5% 5%;
 }
-
 
 /* Media Queries */
 
